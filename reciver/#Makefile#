@@ -1,9 +1,0 @@
-
-build:
-	mbed compile -m NUCLEO_F401RE -t GCC_ARM
-
-clean:
-	rm -rf BUILD
-
-run: build
-	mb 
