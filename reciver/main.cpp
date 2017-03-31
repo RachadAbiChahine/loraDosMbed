@@ -32,12 +32,12 @@
 #define LORA_FHSS_ENABLED                           false
 #define LORA_NB_SYMB_HOP                            4
 #define LORA_IQ_INVERSION_ON                        false
-#define LORA_CRC_ENABLED                            false
+#define LORA_CRC_ENABLED                            true
 #else
 #error "Please define a modem in the compiler options."
 #endif
 
-#define RX_TIMEOUT_VALUE                                3500000   // in us
+#define RX_TIMEOUT_VALUE                                2000000   // in us
 #define BUFFER_SIZE                                     32        // Define the payload size here
 
 DigitalOut led(LED1);
@@ -133,7 +133,7 @@ int main() {
                 pc.printf("%c  ", Buffer[2]);
                 pc.printf("%c  ", Buffer[3]);
 
-                for (uint8_t ct = 4; ct < 8; ct++) {
+                for (uint8_t ct = 4; ct <= 8; ct++) {
                     pc.printf("%d ", Buffer[ct]);
                     value_tester[ct - 4] = Buffer[ct];
                 }
@@ -157,26 +157,24 @@ void OnRxDone(uint8_t *payload, uint16_t size, int16_t rssi, int8_t snr) {
     RssiValue = rssi;
     SnrValue = snr;
     State = RX;
-    //debug_if(DEBUG_MESSAGE, "> OnRxDone\n\r");
+    debug_if(DEBUG_MESSAGE, "> OnRxDone\n\r");
 }
 
 void OnTxTimeout(void) {
-    //Radio.Sleep();
+    Radio.Sleep();
     State = TX_TIMEOUT;
     debug_if(DEBUG_MESSAGE, "> OnTxTimeout\n\r");
 }
 
 void OnRxTimeout(void) {
-    // Radio.Sleep();
+    Radio.Sleep();
     Buffer[ BufferSize ] = 0;
     State = RX_TIMEOUT;
     debug_if(DEBUG_MESSAGE, "> OnRxTimeout\n\r");
 }
 
 void OnRxError(void) {
-    //Radio.Sleep();
+    Radio.Sleep();
     State = RX_ERROR;
-    Radio.Rx(RX_TIMEOUT_VALUE);
-
     debug_if(DEBUG_MESSAGE, "> OnRxError\n\r");
 }
