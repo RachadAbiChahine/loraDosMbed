@@ -1,93 +1,26 @@
-#include "mbed.h"
 #include "main.h"
-#include "sx1276-hal.h"
-#include "debug.h"
-
 /* Set this flag to '1' to display debug messages on the console */
 #define DEBUG_MESSAGE   0
 
 /* Set this flag to '1' to use the LoRa modulation or to '0' to use FSK modulation */
-#define USE_MODEM_LORA  1
-#define USE_MODEM_FSK   !USE_MODEM_LORA
-
-#define RF_FREQUENCY                                    868000000 // Hz
-#define TX_OUTPUT_POWER                                 14        // 14 dBm
-
-#if USE_MODEM_LORA == 1
-
-#define LORA_BANDWIDTH                              1         // [0: 125 kHz,
-//  1: 250 kHz,
-//  2: 500 kHz,
-//  3: Reserved]
-#define LORA_SPREADING_FACTOR                       7         // [SF7..SF12]
-#define LORA_CODINGRATE                             1         // [1: 4/5,
-//  2: 4/6,
-//  3: 4/7,
-//  4: 4/8]
-#define LORA_PREAMBLE_LENGTH                        8         // Same for Tx and Rx
-#define LORA_SYMBOL_TIMEOUT                         5         // Symbols
-#define LORA_FIX_LENGTH_PAYLOAD_ON                  false
-#define LORA_FHSS_ENABLED                           false
-#define LORA_NB_SYMB_HOP                            4
-#define LORA_IQ_INVERSION_ON                        false
-#define LORA_CRC_ENABLED                            true
-
-#elif USE_MODEM_FSK == 1
-
-#define FSK_FDEV                                    25000     // Hz
-#define FSK_DATARATE                                19200     // bps
-#define FSK_BANDWIDTH                               50000     // Hz
-#define FSK_AFC_BANDWIDTH                           83333     // Hz
-#define FSK_PREAMBLE_LENGTH                         5         // Same for Tx and Rx
-#define FSK_FIX_LENGTH_PAYLOAD_ON                   false
-#define FSK_CRC_ENABLED                             true
-
-#else
-#error "Please define a modem in the compiler options."
-#endif
-
-#define RX_TIMEOUT_VALUE                                3500000   // in us
-#define BUFFER_SIZE                                     32        // Define the payload size here
-
 #if( defined ( TARGET_KL25Z ) || defined ( TARGET_LPC11U6X ) )
 DigitalOut led(LED2);
 #else
 DigitalOut led(LED4
 
-);
+        );
 #endif
-
+/*###################"Global Variable##########*/
 /*
  *  Global variables declarations
  */
-typedef enum {
-    LOWPOWER = 0,
-    IDLE,
 
-    RX,
-    RX_TIMEOUT,
-    RX_ERROR,
-
-    TX,
-    TX_TIMEOUT,
-
-    CAD,
-    CAD_DONE
-} AppStates_t;
 
 volatile AppStates_t State = LOWPOWER;
 
-/*!
- * Radio events function pointer
- */
-static RadioEvents_t RadioEvents;
-
-/*
- *  Global variables declarations
- */
 SX1276MB1xAS Radio(NULL);
 
-const uint8_t PingMsg[] = "PING";
+
 const uint8_t PongMsg[] = "PONG";
 
 uint16_t BufferSize = BUFFER_SIZE;
@@ -96,20 +29,20 @@ uint8_t Buffer[BUFFER_SIZE];
 int16_t RssiValue = 0.0;
 int8_t SnrValue = 0.0;
 
+/*!
+ * Radio events function pointer
+ */
+static RadioEvents_t RadioEvents;
+
+
 int main() {
     uint8_t i;
     Serial pc(SERIAL_TX, SERIAL_RX);
     pc.baud(38400);
     debug("\n\n\r     SX1276 Ping Pong Demo Application \n\n\r");
 
-    // Initialize Radio driver
-    RadioEvents.TxDone = OnTxDone;
-    RadioEvents.RxDone = OnRxDone;
-    RadioEvents.RxError = OnRxError;
-    RadioEvents.TxTimeout = OnTxTimeout;
-    RadioEvents.RxTimeout = OnRxTimeout;
-    Radio.Init(&RadioEvents);
 
+    radio_initializes(&RadioEvents);
     // verify the connection with the board
     while (Radio.Read(REG_VERSION) == 0x00) {
         debug("Radio could not be detected!\n\r", NULL);
@@ -132,7 +65,7 @@ int main() {
             LORA_CRC_ENABLED, LORA_FHSS_ENABLED, LORA_NB_SYMB_HOP,
             LORA_IQ_INVERSION_ON, 2000000);
 
-    
+
 #elif USE_MODEM_FSK == 1
 
     debug("\n\n\r              > FSK Mode < \n\n\r");
@@ -156,7 +89,7 @@ int main() {
 
     led = 0;
     uint8_t j = 0;
-    uint16_t cmp = 1000;
+    uint16_t cmp = 0;
 
     while (1) {
         strcpy((char*) Buffer, (char*) PongMsg);
@@ -167,8 +100,9 @@ int main() {
         Buffer[4] = j++;
         wait_ms(200);
         Radio.Send(Buffer, BufferSize);
-        pc.printf("%d sent\r\n", Buffer[4]);
+        pc.printf("%d sent ->%d\r\n", cmp,Buffer[4]  );
         led = !led;
+        cmp ++;
     }
 }
 
@@ -207,3 +141,12 @@ void OnRxError(void) {
     debug_if(DEBUG_MESSAGE, "> OnRxError\n\r");
 }
 
+void radio_initializes(RadioEvents_t* RadioEvents) {
+    // Initialize Radio driver
+    RadioEvents->TxDone = OnTxDone;
+    RadioEvents->RxDone = OnRxDone;
+    RadioEvents->RxError = OnRxError;
+    RadioEvents->TxTimeout = OnTxTimeout;
+    RadioEvents->RxTimeout = OnRxTimeout;
+    Radio.Init(RadioEvents);
+}

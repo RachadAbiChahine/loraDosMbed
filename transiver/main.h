@@ -15,6 +15,29 @@ Maintainer: Miguel Luis and Gregory Cristian
 #ifndef __MAIN_H__
 #define __MAIN_H__
 
+#include "mbed.h"
+#include "sx1276-hal.h"
+#include "debug.h"
+#include "radio_config.h"
+
+
+
+typedef enum {
+    LOWPOWER = 0,
+    IDLE,
+
+    RX,
+    RX_TIMEOUT,
+    RX_ERROR,
+
+    TX,
+    TX_TIMEOUT,
+
+    CAD,
+    CAD_DONE
+} AppStates_t;
+
+
 /*
  * Callback functions prototypes
  */
@@ -52,5 +75,8 @@ void OnFhssChangeChannel( uint8_t channelIndex );
  * @brief Function executed on CAD Done event
  */
 void OnCadDone( void );
+
+void radio_initializes(RadioEvents_t* RadioEvents);
+
 
 #endif // __MAIN_H__
