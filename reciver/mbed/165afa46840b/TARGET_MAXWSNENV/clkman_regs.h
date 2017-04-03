@@ -40,194 +40,194 @@ extern "C" {
 
 #include <stdint.h>
 
-/**
- * @file  clkman_regs.h
- * @addtogroup clkman CLKMAN
- * @{
- */
+    /**
+     * @file  clkman_regs.h
+     * @addtogroup clkman CLKMAN
+     * @{
+     */
 
-/**
- * @brief Defines clock input selections for the phase locked loop.
- */
-typedef enum {
-    /** Input select for high frequency crystal oscillator */
-    MXC_E_CLKMAN_PLL_INPUT_SELECT_HFX = 0,
-    /** Input select for 24MHz ring oscillator */
-    MXC_E_CLKMAN_PLL_INPUT_SELECT_24MHZ_RO,
-} mxc_clkman_pll_input_select_t;
+    /**
+     * @brief Defines clock input selections for the phase locked loop.
+     */
+    typedef enum {
+        /** Input select for high frequency crystal oscillator */
+        MXC_E_CLKMAN_PLL_INPUT_SELECT_HFX = 0,
+        /** Input select for 24MHz ring oscillator */
+        MXC_E_CLKMAN_PLL_INPUT_SELECT_24MHZ_RO,
+    } mxc_clkman_pll_input_select_t;
 
-/**
- * @brief Defines clock input frequency for the phase locked loop.
- */
-typedef enum {
-    /** Input frequency of 24MHz */
-    MXC_E_CLKMAN_PLL_DIVISOR_SELECT_24MHZ = 0,
-    /** Input frequency of 12MHz */
-    MXC_E_CLKMAN_PLL_DIVISOR_SELECT_12MHZ,
-    /** Input frequency of 8MHz */
-    MXC_E_CLKMAN_PLL_DIVISOR_SELECT_8MHZ,
-} mxc_clkman_pll_divisor_select_t;
+    /**
+     * @brief Defines clock input frequency for the phase locked loop.
+     */
+    typedef enum {
+        /** Input frequency of 24MHz */
+        MXC_E_CLKMAN_PLL_DIVISOR_SELECT_24MHZ = 0,
+        /** Input frequency of 12MHz */
+        MXC_E_CLKMAN_PLL_DIVISOR_SELECT_12MHZ,
+        /** Input frequency of 8MHz */
+        MXC_E_CLKMAN_PLL_DIVISOR_SELECT_8MHZ,
+    } mxc_clkman_pll_divisor_select_t;
 
-/**
- * @brief Defines terminal count for PLL stable.
- */
-typedef enum {
-    /** Clock stable after 2^8 = 256 clock cycles */
-    MXC_E_CLKMAN_STABILITY_COUNT_2_8_CLKS = 0,
-    /** Clock stable after 2^9 = 512 clock cycles */
-    MXC_E_CLKMAN_STABILITY_COUNT_2_9_CLKS,
-    /** Clock stable after 2^10 = 1024 clock cycles */
-    MXC_E_CLKMAN_STABILITY_COUNT_2_10_CLKS,
-    /** Clock stable after 2^11 = 2048 clock cycles */
-    MXC_E_CLKMAN_STABILITY_COUNT_2_11_CLKS,
-    /** Clock stable after 2^12 = 4096 clock cycles */
-    MXC_E_CLKMAN_STABILITY_COUNT_2_12_CLKS,
-    /** Clock stable after 2^13 = 8192 clock cycles */
-    MXC_E_CLKMAN_STABILITY_COUNT_2_13_CLKS,
-    /** Clock stable after 2^14 = 16384 clock cycles */
-    MXC_E_CLKMAN_STABILITY_COUNT_2_14_CLKS,
-    /** Clock stable after 2^15 = 32768 clock cycles */
-    MXC_E_CLKMAN_STABILITY_COUNT_2_15_CLKS,
-    /** Clock stable after 2^16 = 65536 clock cycles */
-    MXC_E_CLKMAN_STABILITY_COUNT_2_16_CLKS,
-    /** Clock stable after 2^17 = 131072 clock cycles */
-    MXC_E_CLKMAN_STABILITY_COUNT_2_17_CLKS,
-    /** Clock stable after 2^18 = 262144 clock cycles */
-    MXC_E_CLKMAN_STABILITY_COUNT_2_18_CLKS,
-    /** Clock stable after 2^19 = 524288 clock cycles */
-    MXC_E_CLKMAN_STABILITY_COUNT_2_19_CLKS,
-    /** Clock stable after 2^20 = 1048576 clock cycles */
-    MXC_E_CLKMAN_STABILITY_COUNT_2_20_CLKS,
-    /** Clock stable after 2^21 = 2097152 clock cycles */
-    MXC_E_CLKMAN_STABILITY_COUNT_2_21_CLKS,
-    /** Clock stable after 2^22 = 4194304 clock cycles */
-    MXC_E_CLKMAN_STABILITY_COUNT_2_22_CLKS,
-    /** Clock stable after 2^23 = 8388608 clock cycles */
-    MXC_E_CLKMAN_STABILITY_COUNT_2_23_CLKS
-} mxc_clkman_stability_count_t;
+    /**
+     * @brief Defines terminal count for PLL stable.
+     */
+    typedef enum {
+        /** Clock stable after 2^8 = 256 clock cycles */
+        MXC_E_CLKMAN_STABILITY_COUNT_2_8_CLKS = 0,
+        /** Clock stable after 2^9 = 512 clock cycles */
+        MXC_E_CLKMAN_STABILITY_COUNT_2_9_CLKS,
+        /** Clock stable after 2^10 = 1024 clock cycles */
+        MXC_E_CLKMAN_STABILITY_COUNT_2_10_CLKS,
+        /** Clock stable after 2^11 = 2048 clock cycles */
+        MXC_E_CLKMAN_STABILITY_COUNT_2_11_CLKS,
+        /** Clock stable after 2^12 = 4096 clock cycles */
+        MXC_E_CLKMAN_STABILITY_COUNT_2_12_CLKS,
+        /** Clock stable after 2^13 = 8192 clock cycles */
+        MXC_E_CLKMAN_STABILITY_COUNT_2_13_CLKS,
+        /** Clock stable after 2^14 = 16384 clock cycles */
+        MXC_E_CLKMAN_STABILITY_COUNT_2_14_CLKS,
+        /** Clock stable after 2^15 = 32768 clock cycles */
+        MXC_E_CLKMAN_STABILITY_COUNT_2_15_CLKS,
+        /** Clock stable after 2^16 = 65536 clock cycles */
+        MXC_E_CLKMAN_STABILITY_COUNT_2_16_CLKS,
+        /** Clock stable after 2^17 = 131072 clock cycles */
+        MXC_E_CLKMAN_STABILITY_COUNT_2_17_CLKS,
+        /** Clock stable after 2^18 = 262144 clock cycles */
+        MXC_E_CLKMAN_STABILITY_COUNT_2_18_CLKS,
+        /** Clock stable after 2^19 = 524288 clock cycles */
+        MXC_E_CLKMAN_STABILITY_COUNT_2_19_CLKS,
+        /** Clock stable after 2^20 = 1048576 clock cycles */
+        MXC_E_CLKMAN_STABILITY_COUNT_2_20_CLKS,
+        /** Clock stable after 2^21 = 2097152 clock cycles */
+        MXC_E_CLKMAN_STABILITY_COUNT_2_21_CLKS,
+        /** Clock stable after 2^22 = 4194304 clock cycles */
+        MXC_E_CLKMAN_STABILITY_COUNT_2_22_CLKS,
+        /** Clock stable after 2^23 = 8388608 clock cycles */
+        MXC_E_CLKMAN_STABILITY_COUNT_2_23_CLKS
+    } mxc_clkman_stability_count_t;
 
-/**
- * @brief Defines clock source selections for system clock.
- */
-typedef enum {
-    /** Clock select for 24MHz ring oscillator divided by 8 (3MHz) */
-    MXC_E_CLKMAN_SYSTEM_SOURCE_SELECT_24MHZ_RO_DIV_8 = 0,
-    /** Clock select for 24MHz ring oscillator */
-    MXC_E_CLKMAN_SYSTEM_SOURCE_SELECT_24MHZ_RO,
-    /** Clock select for high frequency crystal oscillator */
-    MXC_E_CLKMAN_SYSTEM_SOURCE_SELECT_HFX,
-    /** Clock select for 48MHz phase locked loop output divided by 2 (24MHz) */
-    MXC_E_CLKMAN_SYSTEM_SOURCE_SELECT_PLL_48MHZ_DIV_2
-} mxc_clkman_system_source_select_t;
+    /**
+     * @brief Defines clock source selections for system clock.
+     */
+    typedef enum {
+        /** Clock select for 24MHz ring oscillator divided by 8 (3MHz) */
+        MXC_E_CLKMAN_SYSTEM_SOURCE_SELECT_24MHZ_RO_DIV_8 = 0,
+        /** Clock select for 24MHz ring oscillator */
+        MXC_E_CLKMAN_SYSTEM_SOURCE_SELECT_24MHZ_RO,
+        /** Clock select for high frequency crystal oscillator */
+        MXC_E_CLKMAN_SYSTEM_SOURCE_SELECT_HFX,
+        /** Clock select for 48MHz phase locked loop output divided by 2 (24MHz) */
+        MXC_E_CLKMAN_SYSTEM_SOURCE_SELECT_PLL_48MHZ_DIV_2
+    } mxc_clkman_system_source_select_t;
 
-/**
- * @brief Defines clock source selections for analog to digital converter clock.
- */
-typedef enum {
-    /** Clock select for system clock frequency */
-    MXC_E_CLKMAN_ADC_SOURCE_SELECT_SYSTEM = 0,
-    /** Clock select for 8MHz phase locked loop output */
-    MXC_E_CLKMAN_ADC_SOURCE_SELECT_PLL_8MHZ,
-    /** Clock select for high frequency crystal oscillator */
-    MXC_E_CLKMAN_ADC_SOURCE_SELECT_HFX,
-    /** Clock select for 24MHz ring oscillator */
-    MXC_E_CLKMAN_ADC_SOURCE_SELECT_24MHZ_RO,
-} mxc_clkman_adc_source_select_t;
+    /**
+     * @brief Defines clock source selections for analog to digital converter clock.
+     */
+    typedef enum {
+        /** Clock select for system clock frequency */
+        MXC_E_CLKMAN_ADC_SOURCE_SELECT_SYSTEM = 0,
+        /** Clock select for 8MHz phase locked loop output */
+        MXC_E_CLKMAN_ADC_SOURCE_SELECT_PLL_8MHZ,
+        /** Clock select for high frequency crystal oscillator */
+        MXC_E_CLKMAN_ADC_SOURCE_SELECT_HFX,
+        /** Clock select for 24MHz ring oscillator */
+        MXC_E_CLKMAN_ADC_SOURCE_SELECT_24MHZ_RO,
+    } mxc_clkman_adc_source_select_t;
 
-/**
- * @brief Defines clock source selections for watchdog timer clock.
- */
-typedef enum {
-    /** Clock select for system clock frequency */
-    MXC_E_CLKMAN_WDT_SOURCE_SELECT_SYSTEM = 0,
-    /** Clock select for 8MHz phase locked loop output */
-    MXC_E_CLKMAN_WDT_SOURCE_SELECT_RTC,
-    /** Clock select for high frequency crystal oscillator */
-    MXC_E_CLKMAN_WDT_SOURCE_SELECT_24MHZ_RO,
-    /** Clock select for 24MHz ring oscillator */
-    MXC_E_CLKMAN_WDT_SOURCE_SELECT_NANO,
-} mxc_clkman_wdt_source_select_t;
+    /**
+     * @brief Defines clock source selections for watchdog timer clock.
+     */
+    typedef enum {
+        /** Clock select for system clock frequency */
+        MXC_E_CLKMAN_WDT_SOURCE_SELECT_SYSTEM = 0,
+        /** Clock select for 8MHz phase locked loop output */
+        MXC_E_CLKMAN_WDT_SOURCE_SELECT_RTC,
+        /** Clock select for high frequency crystal oscillator */
+        MXC_E_CLKMAN_WDT_SOURCE_SELECT_24MHZ_RO,
+        /** Clock select for 24MHz ring oscillator */
+        MXC_E_CLKMAN_WDT_SOURCE_SELECT_NANO,
+    } mxc_clkman_wdt_source_select_t;
 
-/**
- * @brief Defines clock scales for various clocks.
- */
-typedef enum {
-    /** Clock disabled */
-    MXC_E_CLKMAN_CLK_SCALE_DISABLED = 0,
-    /** Clock enabled */
-    MXC_E_CLKMAN_CLK_SCALE_ENABLED,
-    /** Clock scale for dividing by 2 */
-    MXC_E_CLKMAN_CLK_SCALE_DIV_2,
-    /** Clock scale for dividing by 4 */
-    MXC_E_CLKMAN_CLK_SCALE_DIV_4,
-    /** Clock scale for dividing by 8 */
-    MXC_E_CLKMAN_CLK_SCALE_DIV_8,
-    /** Clock scale for dividing by 16 */
-    MXC_E_CLKMAN_CLK_SCALE_DIV_16,
-    /** Clock scale for dividing by 32 */
-    MXC_E_CLKMAN_CLK_SCALE_DIV_32,
-    /** Clock scale for dividing by 64 */
-    MXC_E_CLKMAN_CLK_SCALE_DIV_64,
-    /** Clock scale for dividing by 128 */
-    MXC_E_CLKMAN_CLK_SCALE_DIV_128,
-    /** Clock scale for dividing by 256 */
-    MXC_E_CLKMAN_CLK_SCALE_DIV_256
-} mxc_clkman_clk_scale_t;
+    /**
+     * @brief Defines clock scales for various clocks.
+     */
+    typedef enum {
+        /** Clock disabled */
+        MXC_E_CLKMAN_CLK_SCALE_DISABLED = 0,
+        /** Clock enabled */
+        MXC_E_CLKMAN_CLK_SCALE_ENABLED,
+        /** Clock scale for dividing by 2 */
+        MXC_E_CLKMAN_CLK_SCALE_DIV_2,
+        /** Clock scale for dividing by 4 */
+        MXC_E_CLKMAN_CLK_SCALE_DIV_4,
+        /** Clock scale for dividing by 8 */
+        MXC_E_CLKMAN_CLK_SCALE_DIV_8,
+        /** Clock scale for dividing by 16 */
+        MXC_E_CLKMAN_CLK_SCALE_DIV_16,
+        /** Clock scale for dividing by 32 */
+        MXC_E_CLKMAN_CLK_SCALE_DIV_32,
+        /** Clock scale for dividing by 64 */
+        MXC_E_CLKMAN_CLK_SCALE_DIV_64,
+        /** Clock scale for dividing by 128 */
+        MXC_E_CLKMAN_CLK_SCALE_DIV_128,
+        /** Clock scale for dividing by 256 */
+        MXC_E_CLKMAN_CLK_SCALE_DIV_256
+    } mxc_clkman_clk_scale_t;
 
-/**
- * @brief Defines Setting of the Clock Gates .
- */
-typedef enum {
-    /** Clock Gater is Off */
-    MXC_E_CLKMAN_CLK_GATE_OFF  = 0,
-    /** Clock Gater is Dynamic */
-    MXC_E_CLKMAN_CLK_GATE_DYNAMIC,
-    /** Clock Gater is On */
-    MXC_E_CLKMAN_CLK_GATE_ON
-} mxc_clkman_clk_gate_t;
+    /**
+     * @brief Defines Setting of the Clock Gates .
+     */
+    typedef enum {
+        /** Clock Gater is Off */
+        MXC_E_CLKMAN_CLK_GATE_OFF = 0,
+        /** Clock Gater is Dynamic */
+        MXC_E_CLKMAN_CLK_GATE_DYNAMIC,
+        /** Clock Gater is On */
+        MXC_E_CLKMAN_CLK_GATE_ON
+    } mxc_clkman_clk_gate_t;
 
-/*                                               Offset   Register Description
-                                                 ======   ===================================================================== */
-typedef struct {
-    __IO uint32_t clk_config;                /*  0x0000   System Clock Configuration                                  */
-    __IO uint32_t clk_ctrl;                  /*  0x0004   System Clock Controls                                                 */
-    __IO uint32_t intfl;                     /*  0x0008   Interrupt Flags                                             */
-    __IO uint32_t inten;                     /*  0x000C   Interrupt Enable/Disable Controls                           */
-    __IO uint32_t trim_calc;                 /*  0x0010   Trim Calculation Controls                                   */
-    __I uint32_t rsv0014[4];                 /*  0x0014                                                               */
-    __IO uint32_t i2c_timer_ctrl;            /*  0x0024   I2C Timer Control                                           */
-    __I uint32_t rsv0028[6];                 /*  0x0028                                                               */
-    __IO uint32_t clk_ctrl_0_system;         /*  0x0040   Control Settings for CLK0 - System Clock                    */
-    __IO uint32_t clk_ctrl_1_gpio;           /*  0x0044   Control Settings for CLK1 - GPIO Module Clock               */
-    __IO uint32_t clk_ctrl_2_pt;             /*  0x0048   Control Settings for CLK2 - Pulse Train Module Clock        */
-    __IO uint32_t clk_ctrl_3_spi0;           /*  0x004C   Control Settings for CLK3 - SPI0 Master Clock               */
-    __IO uint32_t clk_ctrl_4_spi1;           /*  0x0050   Control Settings for CLK4 - SPI1 Master Clock               */
-    __IO uint32_t clk_ctrl_5_spi2;           /*  0x0054   Control Settings for CLK5 - SPI2 Master Clock               */
-    __IO uint32_t clk_ctrl_6_i2cm;           /*  0x0058   Control Settings for CLK6 - Clock for all I2C Masters       */
-    __IO uint32_t clk_ctrl_7_i2cs;           /*  0x005C   Control Settings for CLK7 - I2C Slave Clock                 */
-    __IO uint32_t clk_ctrl_8_lcd_chpump;     /*  0x0060   Control Settings for CLK8 - LCD Charge Pump Clock           */
-    __IO uint32_t clk_ctrl_9_puf;            /*  0x0064   Control Settings for CLK9 - PUF Clock                       */
-    __IO uint32_t clk_ctrl_10_prng;          /*  0x0068   Control Settings for CLK10 - PRNG Clock                     */
-    __IO uint32_t clk_ctrl_11_wdt0;          /*  0x006C   Control Settings for CLK11 - Watchdog Timer 0 ScaledSysClk  */
-    __IO uint32_t clk_ctrl_12_wdt1;          /*  0x0070   Control Settings for CLK12 - Watchdog Timer 1 ScaledSysClk  */
-    __IO uint32_t clk_ctrl_13_rtc_int_sync;  /*  0x0074   Control Settings for CLK13 - RTC Interrupt Sync Clock       */
-    __IO uint32_t clk_ctrl_14_dac0;          /*  0x0078   Control Settings for CLK14 - 12-bit DAC 0 Clock             */
-    __IO uint32_t clk_ctrl_15_dac1;          /*  0x007C   Control Settings for CLK15 - 12-bit DAC 1 Clock             */
-    __IO uint32_t clk_ctrl_16_dac2;          /*  0x0080   Control Settings for CLK16 - 8-bit DAC 0 Clock              */
-    __IO uint32_t clk_ctrl_17_dac3;          /*  0x0084   Control Settings for CLK17 - 8-bit DAC 1 Clock              */
-    __I uint32_t rsv0088[30];                /*  0x0088                                                               */
-    __IO uint32_t crypt_clk_ctrl_0_aes;      /*  0x0100   Control Settings for Crypto Clock 0 - AES                   */
-    __IO uint32_t crypt_clk_ctrl_1_maa;      /*  0x0104   Control Settings for Crypto Clock 1 - MAA                   */
-    __IO uint32_t crypt_clk_ctrl_2_prng;     /*  0x0108   Control Settings for Crypto Clock 2 - PRNG                  */
-    __I uint32_t rsv010C[13];                /*  0x010C                                                               */
-    __IO uint32_t clk_gate_ctrl0;            /*  0x0140   Dynamic Clock Gating Control Register 0                     */
-    __IO uint32_t clk_gate_ctrl1;            /*  0x0144   Dynamic Clock Gating Control Register 1                     */
-    __IO uint32_t clk_gate_ctrl2;            /*  0x0148   Dynamic Clock Gating Control Register 2                     */
-} mxc_clkman_regs_t;
+    /*                                               Offset   Register Description
+                                                     ======   ===================================================================== */
+    typedef struct {
+        __IO uint32_t clk_config; /*  0x0000   System Clock Configuration                                  */
+        __IO uint32_t clk_ctrl; /*  0x0004   System Clock Controls                                                 */
+        __IO uint32_t intfl; /*  0x0008   Interrupt Flags                                             */
+        __IO uint32_t inten; /*  0x000C   Interrupt Enable/Disable Controls                           */
+        __IO uint32_t trim_calc; /*  0x0010   Trim Calculation Controls                                   */
+        __I uint32_t rsv0014[4]; /*  0x0014                                                               */
+        __IO uint32_t i2c_timer_ctrl; /*  0x0024   I2C Timer Control                                           */
+        __I uint32_t rsv0028[6]; /*  0x0028                                                               */
+        __IO uint32_t clk_ctrl_0_system; /*  0x0040   Control Settings for CLK0 - System Clock                    */
+        __IO uint32_t clk_ctrl_1_gpio; /*  0x0044   Control Settings for CLK1 - GPIO Module Clock               */
+        __IO uint32_t clk_ctrl_2_pt; /*  0x0048   Control Settings for CLK2 - Pulse Train Module Clock        */
+        __IO uint32_t clk_ctrl_3_spi0; /*  0x004C   Control Settings for CLK3 - SPI0 Master Clock               */
+        __IO uint32_t clk_ctrl_4_spi1; /*  0x0050   Control Settings for CLK4 - SPI1 Master Clock               */
+        __IO uint32_t clk_ctrl_5_spi2; /*  0x0054   Control Settings for CLK5 - SPI2 Master Clock               */
+        __IO uint32_t clk_ctrl_6_i2cm; /*  0x0058   Control Settings for CLK6 - Clock for all I2C Masters       */
+        __IO uint32_t clk_ctrl_7_i2cs; /*  0x005C   Control Settings for CLK7 - I2C Slave Clock                 */
+        __IO uint32_t clk_ctrl_8_lcd_chpump; /*  0x0060   Control Settings for CLK8 - LCD Charge Pump Clock           */
+        __IO uint32_t clk_ctrl_9_puf; /*  0x0064   Control Settings for CLK9 - PUF Clock                       */
+        __IO uint32_t clk_ctrl_10_prng; /*  0x0068   Control Settings for CLK10 - PRNG Clock                     */
+        __IO uint32_t clk_ctrl_11_wdt0; /*  0x006C   Control Settings for CLK11 - Watchdog Timer 0 ScaledSysClk  */
+        __IO uint32_t clk_ctrl_12_wdt1; /*  0x0070   Control Settings for CLK12 - Watchdog Timer 1 ScaledSysClk  */
+        __IO uint32_t clk_ctrl_13_rtc_int_sync; /*  0x0074   Control Settings for CLK13 - RTC Interrupt Sync Clock       */
+        __IO uint32_t clk_ctrl_14_dac0; /*  0x0078   Control Settings for CLK14 - 12-bit DAC 0 Clock             */
+        __IO uint32_t clk_ctrl_15_dac1; /*  0x007C   Control Settings for CLK15 - 12-bit DAC 1 Clock             */
+        __IO uint32_t clk_ctrl_16_dac2; /*  0x0080   Control Settings for CLK16 - 8-bit DAC 0 Clock              */
+        __IO uint32_t clk_ctrl_17_dac3; /*  0x0084   Control Settings for CLK17 - 8-bit DAC 1 Clock              */
+        __I uint32_t rsv0088[30]; /*  0x0088                                                               */
+        __IO uint32_t crypt_clk_ctrl_0_aes; /*  0x0100   Control Settings for Crypto Clock 0 - AES                   */
+        __IO uint32_t crypt_clk_ctrl_1_maa; /*  0x0104   Control Settings for Crypto Clock 1 - MAA                   */
+        __IO uint32_t crypt_clk_ctrl_2_prng; /*  0x0108   Control Settings for Crypto Clock 2 - PRNG                  */
+        __I uint32_t rsv010C[13]; /*  0x010C                                                               */
+        __IO uint32_t clk_gate_ctrl0; /*  0x0140   Dynamic Clock Gating Control Register 0                     */
+        __IO uint32_t clk_gate_ctrl1; /*  0x0144   Dynamic Clock Gating Control Register 1                     */
+        __IO uint32_t clk_gate_ctrl2; /*  0x0148   Dynamic Clock Gating Control Register 2                     */
+    } mxc_clkman_regs_t;
 
-/*
-   Register offsets for module CLKMAN.
-*/
+    /*
+       Register offsets for module CLKMAN.
+     */
 #define MXC_R_CLKMAN_OFFS_CLK_CONFIG                ((uint32_t)0x00000000UL)
 #define MXC_R_CLKMAN_OFFS_CLK_CTRL                  ((uint32_t)0x00000004UL)
 #define MXC_R_CLKMAN_OFFS_INTFL                     ((uint32_t)0x00000008UL)
@@ -259,9 +259,9 @@ typedef struct {
 #define MXC_R_CLKMAN_OFFS_CLK_GATE_CTRL1            ((uint32_t)0x00000144UL)
 #define MXC_R_CLKMAN_OFFS_CLK_GATE_CTRL2            ((uint32_t)0x00000148UL)
 
-/*
-   Field positions and masks for module CLKMAN.
-*/
+    /*
+       Field positions and masks for module CLKMAN.
+     */
 #define MXC_F_CLKMAN_CLK_CONFIG_HFX_ENABLE_POS                  0
 #define MXC_F_CLKMAN_CLK_CONFIG_HFX_ENABLE                      ((uint32_t)(0x00000001UL << MXC_F_CLKMAN_CLK_CONFIG_HFX_ENABLE_POS))
 #define MXC_F_CLKMAN_CLK_CONFIG_HFX_BYPASS_POS                  1
@@ -487,7 +487,7 @@ typedef struct {
 #endif
 
 /**
-* @}
-*/
+ * @}
+ */
 
 #endif   /* _MXC_CLKMAN_REGS_H_ */

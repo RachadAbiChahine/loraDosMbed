@@ -32,9 +32,9 @@
 /**************************************************************************//**
  * @brief LESENSE_ST EFM32LG LESENSE ST
  *****************************************************************************/
-typedef struct
-{
-  __IO uint32_t TCONFA; /**< State transition configuration A  */
-  __IO uint32_t TCONFB; /**< State transition configuration B  */
+
+typedef struct {
+    __IO uint32_t TCONFA; /**< State transition configuration A  */
+    __IO uint32_t TCONFB; /**< State transition configuration B  */
 } LESENSE_ST_TypeDef;
 

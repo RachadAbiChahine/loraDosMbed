@@ -2174,30 +2174,30 @@ uint32_t              HAL_RCCEx_GetPeriphCLKFreq(uint32_t PeriphClk);
 #if defined(STM32F042x6) || defined(STM32F048xx)\
  || defined(STM32F071xB) || defined(STM32F072xB) || defined(STM32F078xx)\
  || defined(STM32F091xC) || defined(STM32F098xx)
-void                  HAL_RCCEx_CRSConfig(RCC_CRSInitTypeDef *pInit);
-void                  HAL_RCCEx_CRSSoftwareSynchronizationGenerate(void);
-void                  HAL_RCCEx_CRSGetSynchronizationInfo(RCC_CRSSynchroInfoTypeDef *pSynchroInfo);
-uint32_t              HAL_RCCEx_CRSWaitSynchronization(uint32_t Timeout);
+    void HAL_RCCEx_CRSConfig(RCC_CRSInitTypeDef *pInit);
+    void HAL_RCCEx_CRSSoftwareSynchronizationGenerate(void);
+    void HAL_RCCEx_CRSGetSynchronizationInfo(RCC_CRSSynchroInfoTypeDef *pSynchroInfo);
+    uint32_t HAL_RCCEx_CRSWaitSynchronization(uint32_t Timeout);
 #endif /* STM32F042x6 || STM32F048xx || */
-       /* STM32F071xB || STM32F072xB || STM32F078xx || */
-       /* STM32F091xC || STM32F098xx */
+    /* STM32F071xB || STM32F072xB || STM32F078xx || */
+    /* STM32F091xC || STM32F098xx */
 
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/**
-  * @}
-  */
-  
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/**
-  * @}
-  */  
+    /**
+     * @}
+     */
+
+    /**
+     * @}
+     */
 
 #ifdef __cplusplus
 }

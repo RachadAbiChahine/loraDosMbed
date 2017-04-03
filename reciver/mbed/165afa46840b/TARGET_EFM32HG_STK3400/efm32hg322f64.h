@@ -38,51 +38,50 @@
 extern "C" {
 #endif
 
-/**************************************************************************//**
+    /**************************************************************************//**
  * @addtogroup Parts
  * @{
  *****************************************************************************/
 
-/**************************************************************************//**
+    /**************************************************************************//**
  * @defgroup EFM32HG322F64 EFM32HG322F64
  * @{
  *****************************************************************************/
 
-/** Interrupt Number Definition */
-typedef enum IRQn
-{
-/******  Cortex-M0+ Processor Exceptions Numbers *****************************************/
-  NonMaskableInt_IRQn = -14,                /*!< 2 Cortex-M0+ Non Maskable Interrupt     */
-  HardFault_IRQn      = -13,                /*!< 3 Cortex-M0+ Hard Fault Interrupt       */
-  SVCall_IRQn         = -5,                 /*!< 11 Cortex-M0+ SV Call Interrupt         */
-  PendSV_IRQn         = -2,                 /*!< 14 Cortex-M0+ Pend SV Interrupt         */
-  SysTick_IRQn        = -1,                 /*!< 15 Cortex-M0+ System Tick Interrupt     */
+    /** Interrupt Number Definition */
+    typedef enum IRQn {
+        /******  Cortex-M0+ Processor Exceptions Numbers *****************************************/
+        NonMaskableInt_IRQn = -14, /*!< 2 Cortex-M0+ Non Maskable Interrupt     */
+        HardFault_IRQn = -13, /*!< 3 Cortex-M0+ Hard Fault Interrupt       */
+        SVCall_IRQn = -5, /*!< 11 Cortex-M0+ SV Call Interrupt         */
+        PendSV_IRQn = -2, /*!< 14 Cortex-M0+ Pend SV Interrupt         */
+        SysTick_IRQn = -1, /*!< 15 Cortex-M0+ System Tick Interrupt     */
 
-/******  EFM32HG Peripheral Interrupt Numbers *********************************************/
-  DMA_IRQn            = 0,  /*!< 16+0 EFM32 DMA Interrupt */
-  GPIO_EVEN_IRQn      = 1,  /*!< 16+1 EFM32 GPIO_EVEN Interrupt */
-  TIMER0_IRQn         = 2,  /*!< 16+2 EFM32 TIMER0 Interrupt */
-  ACMP0_IRQn          = 3,  /*!< 16+3 EFM32 ACMP0 Interrupt */
-  ADC0_IRQn           = 4,  /*!< 16+4 EFM32 ADC0 Interrupt */
-  I2C0_IRQn           = 5,  /*!< 16+5 EFM32 I2C0 Interrupt */
-  GPIO_ODD_IRQn       = 6,  /*!< 16+6 EFM32 GPIO_ODD Interrupt */
-  TIMER1_IRQn         = 7,  /*!< 16+7 EFM32 TIMER1 Interrupt */
-  USART1_RX_IRQn      = 8,  /*!< 16+8 EFM32 USART1_RX Interrupt */
-  USART1_TX_IRQn      = 9,  /*!< 16+9 EFM32 USART1_TX Interrupt */
-  LEUART0_IRQn        = 10, /*!< 16+10 EFM32 LEUART0 Interrupt */
-  PCNT0_IRQn          = 11, /*!< 16+11 EFM32 PCNT0 Interrupt */
-  RTC_IRQn            = 12, /*!< 16+12 EFM32 RTC Interrupt */
-  CMU_IRQn            = 13, /*!< 16+13 EFM32 CMU Interrupt */
-  VCMP_IRQn           = 14, /*!< 16+14 EFM32 VCMP Interrupt */
-  MSC_IRQn            = 15, /*!< 16+15 EFM32 MSC Interrupt */
-  AES_IRQn            = 16, /*!< 16+16 EFM32 AES Interrupt */
-  USART0_RX_IRQn      = 17, /*!< 16+17 EFM32 USART0_RX Interrupt */
-  USART0_TX_IRQn      = 18, /*!< 16+18 EFM32 USART0_TX Interrupt */
-  USB_IRQn            = 19, /*!< 16+19 EFM32 USB Interrupt */
-  TIMER2_IRQn         = 20, /*!< 16+20 EFM32 TIMER2 Interrupt */
-} IRQn_Type;
+        /******  EFM32HG Peripheral Interrupt Numbers *********************************************/
+        DMA_IRQn = 0, /*!< 16+0 EFM32 DMA Interrupt */
+        GPIO_EVEN_IRQn = 1, /*!< 16+1 EFM32 GPIO_EVEN Interrupt */
+        TIMER0_IRQn = 2, /*!< 16+2 EFM32 TIMER0 Interrupt */
+        ACMP0_IRQn = 3, /*!< 16+3 EFM32 ACMP0 Interrupt */
+        ADC0_IRQn = 4, /*!< 16+4 EFM32 ADC0 Interrupt */
+        I2C0_IRQn = 5, /*!< 16+5 EFM32 I2C0 Interrupt */
+        GPIO_ODD_IRQn = 6, /*!< 16+6 EFM32 GPIO_ODD Interrupt */
+        TIMER1_IRQn = 7, /*!< 16+7 EFM32 TIMER1 Interrupt */
+        USART1_RX_IRQn = 8, /*!< 16+8 EFM32 USART1_RX Interrupt */
+        USART1_TX_IRQn = 9, /*!< 16+9 EFM32 USART1_TX Interrupt */
+        LEUART0_IRQn = 10, /*!< 16+10 EFM32 LEUART0 Interrupt */
+        PCNT0_IRQn = 11, /*!< 16+11 EFM32 PCNT0 Interrupt */
+        RTC_IRQn = 12, /*!< 16+12 EFM32 RTC Interrupt */
+        CMU_IRQn = 13, /*!< 16+13 EFM32 CMU Interrupt */
+        VCMP_IRQn = 14, /*!< 16+14 EFM32 VCMP Interrupt */
+        MSC_IRQn = 15, /*!< 16+15 EFM32 MSC Interrupt */
+        AES_IRQn = 16, /*!< 16+16 EFM32 AES Interrupt */
+        USART0_RX_IRQn = 17, /*!< 16+17 EFM32 USART0_RX Interrupt */
+        USART0_TX_IRQn = 18, /*!< 16+18 EFM32 USART0_TX Interrupt */
+        USB_IRQn = 19, /*!< 16+19 EFM32 USB Interrupt */
+        TIMER2_IRQn = 20, /*!< 16+20 EFM32 TIMER2 Interrupt */
+    } IRQn_Type;
 
-/**************************************************************************//**
+    /**************************************************************************//**
  * @defgroup EFM32HG322F64_Core EFM32HG322F64 Core
  * @{
  * @brief Processor and Core Peripheral Section
@@ -92,28 +91,28 @@ typedef enum IRQn
 #define __NVIC_PRIO_BITS          2 /**< NVIC interrupt priority bits */
 #define __Vendor_SysTickConfig    0 /**< Is 1 if different SysTick counter is used */
 
-/** @} End of group EFM32HG322F64_Core */
+    /** @} End of group EFM32HG322F64_Core */
 
-/**************************************************************************//**
+    /**************************************************************************//**
 * @defgroup EFM32HG322F64_Part EFM32HG322F64 Part
 * @{
 ******************************************************************************/
 
-/** Part family */
+    /** Part family */
 #define _EFM32_HAPPY_FAMILY             1 /**< Happy Gecko EFM32HG MCU Family */
 #define _EFM_DEVICE                       /**< Silicon Labs EFM-type microcontroller */
 #define _SILICON_LABS_32B_PLATFORM_1      /**< Silicon Labs platform name */
 #define _SILICON_LABS_32B_PLATFORM      1 /**< Silicon Labs platform name */
 
-/* If part number is not defined as compiler option, define it */
+    /* If part number is not defined as compiler option, define it */
 #if !defined(EFM32HG322F64)
 #define EFM32HG322F64    1 /**< Happy Gecko Part  */
 #endif
 
-/** Configure part number */
+    /** Configure part number */
 #define PART_NUMBER          "EFM32HG322F64" /**< Part Number */
 
-/** Memory Base addresses and limits */
+    /** Memory Base addresses and limits */
 #define FLASH_MEM_BASE       ((uint32_t) 0x0UL)        /**< FLASH base address  */
 #define FLASH_MEM_SIZE       ((uint32_t) 0x10000000UL) /**< FLASH available address space  */
 #define FLASH_MEM_END        ((uint32_t) 0xFFFFFFFUL)  /**< FLASH end address  */
@@ -143,7 +142,7 @@ typedef enum IRQn
 #define RAM_CODE_MEM_END     ((uint32_t) 0x1001FFFFUL) /**< RAM_CODE end address  */
 #define RAM_CODE_MEM_BITS    ((uint32_t) 0x17UL)       /**< RAM_CODE used bits  */
 
-/** Flash and SRAM limits for EFM32HG322F64 */
+    /** Flash and SRAM limits for EFM32HG322F64 */
 #define FLASH_BASE           (0x00000000UL) /**< Flash Base Address */
 #define FLASH_SIZE           (0x00010000UL) /**< Available Flash Memory */
 #define FLASH_PAGE_SIZE      1024           /**< Flash Memory page size */
@@ -153,13 +152,13 @@ typedef enum IRQn
 #define PRS_CHAN_COUNT       6              /**< Number of PRS channels */
 #define DMA_CHAN_COUNT       6              /**< Number of DMA channels */
 
-/** AF channels connect the different on-chip peripherals with the af-mux */
+    /** AF channels connect the different on-chip peripherals with the af-mux */
 #define AFCHAN_MAX           42
 #define AFCHANLOC_MAX        7
-/** Analog AF channels */
+    /** Analog AF channels */
 #define AFACHAN_MAX          27
 
-/* Part number capabilities */
+    /* Part number capabilities */
 
 #define TIMER_PRESENT         /**< TIMER is available in this part */
 #define TIMER_COUNT         3 /**< 3 TIMERs available  */
@@ -222,13 +221,13 @@ typedef enum IRQn
 #define ANALOG_PRESENT
 #define ANALOG_COUNT        1
 
-/** @} End of group EFM32HG322F64_Part */
+    /** @} End of group EFM32HG322F64_Part */
 
 #include "arm_math.h"       /* To get __CLZ definitions etc. */
 #include "core_cm0plus.h"   /* Cortex-M0+ processor and core peripherals */
 #include "system_efm32hg.h" /* System Header */
 
-/**************************************************************************//**
+    /**************************************************************************//**
  * @defgroup EFM32HG322F64_Peripheral_TypeDefs EFM32HG322F64 Peripheral TypeDefs
  * @{
  * @brief Device Specific Peripheral Register Structures
@@ -266,9 +265,9 @@ typedef enum IRQn
 #include "efm32hg_romtable.h"
 #include "efm32hg_calibrate.h"
 
-/** @} End of group EFM32HG322F64_Peripheral_TypeDefs */
+    /** @} End of group EFM32HG322F64_Peripheral_TypeDefs */
 
-/**************************************************************************//**
+    /**************************************************************************//**
  * @defgroup EFM32HG322F64_Peripheral_Base EFM32HG322F64 Peripheral Memory Map
  * @{
  *****************************************************************************/
@@ -303,9 +302,9 @@ typedef enum IRQn
 #define LOCKBITS_BASE     (0x0FE04000UL) /**< Lock-bits page base address */
 #define USERDATA_BASE     (0x0FE00000UL) /**< User data page base address */
 
-/** @} End of group EFM32HG322F64_Peripheral_Base */
+    /** @} End of group EFM32HG322F64_Peripheral_Base */
 
-/**************************************************************************//**
+    /**************************************************************************//**
  * @defgroup EFM32HG322F64_Peripheral_Declaration  EFM32HG322F64 Peripheral Declarations
  * @{
  *****************************************************************************/
@@ -338,9 +337,9 @@ typedef enum IRQn
 #define DEVINFO      ((DEVINFO_TypeDef *) DEVINFO_BASE)     /**< DEVINFO base pointer */
 #define ROMTABLE     ((ROMTABLE_TypeDef *) ROMTABLE_BASE)   /**< ROMTABLE base pointer */
 
-/** @} End of group EFM32HG322F64_Peripheral_Declaration */
+    /** @} End of group EFM32HG322F64_Peripheral_Declaration */
 
-/**************************************************************************//**
+    /**************************************************************************//**
  * @defgroup EFM32HG322F64_BitFields EFM32HG322F64 Bit Fields
  * @{
  *****************************************************************************/
@@ -349,7 +348,7 @@ typedef enum IRQn
 #include "efm32hg_dmareq.h"
 #include "efm32hg_dmactrl.h"
 
-/**************************************************************************//**
+    /**************************************************************************//**
  * @defgroup EFM32HG322F64_UNLOCK EFM32HG322F64 Unlock Codes
  * @{
  *****************************************************************************/
@@ -359,11 +358,11 @@ typedef enum IRQn
 #define TIMER_UNLOCK_CODE    0xCE80 /**< TIMER unlock code */
 #define GPIO_UNLOCK_CODE     0xA534 /**< GPIO unlock code */
 
-/** @} End of group EFM32HG322F64_UNLOCK */
+    /** @} End of group EFM32HG322F64_UNLOCK */
 
-/** @} End of group EFM32HG322F64_BitFields */
+    /** @} End of group EFM32HG322F64_BitFields */
 
-/**************************************************************************//**
+    /**************************************************************************//**
  * @defgroup EFM32HG322F64_Alternate_Function EFM32HG322F64 Alternate Function
  * @{
  *****************************************************************************/
@@ -371,9 +370,9 @@ typedef enum IRQn
 #include "efm32hg_af_ports.h"
 #include "efm32hg_af_pins.h"
 
-/** @} End of group EFM32HG322F64_Alternate_Function */
+    /** @} End of group EFM32HG322F64_Alternate_Function */
 
-/**************************************************************************//**
+    /**************************************************************************//**
  *  @brief Set the value of a bit field within a register.
  *
  *  @param REG
@@ -389,9 +388,9 @@ typedef enum IRQn
 #define SET_BIT_FIELD(REG, MASK, VALUE, OFFSET) \
   REG = ((REG) &~(MASK)) | (((VALUE) << (OFFSET)) & (MASK));
 
-/** @} End of group EFM32HG322F64 */
+    /** @} End of group EFM32HG322F64 */
 
-/** @} End of group Parts */
+    /** @} End of group Parts */
 
 #ifdef __cplusplus
 }

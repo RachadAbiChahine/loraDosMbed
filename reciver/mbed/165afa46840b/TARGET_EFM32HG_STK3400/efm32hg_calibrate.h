@@ -35,9 +35,8 @@
  *****************************************************************************/
 #define CALIBRATE_MAX_REGISTERS    50 /**< Max number of address/value pairs for calibration */
 
-typedef struct
-{
-  __I uint32_t ADDRESS; /**< Address of calibration register */
-  __I uint32_t VALUE;   /**< Default value for calibration register */
-} CALIBRATE_TypeDef;    /** @} */
+typedef struct {
+    __I uint32_t ADDRESS; /**< Address of calibration register */
+    __I uint32_t VALUE; /**< Default value for calibration register */
+} CALIBRATE_TypeDef; /** @} */
 

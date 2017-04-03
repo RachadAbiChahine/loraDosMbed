@@ -1,40 +1,40 @@
 /**
-  ******************************************************************************
-  * @file    stm32l0xx_hal_tsc.h
-  * @author  MCD Application Team
-  * @version V1.2.0
-  * @date    06-February-2015
-  * @brief   This file contains all the functions prototypes for the TSC firmware 
-  *          library.
-  ******************************************************************************
-  * @attention
-  *
-  * <h2><center>&copy; COPYRIGHT(c) 2015 STMicroelectronics</center></h2>
-  *
-  * Redistribution and use in source and binary forms, with or without modification,
-  * are permitted provided that the following conditions are met:
-  *   1. Redistributions of source code must retain the above copyright notice,
-  *      this list of conditions and the following disclaimer.
-  *   2. Redistributions in binary form must reproduce the above copyright notice,
-  *      this list of conditions and the following disclaimer in the documentation
-  *      and/or other materials provided with the distribution.
-  *   3. Neither the name of STMicroelectronics nor the names of its contributors
-  *      may be used to endorse or promote products derived from this software
-  *      without specific prior written permission.
-  *
-  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file    stm32l0xx_hal_tsc.h
+ * @author  MCD Application Team
+ * @version V1.2.0
+ * @date    06-February-2015
+ * @brief   This file contains all the functions prototypes for the TSC firmware 
+ *          library.
+ ******************************************************************************
+ * @attention
+ *
+ * <h2><center>&copy; COPYRIGHT(c) 2015 STMicroelectronics</center></h2>
+ *
+ * Redistribution and use in source and binary forms, with or without modification,
+ * are permitted provided that the following conditions are met:
+ *   1. Redistributions of source code must retain the above copyright notice,
+ *      this list of conditions and the following disclaimer.
+ *   2. Redistributions in binary form must reproduce the above copyright notice,
+ *      this list of conditions and the following disclaimer in the documentation
+ *      and/or other materials provided with the distribution.
+ *   3. Neither the name of STMicroelectronics nor the names of its contributors
+ *      may be used to endorse or promote products derived from this software
+ *      without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ ******************************************************************************
+ */
 
 #if !defined (STM32L031xx) && !defined (STM32L041xx) && !defined (STM32L051xx) && !defined (STM32L061xx) && !defined (STM32L071xx) && !defined (STM32L081xx)
 /* Define to prevent recursive inclusion -------------------------------------*/
@@ -42,89 +42,84 @@
 #define __STM32L0xx_TSC_H
 
 #ifdef __cplusplus
- extern "C" {
+extern "C" {
 #endif
 
-/* Includes ------------------------------------------------------------------*/
+    /* Includes ------------------------------------------------------------------*/
 #include "stm32l0xx_hal_def.h"
 
-/** @addtogroup STM32L0xx_HAL_Driver
-  * @{
-  */
+    /** @addtogroup STM32L0xx_HAL_Driver
+     * @{
+     */
 
-/** @addtogroup TSC
-  * @{
-  */ 
+    /** @addtogroup TSC
+     * @{
+     */
 
-/* Exported types ------------------------------------------------------------*/
-   
-/** 
-  * @brief TSC state structure definition  
-  */ 
-typedef enum
-{
-  HAL_TSC_STATE_RESET  = 0x00, /*!< TSC registers have their reset value */
-  HAL_TSC_STATE_READY  = 0x01, /*!< TSC registers are initialized or acquisition is completed with success */
-  HAL_TSC_STATE_BUSY   = 0x02, /*!< TSC initialization or acquisition is on-going */
-  HAL_TSC_STATE_ERROR  = 0x03  /*!< Acquisition is completed with max count error */
-} HAL_TSC_StateTypeDef;
+    /* Exported types ------------------------------------------------------------*/
 
-/** 
-  * @brief TSC group status structure definition  
-  */ 
-typedef enum
-{
-  TSC_GROUP_ONGOING   = 0x00, /*!< Acquisition on group is on-going or not started */
-  TSC_GROUP_COMPLETED = 0x01  /*!< Acquisition on group is completed with success (no max count error) */
-} TSC_GroupStatusTypeDef;
+    /** 
+     * @brief TSC state structure definition  
+     */
+    typedef enum {
+        HAL_TSC_STATE_RESET = 0x00, /*!< TSC registers have their reset value */
+        HAL_TSC_STATE_READY = 0x01, /*!< TSC registers are initialized or acquisition is completed with success */
+        HAL_TSC_STATE_BUSY = 0x02, /*!< TSC initialization or acquisition is on-going */
+        HAL_TSC_STATE_ERROR = 0x03 /*!< Acquisition is completed with max count error */
+    } HAL_TSC_StateTypeDef;
 
-/** 
-  * @brief TSC init structure definition  
-  */ 
-typedef struct
-{
-  uint32_t CTPulseHighLength;       /*!< Charge-transfer high pulse length */
-  uint32_t CTPulseLowLength;        /*!< Charge-transfer low pulse length */
-  uint32_t SpreadSpectrum;          /*!< Spread spectrum activation */
-  uint32_t SpreadSpectrumDeviation; /*!< Spread spectrum deviation */
-  uint32_t SpreadSpectrumPrescaler; /*!< Spread spectrum prescaler */
-  uint32_t PulseGeneratorPrescaler; /*!< Pulse generator prescaler */
-  uint32_t MaxCountValue;           /*!< Max count value */
-  uint32_t IODefaultMode;           /*!< IO default mode */
-  uint32_t SynchroPinPolarity;      /*!< Synchro pin polarity */
-  uint32_t AcquisitionMode;         /*!< Acquisition mode */
-  uint32_t MaxCountInterrupt;       /*!< Max count interrupt activation */
-  uint32_t ChannelIOs;              /*!< Channel IOs mask */
-  uint32_t ShieldIOs;               /*!< Shield IOs mask */
-  uint32_t SamplingIOs;             /*!< Sampling IOs mask */
-} TSC_InitTypeDef;
+    /** 
+     * @brief TSC group status structure definition  
+     */
+    typedef enum {
+        TSC_GROUP_ONGOING = 0x00, /*!< Acquisition on group is on-going or not started */
+        TSC_GROUP_COMPLETED = 0x01 /*!< Acquisition on group is completed with success (no max count error) */
+    } TSC_GroupStatusTypeDef;
 
-/** 
-  * @brief TSC IOs configuration structure definition  
-  */ 
-typedef struct
-{
-  uint32_t ChannelIOs;  /*!< Channel IOs mask */
-  uint32_t ShieldIOs;   /*!< Shield IOs mask */
-  uint32_t SamplingIOs; /*!< Sampling IOs mask */
-} TSC_IOConfigTypeDef;
+    /** 
+     * @brief TSC init structure definition  
+     */
+    typedef struct {
+        uint32_t CTPulseHighLength; /*!< Charge-transfer high pulse length */
+        uint32_t CTPulseLowLength; /*!< Charge-transfer low pulse length */
+        uint32_t SpreadSpectrum; /*!< Spread spectrum activation */
+        uint32_t SpreadSpectrumDeviation; /*!< Spread spectrum deviation */
+        uint32_t SpreadSpectrumPrescaler; /*!< Spread spectrum prescaler */
+        uint32_t PulseGeneratorPrescaler; /*!< Pulse generator prescaler */
+        uint32_t MaxCountValue; /*!< Max count value */
+        uint32_t IODefaultMode; /*!< IO default mode */
+        uint32_t SynchroPinPolarity; /*!< Synchro pin polarity */
+        uint32_t AcquisitionMode; /*!< Acquisition mode */
+        uint32_t MaxCountInterrupt; /*!< Max count interrupt activation */
+        uint32_t ChannelIOs; /*!< Channel IOs mask */
+        uint32_t ShieldIOs; /*!< Shield IOs mask */
+        uint32_t SamplingIOs; /*!< Sampling IOs mask */
+    } TSC_InitTypeDef;
 
-/** 
-  * @brief  TSC handle Structure definition  
-  */ 
-typedef struct
-{
-  TSC_TypeDef               *Instance; /*!< Register base address */
-  TSC_InitTypeDef           Init;      /*!< Initialization parameters */
-  __IO HAL_TSC_StateTypeDef State;     /*!< Peripheral state */
-  HAL_LockTypeDef           Lock;      /*!< Lock feature */
-} TSC_HandleTypeDef;
+    /** 
+     * @brief TSC IOs configuration structure definition  
+     */
+    typedef struct {
+        uint32_t ChannelIOs; /*!< Channel IOs mask */
+        uint32_t ShieldIOs; /*!< Shield IOs mask */
+        uint32_t SamplingIOs; /*!< Sampling IOs mask */
+    } TSC_IOConfigTypeDef;
 
-/* Exported constants --------------------------------------------------------*/
+    /** 
+     * @brief  TSC handle Structure definition  
+     */
+    typedef struct {
+        TSC_TypeDef *Instance; /*!< Register base address */
+        TSC_InitTypeDef Init; /*!< Initialization parameters */
+        __IO HAL_TSC_StateTypeDef State; /*!< Peripheral state */
+        HAL_LockTypeDef Lock; /*!< Lock feature */
+    } TSC_HandleTypeDef;
 
-/** @defgroup TSC_Exported_Constants
-  * @{
-  */ 
+    /* Exported constants --------------------------------------------------------*/
+
+    /** @defgroup TSC_Exported_Constants
+     * @{
+     */
 
 #define IS_TSC_ALL_INSTANCE(PERIPH) ((PERIPH) == TSC)
 
@@ -255,24 +250,24 @@ typedef struct
                             ((VAL) == TSC_IOMODE_SHIELD) || \
                             ((VAL) == TSC_IOMODE_SAMPLING))
 
-/** @defgroup TSC_interrupts_definition
-  * @{
-  */
+    /** @defgroup TSC_interrupts_definition
+     * @{
+     */
 #define TSC_IT_EOA ((uint32_t)TSC_IER_EOAIE)  
 #define TSC_IT_MCE ((uint32_t)TSC_IER_MCEIE) 
 #define IS_TSC_MCE_IT(VAL) (((VAL) == DISABLE) || ((VAL) == ENABLE))
-/**
-  * @}
-  */ 
+    /**
+     * @}
+     */
 
-/** @defgroup TSC_flags_definition
-  * @{
-  */ 
+    /** @defgroup TSC_flags_definition
+     * @{
+     */
 #define TSC_FLAG_EOA ((uint32_t)TSC_ISR_EOAF)
 #define TSC_FLAG_MCE ((uint32_t)TSC_ISR_MCEF)
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
 #define TSC_NB_OF_GROUPS (8)
 
@@ -346,237 +341,237 @@ typedef struct
 
 #define TSC_ALL_GROUPS_ALL_IOS ((uint32_t)0xFFFFFFFF)
 
-/**
-  * @}
-  */ 
+    /**
+     * @}
+     */
 
-/* Exported macro ------------------------------------------------------------*/
+    /* Exported macro ------------------------------------------------------------*/
 
-/** @brief Reset TSC handle state
-  * @param  __HANDLE__: TSC handle
-  * @retval None
-  */
+    /** @brief Reset TSC handle state
+     * @param  __HANDLE__: TSC handle
+     * @retval None
+     */
 #define __HAL_TSC_RESET_HANDLE_STATE(__HANDLE__) ((__HANDLE__)->State = HAL_TSC_STATE_RESET)
 
-/**
-  * @brief Enable the TSC peripheral.
-  * @param  __HANDLE__: TSC handle
-  * @retval None
-  */
+    /**
+     * @brief Enable the TSC peripheral.
+     * @param  __HANDLE__: TSC handle
+     * @retval None
+     */
 #define __HAL_TSC_ENABLE(__HANDLE__) ((__HANDLE__)->Instance->CR |= TSC_CR_TSCE)
 
-/**
-  * @brief Disable the TSC peripheral.
-  * @param  __HANDLE__: TSC handle
-  * @retval None
-  */
+    /**
+     * @brief Disable the TSC peripheral.
+     * @param  __HANDLE__: TSC handle
+     * @retval None
+     */
 #define __HAL_TSC_DISABLE(__HANDLE__) ((__HANDLE__)->Instance->CR &= (uint32_t)(~TSC_CR_TSCE))
 
-/**
-  * @brief Start acquisition
-  * @param  __HANDLE__: TSC handle
-  * @retval None
-  */
+    /**
+     * @brief Start acquisition
+     * @param  __HANDLE__: TSC handle
+     * @retval None
+     */
 #define __HAL_TSC_START_ACQ(__HANDLE__) ((__HANDLE__)->Instance->CR |= TSC_CR_START)
 
-/**
-  * @brief Stop acquisition
-  * @param  __HANDLE__: TSC handle
-  * @retval None
-  */
+    /**
+     * @brief Stop acquisition
+     * @param  __HANDLE__: TSC handle
+     * @retval None
+     */
 #define __HAL_TSC_STOP_ACQ(__HANDLE__) ((__HANDLE__)->Instance->CR &= (uint32_t)(~TSC_CR_START))
 
-/**
-  * @brief Set IO default mode to output push-pull low
-  * @param  __HANDLE__: TSC handle
-  * @retval None
-  */
+    /**
+     * @brief Set IO default mode to output push-pull low
+     * @param  __HANDLE__: TSC handle
+     * @retval None
+     */
 #define __HAL_TSC_SET_IODEF_OUTPPLOW(__HANDLE__) ((__HANDLE__)->Instance->CR &= (uint32_t)(~TSC_CR_IODEF))
 
-/**
-  * @brief Set IO default mode to input floating
-  * @param  __HANDLE__: TSC handle
-  * @retval None
-  */
+    /**
+     * @brief Set IO default mode to input floating
+     * @param  __HANDLE__: TSC handle
+     * @retval None
+     */
 #define __HAL_TSC_SET_IODEF_INFLOAT(__HANDLE__) ((__HANDLE__)->Instance->CR |= TSC_CR_IODEF)
 
-/**
-  * @brief Set synchronization polarity to falling edge
-  * @param  __HANDLE__: TSC handle
-  * @retval None
-  */
+    /**
+     * @brief Set synchronization polarity to falling edge
+     * @param  __HANDLE__: TSC handle
+     * @retval None
+     */
 #define __HAL_TSC_SET_SYNC_POL_FALL(__HANDLE__) ((__HANDLE__)->Instance->CR &= (uint32_t)(~TSC_CR_SYNCPOL))
 
-/**
-  * @brief Set synchronization polarity to rising edge and high level
-  * @param  __HANDLE__: TSC handle
-  * @retval None
-  */
+    /**
+     * @brief Set synchronization polarity to rising edge and high level
+     * @param  __HANDLE__: TSC handle
+     * @retval None
+     */
 #define __HAL_TSC_SET_SYNC_POL_RISE_HIGH(__HANDLE__) ((__HANDLE__)->Instance->CR |= TSC_CR_SYNCPOL)
 
-/**
-  * @brief Enable TSC interrupt.
-  * @param  __HANDLE__: TSC handle
-  * @param  __INTERRUPT__: TSC interrupt
-  * @retval None
-  */
+    /**
+     * @brief Enable TSC interrupt.
+     * @param  __HANDLE__: TSC handle
+     * @param  __INTERRUPT__: TSC interrupt
+     * @retval None
+     */
 #define __HAL_TSC_ENABLE_IT(__HANDLE__, __INTERRUPT__) ((__HANDLE__)->Instance->IER |= (__INTERRUPT__))
 
-/**
-  * @brief Disable TSC interrupt.
-  * @param  __HANDLE__: TSC handle
-  * @param  __INTERRUPT__: TSC interrupt
-  * @retval None
-  */
+    /**
+     * @brief Disable TSC interrupt.
+     * @param  __HANDLE__: TSC handle
+     * @param  __INTERRUPT__: TSC interrupt
+     * @retval None
+     */
 #define __HAL_TSC_DISABLE_IT(__HANDLE__, __INTERRUPT__) ((__HANDLE__)->Instance->IER &= (uint32_t)(~(__INTERRUPT__)))
 
-/** @brief Check if the specified TSC interrupt source is enabled or disabled.
-  * @param  __HANDLE__: TSC Handle
-  * @param  __INTERRUPT__: TSC interrupt
-  * @retval SET or RESET
-  */
+    /** @brief Check if the specified TSC interrupt source is enabled or disabled.
+     * @param  __HANDLE__: TSC Handle
+     * @param  __INTERRUPT__: TSC interrupt
+     * @retval SET or RESET
+     */
 #define __HAL_TSC_GET_IT_SOURCE(__HANDLE__, __INTERRUPT__) ((((__HANDLE__)->Instance->IER & (__INTERRUPT__)) == (__INTERRUPT__)) ? SET : RESET)
 
-/**
-  * @brief Get the selected TSC's flag status.
-  * @param  __HANDLE__: TSC handle
-  * @param  __FLAG__: TSC flag
-  * @retval SET or RESET
-  */
+    /**
+     * @brief Get the selected TSC's flag status.
+     * @param  __HANDLE__: TSC handle
+     * @param  __FLAG__: TSC flag
+     * @retval SET or RESET
+     */
 #define __HAL_TSC_GET_FLAG(__HANDLE__, __FLAG__) ((((__HANDLE__)->Instance->ISR & (__FLAG__)) == (__FLAG__)) ? SET : RESET)
 
-/**
-  * @brief Clear the TSC's pending flag.
-  * @param  __HANDLE__: TSC handle
-  * @param  __FLAG__: TSC flag
-  * @retval None
-  */
+    /**
+     * @brief Clear the TSC's pending flag.
+     * @param  __HANDLE__: TSC handle
+     * @param  __FLAG__: TSC flag
+     * @retval None
+     */
 #define __HAL_TSC_CLEAR_FLAG(__HANDLE__, __FLAG__) ((__HANDLE__)->Instance->ICR = (__FLAG__))
 
-/**
-  * @brief Enable schmitt trigger hysteresis on a group of IOs
-  * @param  __HANDLE__: TSC handle
-  * @param  __GX_IOY_MASK__: IOs mask
-  * @retval None
-  */
+    /**
+     * @brief Enable schmitt trigger hysteresis on a group of IOs
+     * @param  __HANDLE__: TSC handle
+     * @param  __GX_IOY_MASK__: IOs mask
+     * @retval None
+     */
 #define __HAL_TSC_ENABLE_HYSTERESIS(__HANDLE__, __GX_IOY_MASK__) ((__HANDLE__)->Instance->IOHCR |= (__GX_IOY_MASK__))
 
-/**
-  * @brief Disable schmitt trigger hysteresis on a group of IOs
-  * @param  __HANDLE__: TSC handle
-  * @param  __GX_IOY_MASK__: IOs mask
-  * @retval None
-  */
+    /**
+     * @brief Disable schmitt trigger hysteresis on a group of IOs
+     * @param  __HANDLE__: TSC handle
+     * @param  __GX_IOY_MASK__: IOs mask
+     * @retval None
+     */
 #define __HAL_TSC_DISABLE_HYSTERESIS(__HANDLE__, __GX_IOY_MASK__) ((__HANDLE__)->Instance->IOHCR &= (uint32_t)(~(__GX_IOY_MASK__)))
 
-/**
-  * @brief Open analog switch on a group of IOs
-  * @param  __HANDLE__: TSC handle
-  * @param  __GX_IOY_MASK__: IOs mask
-  * @retval None
-  */
+    /**
+     * @brief Open analog switch on a group of IOs
+     * @param  __HANDLE__: TSC handle
+     * @param  __GX_IOY_MASK__: IOs mask
+     * @retval None
+     */
 #define __HAL_TSC_OPEN_ANALOG_SWITCH(__HANDLE__, __GX_IOY_MASK__) ((__HANDLE__)->Instance->IOASCR &= (uint32_t)(~(__GX_IOY_MASK__)))
 
-/**
-  * @brief Close analog switch on a group of IOs
-  * @param  __HANDLE__: TSC handle
-  * @param  __GX_IOY_MASK__: IOs mask
-  * @retval None
-  */
+    /**
+     * @brief Close analog switch on a group of IOs
+     * @param  __HANDLE__: TSC handle
+     * @param  __GX_IOY_MASK__: IOs mask
+     * @retval None
+     */
 #define __HAL_TSC_CLOSE_ANALOG_SWITCH(__HANDLE__, __GX_IOY_MASK__) ((__HANDLE__)->Instance->IOASCR |= (__GX_IOY_MASK__))
 
-/**
-  * @brief Enable a group of IOs in channel mode
-  * @param  __HANDLE__: TSC handle
-  * @param  __GX_IOY_MASK__: IOs mask
-  * @retval None
-  */
+    /**
+     * @brief Enable a group of IOs in channel mode
+     * @param  __HANDLE__: TSC handle
+     * @param  __GX_IOY_MASK__: IOs mask
+     * @retval None
+     */
 #define __HAL_TSC_ENABLE_CHANNEL(__HANDLE__, __GX_IOY_MASK__) ((__HANDLE__)->Instance->IOCCR |= (__GX_IOY_MASK__))
 
-/**
-  * @brief Disable a group of channel IOs
-  * @param  __HANDLE__: TSC handle
-  * @param  __GX_IOY_MASK__: IOs mask
-  * @retval None
-  */
+    /**
+     * @brief Disable a group of channel IOs
+     * @param  __HANDLE__: TSC handle
+     * @param  __GX_IOY_MASK__: IOs mask
+     * @retval None
+     */
 #define __HAL_TSC_DISABLE_CHANNEL(__HANDLE__, __GX_IOY_MASK__) ((__HANDLE__)->Instance->IOCCR &= (uint32_t)(~(__GX_IOY_MASK__)))
 
-/**
-  * @brief Enable a group of IOs in sampling mode
-  * @param  __HANDLE__: TSC handle
-  * @param  __GX_IOY_MASK__: IOs mask
-  * @retval None
-  */
+    /**
+     * @brief Enable a group of IOs in sampling mode
+     * @param  __HANDLE__: TSC handle
+     * @param  __GX_IOY_MASK__: IOs mask
+     * @retval None
+     */
 #define __HAL_TSC_ENABLE_SAMPLING(__HANDLE__, __GX_IOY_MASK__) ((__HANDLE__)->Instance->IOSCR |= (__GX_IOY_MASK__))
 
-/**
-  * @brief Disable a group of sampling IOs
-  * @param  __HANDLE__: TSC handle
-  * @param  __GX_IOY_MASK__: IOs mask
-  * @retval None
-  */
+    /**
+     * @brief Disable a group of sampling IOs
+     * @param  __HANDLE__: TSC handle
+     * @param  __GX_IOY_MASK__: IOs mask
+     * @retval None
+     */
 #define __HAL_TSC_DISABLE_SAMPLING(__HANDLE__, __GX_IOY_MASK__) ((__HANDLE__)->Instance->IOSCR &= (uint32_t)(~(__GX_IOY_MASK__)))
 
-/**
-  * @brief Enable acquisition groups
-  * @param  __HANDLE__: TSC handle
-  * @param  __GX_MASK__: Groups mask
-  * @retval None
-  */
+    /**
+     * @brief Enable acquisition groups
+     * @param  __HANDLE__: TSC handle
+     * @param  __GX_MASK__: Groups mask
+     * @retval None
+     */
 #define __HAL_TSC_ENABLE_GROUP(__HANDLE__, __GX_MASK__) ((__HANDLE__)->Instance->IOGCSR |= (__GX_MASK__))
 
-/**
-  * @brief Disable acquisition groups
-  * @param  __HANDLE__: TSC handle
-  * @param  __GX_MASK__: Groups mask
-  * @retval None
-  */
+    /**
+     * @brief Disable acquisition groups
+     * @param  __HANDLE__: TSC handle
+     * @param  __GX_MASK__: Groups mask
+     * @retval None
+     */
 #define __HAL_TSC_DISABLE_GROUP(__HANDLE__, __GX_MASK__) ((__HANDLE__)->Instance->IOGCSR &= (uint32_t)(~(__GX_MASK__)))
 
-/** @brief Gets acquisition group status
-  * @param  __HANDLE__: TSC Handle
-  * @param  __GX_INDEX__: Group index
-  * @retval SET or RESET
-  */
+    /** @brief Gets acquisition group status
+     * @param  __HANDLE__: TSC Handle
+     * @param  __GX_INDEX__: Group index
+     * @retval SET or RESET
+     */
 #define __HAL_TSC_GET_GROUP_STATUS(__HANDLE__, __GX_INDEX__) \
 ((((__HANDLE__)->Instance->IOGCSR & (uint32_t)((uint32_t)1 << ((__GX_INDEX__) + (uint32_t)16))) == (uint32_t)((uint32_t)1 << ((__GX_INDEX__) + (uint32_t)16))) ? TSC_GROUP_COMPLETED : TSC_GROUP_ONGOING)
 
-/* Exported functions --------------------------------------------------------*/  
+    /* Exported functions --------------------------------------------------------*/
 
-/* Initialization and de-initialization functions *****************************/
-HAL_StatusTypeDef HAL_TSC_Init(TSC_HandleTypeDef* htsc);
-HAL_StatusTypeDef HAL_TSC_DeInit(TSC_HandleTypeDef *htsc);
-void HAL_TSC_MspInit(TSC_HandleTypeDef* htsc);
-void HAL_TSC_MspDeInit(TSC_HandleTypeDef* htsc);
+    /* Initialization and de-initialization functions *****************************/
+    HAL_StatusTypeDef HAL_TSC_Init(TSC_HandleTypeDef* htsc);
+    HAL_StatusTypeDef HAL_TSC_DeInit(TSC_HandleTypeDef *htsc);
+    void HAL_TSC_MspInit(TSC_HandleTypeDef* htsc);
+    void HAL_TSC_MspDeInit(TSC_HandleTypeDef* htsc);
 
-/* IO operation functions *****************************************************/
-HAL_StatusTypeDef HAL_TSC_Start(TSC_HandleTypeDef* htsc);
-HAL_StatusTypeDef HAL_TSC_Start_IT(TSC_HandleTypeDef* htsc);
-HAL_StatusTypeDef HAL_TSC_Stop(TSC_HandleTypeDef* htsc);
-HAL_StatusTypeDef HAL_TSC_Stop_IT(TSC_HandleTypeDef* htsc);
-TSC_GroupStatusTypeDef HAL_TSC_GroupGetStatus(TSC_HandleTypeDef* htsc, uint32_t gx_index);
-uint32_t HAL_TSC_GroupGetValue(TSC_HandleTypeDef* htsc, uint32_t gx_index);
+    /* IO operation functions *****************************************************/
+    HAL_StatusTypeDef HAL_TSC_Start(TSC_HandleTypeDef* htsc);
+    HAL_StatusTypeDef HAL_TSC_Start_IT(TSC_HandleTypeDef* htsc);
+    HAL_StatusTypeDef HAL_TSC_Stop(TSC_HandleTypeDef* htsc);
+    HAL_StatusTypeDef HAL_TSC_Stop_IT(TSC_HandleTypeDef* htsc);
+    TSC_GroupStatusTypeDef HAL_TSC_GroupGetStatus(TSC_HandleTypeDef* htsc, uint32_t gx_index);
+    uint32_t HAL_TSC_GroupGetValue(TSC_HandleTypeDef* htsc, uint32_t gx_index);
 
-/* Peripheral Control functions ***********************************************/
-HAL_StatusTypeDef HAL_TSC_IOConfig(TSC_HandleTypeDef* htsc, TSC_IOConfigTypeDef* config);
-HAL_StatusTypeDef HAL_TSC_IODischarge(TSC_HandleTypeDef* htsc, uint32_t choice);
+    /* Peripheral Control functions ***********************************************/
+    HAL_StatusTypeDef HAL_TSC_IOConfig(TSC_HandleTypeDef* htsc, TSC_IOConfigTypeDef* config);
+    HAL_StatusTypeDef HAL_TSC_IODischarge(TSC_HandleTypeDef* htsc, uint32_t choice);
 
-/* Peripheral State and Error functions ***************************************/
-HAL_TSC_StateTypeDef HAL_TSC_GetState(TSC_HandleTypeDef* htsc);
-HAL_StatusTypeDef HAL_TSC_PollForAcquisition(TSC_HandleTypeDef* htsc);
-void HAL_TSC_IRQHandler(TSC_HandleTypeDef* htsc);
+    /* Peripheral State and Error functions ***************************************/
+    HAL_TSC_StateTypeDef HAL_TSC_GetState(TSC_HandleTypeDef* htsc);
+    HAL_StatusTypeDef HAL_TSC_PollForAcquisition(TSC_HandleTypeDef* htsc);
+    void HAL_TSC_IRQHandler(TSC_HandleTypeDef* htsc);
 
-/* Callback functions *********************************************************/
-void HAL_TSC_ConvCpltCallback(TSC_HandleTypeDef* htsc);
-void HAL_TSC_ErrorCallback(TSC_HandleTypeDef* htsc);
+    /* Callback functions *********************************************************/
+    void HAL_TSC_ConvCpltCallback(TSC_HandleTypeDef* htsc);
+    void HAL_TSC_ErrorCallback(TSC_HandleTypeDef* htsc);
 
-/**
-  * @}
-  */ 
+    /**
+     * @}
+     */
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
 #ifdef __cplusplus
 }

@@ -40,57 +40,57 @@ extern "C" {
 
 #include <stdint.h>
 
-/**
- * @file  aes_regs.h
- * @addtogroup aes AES
- * @{
- */
+    /**
+     * @file  aes_regs.h
+     * @addtogroup aes AES
+     * @{
+     */
 
-/**
- * @brief  Settings for AES_CTRL.CRYPT_MODE 
- */
-typedef enum {
-    MXC_E_AES_CTRL_ENCRYPT_MODE = 0,
-    MXC_E_AES_CTRL_DECRYPT_MODE = 1
-} mxc_aes_ctrl_crypt_mode_t;
+    /**
+     * @brief  Settings for AES_CTRL.CRYPT_MODE 
+     */
+    typedef enum {
+        MXC_E_AES_CTRL_ENCRYPT_MODE = 0,
+        MXC_E_AES_CTRL_DECRYPT_MODE = 1
+    } mxc_aes_ctrl_crypt_mode_t;
 
-/**
- * @brief Settings for AES_CTRL.EXP_KEY_MODE 
- */
-typedef enum {
-    MXC_E_AES_CTRL_CALC_NEW_EXP_KEY = 0,
-    MXC_E_AES_CTRL_USE_LAST_EXP_KEY = 1
-} mxc_aes_ctrl_exp_key_mode_t;
+    /**
+     * @brief Settings for AES_CTRL.EXP_KEY_MODE 
+     */
+    typedef enum {
+        MXC_E_AES_CTRL_CALC_NEW_EXP_KEY = 0,
+        MXC_E_AES_CTRL_USE_LAST_EXP_KEY = 1
+    } mxc_aes_ctrl_exp_key_mode_t;
 
-/**
- * @brief Settings for AES_CTRL.KEY_SIZE 
- */
-typedef enum {
-    MXC_E_AES_CTRL_KEY_SIZE_128 = 0,
-    MXC_E_AES_CTRL_KEY_SIZE_192 = 1,
-    MXC_E_AES_CTRL_KEY_SIZE_256 = 2
-} mxc_aes_ctrl_key_size_t;
+    /**
+     * @brief Settings for AES_CTRL.KEY_SIZE 
+     */
+    typedef enum {
+        MXC_E_AES_CTRL_KEY_SIZE_128 = 0,
+        MXC_E_AES_CTRL_KEY_SIZE_192 = 1,
+        MXC_E_AES_CTRL_KEY_SIZE_256 = 2
+    } mxc_aes_ctrl_key_size_t;
 
-/*                                       Offset   Register Description
-                                         ======   =========================================================== */
-typedef struct {
-    __IO uint32_t ctrl;              /*  0x0000   AES Control and Status                                      */
-    __I uint32_t rsv004;             /*  0x0004                                                               */
-    __IO uint32_t erase_all;         /*  0x0008   Write to Trigger AES Memory Erase                           */
-} mxc_aes_regs_t;
+    /*                                       Offset   Register Description
+                                             ======   =========================================================== */
+    typedef struct {
+        __IO uint32_t ctrl; /*  0x0000   AES Control and Status                                      */
+        __I uint32_t rsv004; /*  0x0004                                                               */
+        __IO uint32_t erase_all; /*  0x0008   Write to Trigger AES Memory Erase                           */
+    } mxc_aes_regs_t;
 
-/*                                       Offset   Register Description
-                                         ======   =========================================================== */
-typedef struct {
-    __IO uint32_t inp[4];            /*  0x0000   AES Input 0..3                                              */
-    __IO uint32_t key[8];            /*  0x0010   AES Key 0..7                                                */
-    __IO uint32_t out[4];            /*  0x0030   AES Output 0..3                                             */
-    __IO uint32_t expkey[8];         /*  0x0040   AES Expanded Key Data 0..7                                  */
-} mxc_aes_mem_regs_t;
+    /*                                       Offset   Register Description
+                                             ======   =========================================================== */
+    typedef struct {
+        __IO uint32_t inp[4]; /*  0x0000   AES Input 0..3                                              */
+        __IO uint32_t key[8]; /*  0x0010   AES Key 0..7                                                */
+        __IO uint32_t out[4]; /*  0x0030   AES Output 0..3                                             */
+        __IO uint32_t expkey[8]; /*  0x0040   AES Expanded Key Data 0..7                                  */
+    } mxc_aes_mem_regs_t;
 
-/*
-   Register offsets for module AES.
-*/
+    /*
+       Register offsets for module AES.
+     */
 #define MXC_R_AES_OFFS_CTRL                       ((uint32_t)0x00000000UL)
 #define MXC_R_AES_OFFS_ERASE_ALL                  ((uint32_t)0x00000008UL)
 #define MXC_R_AES_MEM_OFFS_INP0                   ((uint32_t)0x00000000UL)
@@ -153,7 +153,7 @@ typedef struct {
 #endif
 
 /**
-* @}
-*/
+ * @}
+ */
 
 #endif   /* _MXC_AES_REGS_H_ */

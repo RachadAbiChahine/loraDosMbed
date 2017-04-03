@@ -40,28 +40,28 @@ extern "C" {
 
 #include <stdint.h>
 
-/**
- * @file  pmu_regs.h
- * @addtogroup pmu PMU
- * @{
- */
+    /**
+     * @file  pmu_regs.h
+     * @addtogroup pmu PMU
+     * @{
+     */
 
-/*                                     Offset   Register Description
-                                       ======   ======================================================== */
-typedef struct {
-    __IO uint32_t dscadr;          /*  0x0000   Starting Descriptor Address                              */
-    __IO uint32_t cfg;             /*  0x0004   Channel Configuration                                    */
-    __IO uint32_t loop;            /*  0x0008   Channel Loop Counters                                    */
-    __IO uint32_t op;              /*  0x000C   Current Descriptor DWORD 0 (OP)                          */
-    __IO uint32_t dsc1;            /*  0x0010   Current Descriptor DWORD 1                               */
-    __IO uint32_t dsc2;            /*  0x0014   Current Descriptor DWORD 2                               */
-    __IO uint32_t dsc3;            /*  0x0018   Current Descriptor DWORD 3                               */
-    __IO uint32_t dsc4;            /*  0x001C   Current Descriptor DWORD 4                               */
-} mxc_pmu_regs_t;
+    /*                                     Offset   Register Description
+                                           ======   ======================================================== */
+    typedef struct {
+        __IO uint32_t dscadr; /*  0x0000   Starting Descriptor Address                              */
+        __IO uint32_t cfg; /*  0x0004   Channel Configuration                                    */
+        __IO uint32_t loop; /*  0x0008   Channel Loop Counters                                    */
+        __IO uint32_t op; /*  0x000C   Current Descriptor DWORD 0 (OP)                          */
+        __IO uint32_t dsc1; /*  0x0010   Current Descriptor DWORD 1                               */
+        __IO uint32_t dsc2; /*  0x0014   Current Descriptor DWORD 2                               */
+        __IO uint32_t dsc3; /*  0x0018   Current Descriptor DWORD 3                               */
+        __IO uint32_t dsc4; /*  0x001C   Current Descriptor DWORD 4                               */
+    } mxc_pmu_regs_t;
 
-/*
-   Register offsets for module PMU.
-*/
+    /*
+       Register offsets for module PMU.
+     */
 #define MXC_R_PMU_OFFS_DSCADR                     ((uint32_t)0x00000000UL)
 #define MXC_R_PMU_OFFS_CFG                        ((uint32_t)0x00000004UL)
 #define MXC_R_PMU_OFFS_LOOP                       ((uint32_t)0x00000008UL)
@@ -71,9 +71,9 @@ typedef struct {
 #define MXC_R_PMU_OFFS_DSC3                       ((uint32_t)0x00000018UL)
 #define MXC_R_PMU_OFFS_DSC4                       ((uint32_t)0x0000001CUL)
 
-/*
-   Field positions and masks for module PMU.
-*/
+    /*
+       Field positions and masks for module PMU.
+     */
 #define MXC_F_PMU_CFG_ENABLE_POS                            0
 #define MXC_F_PMU_CFG_ENABLE                                ((uint32_t)(0x00000001UL << MXC_F_PMU_CFG_ENABLE_POS))
 #define MXC_F_PMU_CFG_LL_STOPPED_POS                        2
@@ -105,7 +105,7 @@ typedef struct {
 #endif
 
 /**
-* @}
-*/
+ * @}
+ */
 
 #endif   /* _MXC_PMU_REGS_H_ */

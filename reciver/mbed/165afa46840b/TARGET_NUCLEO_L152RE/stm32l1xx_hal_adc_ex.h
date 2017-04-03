@@ -545,21 +545,21 @@ typedef struct
      )
 #endif /* STM32L151xCA || STM32L151xD || STM32L152xCA || STM32L152xD || STM32L162xCA || STM32L162xD || STM32L151xE || STM32L152xE || STM32L162xE */
 
-/**
-  * @brief Get the ADC clock prescaler from ADC common control register
-  * and convert it to its decimal number setting (refer to reference manual)
-  * @retval None
-  */
+    /**
+     * @brief Get the ADC clock prescaler from ADC common control register
+     * and convert it to its decimal number setting (refer to reference manual)
+     * @retval None
+     */
 #define __ADC_GET_CLOCK_PRESCALER_DECIMAL(__HANDLE__)                          \
     ((0x01) << ((ADC->CCR & ADC_CCR_ADCPRE) >> POSITION_VAL(ADC_CCR_ADCPRE)))
 
-/**
-  * @brief Clear register SMPR0.
-  * Register SMPR0 availability depends on device category. If register is not
-  * available on the current device, this macro performs no action.
-  * @param __HANDLE__: ADC handle
-  * @retval None
-  */
+    /**
+     * @brief Clear register SMPR0.
+     * Register SMPR0 availability depends on device category. If register is not
+     * available on the current device, this macro performs no action.
+     * @param __HANDLE__: ADC handle
+     * @retval None
+     */
 #if defined(STM32L151xCA) || defined (STM32L151xD) || defined (STM32L152xCA) || defined (STM32L152xD) || defined (STM32L162xCA) || defined (STM32L162xD) || defined(STM32L151xE) || defined (STM32L152xE) || defined (STM32L162xE)
 #define __ADC_SMPR0_CLEAR(__HANDLE__)                                          \
   (CLEAR_BIT((__HANDLE__)->Instance->SMPR0, (ADC_SMPR0_SMP31 | ADC_SMPR0_SMP30)))
@@ -567,11 +567,11 @@ typedef struct
 #define __ADC_SMPR0_CLEAR(__HANDLE__) __NOP()
 #endif /* STM32L151xCA || STM32L151xD || STM32L152xCA || STM32L152xD || STM32L162xCA || STM32L162xD || STM32L151xE || STM32L152xE || STM32L162xE */
 
-/**
-  * @brief Clear register CR2.
-  * @param __HANDLE__: ADC handle
-  * @retval None
-  */
+    /**
+     * @brief Clear register CR2.
+     * @param __HANDLE__: ADC handle
+     * @retval None
+     */
 #if defined(STM32L151xCA) || defined (STM32L151xD) || defined (STM32L152xCA) || defined (STM32L152xD) || defined (STM32L162xCA) || defined (STM32L162xD) || defined(STM32L151xE) || defined (STM32L152xE) || defined (STM32L162xE)
 #define __ADC_CR2_CLEAR(__HANDLE__)                                                                \
   (CLEAR_BIT((__HANDLE__)->Instance->CR2, (ADC_CR2_SWSTART  | ADC_CR2_EXTEN  | ADC_CR2_EXTSEL  |   \
@@ -589,16 +589,16 @@ typedef struct
                                            ADC_CR2_CONT     | ADC_CR2_ADON                      )) \
   )
 #endif /* STM32L151xCA || STM32L151xD || STM32L152xCA || STM32L152xD || STM32L162xCA || STM32L162xD || STM32L151xE || STM32L152xE || STM32L162xE */
-      
-/**
-  * @brief Set the sampling time of selected channel on register SMPR0
-  * Register SMPR0 availability depends on device category. If register is not
-  * available on the current device, this macro performs no action.
-  * @param __HANDLE__: ADC handle
-  * @param _SAMPLETIME_: Sample time parameter.
-  * @param __CHANNEL__: Channel number.
-  * @retval None
-  */
+
+    /**
+     * @brief Set the sampling time of selected channel on register SMPR0
+     * Register SMPR0 availability depends on device category. If register is not
+     * available on the current device, this macro performs no action.
+     * @param __HANDLE__: ADC handle
+     * @param _SAMPLETIME_: Sample time parameter.
+     * @param __CHANNEL__: Channel number.
+     * @retval None
+     */
 #if defined(STM32L151xCA) || defined (STM32L151xD) || defined (STM32L152xCA) || defined (STM32L152xD) || defined (STM32L162xCA) || defined (STM32L162xD) || defined(STM32L151xE) || defined (STM32L152xE) || defined (STM32L162xE)
 #define __ADC_SMPR0_CHANNEL_SET(__HANDLE__, _SAMPLETIME_, __CHANNEL__)         \
     MODIFY_REG((__HANDLE__)->Instance->SMPR0,                                  \
@@ -608,81 +608,81 @@ typedef struct
 #define __ADC_SMPR0_CHANNEL_SET(__HANDLE__, _SAMPLETIME_, __CHANNEL__) __NOP()
 #endif /* STM32L151xCA || STM32L151xD || STM32L152xCA || STM32L152xD || STM32L162xCA || STM32L162xD || STM32L151xE || STM32L152xE || STM32L162xE */     
 
-      
-/**
-  * @brief Enable the ADC peripheral
-  * @param __HANDLE__: ADC handle
-  * @retval None
-  */
+
+    /**
+     * @brief Enable the ADC peripheral
+     * @param __HANDLE__: ADC handle
+     * @retval None
+     */
 #define __ADC_ENABLE(__HANDLE__)                                               \
             (__HANDLE__)->Instance->CR2 |= ADC_CR2_ADON
-  
-/**
-  * @brief Disable the ADC peripheral
-  * @param __HANDLE__: ADC handle
-  * @retval None
-  */
+
+    /**
+     * @brief Disable the ADC peripheral
+     * @param __HANDLE__: ADC handle
+     * @retval None
+     */
 #define __ADC_DISABLE(__HANDLE__)                                              \
             (__HANDLE__)->Instance->CR2 &= ~ADC_CR2_ADON
 
-/**
-  * @}
-  */      
-   
-   
-/* Exported functions --------------------------------------------------------*/
-/** @addtogroup ADCEx_Exported_Functions
-  * @{
-  */
-
-/* IO operation functions  *****************************************************/
-/** @addtogroup ADCEx_Exported_Functions_Group1
-  * @{
-  */
-
-/* Blocking mode: Polling */
-HAL_StatusTypeDef       HAL_ADCEx_InjectedStart(ADC_HandleTypeDef* hadc);
-HAL_StatusTypeDef       HAL_ADCEx_InjectedStop(ADC_HandleTypeDef* hadc);
-HAL_StatusTypeDef       HAL_ADCEx_InjectedPollForConversion(ADC_HandleTypeDef* hadc, uint32_t Timeout);
-
-/* Non-blocking mode: Interruption */
-HAL_StatusTypeDef       HAL_ADCEx_InjectedStart_IT(ADC_HandleTypeDef* hadc);
-HAL_StatusTypeDef       HAL_ADCEx_InjectedStop_IT(ADC_HandleTypeDef* hadc);
-
-/* ADC retrieve conversion value intended to be used with polling or interruption */
-uint32_t                HAL_ADCEx_InjectedGetValue(ADC_HandleTypeDef* hadc, uint32_t InjectedRank);
-
-/* ADC IRQHandler and Callbacks used in non-blocking modes (Interruption) */
-void                    HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef* hadc);
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
 
-/* Peripheral Control functions ***********************************************/
-/** @addtogroup ADCEx_Exported_Functions_Group2
-  * @{
-  */
+    /* Exported functions --------------------------------------------------------*/
+    /** @addtogroup ADCEx_Exported_Functions
+     * @{
+     */
 
-HAL_StatusTypeDef       HAL_ADCEx_InjectedConfigChannel(ADC_HandleTypeDef* hadc,ADC_InjectionConfTypeDef* sConfigInjected);
-/**
-  * @}
-  */
+    /* IO operation functions  *****************************************************/
+    /** @addtogroup ADCEx_Exported_Functions_Group1
+     * @{
+     */
+
+    /* Blocking mode: Polling */
+    HAL_StatusTypeDef HAL_ADCEx_InjectedStart(ADC_HandleTypeDef* hadc);
+    HAL_StatusTypeDef HAL_ADCEx_InjectedStop(ADC_HandleTypeDef* hadc);
+    HAL_StatusTypeDef HAL_ADCEx_InjectedPollForConversion(ADC_HandleTypeDef* hadc, uint32_t Timeout);
+
+    /* Non-blocking mode: Interruption */
+    HAL_StatusTypeDef HAL_ADCEx_InjectedStart_IT(ADC_HandleTypeDef* hadc);
+    HAL_StatusTypeDef HAL_ADCEx_InjectedStop_IT(ADC_HandleTypeDef* hadc);
+
+    /* ADC retrieve conversion value intended to be used with polling or interruption */
+    uint32_t HAL_ADCEx_InjectedGetValue(ADC_HandleTypeDef* hadc, uint32_t InjectedRank);
+
+    /* ADC IRQHandler and Callbacks used in non-blocking modes (Interruption) */
+    void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef* hadc);
+    /**
+     * @}
+     */
 
 
-/**
-  * @}
-  */
+    /* Peripheral Control functions ***********************************************/
+    /** @addtogroup ADCEx_Exported_Functions_Group2
+     * @{
+     */
+
+    HAL_StatusTypeDef HAL_ADCEx_InjectedConfigChannel(ADC_HandleTypeDef* hadc, ADC_InjectionConfTypeDef* sConfigInjected);
+    /**
+     * @}
+     */
 
 
-/**
-  * @}
-  */ 
+    /**
+     * @}
+     */
 
-/**
-  * @}
-  */
-  
+
+    /**
+     * @}
+     */
+
+    /**
+     * @}
+     */
+
 #ifdef __cplusplus
 }
 #endif

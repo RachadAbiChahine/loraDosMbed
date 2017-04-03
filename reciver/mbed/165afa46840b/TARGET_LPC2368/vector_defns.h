@@ -4,7 +4,7 @@
 
 #ifndef MBED_VECTOR_DEFNS_H
 #define MBED_VECTOR_DEFNS_H
- 
+
 // Assember Macros 
 #ifdef __ARMCC_VERSION
 #define EXPORT(x) EXPORT x
@@ -58,8 +58,8 @@
 #define F_Bit 0x40    // when F bit is set, FIQ is disabled
 
 // MCU RAM
-#define LPC2368_RAM_ADDRESS 0x40000000	// RAM Base
-#define LPC2368_RAM_SIZE 0x8000		// 32KB 
+#define LPC2368_RAM_ADDRESS 0x40000000 // RAM Base
+#define LPC2368_RAM_SIZE 0x8000  // 32KB 
 
 // ISR Stack Allocation
 #define UND_stack_size  0x00000040
@@ -72,6 +72,6 @@
 
 // Full Descending Stack, so top-most stack points to just above the top of RAM
 #define LPC2368_STACK_TOP (LPC2368_RAM_ADDRESS + LPC2368_RAM_SIZE)
-#define USR_STACK_TOP	  (LPC2368_STACK_TOP - ISR_stack_size)
+#define USR_STACK_TOP   (LPC2368_STACK_TOP - ISR_stack_size)
 
 #endif

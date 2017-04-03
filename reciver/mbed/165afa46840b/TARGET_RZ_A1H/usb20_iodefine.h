@@ -1,213 +1,207 @@
 /*******************************************************************************
-* DISCLAIMER
-* This software is supplied by Renesas Electronics Corporation and is only
-* intended for use with Renesas products. No other uses are authorized. This
-* software is owned by Renesas Electronics Corporation and is protected under
-* all applicable laws, including copyright laws.
-* THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIES REGARDING
-* THIS SOFTWARE, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING BUT NOT
-* LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
-* AND NON-INFRINGEMENT. ALL SUCH WARRANTIES ARE EXPRESSLY DISCLAIMED.
-* TO THE MAXIMUM EXTENT PERMITTED NOT PROHIBITED BY LAW, NEITHER RENESAS
-* ELECTRONICS CORPORATION NOR ANY OF ITS AFFILIATED COMPANIES SHALL BE LIABLE
-* FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES FOR
-* ANY REASON RELATED TO THIS SOFTWARE, EVEN IF RENESAS OR ITS AFFILIATES HAVE
-* BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
-* Renesas reserves the right, without notice, to make changes to this software
-* and to discontinue the availability of this software. By using this software,
-* you agree to the additional terms and conditions found by accessing the
-* following link:
-* http://www.renesas.com/disclaimer*
-* Copyright (C) 2013-2014 Renesas Electronics Corporation. All rights reserved.
-*******************************************************************************/
+ * DISCLAIMER
+ * This software is supplied by Renesas Electronics Corporation and is only
+ * intended for use with Renesas products. No other uses are authorized. This
+ * software is owned by Renesas Electronics Corporation and is protected under
+ * all applicable laws, including copyright laws.
+ * THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIES REGARDING
+ * THIS SOFTWARE, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING BUT NOT
+ * LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
+ * AND NON-INFRINGEMENT. ALL SUCH WARRANTIES ARE EXPRESSLY DISCLAIMED.
+ * TO THE MAXIMUM EXTENT PERMITTED NOT PROHIBITED BY LAW, NEITHER RENESAS
+ * ELECTRONICS CORPORATION NOR ANY OF ITS AFFILIATED COMPANIES SHALL BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES FOR
+ * ANY REASON RELATED TO THIS SOFTWARE, EVEN IF RENESAS OR ITS AFFILIATES HAVE
+ * BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+ * Renesas reserves the right, without notice, to make changes to this software
+ * and to discontinue the availability of this software. By using this software,
+ * you agree to the additional terms and conditions found by accessing the
+ * following link:
+ * http://www.renesas.com/disclaimer*
+ * Copyright (C) 2013-2014 Renesas Electronics Corporation. All rights reserved.
+ *******************************************************************************/
 /*******************************************************************************
-* File Name : usb20_iodefine.h
-* $Rev: $
-* $Date::                           $
-* Description : Definition of I/O Register (V1.00a)
-******************************************************************************/
+ * File Name : usb20_iodefine.h
+ * $Rev: $
+ * $Date::                           $
+ * Description : Definition of I/O Register (V1.00a)
+ ******************************************************************************/
 #ifndef USB20_IODEFINE_H
 #define USB20_IODEFINE_H
+
 /* ->SEC M1.10.1 : Not magic number */
 
-struct st_usb20
-{                                                          /* USB20            */
-    volatile uint16_t SYSCFG0;                                /*  SYSCFG0         */
-    volatile uint16_t BUSWAIT;                                /*  BUSWAIT         */
-    volatile uint16_t SYSSTS0;                                /*  SYSSTS0         */
-    volatile uint8_t   dummy1[2];                              /*                  */
-    volatile uint16_t DVSTCTR0;                               /*  DVSTCTR0        */
-    volatile uint8_t   dummy2[2];                              /*                  */
-    volatile uint16_t TESTMODE;                               /*  TESTMODE        */
-    volatile uint8_t   dummy3[2];                              /*                  */
+struct st_usb20 { /* USB20            */
+    volatile uint16_t SYSCFG0; /*  SYSCFG0         */
+    volatile uint16_t BUSWAIT; /*  BUSWAIT         */
+    volatile uint16_t SYSSTS0; /*  SYSSTS0         */
+    volatile uint8_t dummy1[2]; /*                  */
+    volatile uint16_t DVSTCTR0; /*  DVSTCTR0        */
+    volatile uint8_t dummy2[2]; /*                  */
+    volatile uint16_t TESTMODE; /*  TESTMODE        */
+    volatile uint8_t dummy3[2]; /*                  */
 #define USB20_D0FBCFG_COUNT 2
-    volatile uint16_t D0FBCFG;                                /*  D0FBCFG         */
-    volatile uint16_t D1FBCFG;                                /*  D1FBCFG         */
-    union iodefine_reg32_t  CFIFO;                         /*  CFIFO           */
+    volatile uint16_t D0FBCFG; /*  D0FBCFG         */
+    volatile uint16_t D1FBCFG; /*  D1FBCFG         */
+    union iodefine_reg32_t CFIFO; /*  CFIFO           */
 #define USB20_D0FIFO_COUNT 2
-    union iodefine_reg32_t  D0FIFO;                        /*  D0FIFO          */
-    union iodefine_reg32_t  D1FIFO;                        /*  D1FIFO          */
-    
-    volatile uint16_t CFIFOSEL;                               /*  CFIFOSEL        */
-    volatile uint16_t CFIFOCTR;                               /*  CFIFOCTR        */
-    volatile uint8_t   dummy4[4];                              /*                  */
-/* start of struct st_usb20_from_d0fifosel */
-    volatile uint16_t D0FIFOSEL;                              /*  D0FIFOSEL       */
-    volatile uint16_t D0FIFOCTR;                              /*  D0FIFOCTR       */
-/* end of struct st_usb20_from_d0fifosel */
-/* start of struct st_usb20_from_d0fifosel */
-    volatile uint16_t D1FIFOSEL;                              /*  D1FIFOSEL       */
-    volatile uint16_t D1FIFOCTR;                              /*  D1FIFOCTR       */
-/* end of struct st_usb20_from_d0fifosel */
+    union iodefine_reg32_t D0FIFO; /*  D0FIFO          */
+    union iodefine_reg32_t D1FIFO; /*  D1FIFO          */
+
+    volatile uint16_t CFIFOSEL; /*  CFIFOSEL        */
+    volatile uint16_t CFIFOCTR; /*  CFIFOCTR        */
+    volatile uint8_t dummy4[4]; /*                  */
+    /* start of struct st_usb20_from_d0fifosel */
+    volatile uint16_t D0FIFOSEL; /*  D0FIFOSEL       */
+    volatile uint16_t D0FIFOCTR; /*  D0FIFOCTR       */
+    /* end of struct st_usb20_from_d0fifosel */
+    /* start of struct st_usb20_from_d0fifosel */
+    volatile uint16_t D1FIFOSEL; /*  D1FIFOSEL       */
+    volatile uint16_t D1FIFOCTR; /*  D1FIFOCTR       */
+    /* end of struct st_usb20_from_d0fifosel */
 #define USB20_INTENB0_COUNT 2
-    volatile uint16_t INTENB0;                                /*  INTENB0         */
-    volatile uint16_t INTENB1;                                /*  INTENB1         */
-    volatile uint8_t   dummy5[2];                              /*                  */
-    volatile uint16_t BRDYENB;                                /*  BRDYENB         */
-    volatile uint16_t NRDYENB;                                /*  NRDYENB         */
-    volatile uint16_t BEMPENB;                                /*  BEMPENB         */
-    volatile uint16_t SOFCFG;                                 /*  SOFCFG          */
-    volatile uint8_t   dummy6[2];                              /*                  */
+    volatile uint16_t INTENB0; /*  INTENB0         */
+    volatile uint16_t INTENB1; /*  INTENB1         */
+    volatile uint8_t dummy5[2]; /*                  */
+    volatile uint16_t BRDYENB; /*  BRDYENB         */
+    volatile uint16_t NRDYENB; /*  NRDYENB         */
+    volatile uint16_t BEMPENB; /*  BEMPENB         */
+    volatile uint16_t SOFCFG; /*  SOFCFG          */
+    volatile uint8_t dummy6[2]; /*                  */
 #define USB20_INTSTS0_COUNT 2
-    volatile uint16_t INTSTS0;                                /*  INTSTS0         */
-    volatile uint16_t INTSTS1;                                /*  INTSTS1         */
-    volatile uint8_t   dummy7[2];                              /*                  */
-    volatile uint16_t BRDYSTS;                                /*  BRDYSTS         */
-    volatile uint16_t NRDYSTS;                                /*  NRDYSTS         */
-    volatile uint16_t BEMPSTS;                                /*  BEMPSTS         */
-    volatile uint16_t FRMNUM;                                 /*  FRMNUM          */
-    volatile uint16_t UFRMNUM;                                /*  UFRMNUM         */
-    volatile uint16_t USBADDR;                                /*  USBADDR         */
-    volatile uint8_t   dummy8[2];                              /*                  */
-    volatile uint16_t USBREQ;                                 /*  USBREQ          */
-    volatile uint16_t USBVAL;                                 /*  USBVAL          */
-    volatile uint16_t USBINDX;                                /*  USBINDX         */
-    volatile uint16_t USBLENG;                                /*  USBLENG         */
-    volatile uint16_t DCPCFG;                                 /*  DCPCFG          */
-    volatile uint16_t DCPMAXP;                                /*  DCPMAXP         */
-    volatile uint16_t DCPCTR;                                 /*  DCPCTR          */
-    volatile uint8_t   dummy9[2];                              /*                  */
-    volatile uint16_t PIPESEL;                                /*  PIPESEL         */
-    volatile uint8_t   dummy10[2];                             /*                  */
-    volatile uint16_t PIPECFG;                                /*  PIPECFG         */
-    volatile uint16_t PIPEBUF;                                /*  PIPEBUF         */
-    volatile uint16_t PIPEMAXP;                               /*  PIPEMAXP        */
-    volatile uint16_t PIPEPERI;                               /*  PIPEPERI        */
+    volatile uint16_t INTSTS0; /*  INTSTS0         */
+    volatile uint16_t INTSTS1; /*  INTSTS1         */
+    volatile uint8_t dummy7[2]; /*                  */
+    volatile uint16_t BRDYSTS; /*  BRDYSTS         */
+    volatile uint16_t NRDYSTS; /*  NRDYSTS         */
+    volatile uint16_t BEMPSTS; /*  BEMPSTS         */
+    volatile uint16_t FRMNUM; /*  FRMNUM          */
+    volatile uint16_t UFRMNUM; /*  UFRMNUM         */
+    volatile uint16_t USBADDR; /*  USBADDR         */
+    volatile uint8_t dummy8[2]; /*                  */
+    volatile uint16_t USBREQ; /*  USBREQ          */
+    volatile uint16_t USBVAL; /*  USBVAL          */
+    volatile uint16_t USBINDX; /*  USBINDX         */
+    volatile uint16_t USBLENG; /*  USBLENG         */
+    volatile uint16_t DCPCFG; /*  DCPCFG          */
+    volatile uint16_t DCPMAXP; /*  DCPMAXP         */
+    volatile uint16_t DCPCTR; /*  DCPCTR          */
+    volatile uint8_t dummy9[2]; /*                  */
+    volatile uint16_t PIPESEL; /*  PIPESEL         */
+    volatile uint8_t dummy10[2]; /*                  */
+    volatile uint16_t PIPECFG; /*  PIPECFG         */
+    volatile uint16_t PIPEBUF; /*  PIPEBUF         */
+    volatile uint16_t PIPEMAXP; /*  PIPEMAXP        */
+    volatile uint16_t PIPEPERI; /*  PIPEPERI        */
 #define USB20_PIPE1CTR_COUNT 0xF
-    volatile uint16_t PIPE1CTR;                               /*  PIPE1CTR        */
-    volatile uint16_t PIPE2CTR;                               /*  PIPE2CTR        */
-    volatile uint16_t PIPE3CTR;                               /*  PIPE3CTR        */
-    volatile uint16_t PIPE4CTR;                               /*  PIPE4CTR        */
-    volatile uint16_t PIPE5CTR;                               /*  PIPE5CTR        */
-    volatile uint16_t PIPE6CTR;                               /*  PIPE6CTR        */
-    volatile uint16_t PIPE7CTR;                               /*  PIPE7CTR        */
-    volatile uint16_t PIPE8CTR;                               /*  PIPE8CTR        */
-    volatile uint16_t PIPE9CTR;                               /*  PIPE9CTR        */
-    volatile uint16_t PIPEACTR;                               /*  PIPEACTR        */
-    volatile uint16_t PIPEBCTR;                               /*  PIPEBCTR        */
-    volatile uint16_t PIPECCTR;                               /*  PIPECCTR        */
-    volatile uint16_t PIPEDCTR;                               /*  PIPEDCTR        */
-    volatile uint16_t PIPEECTR;                               /*  PIPEECTR        */
-    volatile uint16_t PIPEFCTR;                               /*  PIPEFCTR        */
-    volatile uint8_t   dummy11[2];                             /*                  */
-/* start of struct st_usb20_from_pipe1tre */
-    volatile uint16_t PIPE1TRE;                               /*  PIPE1TRE        */
-    volatile uint16_t PIPE1TRN;                               /*  PIPE1TRN        */
-/* end of struct st_usb20_from_pipe1tre */
-/* start of struct st_usb20_from_pipe1tre */
-    volatile uint16_t PIPE2TRE;                               /*  PIPE2TRE        */
-    volatile uint16_t PIPE2TRN;                               /*  PIPE2TRN        */
-/* end of struct st_usb20_from_pipe1tre */
-/* start of struct st_usb20_from_pipe1tre */
-    volatile uint16_t PIPE3TRE;                               /*  PIPE3TRE        */
-    volatile uint16_t PIPE3TRN;                               /*  PIPE3TRN        */
-/* end of struct st_usb20_from_pipe1tre */
-/* start of struct st_usb20_from_pipe1tre */
-    volatile uint16_t PIPE4TRE;                               /*  PIPE4TRE        */
-    volatile uint16_t PIPE4TRN;                               /*  PIPE4TRN        */
-/* end of struct st_usb20_from_pipe1tre */
-/* start of struct st_usb20_from_pipe1tre */
-    volatile uint16_t PIPE5TRE;                               /*  PIPE5TRE        */
-    volatile uint16_t PIPE5TRN;                               /*  PIPE5TRN        */
-/* end of struct st_usb20_from_pipe1tre */
-    volatile uint16_t PIPEBTRE;                               /*  PIPEBTRE        */
-    volatile uint16_t PIPEBTRN;                               /*  PIPEBTRN        */
-    volatile uint16_t PIPECTRE;                               /*  PIPECTRE        */
-    volatile uint16_t PIPECTRN;                               /*  PIPECTRN        */
-    volatile uint16_t PIPEDTRE;                               /*  PIPEDTRE        */
-    volatile uint16_t PIPEDTRN;                               /*  PIPEDTRN        */
-    volatile uint16_t PIPEETRE;                               /*  PIPEETRE        */
-    volatile uint16_t PIPEETRN;                               /*  PIPEETRN        */
-    volatile uint16_t PIPEFTRE;                               /*  PIPEFTRE        */
-    volatile uint16_t PIPEFTRN;                               /*  PIPEFTRN        */
-    volatile uint16_t PIPE9TRE;                               /*  PIPE9TRE        */
-    volatile uint16_t PIPE9TRN;                               /*  PIPE9TRN        */
-    volatile uint16_t PIPEATRE;                               /*  PIPEATRE        */
-    volatile uint16_t PIPEATRN;                               /*  PIPEATRN        */
-    volatile uint8_t   dummy12[16];                            /*                  */
+    volatile uint16_t PIPE1CTR; /*  PIPE1CTR        */
+    volatile uint16_t PIPE2CTR; /*  PIPE2CTR        */
+    volatile uint16_t PIPE3CTR; /*  PIPE3CTR        */
+    volatile uint16_t PIPE4CTR; /*  PIPE4CTR        */
+    volatile uint16_t PIPE5CTR; /*  PIPE5CTR        */
+    volatile uint16_t PIPE6CTR; /*  PIPE6CTR        */
+    volatile uint16_t PIPE7CTR; /*  PIPE7CTR        */
+    volatile uint16_t PIPE8CTR; /*  PIPE8CTR        */
+    volatile uint16_t PIPE9CTR; /*  PIPE9CTR        */
+    volatile uint16_t PIPEACTR; /*  PIPEACTR        */
+    volatile uint16_t PIPEBCTR; /*  PIPEBCTR        */
+    volatile uint16_t PIPECCTR; /*  PIPECCTR        */
+    volatile uint16_t PIPEDCTR; /*  PIPEDCTR        */
+    volatile uint16_t PIPEECTR; /*  PIPEECTR        */
+    volatile uint16_t PIPEFCTR; /*  PIPEFCTR        */
+    volatile uint8_t dummy11[2]; /*                  */
+    /* start of struct st_usb20_from_pipe1tre */
+    volatile uint16_t PIPE1TRE; /*  PIPE1TRE        */
+    volatile uint16_t PIPE1TRN; /*  PIPE1TRN        */
+    /* end of struct st_usb20_from_pipe1tre */
+    /* start of struct st_usb20_from_pipe1tre */
+    volatile uint16_t PIPE2TRE; /*  PIPE2TRE        */
+    volatile uint16_t PIPE2TRN; /*  PIPE2TRN        */
+    /* end of struct st_usb20_from_pipe1tre */
+    /* start of struct st_usb20_from_pipe1tre */
+    volatile uint16_t PIPE3TRE; /*  PIPE3TRE        */
+    volatile uint16_t PIPE3TRN; /*  PIPE3TRN        */
+    /* end of struct st_usb20_from_pipe1tre */
+    /* start of struct st_usb20_from_pipe1tre */
+    volatile uint16_t PIPE4TRE; /*  PIPE4TRE        */
+    volatile uint16_t PIPE4TRN; /*  PIPE4TRN        */
+    /* end of struct st_usb20_from_pipe1tre */
+    /* start of struct st_usb20_from_pipe1tre */
+    volatile uint16_t PIPE5TRE; /*  PIPE5TRE        */
+    volatile uint16_t PIPE5TRN; /*  PIPE5TRN        */
+    /* end of struct st_usb20_from_pipe1tre */
+    volatile uint16_t PIPEBTRE; /*  PIPEBTRE        */
+    volatile uint16_t PIPEBTRN; /*  PIPEBTRN        */
+    volatile uint16_t PIPECTRE; /*  PIPECTRE        */
+    volatile uint16_t PIPECTRN; /*  PIPECTRN        */
+    volatile uint16_t PIPEDTRE; /*  PIPEDTRE        */
+    volatile uint16_t PIPEDTRN; /*  PIPEDTRN        */
+    volatile uint16_t PIPEETRE; /*  PIPEETRE        */
+    volatile uint16_t PIPEETRN; /*  PIPEETRN        */
+    volatile uint16_t PIPEFTRE; /*  PIPEFTRE        */
+    volatile uint16_t PIPEFTRN; /*  PIPEFTRN        */
+    volatile uint16_t PIPE9TRE; /*  PIPE9TRE        */
+    volatile uint16_t PIPE9TRN; /*  PIPE9TRN        */
+    volatile uint16_t PIPEATRE; /*  PIPEATRE        */
+    volatile uint16_t PIPEATRN; /*  PIPEATRN        */
+    volatile uint8_t dummy12[16]; /*                  */
 #define USB20_DEVADD0_COUNT 0xB
-    volatile uint16_t DEVADD0;                                /*  DEVADD0         */
-    volatile uint16_t DEVADD1;                                /*  DEVADD1         */
-    volatile uint16_t DEVADD2;                                /*  DEVADD2         */
-    volatile uint16_t DEVADD3;                                /*  DEVADD3         */
-    volatile uint16_t DEVADD4;                                /*  DEVADD4         */
-    volatile uint16_t DEVADD5;                                /*  DEVADD5         */
-    volatile uint16_t DEVADD6;                                /*  DEVADD6         */
-    volatile uint16_t DEVADD7;                                /*  DEVADD7         */
-    volatile uint16_t DEVADD8;                                /*  DEVADD8         */
-    volatile uint16_t DEVADD9;                                /*  DEVADD9         */
-    volatile uint16_t DEVADDA;                                /*  DEVADDA         */
-    volatile uint8_t   dummy13[28];                            /*                  */
-    volatile uint16_t SUSPMODE;                               /*  SUSPMODE        */
-    volatile uint8_t   dummy14[92];                            /*                  */
-/* start of struct st_usb20_from_dmfifob0 */
-    volatile uint32_t  D0FIFOB0;                               /*  D0FIFOB0        */
-    volatile uint32_t  D0FIFOB1;                               /*  D0FIFOB1        */
-    volatile uint32_t  D0FIFOB2;                               /*  D0FIFOB2        */
-    volatile uint32_t  D0FIFOB3;                               /*  D0FIFOB3        */
-    volatile uint32_t  D0FIFOB4;                               /*  D0FIFOB4        */
-    volatile uint32_t  D0FIFOB5;                               /*  D0FIFOB5        */
-    volatile uint32_t  D0FIFOB6;                               /*  D0FIFOB6        */
-    volatile uint32_t  D0FIFOB7;                               /*  D0FIFOB7        */
-/* end of struct st_usb20_from_dmfifob0 */
-/* start of struct st_usb20_from_dmfifob0 */
-    volatile uint32_t  D1FIFOB0;                               /*  D1FIFOB0        */
-    volatile uint32_t  D1FIFOB1;                               /*  D1FIFOB1        */
-    volatile uint32_t  D1FIFOB2;                               /*  D1FIFOB2        */
-    volatile uint32_t  D1FIFOB3;                               /*  D1FIFOB3        */
-    volatile uint32_t  D1FIFOB4;                               /*  D1FIFOB4        */
-    volatile uint32_t  D1FIFOB5;                               /*  D1FIFOB5        */
-    volatile uint32_t  D1FIFOB6;                               /*  D1FIFOB6        */
-    volatile uint32_t  D1FIFOB7;                               /*  D1FIFOB7        */
-/* end of struct st_usb20_from_dmfifob0 */
+    volatile uint16_t DEVADD0; /*  DEVADD0         */
+    volatile uint16_t DEVADD1; /*  DEVADD1         */
+    volatile uint16_t DEVADD2; /*  DEVADD2         */
+    volatile uint16_t DEVADD3; /*  DEVADD3         */
+    volatile uint16_t DEVADD4; /*  DEVADD4         */
+    volatile uint16_t DEVADD5; /*  DEVADD5         */
+    volatile uint16_t DEVADD6; /*  DEVADD6         */
+    volatile uint16_t DEVADD7; /*  DEVADD7         */
+    volatile uint16_t DEVADD8; /*  DEVADD8         */
+    volatile uint16_t DEVADD9; /*  DEVADD9         */
+    volatile uint16_t DEVADDA; /*  DEVADDA         */
+    volatile uint8_t dummy13[28]; /*                  */
+    volatile uint16_t SUSPMODE; /*  SUSPMODE        */
+    volatile uint8_t dummy14[92]; /*                  */
+    /* start of struct st_usb20_from_dmfifob0 */
+    volatile uint32_t D0FIFOB0; /*  D0FIFOB0        */
+    volatile uint32_t D0FIFOB1; /*  D0FIFOB1        */
+    volatile uint32_t D0FIFOB2; /*  D0FIFOB2        */
+    volatile uint32_t D0FIFOB3; /*  D0FIFOB3        */
+    volatile uint32_t D0FIFOB4; /*  D0FIFOB4        */
+    volatile uint32_t D0FIFOB5; /*  D0FIFOB5        */
+    volatile uint32_t D0FIFOB6; /*  D0FIFOB6        */
+    volatile uint32_t D0FIFOB7; /*  D0FIFOB7        */
+    /* end of struct st_usb20_from_dmfifob0 */
+    /* start of struct st_usb20_from_dmfifob0 */
+    volatile uint32_t D1FIFOB0; /*  D1FIFOB0        */
+    volatile uint32_t D1FIFOB1; /*  D1FIFOB1        */
+    volatile uint32_t D1FIFOB2; /*  D1FIFOB2        */
+    volatile uint32_t D1FIFOB3; /*  D1FIFOB3        */
+    volatile uint32_t D1FIFOB4; /*  D1FIFOB4        */
+    volatile uint32_t D1FIFOB5; /*  D1FIFOB5        */
+    volatile uint32_t D1FIFOB6; /*  D1FIFOB6        */
+    volatile uint32_t D1FIFOB7; /*  D1FIFOB7        */
+    /* end of struct st_usb20_from_dmfifob0 */
 };
 
-
-struct st_usb20_from_d0fifosel
-{
-    volatile uint16_t D0FIFOSEL;                              /*  D0FIFOSEL       */
-    volatile uint16_t D0FIFOCTR;                              /*  D0FIFOCTR       */
+struct st_usb20_from_d0fifosel {
+    volatile uint16_t D0FIFOSEL; /*  D0FIFOSEL       */
+    volatile uint16_t D0FIFOCTR; /*  D0FIFOCTR       */
 };
 
-
-struct st_usb20_from_pipe1tre
-{
-    volatile uint16_t PIPE1TRE;                               /*  PIPE1TRE        */
-    volatile uint16_t PIPE1TRN;                               /*  PIPE1TRN        */
+struct st_usb20_from_pipe1tre {
+    volatile uint16_t PIPE1TRE; /*  PIPE1TRE        */
+    volatile uint16_t PIPE1TRN; /*  PIPE1TRN        */
 };
 
-
-struct st_usb20_from_dmfifob0
-{
+struct st_usb20_from_dmfifob0 {
 #define USB20_D0FIFOB0_COUNT 0x8
-    volatile uint32_t  D0FIFOB0;                               /*  D0FIFOB0        */
-    volatile uint32_t  D0FIFOB1;                               /*  D0FIFOB1        */
-    volatile uint32_t  D0FIFOB2;                               /*  D0FIFOB2        */
-    volatile uint32_t  D0FIFOB3;                               /*  D0FIFOB3        */
-    volatile uint32_t  D0FIFOB4;                               /*  D0FIFOB4        */
-    volatile uint32_t  D0FIFOB5;                               /*  D0FIFOB5        */
-    volatile uint32_t  D0FIFOB6;                               /*  D0FIFOB6        */
-    volatile uint32_t  D0FIFOB7;                               /*  D0FIFOB7        */
+    volatile uint32_t D0FIFOB0; /*  D0FIFOB0        */
+    volatile uint32_t D0FIFOB1; /*  D0FIFOB1        */
+    volatile uint32_t D0FIFOB2; /*  D0FIFOB2        */
+    volatile uint32_t D0FIFOB3; /*  D0FIFOB3        */
+    volatile uint32_t D0FIFOB4; /*  D0FIFOB4        */
+    volatile uint32_t D0FIFOB5; /*  D0FIFOB5        */
+    volatile uint32_t D0FIFOB6; /*  D0FIFOB6        */
+    volatile uint32_t D0FIFOB7; /*  D0FIFOB7        */
 };
 
 

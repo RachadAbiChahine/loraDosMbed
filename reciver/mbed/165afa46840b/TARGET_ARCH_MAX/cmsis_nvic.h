@@ -27,7 +27,7 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *******************************************************************************
- */ 
+ */
 
 #ifndef MBED_CMSIS_NVIC_H
 #define MBED_CMSIS_NVIC_H
@@ -51,8 +51,8 @@
 extern "C" {
 #endif
 
-void NVIC_SetVector(IRQn_Type IRQn, uint32_t vector);
-uint32_t NVIC_GetVector(IRQn_Type IRQn);
+    void NVIC_SetVector(IRQn_Type IRQn, uint32_t vector);
+    uint32_t NVIC_GetVector(IRQn_Type IRQn);
 
 #ifdef __cplusplus
 }

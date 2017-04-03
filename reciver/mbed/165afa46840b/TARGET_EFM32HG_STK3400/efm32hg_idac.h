@@ -34,13 +34,13 @@
  * @{
  * @brief EFM32HG_IDAC Register Declaration
  *****************************************************************************/
-typedef struct
-{
-  __IO uint32_t CTRL;       /**< Control Register  */
-  __IO uint32_t CURPROG;    /**< Current Programming Register  */
-  __IO uint32_t CAL;        /**< Calibration Register  */
-  __IO uint32_t DUTYCONFIG; /**< Duty Cycle Configauration Register  */
-} IDAC_TypeDef;             /** @} */
+
+typedef struct {
+    __IO uint32_t CTRL; /**< Control Register  */
+    __IO uint32_t CURPROG; /**< Current Programming Register  */
+    __IO uint32_t CAL; /**< Calibration Register  */
+    __IO uint32_t DUTYCONFIG; /**< Duty Cycle Configauration Register  */
+} IDAC_TypeDef; /** @} */
 
 /**************************************************************************//**
  * @defgroup EFM32HG_IDAC_BitFields

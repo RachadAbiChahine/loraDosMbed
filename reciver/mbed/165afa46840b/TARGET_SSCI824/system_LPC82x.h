@@ -30,31 +30,31 @@ extern "C" {
 
 #include <stdint.h>
 
-extern uint32_t SystemCoreClock;     /*!< System Clock Frequency (Core Clock)  */
-extern uint32_t MainClock;           /*!< Main Clock Frequency */
+    extern uint32_t SystemCoreClock; /*!< System Clock Frequency (Core Clock)  */
+    extern uint32_t MainClock; /*!< Main Clock Frequency */
 
 
-/**
- * Initialize the system
- *
- * @param  none
- * @return none
- *
- * @brief  Setup the microcontroller system.
- *         Initialize the System and update the SystemCoreClock variable.
- */
-extern void SystemInit (void);
+    /**
+     * Initialize the system
+     *
+     * @param  none
+     * @return none
+     *
+     * @brief  Setup the microcontroller system.
+     *         Initialize the System and update the SystemCoreClock variable.
+     */
+    extern void SystemInit(void);
 
-/**
- * Update SystemCoreClock variable
- *
- * @param  none
- * @return none
- *
- * @brief  Updates the SystemCoreClock with current core Clock
- *         retrieved from cpu registers.
- */
-extern void SystemCoreClockUpdate (void);
+    /**
+     * Update SystemCoreClock variable
+     *
+     * @param  none
+     * @return none
+     *
+     * @brief  Updates the SystemCoreClock with current core Clock
+     *         retrieved from cpu registers.
+     */
+    extern void SystemCoreClockUpdate(void);
 
 #ifdef __cplusplus
 }

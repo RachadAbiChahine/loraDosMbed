@@ -34,27 +34,27 @@
  * @{
  * @brief EFM32HG_PCNT Register Declaration
  *****************************************************************************/
-typedef struct
-{
-  __IO uint32_t CTRL;         /**< Control Register  */
-  __IO uint32_t CMD;          /**< Command Register  */
-  __I uint32_t  STATUS;       /**< Status Register  */
-  __I uint32_t  CNT;          /**< Counter Value Register  */
-  __I uint32_t  TOP;          /**< Top Value Register  */
-  __IO uint32_t TOPB;         /**< Top Value Buffer Register  */
-  __I uint32_t  IF;           /**< Interrupt Flag Register  */
-  __IO uint32_t IFS;          /**< Interrupt Flag Set Register  */
-  __IO uint32_t IFC;          /**< Interrupt Flag Clear Register  */
-  __IO uint32_t IEN;          /**< Interrupt Enable Register  */
-  __IO uint32_t ROUTE;        /**< I/O Routing Register  */
 
-  __IO uint32_t FREEZE;       /**< Freeze Register  */
-  __I uint32_t  SYNCBUSY;     /**< Synchronization Busy Register  */
+typedef struct {
+    __IO uint32_t CTRL; /**< Control Register  */
+    __IO uint32_t CMD; /**< Command Register  */
+    __I uint32_t STATUS; /**< Status Register  */
+    __I uint32_t CNT; /**< Counter Value Register  */
+    __I uint32_t TOP; /**< Top Value Register  */
+    __IO uint32_t TOPB; /**< Top Value Buffer Register  */
+    __I uint32_t IF; /**< Interrupt Flag Register  */
+    __IO uint32_t IFS; /**< Interrupt Flag Set Register  */
+    __IO uint32_t IFC; /**< Interrupt Flag Clear Register  */
+    __IO uint32_t IEN; /**< Interrupt Enable Register  */
+    __IO uint32_t ROUTE; /**< I/O Routing Register  */
 
-  uint32_t      RESERVED0[1]; /**< Reserved for future use **/
-  __IO uint32_t AUXCNT;       /**< Auxiliary Counter Value Register  */
-  __IO uint32_t INPUT;        /**< PCNT Input Register  */
-} PCNT_TypeDef;               /** @} */
+    __IO uint32_t FREEZE; /**< Freeze Register  */
+    __I uint32_t SYNCBUSY; /**< Synchronization Busy Register  */
+
+    uint32_t RESERVED0[1]; /**< Reserved for future use **/
+    __IO uint32_t AUXCNT; /**< Auxiliary Counter Value Register  */
+    __IO uint32_t INPUT; /**< PCNT Input Register  */
+} PCNT_TypeDef; /** @} */
 
 /**************************************************************************//**
  * @defgroup EFM32HG_PCNT_BitFields

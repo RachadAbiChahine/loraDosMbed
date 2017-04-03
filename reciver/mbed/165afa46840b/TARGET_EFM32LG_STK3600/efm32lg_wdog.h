@@ -34,13 +34,13 @@
  * @{
  * @brief EFM32LG_WDOG Register Declaration
  *****************************************************************************/
-typedef struct
-{
-  __IO uint32_t CTRL;     /**< Control Register  */
-  __IO uint32_t CMD;      /**< Command Register  */
 
-  __I uint32_t  SYNCBUSY; /**< Synchronization Busy Register  */
-} WDOG_TypeDef;           /** @} */
+typedef struct {
+    __IO uint32_t CTRL; /**< Control Register  */
+    __IO uint32_t CMD; /**< Command Register  */
+
+    __I uint32_t SYNCBUSY; /**< Synchronization Busy Register  */
+} WDOG_TypeDef; /** @} */
 
 /**************************************************************************//**
  * @defgroup EFM32LG_WDOG_BitFields

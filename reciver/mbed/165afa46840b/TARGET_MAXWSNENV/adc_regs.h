@@ -40,231 +40,231 @@ extern "C" {
 
 #include <stdint.h>
 
-/**
- * @file  adc_regs.h
- * @addtogroup adc ADC
- * @{
- */
+    /**
+     * @file  adc_regs.h
+     * @addtogroup adc ADC
+     * @{
+     */
 
-/**
- * @brief Defines ADC Modes.
- */
-typedef enum {
-    /** Single Mode Full Rate */
-    MXC_E_ADC_MODE_SMPLCNT_FULL_RATE = 0,
-    /** Single Mode Low Power */
-    MXC_E_ADC_MODE_SMPLCNT_LOW_POWER = 1,
-    /** Continuous Mode Full Rate */
-    MXC_E_ADC_MODE_CONTINUOUS_FULL_RATE = 2,
-    /** Continuous Mode Low Power */
-    MXC_E_ADC_MODE_CONTINUOUS_LOW_POWER = 3,
-    /** Single Mode Full Rate with Scan Enabled */
-    MXC_E_ADC_MODE_SMPLCNT_SCAN_FULL_RATE = 8,
-    /** Single Mode Low Power with Scan Enabled */
-    MXC_E_ADC_MODE_SMPLCNT_SCAN_LOW_POWER = 9,
-    /** Continuous Mode Full Rate with Scan Enabled */
-    MXC_E_ADC_MODE_CONTINUOUS_SCAN_FULL_RATE = 10,
-    /** Continuous Mode Low Power with Scan Enabled */
-    MXC_E_ADC_MODE_CONTINUOUS_SCAN_LOW_POWER = 11
-} mxc_adc_mode_t;
+    /**
+     * @brief Defines ADC Modes.
+     */
+    typedef enum {
+        /** Single Mode Full Rate */
+        MXC_E_ADC_MODE_SMPLCNT_FULL_RATE = 0,
+        /** Single Mode Low Power */
+        MXC_E_ADC_MODE_SMPLCNT_LOW_POWER = 1,
+        /** Continuous Mode Full Rate */
+        MXC_E_ADC_MODE_CONTINUOUS_FULL_RATE = 2,
+        /** Continuous Mode Low Power */
+        MXC_E_ADC_MODE_CONTINUOUS_LOW_POWER = 3,
+        /** Single Mode Full Rate with Scan Enabled */
+        MXC_E_ADC_MODE_SMPLCNT_SCAN_FULL_RATE = 8,
+        /** Single Mode Low Power with Scan Enabled */
+        MXC_E_ADC_MODE_SMPLCNT_SCAN_LOW_POWER = 9,
+        /** Continuous Mode Full Rate with Scan Enabled */
+        MXC_E_ADC_MODE_CONTINUOUS_SCAN_FULL_RATE = 10,
+        /** Continuous Mode Low Power with Scan Enabled */
+        MXC_E_ADC_MODE_CONTINUOUS_SCAN_LOW_POWER = 11
+    } mxc_adc_mode_t;
 
-/**
- * @brief Defines ADC Range Control.
- */
-typedef enum {
-    /** Bi-polar Operation (-Vref/2 -> Vref/2) */
-    MXC_E_ADC_RANGE_HALF = 0,
-    /** Bi-polar Operation (-Vref -> Vref) */
-    MXC_E_ADC_RANGE_FULL
-} mxc_adc_range_t;
+    /**
+     * @brief Defines ADC Range Control.
+     */
+    typedef enum {
+        /** Bi-polar Operation (-Vref/2 -> Vref/2) */
+        MXC_E_ADC_RANGE_HALF = 0,
+        /** Bi-polar Operation (-Vref -> Vref) */
+        MXC_E_ADC_RANGE_FULL
+    } mxc_adc_range_t;
 
-/**
- * @brief Defines ADC Bipolar operation.
- */
-typedef enum {
-    /** Uni-polar operation (0 -> Vref) */
-    MXC_E_ADC_BI_POL_UNIPOLAR = 0,
-    /** Bi-polar operation see ADC Range Control */
-    MXC_E_ADC_BI_POL_BIPOLAR
-} mxc_adc_bi_pol_t;
+    /**
+     * @brief Defines ADC Bipolar operation.
+     */
+    typedef enum {
+        /** Uni-polar operation (0 -> Vref) */
+        MXC_E_ADC_BI_POL_UNIPOLAR = 0,
+        /** Bi-polar operation see ADC Range Control */
+        MXC_E_ADC_BI_POL_BIPOLAR
+    } mxc_adc_bi_pol_t;
 
-/**
- * @brief Defines Decimation Filter Modes.
- */
-typedef enum {
-    /** Decimation Filter ByPassed */
-    MXC_E_ADC_AVG_MODE_FILTER_BYPASS = 0,
-    /** Output Average Only*/
-    MXC_E_ADC_AVG_MODE_FILTER_OUTPUT,
-    /** Output Average and Raw Data (Test Mode Only) */
-    MXC_E_ADC_AVG_MODE_FILTER_OUTPUT_RAW
-} mxc_adc_avg_mode_t;
+    /**
+     * @brief Defines Decimation Filter Modes.
+     */
+    typedef enum {
+        /** Decimation Filter ByPassed */
+        MXC_E_ADC_AVG_MODE_FILTER_BYPASS = 0,
+        /** Output Average Only*/
+        MXC_E_ADC_AVG_MODE_FILTER_OUTPUT,
+        /** Output Average and Raw Data (Test Mode Only) */
+        MXC_E_ADC_AVG_MODE_FILTER_OUTPUT_RAW
+    } mxc_adc_avg_mode_t;
 
-/**
- * @brief Defines ADC StartMode Modes.
- */
-typedef enum {
-    /** StarMode via Software */
-    MXC_E_ADC_STRT_MODE_SOFTWARE = 0,
-    /** StarMode via PulseTrain */
-    MXC_E_ADC_STRT_MODE_PULSETRAIN
-} mxc_adc_strt_mode_t;
+    /**
+     * @brief Defines ADC StartMode Modes.
+     */
+    typedef enum {
+        /** StarMode via Software */
+        MXC_E_ADC_STRT_MODE_SOFTWARE = 0,
+        /** StarMode via PulseTrain */
+        MXC_E_ADC_STRT_MODE_PULSETRAIN
+    } mxc_adc_strt_mode_t;
 
-/**
- * @brief Defines Mux Channel Select for the Positive Input to the ADC.
- */
-typedef enum {
-    /** Single Mode Input AIN0+; Diff Mode AIN0+/AIN8-  */
-    MXC_E_ADC_PGA_MUX_CH_SEL_AIN0 = 0,
-    /** Single Mode Input AIN1+; Diff Mode AIN1+/AIN9-  */
-    MXC_E_ADC_PGA_MUX_CH_SEL_AIN1 = 1,
-    /** Single Mode Input AIN2+; Diff Mode AIN2+/AIN10- */
-    MXC_E_ADC_PGA_MUX_CH_SEL_AIN2 = 2,
-    /** Single Mode Input AIN3+; Diff Mode AIN3+/AIN11- */
-    MXC_E_ADC_PGA_MUX_CH_SEL_AIN3 = 3,
-    /** Single Mode Input AIN4+; Diff Mode AIN4+/AIN12- */
-    MXC_E_ADC_PGA_MUX_CH_SEL_AIN4 = 4,
-    /** Single Mode Input AIN5+; Diff Mode AIN5+/AIN13-  */
-    MXC_E_ADC_PGA_MUX_CH_SEL_AIN5 = 5,
-    /** Single Mode Input AIN6+; Diff Mode AIN6+/AIN14-  */
-    MXC_E_ADC_PGA_MUX_CH_SEL_AIN6 = 6,
-    /** Single Mode Input AIN7+; Diff Mode AIN7+/AIN15-  */
-    MXC_E_ADC_PGA_MUX_CH_SEL_AIN7 = 7,
-    /** Single Mode Input AIN8+ */
-    MXC_E_ADC_PGA_MUX_CH_SEL_AIN8 = 8,
-    /** Single Mode Input AIN9+ */
-    MXC_E_ADC_PGA_MUX_CH_SEL_AIN9 = 9,
-    /** Single Mode Input AIN10+ */
-    MXC_E_ADC_PGA_MUX_CH_SEL_AIN10 = 10,
-    /** Single Mode Input AIN11+ */
-    MXC_E_ADC_PGA_MUX_CH_SEL_AIN11 = 11,
-    /** Single Mode Input AIN12+ */
-    MXC_E_ADC_PGA_MUX_CH_SEL_AIN12 = 12,
-    /** Single Mode Input AIN13+ */
-    MXC_E_ADC_PGA_MUX_CH_SEL_AIN13 = 13,
-    /** Single Mode Input AIN14+ */
-    MXC_E_ADC_PGA_MUX_CH_SEL_AIN14 = 14,
-    /** Single Mode Input AIN15+ */
-    MXC_E_ADC_PGA_MUX_CH_SEL_AIN15 = 15,
-    /** Positive Input VSSADC */
-    MXC_E_ADC_PGA_MUX_CH_SEL_VSSADC = 16,
-    /** Positive Input TMON_R */
-    MXC_E_ADC_PGA_MUX_CH_SEL_TMON_R = 17,
-    /** Positive Input VDDA/4 */
-    MXC_E_ADC_PGA_MUX_CH_SEL_VDDA4 = 18,
-    /** Positive Input PWRMAN_TST */
-    MXC_E_ADC_PGA_MUX_CH_SEL_PWRMON_TST = 19,
-    /** Positive Input Ain0Div */
-    MXC_E_ADC_PGA_MUX_CH_SEL_AIN0DIV = 20,
-    /** Positive Input OpAmp OUTA */
-    MXC_E_ADC_PGA_MUX_CH_SEL_OUTA = 32,
-    /** Positive Input OpAmp OUTB */
-    MXC_E_ADC_PGA_MUX_CH_SEL_OUTB = 33,
-    /** Positive Input OpAmp OUTC */
-    MXC_E_ADC_PGA_MUX_CH_SEL_OUTC = 34,
-    /** Positive Input OpAmp OUTD */
-    MXC_E_ADC_PGA_MUX_CH_SEL_OUTD = 35,
-    /** Positive INA+ */
-    MXC_E_ADC_PGA_MUX_CH_SEL_INAPLUS = 36,
-    /** Positive SNO_or */
-    MXC_E_ADC_PGA_MUX_CH_SEL_SNO_OR = 37,
-    /** Positive SCM_or */
-    MXC_E_ADC_PGA_MUX_CH_SEL_SCM_OR = 38,
-    /** Positive TPROBE_sense */
-    MXC_E_ADC_PGA_MUX_CH_SEL_TPROBE_SENSE = 48,
-    /** Positive VREFDAC */
-    MXC_E_ADC_PGA_MUX_CH_SEL_VREFDAC = 49,
-    /** Positive VREFADJ */
-    MXC_E_ADC_PGA_MUX_CH_SEL_VREFADJ = 50,
-    /** Positive Vdd3xtal */
-    MXC_E_ADC_PGA_MUX_CH_SEL_VDD3XTAL = 51
-} mxc_adc_pga_mux_ch_sel_t;
+    /**
+     * @brief Defines Mux Channel Select for the Positive Input to the ADC.
+     */
+    typedef enum {
+        /** Single Mode Input AIN0+; Diff Mode AIN0+/AIN8-  */
+        MXC_E_ADC_PGA_MUX_CH_SEL_AIN0 = 0,
+        /** Single Mode Input AIN1+; Diff Mode AIN1+/AIN9-  */
+        MXC_E_ADC_PGA_MUX_CH_SEL_AIN1 = 1,
+        /** Single Mode Input AIN2+; Diff Mode AIN2+/AIN10- */
+        MXC_E_ADC_PGA_MUX_CH_SEL_AIN2 = 2,
+        /** Single Mode Input AIN3+; Diff Mode AIN3+/AIN11- */
+        MXC_E_ADC_PGA_MUX_CH_SEL_AIN3 = 3,
+        /** Single Mode Input AIN4+; Diff Mode AIN4+/AIN12- */
+        MXC_E_ADC_PGA_MUX_CH_SEL_AIN4 = 4,
+        /** Single Mode Input AIN5+; Diff Mode AIN5+/AIN13-  */
+        MXC_E_ADC_PGA_MUX_CH_SEL_AIN5 = 5,
+        /** Single Mode Input AIN6+; Diff Mode AIN6+/AIN14-  */
+        MXC_E_ADC_PGA_MUX_CH_SEL_AIN6 = 6,
+        /** Single Mode Input AIN7+; Diff Mode AIN7+/AIN15-  */
+        MXC_E_ADC_PGA_MUX_CH_SEL_AIN7 = 7,
+        /** Single Mode Input AIN8+ */
+        MXC_E_ADC_PGA_MUX_CH_SEL_AIN8 = 8,
+        /** Single Mode Input AIN9+ */
+        MXC_E_ADC_PGA_MUX_CH_SEL_AIN9 = 9,
+        /** Single Mode Input AIN10+ */
+        MXC_E_ADC_PGA_MUX_CH_SEL_AIN10 = 10,
+        /** Single Mode Input AIN11+ */
+        MXC_E_ADC_PGA_MUX_CH_SEL_AIN11 = 11,
+        /** Single Mode Input AIN12+ */
+        MXC_E_ADC_PGA_MUX_CH_SEL_AIN12 = 12,
+        /** Single Mode Input AIN13+ */
+        MXC_E_ADC_PGA_MUX_CH_SEL_AIN13 = 13,
+        /** Single Mode Input AIN14+ */
+        MXC_E_ADC_PGA_MUX_CH_SEL_AIN14 = 14,
+        /** Single Mode Input AIN15+ */
+        MXC_E_ADC_PGA_MUX_CH_SEL_AIN15 = 15,
+        /** Positive Input VSSADC */
+        MXC_E_ADC_PGA_MUX_CH_SEL_VSSADC = 16,
+        /** Positive Input TMON_R */
+        MXC_E_ADC_PGA_MUX_CH_SEL_TMON_R = 17,
+        /** Positive Input VDDA/4 */
+        MXC_E_ADC_PGA_MUX_CH_SEL_VDDA4 = 18,
+        /** Positive Input PWRMAN_TST */
+        MXC_E_ADC_PGA_MUX_CH_SEL_PWRMON_TST = 19,
+        /** Positive Input Ain0Div */
+        MXC_E_ADC_PGA_MUX_CH_SEL_AIN0DIV = 20,
+        /** Positive Input OpAmp OUTA */
+        MXC_E_ADC_PGA_MUX_CH_SEL_OUTA = 32,
+        /** Positive Input OpAmp OUTB */
+        MXC_E_ADC_PGA_MUX_CH_SEL_OUTB = 33,
+        /** Positive Input OpAmp OUTC */
+        MXC_E_ADC_PGA_MUX_CH_SEL_OUTC = 34,
+        /** Positive Input OpAmp OUTD */
+        MXC_E_ADC_PGA_MUX_CH_SEL_OUTD = 35,
+        /** Positive INA+ */
+        MXC_E_ADC_PGA_MUX_CH_SEL_INAPLUS = 36,
+        /** Positive SNO_or */
+        MXC_E_ADC_PGA_MUX_CH_SEL_SNO_OR = 37,
+        /** Positive SCM_or */
+        MXC_E_ADC_PGA_MUX_CH_SEL_SCM_OR = 38,
+        /** Positive TPROBE_sense */
+        MXC_E_ADC_PGA_MUX_CH_SEL_TPROBE_SENSE = 48,
+        /** Positive VREFDAC */
+        MXC_E_ADC_PGA_MUX_CH_SEL_VREFDAC = 49,
+        /** Positive VREFADJ */
+        MXC_E_ADC_PGA_MUX_CH_SEL_VREFADJ = 50,
+        /** Positive Vdd3xtal */
+        MXC_E_ADC_PGA_MUX_CH_SEL_VDD3XTAL = 51
+    } mxc_adc_pga_mux_ch_sel_t;
 
-/**
- * @brief Decoded with the MUX Channel Select to enable Differential Mode Input to the ADC.
- */
-typedef enum {
-    /** Differential Mode Disabled */
-    MXC_E_ADC_PGA_MUX_DIFF_DISABLE = 0,
-    /** Differential Mode Enabled */
-    MXC_E_ADC_PGA_MUX_DIFF_ENABLE
-} mxc_adc_pga_mux_diff_t;
+    /**
+     * @brief Decoded with the MUX Channel Select to enable Differential Mode Input to the ADC.
+     */
+    typedef enum {
+        /** Differential Mode Disabled */
+        MXC_E_ADC_PGA_MUX_DIFF_DISABLE = 0,
+        /** Differential Mode Enabled */
+        MXC_E_ADC_PGA_MUX_DIFF_ENABLE
+    } mxc_adc_pga_mux_diff_t;
 
-/**
- * @brief Defines the PGA Gain Options.
- */
-typedef enum {
-    /** PGA Gain = 1 */
-    MXC_E_ADC_PGA_GAIN_1 = 0,
-    /** PGA Gain = 2 */
-    MXC_E_ADC_PGA_GAIN_2,
-    /** PGA Gain = 4 */
-    MXC_E_ADC_PGA_GAIN_4,
-    /** PGA Gain = 8 */
-    MXC_E_ADC_PGA_GAIN_8,
-} mxc_adc_pga_gain_t;
+    /**
+     * @brief Defines the PGA Gain Options.
+     */
+    typedef enum {
+        /** PGA Gain = 1 */
+        MXC_E_ADC_PGA_GAIN_1 = 0,
+        /** PGA Gain = 2 */
+        MXC_E_ADC_PGA_GAIN_2,
+        /** PGA Gain = 4 */
+        MXC_E_ADC_PGA_GAIN_4,
+        /** PGA Gain = 8 */
+        MXC_E_ADC_PGA_GAIN_8,
+    } mxc_adc_pga_gain_t;
 
-/**
- * @brief Defines the Switch Control Mode.
- */
-typedef enum {
-    /** Switch Control Mode = Software */
-    MXC_E_ADC_SPST_SW_CTRL_SOFTWARE = 0,
-    /** Switch Control Mode = Pulse Train */
-    MXC_E_ADC_SPST_SW_CTRL_PULSETRAIN
-} mxc_adc_spst_sw_ctrl_t;
+    /**
+     * @brief Defines the Switch Control Mode.
+     */
+    typedef enum {
+        /** Switch Control Mode = Software */
+        MXC_E_ADC_SPST_SW_CTRL_SOFTWARE = 0,
+        /** Switch Control Mode = Pulse Train */
+        MXC_E_ADC_SPST_SW_CTRL_PULSETRAIN
+    } mxc_adc_spst_sw_ctrl_t;
 
-/**
- * @brief Defines the number of channels to scan when Scan Mode is enabled.
- */
-typedef enum {
-    /** Number of Channels to Scan = 1 */
-    MXC_E_ADC_SCAN_CNT_1 = 0,
-    /** Number of Channels to Scan = 2 */
-    MXC_E_ADC_SCAN_CNT_2,
-    /** Number of Channels to Scan = 3 */
-    MXC_E_ADC_SCAN_CNT_3,
-    /** Number of Channels to Scan = 4 */
-    MXC_E_ADC_SCAN_CNT_4,
-    /** Number of Channels to Scan = 5 */
-    MXC_E_ADC_SCAN_CNT_5,
-    /** Number of Channels to Scan = 6 */
-    MXC_E_ADC_SCAN_CNT_6,
-    /** Number of Channels to Scan = 7 */
-    MXC_E_ADC_SCAN_CNT_7,
-    /** Number of Channels to Scan = 8 */
-    MXC_E_ADC_SCAN_CNT_8,
-} mxc_adc_scan_cnt_t;
+    /**
+     * @brief Defines the number of channels to scan when Scan Mode is enabled.
+     */
+    typedef enum {
+        /** Number of Channels to Scan = 1 */
+        MXC_E_ADC_SCAN_CNT_1 = 0,
+        /** Number of Channels to Scan = 2 */
+        MXC_E_ADC_SCAN_CNT_2,
+        /** Number of Channels to Scan = 3 */
+        MXC_E_ADC_SCAN_CNT_3,
+        /** Number of Channels to Scan = 4 */
+        MXC_E_ADC_SCAN_CNT_4,
+        /** Number of Channels to Scan = 5 */
+        MXC_E_ADC_SCAN_CNT_5,
+        /** Number of Channels to Scan = 6 */
+        MXC_E_ADC_SCAN_CNT_6,
+        /** Number of Channels to Scan = 7 */
+        MXC_E_ADC_SCAN_CNT_7,
+        /** Number of Channels to Scan = 8 */
+        MXC_E_ADC_SCAN_CNT_8,
+    } mxc_adc_scan_cnt_t;
 
-/*                                              Offset   Register Description
-                                                ======   =================================================== */
-typedef struct {
-    __IO uint32_t ctrl0;                    /*  0x0000   ADC Control Register 0                              */
-    __IO uint32_t pga_ctrl;                 /*  0x0004   PGA Control Register                                */
-    __IO uint32_t tg_ctrl0;                 /*  0x0008   ADC Timing Generator Control 0                      */
-    __IO uint32_t tg_ctrl1;                 /*  0x000C   ADC Timing Generator Control 1                      */
-    __IO uint32_t limit;                    /*  0x0010   ADC Limit Settings                                  */
-    __IO uint32_t intr;                     /*  0x0014   ADC Interrupt Flags and Enable/Disable Controls     */
-    __IO uint32_t out;                      /*  0x0018   ADC Output Register                                 */
-} mxc_adc_regs_t;
+    /*                                              Offset   Register Description
+                                                    ======   =================================================== */
+    typedef struct {
+        __IO uint32_t ctrl0; /*  0x0000   ADC Control Register 0                              */
+        __IO uint32_t pga_ctrl; /*  0x0004   PGA Control Register                                */
+        __IO uint32_t tg_ctrl0; /*  0x0008   ADC Timing Generator Control 0                      */
+        __IO uint32_t tg_ctrl1; /*  0x000C   ADC Timing Generator Control 1                      */
+        __IO uint32_t limit; /*  0x0010   ADC Limit Settings                                  */
+        __IO uint32_t intr; /*  0x0014   ADC Interrupt Flags and Enable/Disable Controls     */
+        __IO uint32_t out; /*  0x0018   ADC Output Register                                 */
+    } mxc_adc_regs_t;
 
-/*                                              Offset   Register Description
-                                                ======   =================================================== */
-typedef struct {
-    __IO uint32_t ctrl1;                    /*  0x0000   ADC Control Register 1                              */
-    __IO uint32_t scan1;                    /*  0x0004   ADC Auto-Scan Settings 1                            */
-    __IO uint32_t scan2;                    /*  0x0008   ADC Auto-Scan Settings 2                            */
-    __IO uint32_t ro_cal0;                  /*  0x000C   ADC Ring Osc Calibration 0                          */
-    __IO uint32_t ro_cal1;                  /*  0x0010   ADC Ring Osc Calibration 1                          */
-} mxc_adccfg_regs_t;
+    /*                                              Offset   Register Description
+                                                    ======   =================================================== */
+    typedef struct {
+        __IO uint32_t ctrl1; /*  0x0000   ADC Control Register 1                              */
+        __IO uint32_t scan1; /*  0x0004   ADC Auto-Scan Settings 1                            */
+        __IO uint32_t scan2; /*  0x0008   ADC Auto-Scan Settings 2                            */
+        __IO uint32_t ro_cal0; /*  0x000C   ADC Ring Osc Calibration 0                          */
+        __IO uint32_t ro_cal1; /*  0x0010   ADC Ring Osc Calibration 1                          */
+    } mxc_adccfg_regs_t;
 
-typedef struct {
-    __IO uint16_t data;                     /*  0x0000   Read to pull sample data from ADC FIFO              */
-} mxc_adc_fifo_regs_t;
+    typedef struct {
+        __IO uint16_t data; /*  0x0000   Read to pull sample data from ADC FIFO              */
+    } mxc_adc_fifo_regs_t;
 
-/*
-   Register offsets for module ADC, ADCCFG, ADC_FIFO
-*/
+    /*
+       Register offsets for module ADC, ADCCFG, ADC_FIFO
+     */
 #define MXC_R_ADC_OFFS_CTRL0                      ((uint32_t)0x00000000UL)
 #define MXC_R_ADC_OFFS_PGA_CTRL                   ((uint32_t)0x00000004UL)
 #define MXC_R_ADC_OFFS_TG_CTRL0                   ((uint32_t)0x00000008UL)
@@ -280,9 +280,9 @@ typedef struct {
 #define MXC_R_ADCCFG_OFFS_RO_CAL1                 ((uint32_t)0x00000010UL)
 #define MXC_R_ADC_FIFO_OFFS_DATA                  ((uint32_t)0x00000000UL)
 
-/*
-   Field positions and masks for module ADC.
-*/
+    /*
+       Field positions and masks for module ADC.
+     */
 #define MXC_F_ADC_CTRL0_ADC_WAKE_CNT_POS                    0
 #define MXC_F_ADC_CTRL0_ADC_WAKE_CNT                        ((uint32_t)(0x0000000FUL << MXC_F_ADC_CTRL0_ADC_WAKE_CNT_POS))
 #define MXC_F_ADC_CTRL0_ADC_STRT_MODE_POS                   5

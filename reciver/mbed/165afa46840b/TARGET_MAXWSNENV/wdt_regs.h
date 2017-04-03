@@ -40,64 +40,64 @@ extern "C" {
 
 #include <stdint.h>
 
-/**
- * @file  wdt_regs.h
- * @addtogroup wdt WDT
- * @{
- */
+    /**
+     * @file  wdt_regs.h
+     * @addtogroup wdt WDT
+     * @{
+     */
 
-/**
- * @brief Defines watchdog timer periods
- */
-typedef enum {
-    /** 2^31 cycle period */
-    MXC_E_WDT_PERIOD_2_31_CLKS = 0,
-    /** 2^30 cycle period */
-    MXC_E_WDT_PERIOD_2_30_CLKS,
-    /** 2^29 cycle period */
-    MXC_E_WDT_PERIOD_2_29_CLKS,
-    /** 2^28 cycle period */
-    MXC_E_WDT_PERIOD_2_28_CLKS,
-    /** 2^27 cycle period */
-    MXC_E_WDT_PERIOD_2_27_CLKS,
-    /** 2^26 cycle period */
-    MXC_E_WDT_PERIOD_2_26_CLKS,
-    /** 2^25 cycle period */
-    MXC_E_WDT_PERIOD_2_25_CLKS,
-    /** 2^24 cycle period */
-    MXC_E_WDT_PERIOD_2_24_CLKS,
-    /** 2^23 cycle period */
-    MXC_E_WDT_PERIOD_2_23_CLKS,
-    /** 2^22 cycle period */
-    MXC_E_WDT_PERIOD_2_22_CLKS,
-    /** 2^21 cycle period */
-    MXC_E_WDT_PERIOD_2_21_CLKS,
-    /** 2^20 cycle period */
-    MXC_E_WDT_PERIOD_2_20_CLKS,
-    /** 2^19 cycle period */
-    MXC_E_WDT_PERIOD_2_19_CLKS,
-    /** 2^18 cycle period */
-    MXC_E_WDT_PERIOD_2_18_CLKS,
-    /** 2^17 cycle period */
-    MXC_E_WDT_PERIOD_2_17_CLKS,
-    /** 2^16 cycle period */
-    MXC_E_WDT_PERIOD_2_16_CLKS,
-} mxc_wdt_period_t;
+    /**
+     * @brief Defines watchdog timer periods
+     */
+    typedef enum {
+        /** 2^31 cycle period */
+        MXC_E_WDT_PERIOD_2_31_CLKS = 0,
+        /** 2^30 cycle period */
+        MXC_E_WDT_PERIOD_2_30_CLKS,
+        /** 2^29 cycle period */
+        MXC_E_WDT_PERIOD_2_29_CLKS,
+        /** 2^28 cycle period */
+        MXC_E_WDT_PERIOD_2_28_CLKS,
+        /** 2^27 cycle period */
+        MXC_E_WDT_PERIOD_2_27_CLKS,
+        /** 2^26 cycle period */
+        MXC_E_WDT_PERIOD_2_26_CLKS,
+        /** 2^25 cycle period */
+        MXC_E_WDT_PERIOD_2_25_CLKS,
+        /** 2^24 cycle period */
+        MXC_E_WDT_PERIOD_2_24_CLKS,
+        /** 2^23 cycle period */
+        MXC_E_WDT_PERIOD_2_23_CLKS,
+        /** 2^22 cycle period */
+        MXC_E_WDT_PERIOD_2_22_CLKS,
+        /** 2^21 cycle period */
+        MXC_E_WDT_PERIOD_2_21_CLKS,
+        /** 2^20 cycle period */
+        MXC_E_WDT_PERIOD_2_20_CLKS,
+        /** 2^19 cycle period */
+        MXC_E_WDT_PERIOD_2_19_CLKS,
+        /** 2^18 cycle period */
+        MXC_E_WDT_PERIOD_2_18_CLKS,
+        /** 2^17 cycle period */
+        MXC_E_WDT_PERIOD_2_17_CLKS,
+        /** 2^16 cycle period */
+        MXC_E_WDT_PERIOD_2_16_CLKS,
+    } mxc_wdt_period_t;
 
-/*                                  Offset   Register Description
-                                    ======   ================================================ */
-typedef struct {
-    __IO uint32_t ctrl;         /*  0x0000   Watchdog Timer Control Register                  */
-    __IO uint32_t clear;        /*  0x0004   Watchdog Clear Register (Feed Dog)               */
-    __IO uint32_t int_rst_fl;   /*  0x0008   Watchdog Interrupt/Reset Flags                   */
-    __IO uint32_t int_rst_en;   /*  0x000C   Interrupt/Reset Enable/Disable Controls          */
-    __I uint32_t rsv0010;       /*  0x0010                                                    */
-    __IO uint32_t lock_ctrl;    /*  0x0014   Lock Register Setting for WDT CTRL               */
-} mxc_wdt_regs_t;
+    /*                                  Offset   Register Description
+                                        ======   ================================================ */
+    typedef struct {
+        __IO uint32_t ctrl; /*  0x0000   Watchdog Timer Control Register                  */
+        __IO uint32_t clear; /*  0x0004   Watchdog Clear Register (Feed Dog)               */
+        __IO uint32_t int_rst_fl; /*  0x0008   Watchdog Interrupt/Reset Flags                   */
+        __IO uint32_t int_rst_en; /*  0x000C   Interrupt/Reset Enable/Disable Controls          */
+        __I uint32_t rsv0010; /*  0x0010                                                    */
+        __IO uint32_t lock_ctrl; /*  0x0014   Lock Register Setting for WDT CTRL               */
+    } mxc_wdt_regs_t;
 
-/*
-   Register offsets for module WDT.
-*/
+    /*
+       Register offsets for module WDT.
+     */
 #define MXC_R_WDT_OFFS_CTRL                       ((uint32_t)0x00000000UL)
 #define MXC_R_WDT_OFFS_CLEAR                      ((uint32_t)0x00000004UL)
 #define MXC_R_WDT_OFFS_INT_RST_FL                 ((uint32_t)0x00000008UL)
@@ -108,9 +108,9 @@ typedef struct {
 #define MXC_V_WDT_WDLOCK_UNLOCK_KEY               ((uint8_t)0x42)
 
 
-/*
-   Field positions and masks for module WDT.
-*/
+    /*
+       Field positions and masks for module WDT.
+     */
 #define MXC_F_WDT_CTRL_INT_PERIOD_POS       0
 #define MXC_F_WDT_CTRL_INT_PERIOD           ((uint32_t)(0x0000000FUL << MXC_F_WDT_CTRL_INT_PERIOD_POS))
 #define MXC_F_WDT_CTRL_RST_PERIOD_POS       4
@@ -144,7 +144,7 @@ typedef struct {
 #endif
 
 /**
-* @}
-*/
+ * @}
+ */
 
 #endif   /* _MXC_WDT_REGS_H_ */

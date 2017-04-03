@@ -48,53 +48,53 @@ typedef enum IRQn_Type {
     SysTick_IRQn = -1,
 
     /* Externals interrupts */
-    UART0_IRQn = 0,      /* 16:01 UART0 */
-    UART1_IRQn,          /* 17: 2 UART1 */
-    I2CM0_IRQn,          /* 18: 3 I2C Master 0 */
-    I2CS_IRQn,           /* 19: 4 I2C Slave */
-    USB_IRQn,            /* 20: 5 USB */
-    PMU_IRQn,            /* 21: 6 DMA */
-    AFE_IRQn,            /* 22: 7 AFE */
-    MAA_IRQn,            /* 23: 8 MAA */
-    AES_IRQn,            /* 24: 9 AES */
-    SPI0_IRQn,           /* 25:10 SPI0 */
-    SPI1_IRQn,           /* 26:11 SPI1 */
-    SPI2_IRQn,           /* 27:12 SPI2 */
-    TMR0_IRQn,           /* 28:13 Timer32-0 */
-    TMR1_IRQn,           /* 29:14 Timer32-1 */
-    TMR2_IRQn,           /* 30:15 Timer32-1 */
-    TMR3_IRQn,           /* 31:16 Timer32-2 */
-    RSVD0_IRQn,          /* 32:17 RSVD */
-    RSVD1_IRQn,          /* 33:18 RSVD */
-    DAC0_IRQn,           /* 34:19 DAC0  (12-bit DAC) */
-    DAC1_IRQn,           /* 35:20 DAC1  (12-bit DAC) */
-    DAC2_IRQn,           /* 36:21 DAC2  (8-bit DAC) */
-    DAC3_IRQn,           /* 37:22 DAC3  (8-bit DAC) */
-    ADC_IRQn,            /* 38:23 ADC */
-    FLC_IRQn,            /* 39:24 Flash Controller */
-    PWRMAN_IRQn,         /* 40:25 PWRMAN */
-    CLKMAN_IRQn,         /* 41:26 CLKMAN */
-    RTC0_IRQn,           /* 42:27 RTC INT0 */
-    RTC1_IRQn,           /* 43:28 RTC INT1 */
-    RTC2_IRQn,           /* 44:29 RTC INT2 */
-    RTC3_IRQn,           /* 45:30 RTC INT3 */
-    WDT0_IRQn,           /* 46:31 WATCHDOG0 */
-    WDT0_P_IRQn,         /* 47:32 WATCHDOG0 PRE-WINDOW */
-    WDT1_IRQn,           /* 48:33 WATCHDOG1 */
-    WDT1_P_IRQn,         /* 49:34 WATCHDOG1 PRE-WINDOW */
-    GPIO_P0_IRQn,        /* 50:35 GPIO Port 0  */
-    GPIO_P1_IRQn,        /* 51:36 GPIO Port 1  */
-    GPIO_P2_IRQn,        /* 52:37 GPIO Port 2  */
-    GPIO_P3_IRQn,        /* 53:38 GPIO Port 3  */
-    GPIO_P4_IRQn,        /* 54:39 GPIO Port 4  */
-    GPIO_P5_IRQn,        /* 55:40 GPIO Port 5  */
-    GPIO_P6_IRQn,        /* 56:41 GPIO Port 6  */
-    GPIO_P7_IRQn,        /* 57:42 GPIO Port 7  */
-    TMR16_0_IRQn,        /* 58:43 Timer16-s0 */
-    TMR16_1_IRQn,        /* 59:44 Timer16-s1 */
-    TMR16_2_IRQn,        /* 60:45 Timer16-s2 */
-    TMR16_3_IRQn,        /* 61:46 Timer16-s3 */
-    I2CM1_IRQn,          /* 62:47 I2C Master 1 */
+    UART0_IRQn = 0, /* 16:01 UART0 */
+    UART1_IRQn, /* 17: 2 UART1 */
+    I2CM0_IRQn, /* 18: 3 I2C Master 0 */
+    I2CS_IRQn, /* 19: 4 I2C Slave */
+    USB_IRQn, /* 20: 5 USB */
+    PMU_IRQn, /* 21: 6 DMA */
+    AFE_IRQn, /* 22: 7 AFE */
+    MAA_IRQn, /* 23: 8 MAA */
+    AES_IRQn, /* 24: 9 AES */
+    SPI0_IRQn, /* 25:10 SPI0 */
+    SPI1_IRQn, /* 26:11 SPI1 */
+    SPI2_IRQn, /* 27:12 SPI2 */
+    TMR0_IRQn, /* 28:13 Timer32-0 */
+    TMR1_IRQn, /* 29:14 Timer32-1 */
+    TMR2_IRQn, /* 30:15 Timer32-1 */
+    TMR3_IRQn, /* 31:16 Timer32-2 */
+    RSVD0_IRQn, /* 32:17 RSVD */
+    RSVD1_IRQn, /* 33:18 RSVD */
+    DAC0_IRQn, /* 34:19 DAC0  (12-bit DAC) */
+    DAC1_IRQn, /* 35:20 DAC1  (12-bit DAC) */
+    DAC2_IRQn, /* 36:21 DAC2  (8-bit DAC) */
+    DAC3_IRQn, /* 37:22 DAC3  (8-bit DAC) */
+    ADC_IRQn, /* 38:23 ADC */
+    FLC_IRQn, /* 39:24 Flash Controller */
+    PWRMAN_IRQn, /* 40:25 PWRMAN */
+    CLKMAN_IRQn, /* 41:26 CLKMAN */
+    RTC0_IRQn, /* 42:27 RTC INT0 */
+    RTC1_IRQn, /* 43:28 RTC INT1 */
+    RTC2_IRQn, /* 44:29 RTC INT2 */
+    RTC3_IRQn, /* 45:30 RTC INT3 */
+    WDT0_IRQn, /* 46:31 WATCHDOG0 */
+    WDT0_P_IRQn, /* 47:32 WATCHDOG0 PRE-WINDOW */
+    WDT1_IRQn, /* 48:33 WATCHDOG1 */
+    WDT1_P_IRQn, /* 49:34 WATCHDOG1 PRE-WINDOW */
+    GPIO_P0_IRQn, /* 50:35 GPIO Port 0  */
+    GPIO_P1_IRQn, /* 51:36 GPIO Port 1  */
+    GPIO_P2_IRQn, /* 52:37 GPIO Port 2  */
+    GPIO_P3_IRQn, /* 53:38 GPIO Port 3  */
+    GPIO_P4_IRQn, /* 54:39 GPIO Port 4  */
+    GPIO_P5_IRQn, /* 55:40 GPIO Port 5  */
+    GPIO_P6_IRQn, /* 56:41 GPIO Port 6  */
+    GPIO_P7_IRQn, /* 57:42 GPIO Port 7  */
+    TMR16_0_IRQn, /* 58:43 Timer16-s0 */
+    TMR16_1_IRQn, /* 59:44 Timer16-s1 */
+    TMR16_2_IRQn, /* 60:45 Timer16-s2 */
+    TMR16_3_IRQn, /* 61:46 Timer16-s3 */
+    I2CM1_IRQn, /* 62:47 I2C Master 1 */
     MXC_IRQ_EXT_COUNT,
 } IRQn_Type;
 
@@ -508,6 +508,7 @@ typedef enum IRQn_Type {
 
 #define MXC_BASE_PMU_BITBAND            ((uint32_t)0x42E00000UL)
 #define MXC_BASE_PMU_BITBAND_CHOFFSET   ((uint32_t)0x00000400UL)
+
 /*******************************************************************************/
 
 typedef enum {

@@ -39,72 +39,72 @@ extern "C" {
 
 #include <stdint.h>
 
-/*******************************************************************************
- **************************   GLOBAL VARIABLES   *******************************
- ******************************************************************************/
+    /*******************************************************************************
+     **************************   GLOBAL VARIABLES   *******************************
+     ******************************************************************************/
 
-extern uint32_t SystemCoreClock;    /**< System Clock Frequency (Core Clock) */
+    extern uint32_t SystemCoreClock; /**< System Clock Frequency (Core Clock) */
 
-/*******************************************************************************
- *****************************   PROTOTYPES   **********************************
- ******************************************************************************/
+    /*******************************************************************************
+     *****************************   PROTOTYPES   **********************************
+     ******************************************************************************/
 
-/* Interrupt routines - prototypes */
+    /* Interrupt routines - prototypes */
 #if defined(_EFM32_GIANT_FAMILY)
-void Reset_Handler(void);
-void NMI_Handler(void);
-void HardFault_Handler(void);
-void MemManage_Handler(void);
-void BusFault_Handler(void);
-void UsageFault_Handler(void);
-void SVC_Handler(void);
-void DebugMon_Handler(void);
-void PendSV_Handler(void);
-void SysTick_Handler(void);
-void DMA_IRQHandler(void);
-void GPIO_EVEN_IRQHandler(void);
-void TIMER0_IRQHandler(void);
-void USART0_RX_IRQHandler(void);
-void USART0_TX_IRQHandler(void);
-void USB_IRQHandler(void);
-void ACMP0_IRQHandler(void);
-void ADC0_IRQHandler(void);
-void DAC0_IRQHandler(void);
-void I2C0_IRQHandler(void);
-void I2C1_IRQHandler(void);
-void GPIO_ODD_IRQHandler(void);
-void TIMER1_IRQHandler(void);
-void TIMER2_IRQHandler(void);
-void TIMER3_IRQHandler(void);
-void USART1_RX_IRQHandler(void);
-void USART1_TX_IRQHandler(void);
-void LESENSE_IRQHandler(void);
-void USART2_RX_IRQHandler(void);
-void USART2_TX_IRQHandler(void);
-void UART0_RX_IRQHandler(void);
-void UART0_TX_IRQHandler(void);
-void UART1_RX_IRQHandler(void);
-void UART1_TX_IRQHandler(void);
-void LEUART0_IRQHandler(void);
-void LEUART1_IRQHandler(void);
-void LETIMER0_IRQHandler(void);
-void PCNT0_IRQHandler(void);
-void PCNT1_IRQHandler(void);
-void PCNT2_IRQHandler(void);
-void RTC_IRQHandler(void);
-void BURTC_IRQHandler(void);
-void CMU_IRQHandler(void);
-void VCMP_IRQHandler(void);
-void LCD_IRQHandler(void);
-void MSC_IRQHandler(void);
-void AES_IRQHandler(void);
-void EBI_IRQHandler(void);
-void EMU_IRQHandler(void);
+    void Reset_Handler(void);
+    void NMI_Handler(void);
+    void HardFault_Handler(void);
+    void MemManage_Handler(void);
+    void BusFault_Handler(void);
+    void UsageFault_Handler(void);
+    void SVC_Handler(void);
+    void DebugMon_Handler(void);
+    void PendSV_Handler(void);
+    void SysTick_Handler(void);
+    void DMA_IRQHandler(void);
+    void GPIO_EVEN_IRQHandler(void);
+    void TIMER0_IRQHandler(void);
+    void USART0_RX_IRQHandler(void);
+    void USART0_TX_IRQHandler(void);
+    void USB_IRQHandler(void);
+    void ACMP0_IRQHandler(void);
+    void ADC0_IRQHandler(void);
+    void DAC0_IRQHandler(void);
+    void I2C0_IRQHandler(void);
+    void I2C1_IRQHandler(void);
+    void GPIO_ODD_IRQHandler(void);
+    void TIMER1_IRQHandler(void);
+    void TIMER2_IRQHandler(void);
+    void TIMER3_IRQHandler(void);
+    void USART1_RX_IRQHandler(void);
+    void USART1_TX_IRQHandler(void);
+    void LESENSE_IRQHandler(void);
+    void USART2_RX_IRQHandler(void);
+    void USART2_TX_IRQHandler(void);
+    void UART0_RX_IRQHandler(void);
+    void UART0_TX_IRQHandler(void);
+    void UART1_RX_IRQHandler(void);
+    void UART1_TX_IRQHandler(void);
+    void LEUART0_IRQHandler(void);
+    void LEUART1_IRQHandler(void);
+    void LETIMER0_IRQHandler(void);
+    void PCNT0_IRQHandler(void);
+    void PCNT1_IRQHandler(void);
+    void PCNT2_IRQHandler(void);
+    void RTC_IRQHandler(void);
+    void BURTC_IRQHandler(void);
+    void CMU_IRQHandler(void);
+    void VCMP_IRQHandler(void);
+    void LCD_IRQHandler(void);
+    void MSC_IRQHandler(void);
+    void AES_IRQHandler(void);
+    void EBI_IRQHandler(void);
+    void EMU_IRQHandler(void);
 #endif
 
-uint32_t SystemCoreClockGet(void);
+    uint32_t SystemCoreClockGet(void);
 
-/**************************************************************************//**
+    /**************************************************************************//**
  * @brief
  *   Update CMSIS SystemCoreClock variable.
  *
@@ -118,19 +118,19 @@ uint32_t SystemCoreClockGet(void);
  *   for CMSIS compliance and if a user modifies the the core clock outside
  *   the CMU API.
  *****************************************************************************/
-static __INLINE void SystemCoreClockUpdate(void)
-{
-  SystemCoreClockGet();
-}
 
-void SystemInit(void);
-uint32_t SystemHFClockGet(void);
-uint32_t SystemHFXOClockGet(void);
-void SystemHFXOClockSet(uint32_t freq);
-uint32_t SystemLFRCOClockGet(void);
-uint32_t SystemULFRCOClockGet(void);
-uint32_t SystemLFXOClockGet(void);
-void SystemLFXOClockSet(uint32_t freq);
+    static __INLINE void SystemCoreClockUpdate(void) {
+        SystemCoreClockGet();
+    }
+
+    void SystemInit(void);
+    uint32_t SystemHFClockGet(void);
+    uint32_t SystemHFXOClockGet(void);
+    void SystemHFXOClockSet(uint32_t freq);
+    uint32_t SystemLFRCOClockGet(void);
+    uint32_t SystemULFRCOClockGet(void);
+    uint32_t SystemLFXOClockGet(void);
+    void SystemLFXOClockSet(uint32_t freq);
 
 #ifdef __cplusplus
 }

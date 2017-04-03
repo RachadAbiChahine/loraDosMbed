@@ -7,7 +7,7 @@
 extern "C" {
 #endif
 
-uint32_t __reserved_stack_size();
+    uint32_t __reserved_stack_size();
 
 #ifdef __cplusplus
 }

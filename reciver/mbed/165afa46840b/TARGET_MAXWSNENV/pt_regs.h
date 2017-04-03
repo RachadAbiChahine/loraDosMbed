@@ -40,36 +40,36 @@ extern "C" {
 
 #include <stdint.h>
 
-/**
- * @file  pt_regs.h
- * @addtogroup pt PT
- * @{
- */
+    /**
+     * @file  pt_regs.h
+     * @addtogroup pt PT
+     * @{
+     */
 
-typedef struct {
-    __IO uint32_t ctrl;
-    __IO uint32_t resync;
-} mxc_ptg_regs_t;
+    typedef struct {
+        __IO uint32_t ctrl;
+        __IO uint32_t resync;
+    } mxc_ptg_regs_t;
 
-/*                                      Offset   Register Description
-                                        ======   ================================================== */
-typedef struct {
-    __IO uint32_t rate_length;      /*  0x0000   Pulse train Output length and rate                 */
-    __IO uint32_t train;            /*  0x0004   Pulse Train Output Pattern                         */
-} mxc_pt_regs_t;
+    /*                                      Offset   Register Description
+                                            ======   ================================================== */
+    typedef struct {
+        __IO uint32_t rate_length; /*  0x0000   Pulse train Output length and rate                 */
+        __IO uint32_t train; /*  0x0004   Pulse Train Output Pattern                         */
+    } mxc_pt_regs_t;
 
-/*
-   Register offsets for module PT.
-*/
+    /*
+       Register offsets for module PT.
+     */
 #define MXC_R_PTG_OFFS_CTRL                         ((uint32_t)0x00000000UL)
 #define MXC_R_PTG_OFFS_RESYNC                       ((uint32_t)0x00000004UL)
 #define MXC_R_PT_OFFS_RATE_LENGTH                   ((uint32_t)0x00000000UL)
 #define MXC_R_PT_OFFS_TRAIN                         ((uint32_t)0x00000004UL)
 
 
-/*
-   Field positions and masks for module PT.
-*/
+    /*
+       Field positions and masks for module PT.
+     */
 #define MXC_F_PT_CTRL_ENABLE_ALL_POS                1
 #define MXC_F_PT_CTRL_ENABLE_ALL                    ((uint32_t)(0x00000001UL << MXC_F_PT_CTRL_ENABLE_ALL_POS))
 
@@ -95,9 +95,9 @@ typedef struct {
 #define MXC_F_PT_RATE_LENGTH_MODE_POS               27
 #define MXC_F_PT_RATE_LENGTH_MODE                   ((uint32_t)(0x0000001FUL << MXC_F_PT_RATE_LENGTH_MODE_POS))
 
-/*
-   Field values and shifted values for module PT.
-*/
+    /*
+       Field values and shifted values for module PT.
+     */
 #define MXC_V_PT_RATE_LENGTH_MODE_32_BIT_PATTERN    ((uint32_t)(0x0x00000000UL))
 #define MXC_V_PT_RATE_LENGTH_MODE_SQUARE_WAVE       ((uint32_t)(0x0x00000001UL))
 #define MXC_V_PT_RATE_LENGTH_MODE_2_BIT_PATTERN     ((uint32_t)(0x0x00000002UL))
@@ -169,7 +169,7 @@ typedef struct {
 #endif
 
 /**
-* @}
-*/
+ * @}
+ */
 
 #endif   /* _MXC_PT_REGS_H_ */

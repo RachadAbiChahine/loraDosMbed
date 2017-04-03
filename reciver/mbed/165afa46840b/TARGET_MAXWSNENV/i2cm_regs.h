@@ -40,37 +40,37 @@ extern "C" {
 
 #include <stdint.h>
 
-/**
- * @file  i2cm_regs.h
- * @addtogroup i2cm I2CM
- * @{
- */
+    /**
+     * @file  i2cm_regs.h
+     * @addtogroup i2cm I2CM
+     * @{
+     */
 
-/*                                      Offset   Register Description
-                                        ======   ================================================ */
-typedef struct {
-    __IO uint32_t fs_clk_div;       /*  0x0000   Full Speed SCL Clock Settings                    */
-    __IO uint32_t hs_clk_div;       /*  0x0004   High Speed SCL Clock Settings                    */
-    __I uint32_t rsv0008;           /*  0x0008                                                    */
-    __IO uint32_t timeout;          /*  0x000C   [TO_CNTL] Timeout and Auto-Stop Settings         */
-    __IO uint32_t ctrl;             /*  0x0010   [EN_CNTL] I2C Master Control Register            */
-    __IO uint32_t trans;            /*  0x0014   [MSTR_CNTL] I2C Master Tx Start and Status Flags */
-    __IO uint32_t intfl;            /*  0x0018   Interrupt Flags                                  */
-    __IO uint32_t inten;            /*  0x001C   Interrupt Enable/Disable Controls                */
-    __I uint32_t rsv0020[2];        /*  0x0020                                                    */
-    __IO uint32_t bb;               /*  0x0028   Bit-Bang Control Register                        */
-} mxc_i2cm_regs_t;
+    /*                                      Offset   Register Description
+                                            ======   ================================================ */
+    typedef struct {
+        __IO uint32_t fs_clk_div; /*  0x0000   Full Speed SCL Clock Settings                    */
+        __IO uint32_t hs_clk_div; /*  0x0004   High Speed SCL Clock Settings                    */
+        __I uint32_t rsv0008; /*  0x0008                                                    */
+        __IO uint32_t timeout; /*  0x000C   [TO_CNTL] Timeout and Auto-Stop Settings         */
+        __IO uint32_t ctrl; /*  0x0010   [EN_CNTL] I2C Master Control Register            */
+        __IO uint32_t trans; /*  0x0014   [MSTR_CNTL] I2C Master Tx Start and Status Flags */
+        __IO uint32_t intfl; /*  0x0018   Interrupt Flags                                  */
+        __IO uint32_t inten; /*  0x001C   Interrupt Enable/Disable Controls                */
+        __I uint32_t rsv0020[2]; /*  0x0020                                                    */
+        __IO uint32_t bb; /*  0x0028   Bit-Bang Control Register                        */
+    } mxc_i2cm_regs_t;
 
-/*                                      Offset   Register Description
-                                        ======   ================================================ */
-typedef struct {
-    __IO uint32_t trans[512];       /*  0x0000   I2C Master Transaction FIFO                      */
-    __IO uint32_t rslts[512];       /*  0x0800   I2C Master Results FIFO                          */
-} mxc_i2cm_fifo_regs_t;
+    /*                                      Offset   Register Description
+                                            ======   ================================================ */
+    typedef struct {
+        __IO uint32_t trans[512]; /*  0x0000   I2C Master Transaction FIFO                      */
+        __IO uint32_t rslts[512]; /*  0x0800   I2C Master Results FIFO                          */
+    } mxc_i2cm_fifo_regs_t;
 
-/*
-   Register offsets for module I2CM.
-*/
+    /*
+       Register offsets for module I2CM.
+     */
 #define MXC_R_I2CM_OFFS_FS_CLK_DIV                ((uint32_t)0x00000000UL)
 #define MXC_R_I2CM_OFFS_HS_CLK_DIV                ((uint32_t)0x00000004UL)
 #define MXC_R_I2CM_OFFS_TIMEOUT                   ((uint32_t)0x0000000CUL)
@@ -84,9 +84,9 @@ typedef struct {
 #define MXC_R_I2CM_FIFO_OFFS_TRANS                ((uint32_t)0x00000000UL)
 #define MXC_R_I2CM_FIFO_OFFS_RSLTS                ((uint32_t)0x00000800UL)
 
-/*
-   Field positions and masks for module I2CM.
-*/
+    /*
+       Field positions and masks for module I2CM.
+     */
 #define MXC_S_I2CM_TRANS_TAG_START                0x000
 #define MXC_S_I2CM_TRANS_TAG_TXDATA_ACK           0x100
 #define MXC_S_I2CM_TRANS_TAG_TXDATA_NACK          0x200
@@ -186,7 +186,7 @@ typedef struct {
 #endif
 
 /**
-* @}
-*/
+ * @}
+ */
 
 #endif

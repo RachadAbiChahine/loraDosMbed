@@ -737,32 +737,32 @@ typedef struct
                                      ((__REGTRIG__) == ADC_EXTERNALTRIG_T15_TRGO) || \
                                      ((__REGTRIG__) == ADC_EXTERNALTRIG_T3_CC4)   || \
                                                                                  \
-                                     ((__REGTRIG__) == ADC_SOFTWARE_START)           )	
-								 
+                                     ((__REGTRIG__) == ADC_SOFTWARE_START)           ) 
 
 
-/**
-  * @brief Verify the ADC regular conversions check for converted data availability.
-  * @param __EOC_SELECTION__: converted data availability check.
-  * @retval SET (__EOC_SELECTION__ is a valid value) or RESET (__EOC_SELECTION__ is invalid)
-  */ 								 
+
+    /**
+     * @brief Verify the ADC regular conversions check for converted data availability.
+     * @param __EOC_SELECTION__: converted data availability check.
+     * @retval SET (__EOC_SELECTION__ is a valid value) or RESET (__EOC_SELECTION__ is invalid)
+     */
 #define IS_ADC_EOC_SELECTION(__EOC_SELECTION__) (((__EOC_SELECTION__) == ADC_EOC_SINGLE_CONV)    || \
                                                  ((__EOC_SELECTION__) == ADC_EOC_SEQ_CONV)       || \
                                                  ((__EOC_SELECTION__) == ADC_EOC_SINGLE_SEQ_CONV)  )
-	
-/**
-  * @brief Verify the ADC regular conversions overrun handling.
-  * @param __OVR__: ADC regular conversions overrun handling.
-  * @retval SET (__OVR__ is a valid value) or RESET (__OVR__ is invalid)
-  */ 		
+
+    /**
+     * @brief Verify the ADC regular conversions overrun handling.
+     * @param __OVR__: ADC regular conversions overrun handling.
+     * @retval SET (__OVR__ is a valid value) or RESET (__OVR__ is invalid)
+     */
 #define IS_ADC_OVERRUN(__OVR__) (((__OVR__) == ADC_OVR_DATA_PRESERVED)  || \
-                                 ((__OVR__) == ADC_OVR_DATA_OVERWRITTEN)  )	                                   
-	
-/**
-  * @brief Verify the ADC conversions sampling time.
-  * @param __TIME__: ADC conversions sampling time.
-  * @retval SET (__TIME__ is a valid value) or RESET (__TIME__ is invalid)
-  */
+                                 ((__OVR__) == ADC_OVR_DATA_OVERWRITTEN)  )                                    
+
+    /**
+     * @brief Verify the ADC conversions sampling time.
+     * @param __TIME__: ADC conversions sampling time.
+     * @retval SET (__TIME__ is a valid value) or RESET (__TIME__ is invalid)
+     */
 #define IS_ADC_SAMPLE_TIME(__TIME__) (((__TIME__) == ADC_SAMPLETIME_2CYCLE_5)    || \
                                       ((__TIME__) == ADC_SAMPLETIME_6CYCLES_5)   || \
                                       ((__TIME__) == ADC_SAMPLETIME_12CYCLES_5)  || \
@@ -770,259 +770,259 @@ typedef struct
                                       ((__TIME__) == ADC_SAMPLETIME_47CYCLES_5)  || \
                                       ((__TIME__) == ADC_SAMPLETIME_92CYCLES_5)  || \
                                       ((__TIME__) == ADC_SAMPLETIME_247CYCLES_5) || \
-                                      ((__TIME__) == ADC_SAMPLETIME_640CYCLES_5)   )	     
-/**
-  * @}
-  */ 
-  
-  
-/* Private constants ---------------------------------------------------------*/  
-  
-/** @defgroup ADC_Private_Constants ADC Private Constants
-  * @{
-  */                         
-   
-/* Fixed timeout values for ADC conversion (including sampling time)        */
-/* Maximum sampling time is 640.5 ADC clock cycle (SMPx[2:0] = 0b111        */
-/* Maximum conversion time is 12.5 + Maximum sampling time                  */
-/*                       or 12.5  + 640.5 = 653 ADC clock cycles            */
-/* Minimum ADC Clock frequency is 0.14 MHz                                  */
-/* Maximum conversion time is                                               */
-/*              653 / 0.14 MHz = 4.66 ms                                    */
+                                      ((__TIME__) == ADC_SAMPLETIME_640CYCLES_5)   )      
+    /**
+     * @}
+     */
+
+
+    /* Private constants ---------------------------------------------------------*/
+
+    /** @defgroup ADC_Private_Constants ADC Private Constants
+     * @{
+     */
+
+    /* Fixed timeout values for ADC conversion (including sampling time)        */
+    /* Maximum sampling time is 640.5 ADC clock cycle (SMPx[2:0] = 0b111        */
+    /* Maximum conversion time is 12.5 + Maximum sampling time                  */
+    /*                       or 12.5  + 640.5 = 653 ADC clock cycles            */
+    /* Minimum ADC Clock frequency is 0.14 MHz                                  */
+    /* Maximum conversion time is                                               */
+    /*              653 / 0.14 MHz = 4.66 ms                                    */
 #define ADC_STOP_CONVERSION_TIMEOUT     ((uint32_t) 5)      /*!< ADC stop time-out value */ 
 
-/* Delay for temperature sensor stabilization time.                         */
-/* Maximum delay is 10 us (refer device DataSheet, parameter t_START).      */
-/* Delay in CPU cycles, fixed to worst case with maximum CPU frequency      */
-/* equal to 80 MHz.                                                         */
-/* The minimum number of CPU cycles to fulfill this delay is 800            */
+    /* Delay for temperature sensor stabilization time.                         */
+    /* Maximum delay is 10 us (refer device DataSheet, parameter t_START).      */
+    /* Delay in CPU cycles, fixed to worst case with maximum CPU frequency      */
+    /* equal to 80 MHz.                                                         */
+    /* The minimum number of CPU cycles to fulfill this delay is 800            */
 #define ADC_TEMPSENSOR_DELAY_CPU_CYCLES    ((uint32_t)800)  /*!< ADC temperature sensor stabilization duration */ 
 
-/**
-  * @}
-  */ 
+    /**
+     * @}
+     */
 
-/* Exported macros -----------------------------------------------------------*/
-         
-/** @defgroup ADC_Exported_Macro ADC Exported Macros
-  * @{
-  */
-      
-/** @brief  Reset ADC handle state.
-  * @param  __HANDLE__: ADC handle.
-  * @retval None
-  */
+    /* Exported macros -----------------------------------------------------------*/
+
+    /** @defgroup ADC_Exported_Macro ADC Exported Macros
+     * @{
+     */
+
+    /** @brief  Reset ADC handle state.
+     * @param  __HANDLE__: ADC handle.
+     * @retval None
+     */
 #define __HAL_ADC_RESET_HANDLE_STATE(__HANDLE__) ((__HANDLE__)->State = HAL_ADC_STATE_RESET)                                                                        
-         
-         
-/** @brief  Check whether the specified ADC interrupt source is enabled or not.
-  * @param __HANDLE__: ADC handle.
-  * @param __INTERRUPT__: ADC interrupt source to check
-  *          This parameter can be one of the following values:
-  *            @arg ADC_IT_RDY,    ADC Ready (ADRDY) interrupt source
-  *            @arg ADC_IT_EOSMP,  ADC End of Sampling interrupt source
-  *            @arg ADC_IT_EOC,    ADC End of Regular Conversion interrupt source
-  *            @arg ADC_IT_EOS,    ADC End of Regular sequence of Conversions interrupt source
-  *            @arg ADC_IT_OVR,    ADC overrun interrupt source
-  *            @arg ADC_IT_JEOC,   ADC End of Injected Conversion interrupt source
-  *            @arg ADC_IT_JEOS,   ADC End of Injected sequence of Conversions interrupt source
-  *            @arg ADC_IT_AWD1,   ADC Analog watchdog 1 interrupt source (main analog watchdog)
-  *            @arg ADC_IT_AWD2,   ADC Analog watchdog 2 interrupt source (additional analog watchdog)
-  *            @arg ADC_IT_AWD3,   ADC Analog watchdog 3 interrupt source (additional analog watchdog)
-  *            @arg ADC_IT_JQOVF,  ADC Injected Context Queue Overflow interrupt source.  
-  * @retval State of interruption (SET or RESET)
-  */
+
+
+    /** @brief  Check whether the specified ADC interrupt source is enabled or not.
+     * @param __HANDLE__: ADC handle.
+     * @param __INTERRUPT__: ADC interrupt source to check
+     *          This parameter can be one of the following values:
+     *            @arg ADC_IT_RDY,    ADC Ready (ADRDY) interrupt source
+     *            @arg ADC_IT_EOSMP,  ADC End of Sampling interrupt source
+     *            @arg ADC_IT_EOC,    ADC End of Regular Conversion interrupt source
+     *            @arg ADC_IT_EOS,    ADC End of Regular sequence of Conversions interrupt source
+     *            @arg ADC_IT_OVR,    ADC overrun interrupt source
+     *            @arg ADC_IT_JEOC,   ADC End of Injected Conversion interrupt source
+     *            @arg ADC_IT_JEOS,   ADC End of Injected sequence of Conversions interrupt source
+     *            @arg ADC_IT_AWD1,   ADC Analog watchdog 1 interrupt source (main analog watchdog)
+     *            @arg ADC_IT_AWD2,   ADC Analog watchdog 2 interrupt source (additional analog watchdog)
+     *            @arg ADC_IT_AWD3,   ADC Analog watchdog 3 interrupt source (additional analog watchdog)
+     *            @arg ADC_IT_JQOVF,  ADC Injected Context Queue Overflow interrupt source.  
+     * @retval State of interruption (SET or RESET)
+     */
 #define __HAL_ADC_GET_IT_SOURCE(__HANDLE__, __INTERRUPT__)                     \
     (( ((__HANDLE__)->Instance->IER & (__INTERRUPT__)) == (__INTERRUPT__)      \
      )? SET : RESET                                                            \
     )
 
-/**
-  * @brief Enable an ADC interrupt.
-  * @param __HANDLE__: ADC handle.
-  * @param __INTERRUPT__: ADC Interrupt to enable
-   *          This parameter can be one of the following values:
-  *            @arg ADC_IT_RDY,    ADC Ready (ADRDY) interrupt source
-  *            @arg ADC_IT_EOSMP,  ADC End of Sampling interrupt source
-  *            @arg ADC_IT_EOC,    ADC End of Regular Conversion interrupt source
-  *            @arg ADC_IT_EOS,    ADC End of Regular sequence of Conversions interrupt source
-  *            @arg ADC_IT_OVR,    ADC overrun interrupt source
-  *            @arg ADC_IT_JEOC,   ADC End of Injected Conversion interrupt source
-  *            @arg ADC_IT_JEOS,   ADC End of Injected sequence of Conversions interrupt source
-  *            @arg ADC_IT_AWD1,   ADC Analog watchdog 1 interrupt source (main analog watchdog)
-  *            @arg ADC_IT_AWD2,   ADC Analog watchdog 2 interrupt source (additional analog watchdog)
-  *            @arg ADC_IT_AWD3,  ADC Analog watchdog 3 interrupt source (additional analog watchdog)
-  *            @arg ADC_IT_JQOVF,  ADC Injected Context Queue Overflow interrupt source. 
-  * @retval None
-  */
+    /**
+     * @brief Enable an ADC interrupt.
+     * @param __HANDLE__: ADC handle.
+     * @param __INTERRUPT__: ADC Interrupt to enable
+     *          This parameter can be one of the following values:
+     *            @arg ADC_IT_RDY,    ADC Ready (ADRDY) interrupt source
+     *            @arg ADC_IT_EOSMP,  ADC End of Sampling interrupt source
+     *            @arg ADC_IT_EOC,    ADC End of Regular Conversion interrupt source
+     *            @arg ADC_IT_EOS,    ADC End of Regular sequence of Conversions interrupt source
+     *            @arg ADC_IT_OVR,    ADC overrun interrupt source
+     *            @arg ADC_IT_JEOC,   ADC End of Injected Conversion interrupt source
+     *            @arg ADC_IT_JEOS,   ADC End of Injected sequence of Conversions interrupt source
+     *            @arg ADC_IT_AWD1,   ADC Analog watchdog 1 interrupt source (main analog watchdog)
+     *            @arg ADC_IT_AWD2,   ADC Analog watchdog 2 interrupt source (additional analog watchdog)
+     *            @arg ADC_IT_AWD3,  ADC Analog watchdog 3 interrupt source (additional analog watchdog)
+     *            @arg ADC_IT_JQOVF,  ADC Injected Context Queue Overflow interrupt source. 
+     * @retval None
+     */
 #define __HAL_ADC_ENABLE_IT(__HANDLE__, __INTERRUPT__) (((__HANDLE__)->Instance->IER) |= (__INTERRUPT__))
 
-/**
-  * @brief Disable an ADC interrupt.
-  * @param __HANDLE__: ADC handle.
-  * @param __INTERRUPT__: ADC Interrupt to disable
-  *            @arg ADC_IT_RDY,    ADC Ready (ADRDY) interrupt source
-  *            @arg ADC_IT_EOSMP,  ADC End of Sampling interrupt source
-  *            @arg ADC_IT_EOC,    ADC End of Regular Conversion interrupt source
-  *            @arg ADC_IT_EOS,    ADC End of Regular sequence of Conversions interrupt source
-  *            @arg ADC_IT_OVR,    ADC overrun interrupt source
-  *            @arg ADC_IT_JEOC,   ADC End of Injected Conversion interrupt source
-  *            @arg ADC_IT_JEOS,   ADC End of Injected sequence of Conversions interrupt source
-  *            @arg ADC_IT_AWD1,   ADC Analog watchdog 1 interrupt source (main analog watchdog)
-  *            @arg ADC_IT_AWD2,   ADC Analog watchdog 2 interrupt source (additional analog watchdog)
-  *            @arg ADC_IT_AWD3,   ADC Analog watchdog 3 interrupt source (additional analog watchdog)
-  *            @arg ADC_IT_JQOVF,  ADC Injected Context Queue Overflow interrupt source. 
-  * @retval None
-  */
+    /**
+     * @brief Disable an ADC interrupt.
+     * @param __HANDLE__: ADC handle.
+     * @param __INTERRUPT__: ADC Interrupt to disable
+     *            @arg ADC_IT_RDY,    ADC Ready (ADRDY) interrupt source
+     *            @arg ADC_IT_EOSMP,  ADC End of Sampling interrupt source
+     *            @arg ADC_IT_EOC,    ADC End of Regular Conversion interrupt source
+     *            @arg ADC_IT_EOS,    ADC End of Regular sequence of Conversions interrupt source
+     *            @arg ADC_IT_OVR,    ADC overrun interrupt source
+     *            @arg ADC_IT_JEOC,   ADC End of Injected Conversion interrupt source
+     *            @arg ADC_IT_JEOS,   ADC End of Injected sequence of Conversions interrupt source
+     *            @arg ADC_IT_AWD1,   ADC Analog watchdog 1 interrupt source (main analog watchdog)
+     *            @arg ADC_IT_AWD2,   ADC Analog watchdog 2 interrupt source (additional analog watchdog)
+     *            @arg ADC_IT_AWD3,   ADC Analog watchdog 3 interrupt source (additional analog watchdog)
+     *            @arg ADC_IT_JQOVF,  ADC Injected Context Queue Overflow interrupt source. 
+     * @retval None
+     */
 #define __HAL_ADC_DISABLE_IT(__HANDLE__, __INTERRUPT__) (((__HANDLE__)->Instance->IER) &= ~(__INTERRUPT__))
 
-/**
-  * @brief Check whether the specified ADC flag is set or not.
-  * @param __HANDLE__: ADC handle.
-  * @param __FLAG__: ADC flag to check
-  *        This parameter can be one of the following values:
-  *            @arg ADC_FLAG_RDY,     ADC Ready (ADRDY) flag                              
-  *            @arg ADC_FLAG_EOSMP,   ADC End of Sampling flag                            
-  *            @arg ADC_FLAG_EOC,     ADC End of Regular Conversion flag                  
-  *            @arg ADC_FLAG_EOS,     ADC End of Regular sequence of Conversions flag     
-  *            @arg ADC_FLAG_OVR,     ADC overrun flag        
-  *            @arg ADC_FLAG_JEOC,    ADC End of Injected Conversion flag                 
-  *            @arg ADC_FLAG_JEOS,    ADC End of Injected sequence of Conversions flag    
-  *            @arg ADC_FLAG_AWD1,    ADC Analog watchdog 1 flag (main analog watchdog)
-  *            @arg ADC_FLAG_AWD2,    ADC Analog watchdog 2 flag (additional analog watchdog)
-  *            @arg ADC_FLAG_AWD3,    ADC Analog watchdog 3 flag (additional analog watchdog)
-  *            @arg ADC_FLAG_JQOVF,   ADC Injected Context Queue Overflow flag.            
-  * @retval The new state of __FLAG__ (TRUE or FALSE).
-  */
+    /**
+     * @brief Check whether the specified ADC flag is set or not.
+     * @param __HANDLE__: ADC handle.
+     * @param __FLAG__: ADC flag to check
+     *        This parameter can be one of the following values:
+     *            @arg ADC_FLAG_RDY,     ADC Ready (ADRDY) flag                              
+     *            @arg ADC_FLAG_EOSMP,   ADC End of Sampling flag                            
+     *            @arg ADC_FLAG_EOC,     ADC End of Regular Conversion flag                  
+     *            @arg ADC_FLAG_EOS,     ADC End of Regular sequence of Conversions flag     
+     *            @arg ADC_FLAG_OVR,     ADC overrun flag        
+     *            @arg ADC_FLAG_JEOC,    ADC End of Injected Conversion flag                 
+     *            @arg ADC_FLAG_JEOS,    ADC End of Injected sequence of Conversions flag    
+     *            @arg ADC_FLAG_AWD1,    ADC Analog watchdog 1 flag (main analog watchdog)
+     *            @arg ADC_FLAG_AWD2,    ADC Analog watchdog 2 flag (additional analog watchdog)
+     *            @arg ADC_FLAG_AWD3,    ADC Analog watchdog 3 flag (additional analog watchdog)
+     *            @arg ADC_FLAG_JQOVF,   ADC Injected Context Queue Overflow flag.            
+     * @retval The new state of __FLAG__ (TRUE or FALSE).
+     */
 #define __HAL_ADC_GET_FLAG(__HANDLE__, __FLAG__) ((((__HANDLE__)->Instance->ISR) & (__FLAG__)) == (__FLAG__))
 
-/**
-  * @brief Clear a specified ADC flag.
-  * @param __HANDLE__: ADC handle.
-  * @param __FLAG__: ADC flag to clear
-  *        This parameter can be one of the following values:
-  *            @arg ADC_FLAG_RDY,     ADC Ready (ADRDY) flag                              
-  *            @arg ADC_FLAG_EOSMP,   ADC End of Sampling flag                            
-  *            @arg ADC_FLAG_EOC,     ADC End of Regular Conversion flag                  
-  *            @arg ADC_FLAG_EOS,     ADC End of Regular sequence of Conversions flag     
-  *            @arg ADC_FLAG_OVR,     ADC overrun flag        
-  *            @arg ADC_FLAG_JEOC,    ADC End of Injected Conversion flag                 
-  *            @arg ADC_FLAG_JEOS,    ADC End of Injected sequence of Conversions flag    
-  *            @arg ADC_FLAG_AWD1,    ADC Analog watchdog 1 flag (main analog watchdog)
-  *            @arg ADC_FLAG_AWD2,    ADC Analog watchdog 2 flag (additional analog watchdog)
-  *            @arg ADC_FLAG_AWD3,    ADC Analog watchdog 3 flag (additional analog watchdog)
-  *            @arg ADC_FLAG_JQOVF,   ADC Injected Context Queue Overflow flag.   
-  * @note  Bit cleared bit by writing 1 (writing 0 has no effect on any bit of register ISR).
-  * @retval None
-  */
+    /**
+     * @brief Clear a specified ADC flag.
+     * @param __HANDLE__: ADC handle.
+     * @param __FLAG__: ADC flag to clear
+     *        This parameter can be one of the following values:
+     *            @arg ADC_FLAG_RDY,     ADC Ready (ADRDY) flag                              
+     *            @arg ADC_FLAG_EOSMP,   ADC End of Sampling flag                            
+     *            @arg ADC_FLAG_EOC,     ADC End of Regular Conversion flag                  
+     *            @arg ADC_FLAG_EOS,     ADC End of Regular sequence of Conversions flag     
+     *            @arg ADC_FLAG_OVR,     ADC overrun flag        
+     *            @arg ADC_FLAG_JEOC,    ADC End of Injected Conversion flag                 
+     *            @arg ADC_FLAG_JEOS,    ADC End of Injected sequence of Conversions flag    
+     *            @arg ADC_FLAG_AWD1,    ADC Analog watchdog 1 flag (main analog watchdog)
+     *            @arg ADC_FLAG_AWD2,    ADC Analog watchdog 2 flag (additional analog watchdog)
+     *            @arg ADC_FLAG_AWD3,    ADC Analog watchdog 3 flag (additional analog watchdog)
+     *            @arg ADC_FLAG_JQOVF,   ADC Injected Context Queue Overflow flag.   
+     * @note  Bit cleared bit by writing 1 (writing 0 has no effect on any bit of register ISR).
+     * @retval None
+     */
 #define __HAL_ADC_CLEAR_FLAG(__HANDLE__, __FLAG__) (((__HANDLE__)->Instance->ISR) = (__FLAG__))
-       
 
-/**
-  * @}
-  */
 
-/* Include ADC HAL Extended module */
+    /**
+     * @}
+     */
+
+    /* Include ADC HAL Extended module */
 #include "stm32l4xx_hal_adc_ex.h"
 
-/* Exported functions --------------------------------------------------------*/
-/** @addtogroup ADC_Exported_Functions ADC Exported Functions
-  * @{
-  */ 
+    /* Exported functions --------------------------------------------------------*/
+    /** @addtogroup ADC_Exported_Functions ADC Exported Functions
+     * @{
+     */
 
-/** @addtogroup ADC_Exported_Functions_Group1 Initialization and de-initialization functions 
- *  @brief    Initialization and Configuration functions 
- * @{
- */ 
-/* Initialization and de-initialization functions  **********************************/
-HAL_StatusTypeDef       HAL_ADC_Init(ADC_HandleTypeDef* hadc);
-HAL_StatusTypeDef       HAL_ADC_DeInit(ADC_HandleTypeDef *hadc);
-void                    HAL_ADC_MspInit(ADC_HandleTypeDef* hadc);
-void                    HAL_ADC_MspDeInit(ADC_HandleTypeDef* hadc);
-/**
-  * @}
-  */
+    /** @addtogroup ADC_Exported_Functions_Group1 Initialization and de-initialization functions 
+     *  @brief    Initialization and Configuration functions 
+     * @{
+     */
+    /* Initialization and de-initialization functions  **********************************/
+    HAL_StatusTypeDef HAL_ADC_Init(ADC_HandleTypeDef* hadc);
+    HAL_StatusTypeDef HAL_ADC_DeInit(ADC_HandleTypeDef *hadc);
+    void HAL_ADC_MspInit(ADC_HandleTypeDef* hadc);
+    void HAL_ADC_MspDeInit(ADC_HandleTypeDef* hadc);
+    /**
+     * @}
+     */
 
-/** @addtogroup ADC_Exported_Functions_Group2 Input and Output operation functions
- *  @brief    IO operation functions 
- * @{
- */ 
-/* Blocking mode: Polling */
-HAL_StatusTypeDef       HAL_ADC_Start(ADC_HandleTypeDef* hadc);
-HAL_StatusTypeDef       HAL_ADC_Stop(ADC_HandleTypeDef* hadc);
-HAL_StatusTypeDef       HAL_ADC_PollForConversion(ADC_HandleTypeDef* hadc, uint32_t Timeout);
-HAL_StatusTypeDef       HAL_ADC_PollForEvent(ADC_HandleTypeDef* hadc, uint32_t EventType, uint32_t Timeout);
+    /** @addtogroup ADC_Exported_Functions_Group2 Input and Output operation functions
+     *  @brief    IO operation functions 
+     * @{
+     */
+    /* Blocking mode: Polling */
+    HAL_StatusTypeDef HAL_ADC_Start(ADC_HandleTypeDef* hadc);
+    HAL_StatusTypeDef HAL_ADC_Stop(ADC_HandleTypeDef* hadc);
+    HAL_StatusTypeDef HAL_ADC_PollForConversion(ADC_HandleTypeDef* hadc, uint32_t Timeout);
+    HAL_StatusTypeDef HAL_ADC_PollForEvent(ADC_HandleTypeDef* hadc, uint32_t EventType, uint32_t Timeout);
 
-/* Non-blocking mode: Interruption */
-HAL_StatusTypeDef       HAL_ADC_Start_IT(ADC_HandleTypeDef* hadc);
-HAL_StatusTypeDef       HAL_ADC_Stop_IT(ADC_HandleTypeDef* hadc);
+    /* Non-blocking mode: Interruption */
+    HAL_StatusTypeDef HAL_ADC_Start_IT(ADC_HandleTypeDef* hadc);
+    HAL_StatusTypeDef HAL_ADC_Stop_IT(ADC_HandleTypeDef* hadc);
 
-/* Non-blocking mode: DMA */
-HAL_StatusTypeDef       HAL_ADC_Start_DMA(ADC_HandleTypeDef* hadc, uint32_t* pData, uint32_t Length);
-HAL_StatusTypeDef       HAL_ADC_Stop_DMA(ADC_HandleTypeDef* hadc);
+    /* Non-blocking mode: DMA */
+    HAL_StatusTypeDef HAL_ADC_Start_DMA(ADC_HandleTypeDef* hadc, uint32_t* pData, uint32_t Length);
+    HAL_StatusTypeDef HAL_ADC_Stop_DMA(ADC_HandleTypeDef* hadc);
 
-/* ADC retrieve conversion value intended to be used with polling or interruption */
-uint32_t                HAL_ADC_GetValue(ADC_HandleTypeDef* hadc);
+    /* ADC retrieve conversion value intended to be used with polling or interruption */
+    uint32_t HAL_ADC_GetValue(ADC_HandleTypeDef* hadc);
 
-/* ADC IRQHandler and Callbacks used in non-blocking modes (Interruption and DMA) */
-void                    HAL_ADC_IRQHandler(ADC_HandleTypeDef* hadc);
-void                    HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc);
-void                    HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc);
-void                    HAL_ADC_LevelOutOfWindowCallback(ADC_HandleTypeDef* hadc);
-void                    HAL_ADC_ErrorCallback(ADC_HandleTypeDef *hadc);
-/**
-  * @}
-  */
+    /* ADC IRQHandler and Callbacks used in non-blocking modes (Interruption and DMA) */
+    void HAL_ADC_IRQHandler(ADC_HandleTypeDef* hadc);
+    void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc);
+    void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc);
+    void HAL_ADC_LevelOutOfWindowCallback(ADC_HandleTypeDef* hadc);
+    void HAL_ADC_ErrorCallback(ADC_HandleTypeDef *hadc);
+    /**
+     * @}
+     */
 
-/** @addtogroup ADC_Exported_Functions_Group3 Peripheral Control functions
- *  @brief    Peripheral Control functions 
- * @{
- */ 
-/* Peripheral Control functions ***********************************************/
-HAL_StatusTypeDef       HAL_ADC_ConfigChannel(ADC_HandleTypeDef* hadc, ADC_ChannelConfTypeDef* sConfig);
-HAL_StatusTypeDef       HAL_ADC_AnalogWDGConfig(ADC_HandleTypeDef* hadc, ADC_AnalogWDGConfTypeDef* AnalogWDGConfig);
-/**
-  * @}
-  */
+    /** @addtogroup ADC_Exported_Functions_Group3 Peripheral Control functions
+     *  @brief    Peripheral Control functions 
+     * @{
+     */
+    /* Peripheral Control functions ***********************************************/
+    HAL_StatusTypeDef HAL_ADC_ConfigChannel(ADC_HandleTypeDef* hadc, ADC_ChannelConfTypeDef* sConfig);
+    HAL_StatusTypeDef HAL_ADC_AnalogWDGConfig(ADC_HandleTypeDef* hadc, ADC_AnalogWDGConfTypeDef* AnalogWDGConfig);
+    /**
+     * @}
+     */
 
-/** @defgroup ADC_Exported_Functions_Group4 Peripheral State functions
- *  @brief   ADC Peripheral State functions 
- * @{
- */ 
-/* Peripheral State functions *************************************************/
-uint32_t      HAL_ADC_GetState(ADC_HandleTypeDef* hadc);
-uint32_t      HAL_ADC_GetError(ADC_HandleTypeDef *hadc);
-/**
-  * @}
-  */
-  
-/**
-  * @}
-  */   
+    /** @defgroup ADC_Exported_Functions_Group4 Peripheral State functions
+     *  @brief   ADC Peripheral State functions 
+     * @{
+     */
+    /* Peripheral State functions *************************************************/
+    uint32_t HAL_ADC_GetState(ADC_HandleTypeDef* hadc);
+    uint32_t HAL_ADC_GetError(ADC_HandleTypeDef *hadc);
+    /**
+     * @}
+     */
 
-/* Private functions -----------------------------------------------------------*/
-/** @addtogroup ADC_Private_Functions ADC Private Functions
-  * @{
-  */
- 
-HAL_StatusTypeDef ADC_ConversionStop(ADC_HandleTypeDef* hadc, uint32_t ConversionGroup);
-HAL_StatusTypeDef ADC_Enable(ADC_HandleTypeDef* hadc);
-HAL_StatusTypeDef ADC_Disable(ADC_HandleTypeDef* hadc);
-void ADC_DMAConvCplt(DMA_HandleTypeDef *hdma);
-void ADC_DMAHalfConvCplt(DMA_HandleTypeDef *hdma);
-void ADC_DMAError(DMA_HandleTypeDef *hdma);
+    /**
+     * @}
+     */
 
-/**
-  * @}
-  */
+    /* Private functions -----------------------------------------------------------*/
+    /** @addtogroup ADC_Private_Functions ADC Private Functions
+     * @{
+     */
 
-/**
-  * @}
-  */ 
+    HAL_StatusTypeDef ADC_ConversionStop(ADC_HandleTypeDef* hadc, uint32_t ConversionGroup);
+    HAL_StatusTypeDef ADC_Enable(ADC_HandleTypeDef* hadc);
+    HAL_StatusTypeDef ADC_Disable(ADC_HandleTypeDef* hadc);
+    void ADC_DMAConvCplt(DMA_HandleTypeDef *hdma);
+    void ADC_DMAHalfConvCplt(DMA_HandleTypeDef *hdma);
+    void ADC_DMAError(DMA_HandleTypeDef *hdma);
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
+
+    /**
+     * @}
+     */
+
+    /**
+     * @}
+     */
 
 #ifdef __cplusplus
 }

@@ -40,30 +40,30 @@ extern "C" {
 
 #include <stdint.h>
 
-/**
- * @file  uart_regs.h
- * @addtogroup uart UART
- * @{
- */
+    /**
+     * @file  uart_regs.h
+     * @addtogroup uart UART
+     * @{
+     */
 
-/*                                      Offset   Register Description
-                                        ======   ============================================== */
-typedef struct {
-    __IO uint32_t ctrl;             /*  0x0000   UART Control Register                          */
-    __IO uint32_t status;           /*  0x0004   UART Status Register                           */
-    __IO uint32_t inten;            /*  0x0008   Interrupt Enable/Disable Controls              */
-    __IO uint32_t intfl;            /*  0x000C   Interrupt Flags                                */
-    __IO uint32_t baud_int;         /*  0x0010   Baud Rate Setting (Integer Portion)            */
-    __IO uint32_t baud_div_128;     /*  0x0014   Baud Rate Setting                              */
-    __IO uint32_t tx_fifo_out;      /*  0x0018   TX FIFO Output End (read-only)                 */
-    __IO uint32_t hw_flow_ctrl;     /*  0x001C   Hardware Flow Control Register                 */
-    __IO uint32_t tx_rx_fifo;       /*  0x0020   Write to load TX FIFO, Read to unload RX FIFO  */
-} mxc_uart_regs_t;
+    /*                                      Offset   Register Description
+                                            ======   ============================================== */
+    typedef struct {
+        __IO uint32_t ctrl; /*  0x0000   UART Control Register                          */
+        __IO uint32_t status; /*  0x0004   UART Status Register                           */
+        __IO uint32_t inten; /*  0x0008   Interrupt Enable/Disable Controls              */
+        __IO uint32_t intfl; /*  0x000C   Interrupt Flags                                */
+        __IO uint32_t baud_int; /*  0x0010   Baud Rate Setting (Integer Portion)            */
+        __IO uint32_t baud_div_128; /*  0x0014   Baud Rate Setting                              */
+        __IO uint32_t tx_fifo_out; /*  0x0018   TX FIFO Output End (read-only)                 */
+        __IO uint32_t hw_flow_ctrl; /*  0x001C   Hardware Flow Control Register                 */
+        __IO uint32_t tx_rx_fifo; /*  0x0020   Write to load TX FIFO, Read to unload RX FIFO  */
+    } mxc_uart_regs_t;
 
 
-/*
-    Register offsets for module UART.
-*/
+    /*
+        Register offsets for module UART.
+     */
 #define MXC_R_UART_OFFS_CTRL                      ((uint32_t)0x00000000UL)
 #define MXC_R_UART_OFFS_STATUS                    ((uint32_t)0x00000004UL)
 #define MXC_R_UART_OFFS_INTEN                     ((uint32_t)0x00000008UL)
@@ -74,9 +74,9 @@ typedef struct {
 #define MXC_R_UART_OFFS_HW_FLOW_CTRL              ((uint32_t)0x0000001CUL)
 #define MXC_R_UART_OFFS_TX_RX_FIFO                ((uint32_t)0x00000020UL)
 
-/*
-   Field positions and masks for module UART.
-*/
+    /*
+       Field positions and masks for module UART.
+     */
 #define MXC_F_UART_CTRL_RX_THRESHOLD_POS                    0
 #define MXC_F_UART_CTRL_RX_THRESHOLD                        ((uint32_t)(0x00000007UL << MXC_F_UART_CTRL_RX_THRESHOLD_POS))
 #define MXC_F_UART_CTRL_PARITY_ENABLE_POS                   4
@@ -169,7 +169,7 @@ typedef struct {
 #endif
 
 /**
-* @}
-*/
+ * @}
+ */
 
 #endif /* _MXC_UART_REGS_H_ */

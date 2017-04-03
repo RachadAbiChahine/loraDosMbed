@@ -40,48 +40,49 @@ extern "C" {
 
 #include <stdint.h>
 
-/**
- * @file  flc_regs.h
- * @addtogroup flc FLC
- * @{
- */
-/*                                          Offset   Register Description
-                                            ======   ======================================================= */
-typedef struct {
-    __IO uint32_t faddr;                /*  0x0000   Flash Operation Address                                 */
-    __IO uint32_t fckdiv;               /*  0x0004   Flash Clock Rate Divisor                                */
-    __IO uint32_t ctrl;                 /*  0x0008   Flash Control Register                                  */
-    __I uint32_t rsv000C[6];            /*  0x000C                                                           */
-    __IO uint32_t intr;                 /*  0x0024   Flash Controller Interrupt Flags and Enable/Disable 0   */
-    __I uint32_t rsv0028[2];            /*  0x0028                                                           */
-    __IO uint32_t fdata;                /*  0x0030   Flash Operation Data Register                           */
-    __I uint32_t rsv0034[7];            /*  0x0034                                                           */
-    __IO uint32_t perform;              /*  0x0050   Flash Performance Settings                              */
-    __I uint32_t rsv0054[11];           /*  0x0054                                                           */
-    __IO uint32_t status;               /*  0x0080   Security Status Flags                                   */
-    __I uint32_t rsv0084;               /*  0x0084                                                           */
-    __IO uint32_t security;             /*  0x0088   Flash Controller Security Settings                      */
-    __I uint32_t rsv008C[4];            /*  0x008C                                                           */
-    __IO uint32_t bypass;               /*  0x009C   Status Flags for DSB Operations                         */
-    __IO uint32_t user_option;          /*  0x0100   Used to set DSB Access code and Auto-Lock in info block */
-    __I uint32_t rsv0104[15];           /*  0x0104                                                           */
-    __IO uint32_t ctrl2;                /*  0x0140   Flash Control Register 2                                */
-    __IO uint32_t intfl1;               /*  0x0144   Interrupt Flags Register 1                              */
-    __IO uint32_t inten1;               /*  0x0148   Interrupt Enable/Disable Register 1                     */
-    __I uint32_t rsv014C;               /*  0x014C                                                           */
-    __IO uint32_t disable_xr0;          /*  0x0150   Disable Flash Page Exec/Read Register 0                 */
-    __IO uint32_t disable_xr1;          /*  0x0154   Disable Flash Page Exec/Read Register 1                 */
-    __IO uint32_t disable_xr2;          /*  0x0158   Disable Flash Page Exec/Read Register 2                 */
-    __IO uint32_t disable_xr3;          /*  0x015C   Disable Flash Page Exec/Read Register 3                 */
-    __IO uint32_t disable_we0;          /*  0x0160   Disable Flash Page Write/Erase Register 0               */
-    __IO uint32_t disable_we1;          /*  0x0164   Disable Flash Page Write/Erase Register 1               */
-    __IO uint32_t disable_we2;          /*  0x0168   Disable Flash Page Write/Erase Register 2               */
-    __IO uint32_t disable_we3;          /*  0x016C   Disable Flash Page Write/Erase Register 3               */
-} mxc_flc_regs_t;
+    /**
+     * @file  flc_regs.h
+     * @addtogroup flc FLC
+     * @{
+     */
 
-/*
-   Register offsets for module FLC.
-*/
+    /*                                          Offset   Register Description
+                                                ======   ======================================================= */
+    typedef struct {
+        __IO uint32_t faddr; /*  0x0000   Flash Operation Address                                 */
+        __IO uint32_t fckdiv; /*  0x0004   Flash Clock Rate Divisor                                */
+        __IO uint32_t ctrl; /*  0x0008   Flash Control Register                                  */
+        __I uint32_t rsv000C[6]; /*  0x000C                                                           */
+        __IO uint32_t intr; /*  0x0024   Flash Controller Interrupt Flags and Enable/Disable 0   */
+        __I uint32_t rsv0028[2]; /*  0x0028                                                           */
+        __IO uint32_t fdata; /*  0x0030   Flash Operation Data Register                           */
+        __I uint32_t rsv0034[7]; /*  0x0034                                                           */
+        __IO uint32_t perform; /*  0x0050   Flash Performance Settings                              */
+        __I uint32_t rsv0054[11]; /*  0x0054                                                           */
+        __IO uint32_t status; /*  0x0080   Security Status Flags                                   */
+        __I uint32_t rsv0084; /*  0x0084                                                           */
+        __IO uint32_t security; /*  0x0088   Flash Controller Security Settings                      */
+        __I uint32_t rsv008C[4]; /*  0x008C                                                           */
+        __IO uint32_t bypass; /*  0x009C   Status Flags for DSB Operations                         */
+        __IO uint32_t user_option; /*  0x0100   Used to set DSB Access code and Auto-Lock in info block */
+        __I uint32_t rsv0104[15]; /*  0x0104                                                           */
+        __IO uint32_t ctrl2; /*  0x0140   Flash Control Register 2                                */
+        __IO uint32_t intfl1; /*  0x0144   Interrupt Flags Register 1                              */
+        __IO uint32_t inten1; /*  0x0148   Interrupt Enable/Disable Register 1                     */
+        __I uint32_t rsv014C; /*  0x014C                                                           */
+        __IO uint32_t disable_xr0; /*  0x0150   Disable Flash Page Exec/Read Register 0                 */
+        __IO uint32_t disable_xr1; /*  0x0154   Disable Flash Page Exec/Read Register 1                 */
+        __IO uint32_t disable_xr2; /*  0x0158   Disable Flash Page Exec/Read Register 2                 */
+        __IO uint32_t disable_xr3; /*  0x015C   Disable Flash Page Exec/Read Register 3                 */
+        __IO uint32_t disable_we0; /*  0x0160   Disable Flash Page Write/Erase Register 0               */
+        __IO uint32_t disable_we1; /*  0x0164   Disable Flash Page Write/Erase Register 1               */
+        __IO uint32_t disable_we2; /*  0x0168   Disable Flash Page Write/Erase Register 2               */
+        __IO uint32_t disable_we3; /*  0x016C   Disable Flash Page Write/Erase Register 3               */
+    } mxc_flc_regs_t;
+
+    /*
+       Register offsets for module FLC.
+     */
 #define MXC_R_FLC_OFFS_FADDR                          ((uint32_t)0x00000000UL)
 #define MXC_R_FLC_OFFS_FCKDIV                         ((uint32_t)0x00000004UL)
 #define MXC_R_FLC_OFFS_CTRL                           ((uint32_t)0x00000008UL)
@@ -109,9 +110,9 @@ typedef struct {
 
 #define MXC_V_FLC_FLSH_UNLOCK_KEY                     ((uint8_t)0x2)
 
-/*
-   Field positions and masks for module FLC.
-*/
+    /*
+       Field positions and masks for module FLC.
+     */
 #define MXC_F_FLC_FADDR_FADDR_POS                     0
 #define MXC_F_FLC_FADDR_FADDR                         ((uint32_t)(0x0003FFFFUL << MXC_F_FLC_FADDR_FADDR_POS))
 
@@ -204,7 +205,7 @@ typedef struct {
 #endif
 
 /**
-* @}
-*/
+ * @}
+ */
 
 #endif   /* _MXC_FLC_REGS_H_ */

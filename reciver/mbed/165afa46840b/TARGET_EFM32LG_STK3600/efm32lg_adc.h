@@ -34,26 +34,26 @@
  * @{
  * @brief EFM32LG_ADC Register Declaration
  *****************************************************************************/
-typedef struct
-{
-  __IO uint32_t CTRL;         /**< Control Register  */
-  __IO uint32_t CMD;          /**< Command Register  */
-  __I uint32_t  STATUS;       /**< Status Register  */
-  __IO uint32_t SINGLECTRL;   /**< Single Sample Control Register  */
-  __IO uint32_t SCANCTRL;     /**< Scan Control Register  */
-  __IO uint32_t IEN;          /**< Interrupt Enable Register  */
-  __I uint32_t  IF;           /**< Interrupt Flag Register  */
-  __IO uint32_t IFS;          /**< Interrupt Flag Set Register  */
-  __IO uint32_t IFC;          /**< Interrupt Flag Clear Register  */
-  __I uint32_t  SINGLEDATA;   /**< Single Conversion Result Data  */
-  __I uint32_t  SCANDATA;     /**< Scan Conversion Result Data  */
-  __I uint32_t  SINGLEDATAP;  /**< Single Conversion Result Data Peek Register  */
-  __I uint32_t  SCANDATAP;    /**< Scan Sequence Result Data Peek Register  */
-  __IO uint32_t CAL;          /**< Calibration Register  */
 
-  uint32_t      RESERVED0[1]; /**< Reserved for future use **/
-  __IO uint32_t BIASPROG;     /**< Bias Programming Register  */
-} ADC_TypeDef;                /** @} */
+typedef struct {
+    __IO uint32_t CTRL; /**< Control Register  */
+    __IO uint32_t CMD; /**< Command Register  */
+    __I uint32_t STATUS; /**< Status Register  */
+    __IO uint32_t SINGLECTRL; /**< Single Sample Control Register  */
+    __IO uint32_t SCANCTRL; /**< Scan Control Register  */
+    __IO uint32_t IEN; /**< Interrupt Enable Register  */
+    __I uint32_t IF; /**< Interrupt Flag Register  */
+    __IO uint32_t IFS; /**< Interrupt Flag Set Register  */
+    __IO uint32_t IFC; /**< Interrupt Flag Clear Register  */
+    __I uint32_t SINGLEDATA; /**< Single Conversion Result Data  */
+    __I uint32_t SCANDATA; /**< Scan Conversion Result Data  */
+    __I uint32_t SINGLEDATAP; /**< Single Conversion Result Data Peek Register  */
+    __I uint32_t SCANDATAP; /**< Scan Sequence Result Data Peek Register  */
+    __IO uint32_t CAL; /**< Calibration Register  */
+
+    uint32_t RESERVED0[1]; /**< Reserved for future use **/
+    __IO uint32_t BIASPROG; /**< Bias Programming Register  */
+} ADC_TypeDef; /** @} */
 
 /**************************************************************************//**
  * @defgroup EFM32LG_ADC_BitFields

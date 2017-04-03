@@ -34,16 +34,16 @@
  * @{
  * @brief EFM32HG_VCMP Register Declaration
  *****************************************************************************/
-typedef struct
-{
-  __IO uint32_t CTRL;     /**< Control Register  */
-  __IO uint32_t INPUTSEL; /**< Input Selection Register  */
-  __I uint32_t  STATUS;   /**< Status Register  */
-  __IO uint32_t IEN;      /**< Interrupt Enable Register  */
-  __I uint32_t  IF;       /**< Interrupt Flag Register  */
-  __IO uint32_t IFS;      /**< Interrupt Flag Set Register  */
-  __IO uint32_t IFC;      /**< Interrupt Flag Clear Register  */
-} VCMP_TypeDef;           /** @} */
+
+typedef struct {
+    __IO uint32_t CTRL; /**< Control Register  */
+    __IO uint32_t INPUTSEL; /**< Input Selection Register  */
+    __I uint32_t STATUS; /**< Status Register  */
+    __IO uint32_t IEN; /**< Interrupt Enable Register  */
+    __I uint32_t IF; /**< Interrupt Flag Register  */
+    __IO uint32_t IFS; /**< Interrupt Flag Set Register  */
+    __IO uint32_t IFC; /**< Interrupt Flag Clear Register  */
+} VCMP_TypeDef; /** @} */
 
 /**************************************************************************//**
  * @defgroup EFM32HG_VCMP_BitFields

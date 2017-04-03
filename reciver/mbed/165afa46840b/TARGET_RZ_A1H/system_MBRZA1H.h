@@ -21,7 +21,7 @@
    - Neither the name of ARM nor the names of its contributors may be used
      to endorse or promote products derived from this software without
      specific prior written permission.
-   *
+ *
    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
    AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
    IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -43,20 +43,20 @@
 extern "C" {
 #endif
 
-typedef void(*IRQHandler)();
-uint32_t InterruptHandlerRegister(IRQn_Type, IRQHandler);
-uint32_t InterruptHandlerUnregister(IRQn_Type);
+    typedef void(*IRQHandler)();
+    uint32_t InterruptHandlerRegister(IRQn_Type, IRQHandler);
+    uint32_t InterruptHandlerUnregister(IRQn_Type);
 
-/**
- * Initialize the system
- *
- * @param  none
- * @return none
- *
- * @brief  Setup the microcontroller system.
- *         Initialize the System and update the Systd short        int16_t;emCoreClock variable.
- */
-extern void SystemInit (void);
+    /**
+     * Initialize the system
+     *
+     * @param  none
+     * @return none
+     *
+     * @brief  Setup the microcontroller system.
+     *         Initialize the System and update the Systd short        int16_t;emCoreClock variable.
+     */
+    extern void SystemInit(void);
 
 #ifdef __cplusplus
 }

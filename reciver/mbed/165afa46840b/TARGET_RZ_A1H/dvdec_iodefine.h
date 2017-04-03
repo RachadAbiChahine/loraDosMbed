@@ -1,166 +1,166 @@
 /*******************************************************************************
-* DISCLAIMER
-* This software is supplied by Renesas Electronics Corporation and is only
-* intended for use with Renesas products. No other uses are authorized. This
-* software is owned by Renesas Electronics Corporation and is protected under
-* all applicable laws, including copyright laws.
-* THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIES REGARDING
-* THIS SOFTWARE, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING BUT NOT
-* LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
-* AND NON-INFRINGEMENT. ALL SUCH WARRANTIES ARE EXPRESSLY DISCLAIMED.
-* TO THE MAXIMUM EXTENT PERMITTED NOT PROHIBITED BY LAW, NEITHER RENESAS
-* ELECTRONICS CORPORATION NOR ANY OF ITS AFFILIATED COMPANIES SHALL BE LIABLE
-* FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES FOR
-* ANY REASON RELATED TO THIS SOFTWARE, EVEN IF RENESAS OR ITS AFFILIATES HAVE
-* BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
-* Renesas reserves the right, without notice, to make changes to this software
-* and to discontinue the availability of this software. By using this software,
-* you agree to the additional terms and conditions found by accessing the
-* following link:
-* http://www.renesas.com/disclaimer*
-* Copyright (C) 2013-2014 Renesas Electronics Corporation. All rights reserved.
-*******************************************************************************/
+ * DISCLAIMER
+ * This software is supplied by Renesas Electronics Corporation and is only
+ * intended for use with Renesas products. No other uses are authorized. This
+ * software is owned by Renesas Electronics Corporation and is protected under
+ * all applicable laws, including copyright laws.
+ * THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIES REGARDING
+ * THIS SOFTWARE, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING BUT NOT
+ * LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
+ * AND NON-INFRINGEMENT. ALL SUCH WARRANTIES ARE EXPRESSLY DISCLAIMED.
+ * TO THE MAXIMUM EXTENT PERMITTED NOT PROHIBITED BY LAW, NEITHER RENESAS
+ * ELECTRONICS CORPORATION NOR ANY OF ITS AFFILIATED COMPANIES SHALL BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES FOR
+ * ANY REASON RELATED TO THIS SOFTWARE, EVEN IF RENESAS OR ITS AFFILIATES HAVE
+ * BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+ * Renesas reserves the right, without notice, to make changes to this software
+ * and to discontinue the availability of this software. By using this software,
+ * you agree to the additional terms and conditions found by accessing the
+ * following link:
+ * http://www.renesas.com/disclaimer*
+ * Copyright (C) 2013-2014 Renesas Electronics Corporation. All rights reserved.
+ *******************************************************************************/
 /*******************************************************************************
-* File Name : dvdec_iodefine.h
-* $Rev: $
-* $Date::                           $
-* Description : Definition of I/O Register (V1.00a)
-******************************************************************************/
+ * File Name : dvdec_iodefine.h
+ * $Rev: $
+ * $Date::                           $
+ * Description : Definition of I/O Register (V1.00a)
+ ******************************************************************************/
 #ifndef DVDEC_IODEFINE_H
 #define DVDEC_IODEFINE_H
+
 /* ->SEC M1.10.1 : Not magic number */
 
-struct st_dvdec
-{                                                          /* DVDEC            */
-    volatile uint16_t ADCCR1;                                 /*  ADCCR1          */
-    volatile uint8_t   dummy1[4];                              /*                  */
+struct st_dvdec { /* DVDEC            */
+    volatile uint16_t ADCCR1; /*  ADCCR1          */
+    volatile uint8_t dummy1[4]; /*                  */
 #define DVDEC_TGCRn_COUNT 3
-    volatile uint16_t TGCR1;                                  /*  TGCR1           */
-    volatile uint16_t TGCR2;                                  /*  TGCR2           */
-    volatile uint16_t TGCR3;                                  /*  TGCR3           */
-    volatile uint8_t   dummy2[6];                              /*                  */
+    volatile uint16_t TGCR1; /*  TGCR1           */
+    volatile uint16_t TGCR2; /*  TGCR2           */
+    volatile uint16_t TGCR3; /*  TGCR3           */
+    volatile uint8_t dummy2[6]; /*                  */
 #define DVDEC_SYNSCRn_COUNT 5
-    volatile uint16_t SYNSCR1;                                /*  SYNSCR1         */
-    volatile uint16_t SYNSCR2;                                /*  SYNSCR2         */
-    volatile uint16_t SYNSCR3;                                /*  SYNSCR3         */
-    volatile uint16_t SYNSCR4;                                /*  SYNSCR4         */
-    volatile uint16_t SYNSCR5;                                /*  SYNSCR5         */
+    volatile uint16_t SYNSCR1; /*  SYNSCR1         */
+    volatile uint16_t SYNSCR2; /*  SYNSCR2         */
+    volatile uint16_t SYNSCR3; /*  SYNSCR3         */
+    volatile uint16_t SYNSCR4; /*  SYNSCR4         */
+    volatile uint16_t SYNSCR5; /*  SYNSCR5         */
 #define DVDEC_HAFCCRn_COUNT 3
-    volatile uint16_t HAFCCR1;                                /*  HAFCCR1         */
-    volatile uint16_t HAFCCR2;                                /*  HAFCCR2         */
-    volatile uint16_t HAFCCR3;                                /*  HAFCCR3         */
-    volatile uint16_t VCDWCR1;                                /*  VCDWCR1         */
-    volatile uint8_t   dummy3[4];                              /*                  */
+    volatile uint16_t HAFCCR1; /*  HAFCCR1         */
+    volatile uint16_t HAFCCR2; /*  HAFCCR2         */
+    volatile uint16_t HAFCCR3; /*  HAFCCR3         */
+    volatile uint16_t VCDWCR1; /*  VCDWCR1         */
+    volatile uint8_t dummy3[4]; /*                  */
 #define DVDEC_DCPCRn_COUNT 8
-    volatile uint16_t DCPCR1;                                 /*  DCPCR1          */
-    volatile uint16_t DCPCR2;                                 /*  DCPCR2          */
-    volatile uint16_t DCPCR3;                                 /*  DCPCR3          */
-    volatile uint16_t DCPCR4;                                 /*  DCPCR4          */
-    volatile uint16_t DCPCR5;                                 /*  DCPCR5          */
-    volatile uint16_t DCPCR6;                                 /*  DCPCR6          */
-    volatile uint16_t DCPCR7;                                 /*  DCPCR7          */
-    volatile uint16_t DCPCR8;                                 /*  DCPCR8          */
-    volatile uint16_t NSDCR;                                  /*  NSDCR           */
-    volatile uint16_t BTLCR;                                  /*  BTLCR           */
-    volatile uint16_t BTGPCR;                                 /*  BTGPCR          */
+    volatile uint16_t DCPCR1; /*  DCPCR1          */
+    volatile uint16_t DCPCR2; /*  DCPCR2          */
+    volatile uint16_t DCPCR3; /*  DCPCR3          */
+    volatile uint16_t DCPCR4; /*  DCPCR4          */
+    volatile uint16_t DCPCR5; /*  DCPCR5          */
+    volatile uint16_t DCPCR6; /*  DCPCR6          */
+    volatile uint16_t DCPCR7; /*  DCPCR7          */
+    volatile uint16_t DCPCR8; /*  DCPCR8          */
+    volatile uint16_t NSDCR; /*  NSDCR           */
+    volatile uint16_t BTLCR; /*  BTLCR           */
+    volatile uint16_t BTGPCR; /*  BTGPCR          */
 #define DVDEC_ACCCRn_COUNT 3
-    volatile uint16_t ACCCR1;                                 /*  ACCCR1          */
-    volatile uint16_t ACCCR2;                                 /*  ACCCR2          */
-    volatile uint16_t ACCCR3;                                 /*  ACCCR3          */
-    volatile uint16_t TINTCR;                                 /*  TINTCR          */
-    volatile uint16_t YCDCR;                                  /*  YCDCR           */
+    volatile uint16_t ACCCR1; /*  ACCCR1          */
+    volatile uint16_t ACCCR2; /*  ACCCR2          */
+    volatile uint16_t ACCCR3; /*  ACCCR3          */
+    volatile uint16_t TINTCR; /*  TINTCR          */
+    volatile uint16_t YCDCR; /*  YCDCR           */
 #define DVDEC_AGCCRn_COUNT 2
-    volatile uint16_t AGCCR1;                                 /*  AGCCR1          */
-    volatile uint16_t AGCCR2;                                 /*  AGCCR2          */
-    volatile uint16_t PKLIMITCR;                              /*  PKLIMITCR       */
+    volatile uint16_t AGCCR1; /*  AGCCR1          */
+    volatile uint16_t AGCCR2; /*  AGCCR2          */
+    volatile uint16_t PKLIMITCR; /*  PKLIMITCR       */
 #define DVDEC_RGORCRn_COUNT 7
-    volatile uint16_t RGORCR1;                                /*  RGORCR1         */
-    volatile uint16_t RGORCR2;                                /*  RGORCR2         */
-    volatile uint16_t RGORCR3;                                /*  RGORCR3         */
-    volatile uint16_t RGORCR4;                                /*  RGORCR4         */
-    volatile uint16_t RGORCR5;                                /*  RGORCR5         */
-    volatile uint16_t RGORCR6;                                /*  RGORCR6         */
-    volatile uint16_t RGORCR7;                                /*  RGORCR7         */
-    volatile uint8_t   dummy4[24];                             /*                  */
-    volatile uint16_t AFCPFCR;                                /*  AFCPFCR         */
-    volatile uint16_t RUPDCR;                                 /*  RUPDCR          */
-    volatile uint16_t VSYNCSR;                                /*  VSYNCSR         */
-    volatile uint16_t HSYNCSR;                                /*  HSYNCSR         */
+    volatile uint16_t RGORCR1; /*  RGORCR1         */
+    volatile uint16_t RGORCR2; /*  RGORCR2         */
+    volatile uint16_t RGORCR3; /*  RGORCR3         */
+    volatile uint16_t RGORCR4; /*  RGORCR4         */
+    volatile uint16_t RGORCR5; /*  RGORCR5         */
+    volatile uint16_t RGORCR6; /*  RGORCR6         */
+    volatile uint16_t RGORCR7; /*  RGORCR7         */
+    volatile uint8_t dummy4[24]; /*                  */
+    volatile uint16_t AFCPFCR; /*  AFCPFCR         */
+    volatile uint16_t RUPDCR; /*  RUPDCR          */
+    volatile uint16_t VSYNCSR; /*  VSYNCSR         */
+    volatile uint16_t HSYNCSR; /*  HSYNCSR         */
 #define DVDEC_DCPSRn_COUNT 2
-    volatile uint16_t DCPSR1;                                 /*  DCPSR1          */
-    volatile uint16_t DCPSR2;                                 /*  DCPSR2          */
-    volatile uint8_t   dummy5[4];                              /*                  */
-    volatile uint16_t NSDSR;                                  /*  NSDSR           */
+    volatile uint16_t DCPSR1; /*  DCPSR1          */
+    volatile uint16_t DCPSR2; /*  DCPSR2          */
+    volatile uint8_t dummy5[4]; /*                  */
+    volatile uint16_t NSDSR; /*  NSDSR           */
 #define DVDEC_CROMASRn_COUNT 2
-    volatile uint16_t CROMASR1;                               /*  CROMASR1        */
-    volatile uint16_t CROMASR2;                               /*  CROMASR2        */
-    volatile uint16_t SYNCSSR;                                /*  SYNCSSR         */
+    volatile uint16_t CROMASR1; /*  CROMASR1        */
+    volatile uint16_t CROMASR2; /*  CROMASR2        */
+    volatile uint16_t SYNCSSR; /*  SYNCSSR         */
 #define DVDEC_AGCCSRn_COUNT 2
-    volatile uint16_t AGCCSR1;                                /*  AGCCSR1         */
-    volatile uint16_t AGCCSR2;                                /*  AGCCSR2         */
-    volatile uint8_t   dummy6[108];                            /*                  */
+    volatile uint16_t AGCCSR1; /*  AGCCSR1         */
+    volatile uint16_t AGCCSR2; /*  AGCCSR2         */
+    volatile uint8_t dummy6[108]; /*                  */
 #define DVDEC_YCSCRn_COUNT 7
-    volatile uint16_t YCSCR3;                                 /*  YCSCR3          */
-    volatile uint16_t YCSCR4;                                 /*  YCSCR4          */
-    volatile uint16_t YCSCR5;                                 /*  YCSCR5          */
-    volatile uint16_t YCSCR6;                                 /*  YCSCR6          */
-    volatile uint16_t YCSCR7;                                 /*  YCSCR7          */
-    volatile uint16_t YCSCR8;                                 /*  YCSCR8          */
-    volatile uint16_t YCSCR9;                                 /*  YCSCR9          */
-    volatile uint8_t   dummy7[2];                              /*                  */
-    volatile uint16_t YCSCR11;                                /*  YCSCR11         */
-    volatile uint16_t YCSCR12;                                /*  YCSCR12         */
-    volatile uint8_t   dummy8[104];                            /*                  */
-    volatile uint16_t DCPCR9;                                 /*  DCPCR9          */
-    volatile uint8_t   dummy9[16];                             /*                  */
+    volatile uint16_t YCSCR3; /*  YCSCR3          */
+    volatile uint16_t YCSCR4; /*  YCSCR4          */
+    volatile uint16_t YCSCR5; /*  YCSCR5          */
+    volatile uint16_t YCSCR6; /*  YCSCR6          */
+    volatile uint16_t YCSCR7; /*  YCSCR7          */
+    volatile uint16_t YCSCR8; /*  YCSCR8          */
+    volatile uint16_t YCSCR9; /*  YCSCR9          */
+    volatile uint8_t dummy7[2]; /*                  */
+    volatile uint16_t YCSCR11; /*  YCSCR11         */
+    volatile uint16_t YCSCR12; /*  YCSCR12         */
+    volatile uint8_t dummy8[104]; /*                  */
+    volatile uint16_t DCPCR9; /*  DCPCR9          */
+    volatile uint8_t dummy9[16]; /*                  */
 #define DVDEC_YCTWA_Fn_COUNT 9
-    volatile uint16_t YCTWA_F0;                               /*  YCTWA_F0        */
-    volatile uint16_t YCTWA_F1;                               /*  YCTWA_F1        */
-    volatile uint16_t YCTWA_F2;                               /*  YCTWA_F2        */
-    volatile uint16_t YCTWA_F3;                               /*  YCTWA_F3        */
-    volatile uint16_t YCTWA_F4;                               /*  YCTWA_F4        */
-    volatile uint16_t YCTWA_F5;                               /*  YCTWA_F5        */
-    volatile uint16_t YCTWA_F6;                               /*  YCTWA_F6        */
-    volatile uint16_t YCTWA_F7;                               /*  YCTWA_F7        */
-    volatile uint16_t YCTWA_F8;                               /*  YCTWA_F8        */
+    volatile uint16_t YCTWA_F0; /*  YCTWA_F0        */
+    volatile uint16_t YCTWA_F1; /*  YCTWA_F1        */
+    volatile uint16_t YCTWA_F2; /*  YCTWA_F2        */
+    volatile uint16_t YCTWA_F3; /*  YCTWA_F3        */
+    volatile uint16_t YCTWA_F4; /*  YCTWA_F4        */
+    volatile uint16_t YCTWA_F5; /*  YCTWA_F5        */
+    volatile uint16_t YCTWA_F6; /*  YCTWA_F6        */
+    volatile uint16_t YCTWA_F7; /*  YCTWA_F7        */
+    volatile uint16_t YCTWA_F8; /*  YCTWA_F8        */
 #define DVDEC_YCTWB_Fn_COUNT 9
-    volatile uint16_t YCTWB_F0;                               /*  YCTWB_F0        */
-    volatile uint16_t YCTWB_F1;                               /*  YCTWB_F1        */
-    volatile uint16_t YCTWB_F2;                               /*  YCTWB_F2        */
-    volatile uint16_t YCTWB_F3;                               /*  YCTWB_F3        */
-    volatile uint16_t YCTWB_F4;                               /*  YCTWB_F4        */
-    volatile uint16_t YCTWB_F5;                               /*  YCTWB_F5        */
-    volatile uint16_t YCTWB_F6;                               /*  YCTWB_F6        */
-    volatile uint16_t YCTWB_F7;                               /*  YCTWB_F7        */
-    volatile uint16_t YCTWB_F8;                               /*  YCTWB_F8        */
+    volatile uint16_t YCTWB_F0; /*  YCTWB_F0        */
+    volatile uint16_t YCTWB_F1; /*  YCTWB_F1        */
+    volatile uint16_t YCTWB_F2; /*  YCTWB_F2        */
+    volatile uint16_t YCTWB_F3; /*  YCTWB_F3        */
+    volatile uint16_t YCTWB_F4; /*  YCTWB_F4        */
+    volatile uint16_t YCTWB_F5; /*  YCTWB_F5        */
+    volatile uint16_t YCTWB_F6; /*  YCTWB_F6        */
+    volatile uint16_t YCTWB_F7; /*  YCTWB_F7        */
+    volatile uint16_t YCTWB_F8; /*  YCTWB_F8        */
 #define DVDEC_YCTNA_Fn_COUNT 9
-    volatile uint16_t YCTNA_F0;                               /*  YCTNA_F0        */
-    volatile uint16_t YCTNA_F1;                               /*  YCTNA_F1        */
-    volatile uint16_t YCTNA_F2;                               /*  YCTNA_F2        */
-    volatile uint16_t YCTNA_F3;                               /*  YCTNA_F3        */
-    volatile uint16_t YCTNA_F4;                               /*  YCTNA_F4        */
-    volatile uint16_t YCTNA_F5;                               /*  YCTNA_F5        */
-    volatile uint16_t YCTNA_F6;                               /*  YCTNA_F6        */
-    volatile uint16_t YCTNA_F7;                               /*  YCTNA_F7        */
-    volatile uint16_t YCTNA_F8;                               /*  YCTNA_F8        */
+    volatile uint16_t YCTNA_F0; /*  YCTNA_F0        */
+    volatile uint16_t YCTNA_F1; /*  YCTNA_F1        */
+    volatile uint16_t YCTNA_F2; /*  YCTNA_F2        */
+    volatile uint16_t YCTNA_F3; /*  YCTNA_F3        */
+    volatile uint16_t YCTNA_F4; /*  YCTNA_F4        */
+    volatile uint16_t YCTNA_F5; /*  YCTNA_F5        */
+    volatile uint16_t YCTNA_F6; /*  YCTNA_F6        */
+    volatile uint16_t YCTNA_F7; /*  YCTNA_F7        */
+    volatile uint16_t YCTNA_F8; /*  YCTNA_F8        */
 #define DVDEC_YCTNB_Fn_COUNT 9
-    volatile uint16_t YCTNB_F0;                               /*  YCTNB_F0        */
-    volatile uint16_t YCTNB_F1;                               /*  YCTNB_F1        */
-    volatile uint16_t YCTNB_F2;                               /*  YCTNB_F2        */
-    volatile uint16_t YCTNB_F3;                               /*  YCTNB_F3        */
-    volatile uint16_t YCTNB_F4;                               /*  YCTNB_F4        */
-    volatile uint16_t YCTNB_F5;                               /*  YCTNB_F5        */
-    volatile uint16_t YCTNB_F6;                               /*  YCTNB_F6        */
-    volatile uint16_t YCTNB_F7;                               /*  YCTNB_F7        */
-    volatile uint16_t YCTNB_F8;                               /*  YCTNB_F8        */
-    volatile uint8_t   dummy10[38];                            /*                  */
-    volatile uint16_t YGAINCR;                                /*  YGAINCR         */
-    volatile uint16_t CBGAINCR;                               /*  CBGAINCR        */
-    volatile uint16_t CRGAINCR;                               /*  CRGAINCR        */
-    volatile uint8_t   dummy11[122];                           /*                  */
-    volatile uint16_t PGA_UPDATE;                             /*  PGA_UPDATE      */
-    volatile uint16_t PGACR;                                  /*  PGACR           */
-    volatile uint16_t ADCCR2;                                 /*  ADCCR2          */
+    volatile uint16_t YCTNB_F0; /*  YCTNB_F0        */
+    volatile uint16_t YCTNB_F1; /*  YCTNB_F1        */
+    volatile uint16_t YCTNB_F2; /*  YCTNB_F2        */
+    volatile uint16_t YCTNB_F3; /*  YCTNB_F3        */
+    volatile uint16_t YCTNB_F4; /*  YCTNB_F4        */
+    volatile uint16_t YCTNB_F5; /*  YCTNB_F5        */
+    volatile uint16_t YCTNB_F6; /*  YCTNB_F6        */
+    volatile uint16_t YCTNB_F7; /*  YCTNB_F7        */
+    volatile uint16_t YCTNB_F8; /*  YCTNB_F8        */
+    volatile uint8_t dummy10[38]; /*                  */
+    volatile uint16_t YGAINCR; /*  YGAINCR         */
+    volatile uint16_t CBGAINCR; /*  CBGAINCR        */
+    volatile uint16_t CRGAINCR; /*  CRGAINCR        */
+    volatile uint8_t dummy11[122]; /*                  */
+    volatile uint16_t PGA_UPDATE; /*  PGA_UPDATE      */
+    volatile uint16_t PGACR; /*  PGACR           */
+    volatile uint16_t ADCCR2; /*  ADCCR2          */
 };
 
 

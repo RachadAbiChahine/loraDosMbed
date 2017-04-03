@@ -34,27 +34,27 @@
  * @{
  * @brief EFM32LG_LETIMER Register Declaration
  *****************************************************************************/
-typedef struct
-{
-  __IO uint32_t CTRL;         /**< Control Register  */
-  __IO uint32_t CMD;          /**< Command Register  */
-  __I uint32_t  STATUS;       /**< Status Register  */
-  __IO uint32_t CNT;          /**< Counter Value Register  */
-  __IO uint32_t COMP0;        /**< Compare Value Register 0  */
-  __IO uint32_t COMP1;        /**< Compare Value Register 1  */
-  __IO uint32_t REP0;         /**< Repeat Counter Register 0  */
-  __IO uint32_t REP1;         /**< Repeat Counter Register 1  */
-  __I uint32_t  IF;           /**< Interrupt Flag Register  */
-  __IO uint32_t IFS;          /**< Interrupt Flag Set Register  */
-  __IO uint32_t IFC;          /**< Interrupt Flag Clear Register  */
-  __IO uint32_t IEN;          /**< Interrupt Enable Register  */
 
-  __IO uint32_t FREEZE;       /**< Freeze Register  */
-  __I uint32_t  SYNCBUSY;     /**< Synchronization Busy Register  */
+typedef struct {
+    __IO uint32_t CTRL; /**< Control Register  */
+    __IO uint32_t CMD; /**< Command Register  */
+    __I uint32_t STATUS; /**< Status Register  */
+    __IO uint32_t CNT; /**< Counter Value Register  */
+    __IO uint32_t COMP0; /**< Compare Value Register 0  */
+    __IO uint32_t COMP1; /**< Compare Value Register 1  */
+    __IO uint32_t REP0; /**< Repeat Counter Register 0  */
+    __IO uint32_t REP1; /**< Repeat Counter Register 1  */
+    __I uint32_t IF; /**< Interrupt Flag Register  */
+    __IO uint32_t IFS; /**< Interrupt Flag Set Register  */
+    __IO uint32_t IFC; /**< Interrupt Flag Clear Register  */
+    __IO uint32_t IEN; /**< Interrupt Enable Register  */
 
-  uint32_t      RESERVED0[2]; /**< Reserved for future use **/
-  __IO uint32_t ROUTE;        /**< I/O Routing Register  */
-} LETIMER_TypeDef;            /** @} */
+    __IO uint32_t FREEZE; /**< Freeze Register  */
+    __I uint32_t SYNCBUSY; /**< Synchronization Busy Register  */
+
+    uint32_t RESERVED0[2]; /**< Reserved for future use **/
+    __IO uint32_t ROUTE; /**< I/O Routing Register  */
+} LETIMER_TypeDef; /** @} */
 
 /**************************************************************************//**
  * @defgroup EFM32LG_LETIMER_BitFields

@@ -40,50 +40,50 @@ extern "C" {
 
 #include <stdint.h>
 
-/**
- * @file  pwrman_regs.h
- * @addtogroup pwrman PWRMAN
- * @{
- */
+    /**
+     * @file  pwrman_regs.h
+     * @addtogroup pwrman PWRMAN
+     * @{
+     */
 
-/**
- * @brief Defines PAD Modes for Wake Up Detection.
- */
-typedef enum {
-    /** WUD Mode for Selected PAD = Clear/Activate */
-    MXC_E_PWRMAN_PAD_MODE_CLEAR_SET,
-    /** WUD Mode for Selected PAD = Set WUD Act Hi/Set WUD Act Lo */
-    MXC_E_PWRMAN_PAD_MODE_ACT_HI_LO,
-    /** WUD Mode for Selected PAD = Set Weak Hi/ Set Weak Lo */
-    MXC_E_PWRMAN_PAD_MODE_WEAK_HI_LO,
-    /** WUD Mode for Selected PAD = No pad state change */
-    MXC_E_PWRMAN_PAD_MODE_NONE
-} mxc_pwrman_pad_mode_t;
+    /**
+     * @brief Defines PAD Modes for Wake Up Detection.
+     */
+    typedef enum {
+        /** WUD Mode for Selected PAD = Clear/Activate */
+        MXC_E_PWRMAN_PAD_MODE_CLEAR_SET,
+        /** WUD Mode for Selected PAD = Set WUD Act Hi/Set WUD Act Lo */
+        MXC_E_PWRMAN_PAD_MODE_ACT_HI_LO,
+        /** WUD Mode for Selected PAD = Set Weak Hi/ Set Weak Lo */
+        MXC_E_PWRMAN_PAD_MODE_WEAK_HI_LO,
+        /** WUD Mode for Selected PAD = No pad state change */
+        MXC_E_PWRMAN_PAD_MODE_NONE
+    } mxc_pwrman_pad_mode_t;
 
-/*                                          Offset   Register Description
-                                            ======   =========================================== */
-typedef struct {
-    __IO uint32_t pwr_rst_ctrl;         /*  0x0000   Power Reset Control and Status              */
-    __IO uint32_t intfl;                /*  0x0004   Interrupt Flags                             */
-    __IO uint32_t inten;                /*  0x0008   Interrupt Enable/Disable Controls           */
-    __IO uint32_t svm_events;           /*  0x000C   SVM Event Status Flags (read-only)          */
-    __IO uint32_t wud_ctrl;             /*  0x0010   Wake-Up Detect Control                      */
-    __IO uint32_t wud_pulse0;           /*  0x0014   WUD Pulse To Mode Bit 0                     */
-    __IO uint32_t wud_pulse1;           /*  0x0018   WUD Pulse To Mode Bit 1                     */
-    __I uint32_t rsv001C[5];            /*  0x001C                                               */
+    /*                                          Offset   Register Description
+                                                ======   =========================================== */
+    typedef struct {
+        __IO uint32_t pwr_rst_ctrl; /*  0x0000   Power Reset Control and Status              */
+        __IO uint32_t intfl; /*  0x0004   Interrupt Flags                             */
+        __IO uint32_t inten; /*  0x0008   Interrupt Enable/Disable Controls           */
+        __IO uint32_t svm_events; /*  0x000C   SVM Event Status Flags (read-only)          */
+        __IO uint32_t wud_ctrl; /*  0x0010   Wake-Up Detect Control                      */
+        __IO uint32_t wud_pulse0; /*  0x0014   WUD Pulse To Mode Bit 0                     */
+        __IO uint32_t wud_pulse1; /*  0x0018   WUD Pulse To Mode Bit 1                     */
+        __I uint32_t rsv001C[5]; /*  0x001C                                               */
 
-    __IO uint32_t wud_seen0;            /*  0x0030   Wake-up Detect Status for P0/P1/P2/P3       */
-    __IO uint32_t wud_seen1;            /*  0x0034   Wake-up Detect Status for P4/P5/P6/P7       */
-    __IO uint32_t die_type;             /*  0x0038   Die ID Register (Device Type)               */
-    __IO uint32_t base_part_num;        /*  0x003C   Base Part Number                            */
-    __IO uint32_t mask_id0;             /*  0x0040   Mask ID Register 0                          */
-    __IO uint32_t mask_id1;             /*  0x0044   Mask ID Register 1                          */
-    __IO uint32_t peripheral_reset;     /*  0x0048   Peripheral Reset Control Register           */
-} mxc_pwrman_regs_t;
+        __IO uint32_t wud_seen0; /*  0x0030   Wake-up Detect Status for P0/P1/P2/P3       */
+        __IO uint32_t wud_seen1; /*  0x0034   Wake-up Detect Status for P4/P5/P6/P7       */
+        __IO uint32_t die_type; /*  0x0038   Die ID Register (Device Type)               */
+        __IO uint32_t base_part_num; /*  0x003C   Base Part Number                            */
+        __IO uint32_t mask_id0; /*  0x0040   Mask ID Register 0                          */
+        __IO uint32_t mask_id1; /*  0x0044   Mask ID Register 1                          */
+        __IO uint32_t peripheral_reset; /*  0x0048   Peripheral Reset Control Register           */
+    } mxc_pwrman_regs_t;
 
-/*
-   Register offsets for module PWRMAN.
-*/
+    /*
+       Register offsets for module PWRMAN.
+     */
 #define MXC_R_PWRMAN_OFFS_PWR_RST_CTRL          ((uint32_t)0x00000000UL)
 #define MXC_R_PWRMAN_OFFS_INTFL                 ((uint32_t)0x00000004UL)
 #define MXC_R_PWRMAN_OFFS_INTEN                 ((uint32_t)0x00000008UL)
@@ -99,9 +99,9 @@ typedef struct {
 #define MXC_R_PWRMAN_OFFS_MASK_ID1              ((uint32_t)0x00000044UL)
 #define MXC_R_PWRMAN_OFFS_PERIPHERAL_RESET      ((uint32_t)0x00000048UL)
 
-/*
-   Field positions and masks for module PWRMAN.
-*/
+    /*
+       Field positions and masks for module PWRMAN.
+     */
 #define MXC_F_PWRMAN_PWR_RST_CTRL_FLASH_ACTIVE_POS          0
 #define MXC_F_PWRMAN_PWR_RST_CTRL_FLASH_ACTIVE              ((uint32_t)(0x00000001UL << MXC_F_PWRMAN_PWR_RST_CTRL_FLASH_ACTIVE_POS))
 #define MXC_F_PWRMAN_PWR_RST_CTRL_SRAM_ACTIVE_POS           1
@@ -380,7 +380,7 @@ typedef struct {
 #endif
 
 /**
-* @}
-*/
+ * @}
+ */
 
 #endif /* _MXC_PWRMAN_REGS_H_ */

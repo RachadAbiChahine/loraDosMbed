@@ -40,33 +40,33 @@ extern "C" {
 
 #include <stdint.h>
 
-/**
- * @file  maa_regs.h
- * @addtogroup maa MAA
- * @{
- */
+    /**
+     * @file  maa_regs.h
+     * @addtogroup maa MAA
+     * @{
+     */
 
-/*                                    Offset   Register Description
-                                      ======   ========================================================== */
-typedef struct {
-    __IO uint32_t ctrl;           /*  0x0000   MAA Control, Configuration and Status                      */
-    __IO uint32_t maws;           /*  0x0004   MAA Word (Operand) Size, Big/Little Endian Mode Select     */
-} mxc_maa_regs_t;
+    /*                                    Offset   Register Description
+                                          ======   ========================================================== */
+    typedef struct {
+        __IO uint32_t ctrl; /*  0x0000   MAA Control, Configuration and Status                      */
+        __IO uint32_t maws; /*  0x0004   MAA Word (Operand) Size, Big/Little Endian Mode Select     */
+    } mxc_maa_regs_t;
 
-/*                                    Offset   Register Description
-                                      ======   ========================================================== */
-typedef struct {
-    __IO uint32_t seg0[16];        /*  0x0000   [64 bytes] MAA Memory Segment 0                            */
-    __IO uint32_t seg1[16];        /*  0x0040   [64 bytes] MAA Memory Segment 1                            */
-    __IO uint32_t seg2[16];        /*  0x0080   [64 bytes] MAA Memory Segment 2                            */
-    __IO uint32_t seg3[16];        /*  0x00C0   [64 bytes] MAA Memory Segment 3                            */
-    __IO uint32_t seg4[16];        /*  0x0100   [64 bytes] MAA Memory Segment 4                            */
-    __IO uint32_t seg5[16];        /*  0x0140   [64 bytes] MAA Memory Segment 5                            */
-} mxc_maa_mem_regs_t;
+    /*                                    Offset   Register Description
+                                          ======   ========================================================== */
+    typedef struct {
+        __IO uint32_t seg0[16]; /*  0x0000   [64 bytes] MAA Memory Segment 0                            */
+        __IO uint32_t seg1[16]; /*  0x0040   [64 bytes] MAA Memory Segment 1                            */
+        __IO uint32_t seg2[16]; /*  0x0080   [64 bytes] MAA Memory Segment 2                            */
+        __IO uint32_t seg3[16]; /*  0x00C0   [64 bytes] MAA Memory Segment 3                            */
+        __IO uint32_t seg4[16]; /*  0x0100   [64 bytes] MAA Memory Segment 4                            */
+        __IO uint32_t seg5[16]; /*  0x0140   [64 bytes] MAA Memory Segment 5                            */
+    } mxc_maa_mem_regs_t;
 
-/*
-   Register offsets for module MAA.
-*/
+    /*
+       Register offsets for module MAA.
+     */
 #define MXC_R_MAA_OFFS_CTRL         ((uint32_t)0x00000000UL)
 #define MXC_R_MAA_OFFS_MAWS         ((uint32_t)0x00000004UL)
 #define MXC_R_MAA_MEM_OFFS_SEG0     ((uint32_t)0x00000000UL)
@@ -76,9 +76,9 @@ typedef struct {
 #define MXC_R_MAA_MEM_OFFS_SEG4     ((uint32_t)0x00000100UL)
 #define MXC_R_MAA_MEM_OFFS_SEG5     ((uint32_t)0x00000140UL)
 
-/*
-   Field positions and masks for module MAA.
-*/
+    /*
+       Field positions and masks for module MAA.
+     */
 #define MXC_F_MAA_CTRL_START_POS    0
 #define MXC_F_MAA_CTRL_START        ((uint32_t)(0x00000001UL << MXC_F_MAA_CTRL_START_POS))
 #define MXC_F_MAA_CTRL_OPSEL_POS    1
@@ -118,7 +118,7 @@ typedef struct {
 #endif
 
 /**
-* @}
-*/
+ * @}
+ */
 
 #endif   /* _MXC_MAA_REGS_H_ */

@@ -34,17 +34,17 @@
  * @{
  * @brief EFM32LG_ACMP Register Declaration
  *****************************************************************************/
-typedef struct
-{
-  __IO uint32_t CTRL;     /**< Control Register  */
-  __IO uint32_t INPUTSEL; /**< Input Selection Register  */
-  __I uint32_t  STATUS;   /**< Status Register  */
-  __IO uint32_t IEN;      /**< Interrupt Enable Register  */
-  __I uint32_t  IF;       /**< Interrupt Flag Register  */
-  __IO uint32_t IFS;      /**< Interrupt Flag Set Register  */
-  __IO uint32_t IFC;      /**< Interrupt Flag Clear Register  */
-  __IO uint32_t ROUTE;    /**< I/O Routing Register  */
-} ACMP_TypeDef;           /** @} */
+
+typedef struct {
+    __IO uint32_t CTRL; /**< Control Register  */
+    __IO uint32_t INPUTSEL; /**< Input Selection Register  */
+    __I uint32_t STATUS; /**< Status Register  */
+    __IO uint32_t IEN; /**< Interrupt Enable Register  */
+    __I uint32_t IF; /**< Interrupt Flag Register  */
+    __IO uint32_t IFS; /**< Interrupt Flag Set Register  */
+    __IO uint32_t IFC; /**< Interrupt Flag Clear Register  */
+    __IO uint32_t ROUTE; /**< I/O Routing Register  */
+} ACMP_TypeDef; /** @} */
 
 /**************************************************************************//**
  * @defgroup EFM32LG_ACMP_BitFields

@@ -40,38 +40,38 @@ extern "C" {
 
 #include <stdint.h>
 
-/**
- * @file  tpu_regs.h
- * @addtogroup tpu TPU
- * @{
- */
+    /**
+     * @file  tpu_regs.h
+     * @addtogroup tpu TPU
+     * @{
+     */
 
-/*                                               Offset   Register Description
-                                                 ======   ================================================== */
-typedef struct {
-    __I uint32_t rsv0000;                    /*  0x0000   Reserved                                          */
-    __I uint32_t rsv0004;                    /*  0x0004   Reserved - PUF Control (Deprecated)               */
-    __I uint32_t rsv0008;                    /*  0x0008   Reserved - PUF Output (Deprecated)                */
-    __I uint32_t rsv000C[125];               /*  0x000C                                                     */
-    __IO uint32_t prng_user_entropy;         /*  0x0200   PRNG User Entropy Value                           */
-    __IO uint32_t prng_rnd_num;              /*  0x0204   PRNG Random Number Output                         */
-} mxc_tpu_regs_t;
+    /*                                               Offset   Register Description
+                                                     ======   ================================================== */
+    typedef struct {
+        __I uint32_t rsv0000; /*  0x0000   Reserved                                          */
+        __I uint32_t rsv0004; /*  0x0004   Reserved - PUF Control (Deprecated)               */
+        __I uint32_t rsv0008; /*  0x0008   Reserved - PUF Output (Deprecated)                */
+        __I uint32_t rsv000C[125]; /*  0x000C                                                     */
+        __IO uint32_t prng_user_entropy; /*  0x0200   PRNG User Entropy Value                           */
+        __IO uint32_t prng_rnd_num; /*  0x0204   PRNG Random Number Output                         */
+    } mxc_tpu_regs_t;
 
-/*                                               Offset   Register Description
-                                                 ======   ================================================= */
-typedef struct {
-    __IO uint32_t status;                    /*  0x0000   Dynamic Tamper Sensor Status                      */
-    __IO uint32_t ctrl0;                     /*  0x0004   Dynamic Tamper Sensor Control 0                   */
-    __IO uint32_t ctrl1;                     /*  0x0008   Dynamic Tamper Sensor Control 1                   */
-    __IO uint32_t sks0;                      /*  0x0010   TPU Secure Key Storage Register 0                 */
-    __IO uint32_t sks1;                      /*  0x0014   TPU Secure Key Storage Register 0                 */
-    __IO uint32_t sks2;                      /*  0x0018   TPU Secure Key Storage Register 0                 */
-    __IO uint32_t sks3;                      /*  0x001C   TPU Secure Key Storage Register 0                 */
-} mxc_tpu_tsr_regs_t;
+    /*                                               Offset   Register Description
+                                                     ======   ================================================= */
+    typedef struct {
+        __IO uint32_t status; /*  0x0000   Dynamic Tamper Sensor Status                      */
+        __IO uint32_t ctrl0; /*  0x0004   Dynamic Tamper Sensor Control 0                   */
+        __IO uint32_t ctrl1; /*  0x0008   Dynamic Tamper Sensor Control 1                   */
+        __IO uint32_t sks0; /*  0x0010   TPU Secure Key Storage Register 0                 */
+        __IO uint32_t sks1; /*  0x0014   TPU Secure Key Storage Register 0                 */
+        __IO uint32_t sks2; /*  0x0018   TPU Secure Key Storage Register 0                 */
+        __IO uint32_t sks3; /*  0x001C   TPU Secure Key Storage Register 0                 */
+    } mxc_tpu_tsr_regs_t;
 
-/*
-   Register offsets for module TPU.
-*/
+    /*
+       Register offsets for module TPU.
+     */
 #define MXC_R_TPU_OFFS_PRNG_USER_ENTROPY    ((uint32_t)0x00000200UL)
 #define MXC_R_TPU_OFFS_PRNG_RND_NUM         ((uint32_t)0x00000204UL)
 #define MXC_R_TPU_TSR_OFFS_STATUS           ((uint32_t)0x00000000UL)
@@ -83,9 +83,9 @@ typedef struct {
 #define MXC_R_TPU_TSR_OFFS_SKS3             ((uint32_t)0x0000001CUL)
 
 
-/*
-   Field positions and masks for module TPU.
-*/
+    /*
+       Field positions and masks for module TPU.
+     */
 #define MXC_F_TPU_CTRL0_ERR_THR_POS         0
 #define MXC_F_TPU_CTRL0_ERR_THR             ((uint32_t)(0x0000001FUL << MXC_F_TPU_CTRL0_ERR_THR_POS))
 #define MXC_F_TPU_CTRL0_OUT_FREQ_POS        5
@@ -102,7 +102,7 @@ typedef struct {
 #endif
 
 /**
-* @}
-*/
+ * @}
+ */
 
 #endif   /* _MXC_TPU_REGS_H_ */

@@ -1,62 +1,61 @@
 /*******************************************************************************
-* DISCLAIMER
-* This software is supplied by Renesas Electronics Corporation and is only
-* intended for use with Renesas products. No other uses are authorized. This
-* software is owned by Renesas Electronics Corporation and is protected under
-* all applicable laws, including copyright laws.
-* THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIES REGARDING
-* THIS SOFTWARE, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING BUT NOT
-* LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
-* AND NON-INFRINGEMENT. ALL SUCH WARRANTIES ARE EXPRESSLY DISCLAIMED.
-* TO THE MAXIMUM EXTENT PERMITTED NOT PROHIBITED BY LAW, NEITHER RENESAS
-* ELECTRONICS CORPORATION NOR ANY OF ITS AFFILIATED COMPANIES SHALL BE LIABLE
-* FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES FOR
-* ANY REASON RELATED TO THIS SOFTWARE, EVEN IF RENESAS OR ITS AFFILIATES HAVE
-* BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
-* Renesas reserves the right, without notice, to make changes to this software
-* and to discontinue the availability of this software. By using this software,
-* you agree to the additional terms and conditions found by accessing the
-* following link:
-* http://www.renesas.com/disclaimer*
-* Copyright (C) 2013-2014 Renesas Electronics Corporation. All rights reserved.
-*******************************************************************************/
+ * DISCLAIMER
+ * This software is supplied by Renesas Electronics Corporation and is only
+ * intended for use with Renesas products. No other uses are authorized. This
+ * software is owned by Renesas Electronics Corporation and is protected under
+ * all applicable laws, including copyright laws.
+ * THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIES REGARDING
+ * THIS SOFTWARE, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING BUT NOT
+ * LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
+ * AND NON-INFRINGEMENT. ALL SUCH WARRANTIES ARE EXPRESSLY DISCLAIMED.
+ * TO THE MAXIMUM EXTENT PERMITTED NOT PROHIBITED BY LAW, NEITHER RENESAS
+ * ELECTRONICS CORPORATION NOR ANY OF ITS AFFILIATED COMPANIES SHALL BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES FOR
+ * ANY REASON RELATED TO THIS SOFTWARE, EVEN IF RENESAS OR ITS AFFILIATES HAVE
+ * BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+ * Renesas reserves the right, without notice, to make changes to this software
+ * and to discontinue the availability of this software. By using this software,
+ * you agree to the additional terms and conditions found by accessing the
+ * following link:
+ * http://www.renesas.com/disclaimer*
+ * Copyright (C) 2013-2014 Renesas Electronics Corporation. All rights reserved.
+ *******************************************************************************/
 /*******************************************************************************
-* File Name : rspi_iodefine.h
-* $Rev: $
-* $Date::                           $
-* Description : Definition of I/O Register (V1.00a)
-******************************************************************************/
+ * File Name : rspi_iodefine.h
+ * $Rev: $
+ * $Date::                           $
+ * Description : Definition of I/O Register (V1.00a)
+ ******************************************************************************/
 #ifndef RSPI_IODEFINE_H
 #define RSPI_IODEFINE_H
 /* ->SEC M1.10.1 : Not magic number */
 
 #include "reg32_t.h"
 
-struct st_rspi
-{                                                          /* RSPI             */
-    volatile uint8_t   SPCR;                                   /*  SPCR            */
-    volatile uint8_t   SSLP;                                   /*  SSLP            */
-    volatile uint8_t   SPPCR;                                  /*  SPPCR           */
-    volatile uint8_t   SPSR;                                   /*  SPSR            */
-    union reg32_t  SPDR;                          /*  SPDR            */
-    
-    volatile uint8_t   SPSCR;                                  /*  SPSCR           */
-    volatile uint8_t   SPSSR;                                  /*  SPSSR           */
-    volatile uint8_t   SPBR;                                   /*  SPBR            */
-    volatile uint8_t   SPDCR;                                  /*  SPDCR           */
-    volatile uint8_t   SPCKD;                                  /*  SPCKD           */
-    volatile uint8_t   SSLND;                                  /*  SSLND           */
-    volatile uint8_t   SPND;                                   /*  SPND            */
-    volatile uint8_t   dummy1[1];                              /*                  */
+struct st_rspi { /* RSPI             */
+    volatile uint8_t SPCR; /*  SPCR            */
+    volatile uint8_t SSLP; /*  SSLP            */
+    volatile uint8_t SPPCR; /*  SPPCR           */
+    volatile uint8_t SPSR; /*  SPSR            */
+    union reg32_t SPDR; /*  SPDR            */
+
+    volatile uint8_t SPSCR; /*  SPSCR           */
+    volatile uint8_t SPSSR; /*  SPSSR           */
+    volatile uint8_t SPBR; /*  SPBR            */
+    volatile uint8_t SPDCR; /*  SPDCR           */
+    volatile uint8_t SPCKD; /*  SPCKD           */
+    volatile uint8_t SSLND; /*  SSLND           */
+    volatile uint8_t SPND; /*  SPND            */
+    volatile uint8_t dummy1[1]; /*                  */
 #define SPCMD_COUNT 4
-    volatile uint16_t SPCMD0;                                 /*  SPCMD0          */
-    volatile uint16_t SPCMD1;                                 /*  SPCMD1          */
-    volatile uint16_t SPCMD2;                                 /*  SPCMD2          */
-    volatile uint16_t SPCMD3;                                 /*  SPCMD3          */
-    volatile uint8_t   dummy2[8];                              /*                  */
-    volatile uint8_t   SPBFCR;                                 /*  SPBFCR          */
-    volatile uint8_t   dummy3[1];                              /*                  */
-    volatile uint16_t SPBFDR;                                 /*  SPBFDR          */
+    volatile uint16_t SPCMD0; /*  SPCMD0          */
+    volatile uint16_t SPCMD1; /*  SPCMD1          */
+    volatile uint16_t SPCMD2; /*  SPCMD2          */
+    volatile uint16_t SPCMD3; /*  SPCMD3          */
+    volatile uint8_t dummy2[8]; /*                  */
+    volatile uint8_t SPBFCR; /*  SPBFCR          */
+    volatile uint8_t dummy3[1]; /*                  */
+    volatile uint16_t SPBFDR; /*  SPBFDR          */
 };
 
 

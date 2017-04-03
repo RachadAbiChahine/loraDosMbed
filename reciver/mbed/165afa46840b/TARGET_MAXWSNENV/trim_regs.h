@@ -40,50 +40,50 @@ extern "C" {
 
 #include <stdint.h>
 
-typedef struct {
-    __IO uint32_t trim_reg_00;
-    __IO uint32_t trim_reg_01;
-    __IO uint32_t trim_reg_02;
-    __IO uint32_t trim_reg_03;
-    __IO uint32_t trim_reg_04;
-    __IO uint32_t trim_reg_05;
-    __IO uint32_t trim_reg_06;
-    __IO uint32_t trim_reg_07;
-    __IO uint32_t trim_reg_08;
-    __IO uint32_t trim_reg_09;
-    __IO uint32_t trim_reg_10;
-    __IO uint32_t trim_reg_11;
-    __IO uint32_t trim_reg_12;
-    __IO uint32_t trim_reg_13;
-    __IO uint32_t trim_reg_14;
-    __IO uint32_t trim_reg_15;
-    __IO uint32_t trim_reg_16;
-    __IO uint32_t trim_reg_17;
-    __IO uint32_t trim_reg_18;
-    __IO uint32_t trim_reg_19;
-    __IO uint32_t trim_reg_20;
-    __IO uint32_t trim_reg_21;
-    __IO uint32_t trim_reg_22;
-    __IO uint32_t trim_reg_23;
-    __IO uint32_t trim_reg_24;
-    __IO uint32_t trim_reg_25;
-    __IO uint32_t trim_reg_26;
-    __IO uint32_t trim_reg_27;
-    __IO uint32_t trim_reg_28;
-    __IO uint32_t trim_reg_29;
-    __IO uint32_t trim_reg_30;
-    __IO uint32_t trim_reg_31;
-    __IO uint32_t trim_reg_32;
-    __IO uint32_t trim_reg_33;
-    __IO uint32_t trim_reg_34;
-    __IO uint32_t trim_reg_35;
-    __IO uint32_t trim_reg_36;
-    __IO uint32_t trim_reg_37;
-    __IO uint32_t trim_reg_38;
-    __IO uint32_t trim_reg_39;
-    __IO uint32_t trim_reg_40;
-    __IO uint32_t trim_reg_41;
-} mxc_ftr_regs_t;
+    typedef struct {
+        __IO uint32_t trim_reg_00;
+        __IO uint32_t trim_reg_01;
+        __IO uint32_t trim_reg_02;
+        __IO uint32_t trim_reg_03;
+        __IO uint32_t trim_reg_04;
+        __IO uint32_t trim_reg_05;
+        __IO uint32_t trim_reg_06;
+        __IO uint32_t trim_reg_07;
+        __IO uint32_t trim_reg_08;
+        __IO uint32_t trim_reg_09;
+        __IO uint32_t trim_reg_10;
+        __IO uint32_t trim_reg_11;
+        __IO uint32_t trim_reg_12;
+        __IO uint32_t trim_reg_13;
+        __IO uint32_t trim_reg_14;
+        __IO uint32_t trim_reg_15;
+        __IO uint32_t trim_reg_16;
+        __IO uint32_t trim_reg_17;
+        __IO uint32_t trim_reg_18;
+        __IO uint32_t trim_reg_19;
+        __IO uint32_t trim_reg_20;
+        __IO uint32_t trim_reg_21;
+        __IO uint32_t trim_reg_22;
+        __IO uint32_t trim_reg_23;
+        __IO uint32_t trim_reg_24;
+        __IO uint32_t trim_reg_25;
+        __IO uint32_t trim_reg_26;
+        __IO uint32_t trim_reg_27;
+        __IO uint32_t trim_reg_28;
+        __IO uint32_t trim_reg_29;
+        __IO uint32_t trim_reg_30;
+        __IO uint32_t trim_reg_31;
+        __IO uint32_t trim_reg_32;
+        __IO uint32_t trim_reg_33;
+        __IO uint32_t trim_reg_34;
+        __IO uint32_t trim_reg_35;
+        __IO uint32_t trim_reg_36;
+        __IO uint32_t trim_reg_37;
+        __IO uint32_t trim_reg_38;
+        __IO uint32_t trim_reg_39;
+        __IO uint32_t trim_reg_40;
+        __IO uint32_t trim_reg_41;
+    } mxc_ftr_regs_t;
 
 #ifdef __cplusplus
 }

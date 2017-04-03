@@ -34,33 +34,33 @@
  * @{
  * @brief EFM32LG_TIMER Register Declaration
  *****************************************************************************/
-typedef struct
-{
-  __IO uint32_t    CTRL;         /**< Control Register  */
-  __IO uint32_t    CMD;          /**< Command Register  */
-  __I uint32_t     STATUS;       /**< Status Register  */
-  __IO uint32_t    IEN;          /**< Interrupt Enable Register  */
-  __I uint32_t     IF;           /**< Interrupt Flag Register  */
-  __IO uint32_t    IFS;          /**< Interrupt Flag Set Register  */
-  __IO uint32_t    IFC;          /**< Interrupt Flag Clear Register  */
-  __IO uint32_t    TOP;          /**< Counter Top Value Register  */
-  __IO uint32_t    TOPB;         /**< Counter Top Value Buffer Register  */
-  __IO uint32_t    CNT;          /**< Counter Value Register  */
-  __IO uint32_t    ROUTE;        /**< I/O Routing Register  */
 
-  uint32_t         RESERVED0[1]; /**< Reserved registers */
+typedef struct {
+    __IO uint32_t CTRL; /**< Control Register  */
+    __IO uint32_t CMD; /**< Command Register  */
+    __I uint32_t STATUS; /**< Status Register  */
+    __IO uint32_t IEN; /**< Interrupt Enable Register  */
+    __I uint32_t IF; /**< Interrupt Flag Register  */
+    __IO uint32_t IFS; /**< Interrupt Flag Set Register  */
+    __IO uint32_t IFC; /**< Interrupt Flag Clear Register  */
+    __IO uint32_t TOP; /**< Counter Top Value Register  */
+    __IO uint32_t TOPB; /**< Counter Top Value Buffer Register  */
+    __IO uint32_t CNT; /**< Counter Value Register  */
+    __IO uint32_t ROUTE; /**< I/O Routing Register  */
 
-  TIMER_CC_TypeDef CC[3];        /**< Compare/Capture Channel */
+    uint32_t RESERVED0[1]; /**< Reserved registers */
 
-  uint32_t         RESERVED1[4]; /**< Reserved for future use **/
-  __IO uint32_t    DTCTRL;       /**< DTI Control Register  */
-  __IO uint32_t    DTTIME;       /**< DTI Time Control Register  */
-  __IO uint32_t    DTFC;         /**< DTI Fault Configuration Register  */
-  __IO uint32_t    DTOGEN;       /**< DTI Output Generation Enable Register  */
-  __I uint32_t     DTFAULT;      /**< DTI Fault Register  */
-  __O uint32_t     DTFAULTC;     /**< DTI Fault Clear Register  */
-  __IO uint32_t    DTLOCK;       /**< DTI Configuration Lock Register  */
-} TIMER_TypeDef;                 /** @} */
+    TIMER_CC_TypeDef CC[3]; /**< Compare/Capture Channel */
+
+    uint32_t RESERVED1[4]; /**< Reserved for future use **/
+    __IO uint32_t DTCTRL; /**< DTI Control Register  */
+    __IO uint32_t DTTIME; /**< DTI Time Control Register  */
+    __IO uint32_t DTFC; /**< DTI Fault Configuration Register  */
+    __IO uint32_t DTOGEN; /**< DTI Output Generation Enable Register  */
+    __I uint32_t DTFAULT; /**< DTI Fault Register  */
+    __O uint32_t DTFAULTC; /**< DTI Fault Clear Register  */
+    __IO uint32_t DTLOCK; /**< DTI Configuration Lock Register  */
+} TIMER_TypeDef; /** @} */
 
 /**************************************************************************//**
  * @defgroup EFM32LG_TIMER_BitFields

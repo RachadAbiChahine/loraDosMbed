@@ -34,13 +34,13 @@
  * @{
  * @brief EFM32HG_MTB Register Declaration
  *****************************************************************************/
-typedef struct
-{
-  __IO uint32_t POSITION; /**< MTB Trace Position Register.  */
-  __IO uint32_t MASTER;   /**< MTB Trace Control Register  */
-  __IO uint32_t FLOW;     /**< MTB Trace Flow Register  */
-  __IO uint32_t BASE;     /**< MTB Trace Base Register  */
-} MTB_TypeDef;            /** @} */
+
+typedef struct {
+    __IO uint32_t POSITION; /**< MTB Trace Position Register.  */
+    __IO uint32_t MASTER; /**< MTB Trace Control Register  */
+    __IO uint32_t FLOW; /**< MTB Trace Flow Register  */
+    __IO uint32_t BASE; /**< MTB Trace Base Register  */
+} MTB_TypeDef; /** @} */
 
 /**************************************************************************//**
  * @defgroup EFM32HG_MTB_BitFields

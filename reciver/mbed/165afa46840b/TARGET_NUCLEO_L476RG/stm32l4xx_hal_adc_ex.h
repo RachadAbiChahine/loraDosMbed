@@ -1145,14 +1145,14 @@ typedef struct
                                           ((__INJTRIG__) == ADC_EXTERNALTRIGINJEC_T6_TRGO)     || \
                                           ((__INJTRIG__) == ADC_EXTERNALTRIGINJEC_T15_TRGO)    || \
                                                                                                   \
-                                          ((__INJTRIG__) == ADC_SOFTWARE_START)                   )		
+                                          ((__INJTRIG__) == ADC_SOFTWARE_START)                   )  
 
 
-/**
-  * @brief Verify the ADC multimode setting.
-  * @param __MODE__: programmed ADC multimode setting.
-  * @retval SET (__MODE__ is valid) or RESET (__MODE__ is invalid)
-  */ 
+    /**
+     * @brief Verify the ADC multimode setting.
+     * @param __MODE__: programmed ADC multimode setting.
+     * @retval SET (__MODE__ is valid) or RESET (__MODE__ is invalid)
+     */
 #define IS_ADC_MULTIMODE(__MODE__) (((__MODE__) == ADC_MODE_INDEPENDENT)               || \
                                ((__MODE__) == ADC_DUALMODE_REGSIMULT_INJECSIMULT) || \
                                ((__MODE__) == ADC_DUALMODE_REGSIMULT_ALTERTRIG)   || \
@@ -1160,23 +1160,23 @@ typedef struct
                                ((__MODE__) == ADC_DUALMODE_INJECSIMULT)           || \
                                ((__MODE__) == ADC_DUALMODE_REGSIMULT)             || \
                                ((__MODE__) == ADC_DUALMODE_INTERL)                || \
-                               ((__MODE__) == ADC_DUALMODE_ALTERTRIG)               )	
+                               ((__MODE__) == ADC_DUALMODE_ALTERTRIG)               ) 
 
 
-/**
-  * @brief Verify the ADC multimode DMA access setting.
-  * @param __MODE__: programmed ADC multimode DMA access setting.
-  * @retval SET (__MODE__ is valid) or RESET (__MODE__ is invalid)
-  */
+    /**
+     * @brief Verify the ADC multimode DMA access setting.
+     * @param __MODE__: programmed ADC multimode DMA access setting.
+     * @retval SET (__MODE__ is valid) or RESET (__MODE__ is invalid)
+     */
 #define IS_ADC_DMA_ACCESS_MULTIMODE(__MODE__) (((__MODE__) == ADC_DMAACCESSMODE_DISABLED)   || \
                                                ((__MODE__) == ADC_DMAACCESSMODE_12_10_BITS) || \
-                                               ((__MODE__) == ADC_DMAACCESSMODE_8_6_BITS)     )	
+                                               ((__MODE__) == ADC_DMAACCESSMODE_8_6_BITS)     ) 
 
-/**
-  * @brief Verify the ADC multimode delay setting.
-  * @param __DELAY__: programmed ADC multimode delay setting.
-  * @retval SET (__DELAY__ is a valid value) or RESET (__DELAY__ is invalid)
-  */
+    /**
+     * @brief Verify the ADC multimode delay setting.
+     * @param __DELAY__: programmed ADC multimode delay setting.
+     * @retval SET (__DELAY__ is a valid value) or RESET (__DELAY__ is invalid)
+     */
 #define IS_ADC_SAMPLING_DELAY(__DELAY__) (((__DELAY__) == ADC_TWOSAMPLINGDELAY_1CYCLE)   || \
                                           ((__DELAY__) == ADC_TWOSAMPLINGDELAY_2CYCLES)  || \
                                           ((__DELAY__) == ADC_TWOSAMPLINGDELAY_3CYCLES)  || \
@@ -1188,57 +1188,57 @@ typedef struct
                                           ((__DELAY__) == ADC_TWOSAMPLINGDELAY_9CYCLES)  || \
                                           ((__DELAY__) == ADC_TWOSAMPLINGDELAY_10CYCLES) || \
                                           ((__DELAY__) == ADC_TWOSAMPLINGDELAY_11CYCLES) || \
-                                          ((__DELAY__) == ADC_TWOSAMPLINGDELAY_12CYCLES)   )	
+                                          ((__DELAY__) == ADC_TWOSAMPLINGDELAY_12CYCLES)   ) 
 
 
-/**
-  * @brief Verify the ADC analog watchdog setting.
-  * @param __WATCHDOG__: programmed ADC analog watchdog setting.
-  * @retval SET (__WATCHDOG__ is valid) or RESET (__WATCHDOG__ is invalid)
-  */
+    /**
+     * @brief Verify the ADC analog watchdog setting.
+     * @param __WATCHDOG__: programmed ADC analog watchdog setting.
+     * @retval SET (__WATCHDOG__ is valid) or RESET (__WATCHDOG__ is invalid)
+     */
 #define IS_ADC_ANALOG_WATCHDOG_NUMBER(__WATCHDOG__) (((__WATCHDOG__) == ADC_ANALOGWATCHDOG_1) || \
                                                      ((__WATCHDOG__) == ADC_ANALOGWATCHDOG_2) || \
-                                                     ((__WATCHDOG__) == ADC_ANALOGWATCHDOG_3)   )	
+                                                     ((__WATCHDOG__) == ADC_ANALOGWATCHDOG_3)   ) 
 
-/**
-  * @brief Verify the ADC analog watchdog mode setting.
-  * @param __WATCHDOG_MODE__: programmed ADC analog watchdog mode setting.
-  * @retval SET (__WATCHDOG_MODE__ is valid) or RESET (__WATCHDOG_MODE__ is invalid)
-  */
+    /**
+     * @brief Verify the ADC analog watchdog mode setting.
+     * @param __WATCHDOG_MODE__: programmed ADC analog watchdog mode setting.
+     * @retval SET (__WATCHDOG_MODE__ is valid) or RESET (__WATCHDOG_MODE__ is invalid)
+     */
 #define IS_ADC_ANALOG_WATCHDOG_MODE(__WATCHDOG_MODE__) (((__WATCHDOG_MODE__) == ADC_ANALOGWATCHDOG_NONE)             || \
                                                         ((__WATCHDOG_MODE__) == ADC_ANALOGWATCHDOG_SINGLE_REG)       || \
                                                         ((__WATCHDOG_MODE__) == ADC_ANALOGWATCHDOG_SINGLE_INJEC)     || \
                                                         ((__WATCHDOG_MODE__) == ADC_ANALOGWATCHDOG_SINGLE_REGINJEC)  || \
                                                         ((__WATCHDOG_MODE__) == ADC_ANALOGWATCHDOG_ALL_REG)          || \
                                                         ((__WATCHDOG_MODE__) == ADC_ANALOGWATCHDOG_ALL_INJEC)        || \
-                                                        ((__WATCHDOG_MODE__) == ADC_ANALOGWATCHDOG_ALL_REGINJEC)       )	
+                                                        ((__WATCHDOG_MODE__) == ADC_ANALOGWATCHDOG_ALL_REGINJEC)       ) 
 
-/**
-  * @brief Verify the ADC conversion (regular or injected or both).
-  * @param __CONVERSION__: ADC conversion group.
-  * @retval SET (__CONVERSION__ is valid) or RESET (__CONVERSION__ is invalid)
-  */
+    /**
+     * @brief Verify the ADC conversion (regular or injected or both).
+     * @param __CONVERSION__: ADC conversion group.
+     * @retval SET (__CONVERSION__ is valid) or RESET (__CONVERSION__ is invalid)
+     */
 #define IS_ADC_CONVERSION_GROUP(__CONVERSION__) (((__CONVERSION__) == ADC_REGULAR_GROUP)     || \
                                              ((__CONVERSION__) == ADC_INJECTED_GROUP)        || \
                                              ((__CONVERSION__) == ADC_REGULAR_INJECTED_GROUP)  )
 
-/**
-  * @brief Verify the ADC event type.
-  * @param __EVENT__: ADC event.
-  * @retval SET (__EVENT__ is valid) or RESET (__EVENT__ is invalid)
-  */
+    /**
+     * @brief Verify the ADC event type.
+     * @param __EVENT__: ADC event.
+     * @retval SET (__EVENT__ is valid) or RESET (__EVENT__ is invalid)
+     */
 #define IS_ADC_EVENT_TYPE(__EVENT__) (((__EVENT__) == ADC_EOSMP_EVENT) || \
                                      ((__EVENT__) == ADC_AWD_EVENT)    || \
                                      ((__EVENT__) == ADC_AWD2_EVENT)   || \
                                      ((__EVENT__) == ADC_AWD3_EVENT)   || \
                                      ((__EVENT__) == ADC_OVR_EVENT)    || \
-                                     ((__EVENT__) == ADC_JQOVF_EVENT)  )	
+                                     ((__EVENT__) == ADC_JQOVF_EVENT)  ) 
 
-/**
-  * @brief Verify the ADC oversampling ratio. 
-  * @param __RATIO__: programmed ADC oversampling ratio.
-  * @retval SET (__RATIO__ is a valid value) or RESET (__RATIO__ is invalid)
-  */   
+    /**
+     * @brief Verify the ADC oversampling ratio. 
+     * @param __RATIO__: programmed ADC oversampling ratio.
+     * @retval SET (__RATIO__ is a valid value) or RESET (__RATIO__ is invalid)
+     */
 #define IS_ADC_OVERSAMPLING_RATIO(__RATIO__)      (((__RATIO__) == ADC_OVERSAMPLING_RATIO_2   ) || \
                                                    ((__RATIO__) == ADC_OVERSAMPLING_RATIO_4   ) || \
                                                    ((__RATIO__) == ADC_OVERSAMPLING_RATIO_8   ) || \
@@ -1248,11 +1248,11 @@ typedef struct
                                                    ((__RATIO__) == ADC_OVERSAMPLING_RATIO_128 ) || \
                                                    ((__RATIO__) == ADC_OVERSAMPLING_RATIO_256 ))
 
-/**
-  * @brief Verify the ADC oversampling shift. 
-  * @param __SHIFT__: programmed ADC oversampling shift.
-  * @retval SET (__SHIFT__ is a valid value) or RESET (__SHIFT__ is invalid)
-  */     
+    /**
+     * @brief Verify the ADC oversampling shift. 
+     * @param __SHIFT__: programmed ADC oversampling shift.
+     * @retval SET (__SHIFT__ is a valid value) or RESET (__SHIFT__ is invalid)
+     */
 #define IS_ADC_RIGHT_BIT_SHIFT(__SHIFT__)        (((__SHIFT__) == ADC_RIGHTBITSHIFT_NONE) || \
                                                   ((__SHIFT__) == ADC_RIGHTBITSHIFT_1   ) || \
                                                   ((__SHIFT__) == ADC_RIGHTBITSHIFT_2   ) || \
@@ -1263,112 +1263,112 @@ typedef struct
                                                   ((__SHIFT__) == ADC_RIGHTBITSHIFT_7   ) || \
                                                   ((__SHIFT__) == ADC_RIGHTBITSHIFT_8   ))
 
-/**
-  * @brief Verify the ADC oversampling triggered mode. 
-  * @param __MODE__: programmed ADC oversampling triggered mode. 
-  * @retval SET (__MODE__ is valid) or RESET (__MODE__ is invalid)
-  */ 
+    /**
+     * @brief Verify the ADC oversampling triggered mode. 
+     * @param __MODE__: programmed ADC oversampling triggered mode. 
+     * @retval SET (__MODE__ is valid) or RESET (__MODE__ is invalid)
+     */
 #define IS_ADC_TRIGGERED_OVERSAMPLING_MODE(__MODE__) (((__MODE__) == ADC_TRIGGEREDMODE_SINGLE_TRIGGER) || \
-                                                      ((__MODE__) == ADC_TRIGGEREDMODE_MULTI_TRIGGER) )	
+                                                      ((__MODE__) == ADC_TRIGGEREDMODE_MULTI_TRIGGER) ) 
 
-/**
-  * @brief Verify the ADC oversampling regular conversion resumed or continued mode. 
-  * @param __MODE__: programmed ADC oversampling regular conversion resumed or continued mode. 
-  * @retval SET (__MODE__ is valid) or RESET (__MODE__ is invalid)
-  */ 
+    /**
+     * @brief Verify the ADC oversampling regular conversion resumed or continued mode. 
+     * @param __MODE__: programmed ADC oversampling regular conversion resumed or continued mode. 
+     * @retval SET (__MODE__ is valid) or RESET (__MODE__ is invalid)
+     */
 #define IS_ADC_REGOVERSAMPLING_MODE(__MODE__) (((__MODE__) == ADC_REGOVERSAMPLING_CONTINUED_MODE) || \
-                                               ((__MODE__) == ADC_REGOVERSAMPLING_RESUMED_MODE) )												  
-   
-/**
-  * @}
-  */
+                                               ((__MODE__) == ADC_REGOVERSAMPLING_RESUMED_MODE) )              
+
+    /**
+     * @}
+     */
 
 
-/* Exported functions --------------------------------------------------------*/  
-/** @addtogroup ADCEx_Exported_Functions ADC Extended Exported Functions
-  * @{
-  */ 
-          
-/* Initialization/de-initialization functions *********************************/
+    /* Exported functions --------------------------------------------------------*/
+    /** @addtogroup ADCEx_Exported_Functions ADC Extended Exported Functions
+     * @{
+     */
 
-/** @addtogroup ADCEx_Exported_Functions_Group1 Extended Input and Output operation functions
-  * @brief    Extended IO operation functions
-  * @{
-  */ 
-/* I/O operation functions ****************************************************/
+    /* Initialization/de-initialization functions *********************************/
 
-/* ADC calibration */
+    /** @addtogroup ADCEx_Exported_Functions_Group1 Extended Input and Output operation functions
+     * @brief    Extended IO operation functions
+     * @{
+     */
+    /* I/O operation functions ****************************************************/
 
-HAL_StatusTypeDef       HAL_ADCEx_Calibration_Start(ADC_HandleTypeDef* hadc, uint32_t SingleDiff);
-uint32_t                HAL_ADCEx_Calibration_GetValue(ADC_HandleTypeDef *hadc, uint32_t SingleDiff);
-HAL_StatusTypeDef       HAL_ADCEx_Calibration_SetValue(ADC_HandleTypeDef *hadc, uint32_t SingleDiff, uint32_t CalibrationFactor);
+    /* ADC calibration */
 
-
-
-/* Blocking mode: Polling */
-HAL_StatusTypeDef       HAL_ADCEx_InjectedStart(ADC_HandleTypeDef* hadc);
-HAL_StatusTypeDef       HAL_ADCEx_InjectedStop(ADC_HandleTypeDef* hadc);
-HAL_StatusTypeDef       HAL_ADCEx_InjectedPollForConversion(ADC_HandleTypeDef* hadc, uint32_t Timeout);
-
-/* Non-blocking mode: Interruption */
-HAL_StatusTypeDef       HAL_ADCEx_InjectedStart_IT(ADC_HandleTypeDef* hadc);
-HAL_StatusTypeDef       HAL_ADCEx_InjectedStop_IT(ADC_HandleTypeDef* hadc);
-     
-
-/* ADC multimode */
-HAL_StatusTypeDef       HAL_ADCEx_MultiModeStart_DMA(ADC_HandleTypeDef *hadc, uint32_t *pData, uint32_t Length);
-HAL_StatusTypeDef       HAL_ADCEx_MultiModeStop_DMA(ADC_HandleTypeDef *hadc); 
-uint32_t                HAL_ADCEx_MultiModeGetValue(ADC_HandleTypeDef *hadc);
+    HAL_StatusTypeDef HAL_ADCEx_Calibration_Start(ADC_HandleTypeDef* hadc, uint32_t SingleDiff);
+    uint32_t HAL_ADCEx_Calibration_GetValue(ADC_HandleTypeDef *hadc, uint32_t SingleDiff);
+    HAL_StatusTypeDef HAL_ADCEx_Calibration_SetValue(ADC_HandleTypeDef *hadc, uint32_t SingleDiff, uint32_t CalibrationFactor);
 
 
-/* ADC retrieve conversion value intended to be used with polling or interruption */
-uint32_t                HAL_ADCEx_InjectedGetValue(ADC_HandleTypeDef* hadc, uint32_t InjectedRank);
 
-/* ADC IRQHandler and Callbacks used in non-blocking modes (Interruption) */
-void                    HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef* hadc);
-void                    HAL_ADCEx_InjectedQueueOverflowCallback(ADC_HandleTypeDef* hadc);
-void                    HAL_ADCEx_LevelOutOfWindow2Callback(ADC_HandleTypeDef* hadc);
-void                    HAL_ADCEx_LevelOutOfWindow3Callback(ADC_HandleTypeDef* hadc);
-void                    HAL_ADCEx_EndOfSamplingCallback(ADC_HandleTypeDef* hadc);
+    /* Blocking mode: Polling */
+    HAL_StatusTypeDef HAL_ADCEx_InjectedStart(ADC_HandleTypeDef* hadc);
+    HAL_StatusTypeDef HAL_ADCEx_InjectedStop(ADC_HandleTypeDef* hadc);
+    HAL_StatusTypeDef HAL_ADCEx_InjectedPollForConversion(ADC_HandleTypeDef* hadc, uint32_t Timeout);
+
+    /* Non-blocking mode: Interruption */
+    HAL_StatusTypeDef HAL_ADCEx_InjectedStart_IT(ADC_HandleTypeDef* hadc);
+    HAL_StatusTypeDef HAL_ADCEx_InjectedStop_IT(ADC_HandleTypeDef* hadc);
 
 
-/* ADC Regular conversions stop */
-HAL_StatusTypeDef HAL_ADCEx_RegularStop(ADC_HandleTypeDef* hadc);
-HAL_StatusTypeDef HAL_ADCEx_RegularStop_IT(ADC_HandleTypeDef* hadc);
-HAL_StatusTypeDef HAL_ADCEx_RegularStop_DMA(ADC_HandleTypeDef* hadc);
-HAL_StatusTypeDef HAL_ADCEx_RegularMultiModeStop_DMA(ADC_HandleTypeDef* hadc);
+    /* ADC multimode */
+    HAL_StatusTypeDef HAL_ADCEx_MultiModeStart_DMA(ADC_HandleTypeDef *hadc, uint32_t *pData, uint32_t Length);
+    HAL_StatusTypeDef HAL_ADCEx_MultiModeStop_DMA(ADC_HandleTypeDef *hadc);
+    uint32_t HAL_ADCEx_MultiModeGetValue(ADC_HandleTypeDef *hadc);
 
-/**
-  * @}
-  */
-     
-/** @addtogroup ADCEx_Exported_Functions_Group2 Extended Peripheral Control functions
-  * @brief    Extended Peripheral Control functions
-  * @{
-  */ 
-/* Peripheral Control functions ***********************************************/
-HAL_StatusTypeDef       HAL_ADCEx_InjectedConfigChannel(ADC_HandleTypeDef* hadc,ADC_InjectionConfTypeDef* sConfigInjected);
-HAL_StatusTypeDef       HAL_ADCEx_MultiModeConfigChannel(ADC_HandleTypeDef *hadc, ADC_MultiModeTypeDef *multimode);
-HAL_StatusTypeDef       HAL_ADCEx_EnableInjectedQueue(ADC_HandleTypeDef* hadc);
-HAL_StatusTypeDef       HAL_ADCEx_DisableInjectedQueue(ADC_HandleTypeDef* hadc);
-HAL_StatusTypeDef       HAL_ADCEx_DisableVoltageRegulator(ADC_HandleTypeDef* hadc);
-HAL_StatusTypeDef       HAL_ADCEx_EnterADCDeepPowerDownMode(ADC_HandleTypeDef* hadc);
 
-/**
-  * @}
-  */
+    /* ADC retrieve conversion value intended to be used with polling or interruption */
+    uint32_t HAL_ADCEx_InjectedGetValue(ADC_HandleTypeDef* hadc, uint32_t InjectedRank);
 
-/**
-  * @}
-  */
-  
-/**
-  * @}
-  */ 
+    /* ADC IRQHandler and Callbacks used in non-blocking modes (Interruption) */
+    void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef* hadc);
+    void HAL_ADCEx_InjectedQueueOverflowCallback(ADC_HandleTypeDef* hadc);
+    void HAL_ADCEx_LevelOutOfWindow2Callback(ADC_HandleTypeDef* hadc);
+    void HAL_ADCEx_LevelOutOfWindow3Callback(ADC_HandleTypeDef* hadc);
+    void HAL_ADCEx_EndOfSamplingCallback(ADC_HandleTypeDef* hadc);
 
-/**
-  * @}
-  */
+
+    /* ADC Regular conversions stop */
+    HAL_StatusTypeDef HAL_ADCEx_RegularStop(ADC_HandleTypeDef* hadc);
+    HAL_StatusTypeDef HAL_ADCEx_RegularStop_IT(ADC_HandleTypeDef* hadc);
+    HAL_StatusTypeDef HAL_ADCEx_RegularStop_DMA(ADC_HandleTypeDef* hadc);
+    HAL_StatusTypeDef HAL_ADCEx_RegularMultiModeStop_DMA(ADC_HandleTypeDef* hadc);
+
+    /**
+     * @}
+     */
+
+    /** @addtogroup ADCEx_Exported_Functions_Group2 Extended Peripheral Control functions
+     * @brief    Extended Peripheral Control functions
+     * @{
+     */
+    /* Peripheral Control functions ***********************************************/
+    HAL_StatusTypeDef HAL_ADCEx_InjectedConfigChannel(ADC_HandleTypeDef* hadc, ADC_InjectionConfTypeDef* sConfigInjected);
+    HAL_StatusTypeDef HAL_ADCEx_MultiModeConfigChannel(ADC_HandleTypeDef *hadc, ADC_MultiModeTypeDef *multimode);
+    HAL_StatusTypeDef HAL_ADCEx_EnableInjectedQueue(ADC_HandleTypeDef* hadc);
+    HAL_StatusTypeDef HAL_ADCEx_DisableInjectedQueue(ADC_HandleTypeDef* hadc);
+    HAL_StatusTypeDef HAL_ADCEx_DisableVoltageRegulator(ADC_HandleTypeDef* hadc);
+    HAL_StatusTypeDef HAL_ADCEx_EnterADCDeepPowerDownMode(ADC_HandleTypeDef* hadc);
+
+    /**
+     * @}
+     */
+
+    /**
+     * @}
+     */
+
+    /**
+     * @}
+     */
+
+    /**
+     * @}
+     */
 
 #ifdef __cplusplus
 }

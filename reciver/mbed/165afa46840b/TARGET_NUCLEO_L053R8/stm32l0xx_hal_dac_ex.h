@@ -1,72 +1,72 @@
 /**
-  ******************************************************************************
-  * @file    stm32l0xx_hal_dac_ex.h
-  * @author  MCD Application Team
-  * @version V1.2.0
-  * @date    06-February-2015
-  * @brief   Header file of DAC HAL Extension module.
-  ******************************************************************************
-  * @attention
-  *
-  * <h2><center>&copy; COPYRIGHT(c) 2015 STMicroelectronics</center></h2>
-  *
-  * Redistribution and use in source and binary forms, with or without modification,
-  * are permitted provided that the following conditions are met:
-  *   1. Redistributions of source code must retain the above copyright notice,
-  *      this list of conditions and the following disclaimer.
-  *   2. Redistributions in binary form must reproduce the above copyright notice,
-  *      this list of conditions and the following disclaimer in the documentation
-  *      and/or other materials provided with the distribution.
-  *   3. Neither the name of STMicroelectronics nor the names of its contributors
-  *      may be used to endorse or promote products derived from this software
-  *      without specific prior written permission.
-  *
-  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file    stm32l0xx_hal_dac_ex.h
+ * @author  MCD Application Team
+ * @version V1.2.0
+ * @date    06-February-2015
+ * @brief   Header file of DAC HAL Extension module.
+ ******************************************************************************
+ * @attention
+ *
+ * <h2><center>&copy; COPYRIGHT(c) 2015 STMicroelectronics</center></h2>
+ *
+ * Redistribution and use in source and binary forms, with or without modification,
+ * are permitted provided that the following conditions are met:
+ *   1. Redistributions of source code must retain the above copyright notice,
+ *      this list of conditions and the following disclaimer.
+ *   2. Redistributions in binary form must reproduce the above copyright notice,
+ *      this list of conditions and the following disclaimer in the documentation
+ *      and/or other materials provided with the distribution.
+ *   3. Neither the name of STMicroelectronics nor the names of its contributors
+ *      may be used to endorse or promote products derived from this software
+ *      without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ ******************************************************************************
+ */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __STM32L0xx_HAL_DAC_EX_H
 #define __STM32L0xx_HAL_DAC_EX_H
 
 #ifdef __cplusplus
- extern "C" {
+extern "C" {
 #endif
 
 #if !defined (STM32L031xx) && !defined (STM32L041xx) && !defined (STM32L051xx) && !defined (STM32L061xx) && !defined (STM32L071xx) && !defined (STM32L081xx)
-   
-/* Includes ------------------------------------------------------------------*/
+
+    /* Includes ------------------------------------------------------------------*/
 #include "stm32l0xx_hal_def.h"
 
-/** @addtogroup STM32L0xx_HAL_Driver
-  * @{
-  */
+    /** @addtogroup STM32L0xx_HAL_Driver
+     * @{
+     */
 
-/** @addtogroup DACEx
-  * @{
-  */
+    /** @addtogroup DACEx
+     * @{
+     */
 
-/* Exported types ------------------------------------------------------------*/
-   
-/* Exported constants --------------------------------------------------------*/
-  
-/** @defgroup DACEx_Exported_Constants DACEx Exported Constants
-  * @{
-  */ 
-   
-/** @defgroup DACEx_lfsrunmask_triangleamplitude DACEx lfsrunmask triangleamplitude
-  * @{
-  */
+    /* Exported types ------------------------------------------------------------*/
+
+    /* Exported constants --------------------------------------------------------*/
+
+    /** @defgroup DACEx_Exported_Constants DACEx Exported Constants
+     * @{
+     */
+
+    /** @defgroup DACEx_lfsrunmask_triangleamplitude DACEx lfsrunmask triangleamplitude
+     * @{
+     */
 #define DAC_LFSRUNMASK_BIT0                ((uint32_t)0x00000000) /*!< Unmask DAC channel LFSR bit0 for noise wave generation */
 #define DAC_LFSRUNMASK_BITS1_0             ((uint32_t)DAC_CR_MAMP1_0) /*!< Unmask DAC channel LFSR bit[1:0] for noise wave generation */
 #define DAC_LFSRUNMASK_BITS2_0             ((uint32_t)DAC_CR_MAMP1_1) /*!< Unmask DAC channel LFSR bit[2:0] for noise wave generation */
@@ -116,56 +116,56 @@
                                                       ((VALUE) == DAC_TRIANGLEAMPLITUDE_1023) || \
                                                       ((VALUE) == DAC_TRIANGLEAMPLITUDE_2047) || \
                                                       ((VALUE) == DAC_TRIANGLEAMPLITUDE_4095))
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/* Exported macro ------------------------------------------------------------*/  
+    /* Exported macro ------------------------------------------------------------*/
 
-/* Exported functions --------------------------------------------------------*/  
+    /* Exported functions --------------------------------------------------------*/
 
-/** @addtogroup DACEx_Exported_Functions
-  * @{
-  */
+    /** @addtogroup DACEx_Exported_Functions
+     * @{
+     */
 
-/** @addtogroup DACEx_Exported_Functions_Group1
-  * @{
-  */
-/* Extension features functions ***********************************************/
-HAL_StatusTypeDef HAL_DACEx_TriangleWaveGenerate(DAC_HandleTypeDef* hdac, uint32_t Channel, uint32_t Amplitude);
-HAL_StatusTypeDef HAL_DACEx_NoiseWaveGenerate(DAC_HandleTypeDef* hdac, uint32_t Channel, uint32_t Amplitude);
+    /** @addtogroup DACEx_Exported_Functions_Group1
+     * @{
+     */
+    /* Extension features functions ***********************************************/
+    HAL_StatusTypeDef HAL_DACEx_TriangleWaveGenerate(DAC_HandleTypeDef* hdac, uint32_t Channel, uint32_t Amplitude);
+    HAL_StatusTypeDef HAL_DACEx_NoiseWaveGenerate(DAC_HandleTypeDef* hdac, uint32_t Channel, uint32_t Amplitude);
 
 #if defined (STM32L072xx) || defined (STM32L073xx) || defined (STM32L082xx) || defined (STM32L083xx)
-uint32_t HAL_DACEx_DualGetValue(DAC_HandleTypeDef* hdac);
-HAL_StatusTypeDef HAL_DACEx_DualSetValue(DAC_HandleTypeDef* hdac, uint32_t Alignment, uint32_t Data1, uint32_t Data2);
-void HAL_DACEx_ConvCpltCallbackCh2(DAC_HandleTypeDef* hdac);
-void HAL_DACEx_ConvHalfCpltCallbackCh2(DAC_HandleTypeDef* hdac);
-void HAL_DACEx_ErrorCallbackCh2(DAC_HandleTypeDef* hdac);
-void HAL_DACEx_DMAUnderrunCallbackCh2(DAC_HandleTypeDef* hdac);
+    uint32_t HAL_DACEx_DualGetValue(DAC_HandleTypeDef* hdac);
+    HAL_StatusTypeDef HAL_DACEx_DualSetValue(DAC_HandleTypeDef* hdac, uint32_t Alignment, uint32_t Data1, uint32_t Data2);
+    void HAL_DACEx_ConvCpltCallbackCh2(DAC_HandleTypeDef* hdac);
+    void HAL_DACEx_ConvHalfCpltCallbackCh2(DAC_HandleTypeDef* hdac);
+    void HAL_DACEx_ErrorCallbackCh2(DAC_HandleTypeDef* hdac);
+    void HAL_DACEx_DMAUnderrunCallbackCh2(DAC_HandleTypeDef* hdac);
 #endif
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 #endif /* STM32L031xx && STM32L041xx && !STM32L051xx && !STM32L061xx && !STM32L071xx && !STM32L081xx*/
-  
+
 #ifdef __cplusplus
 }
 #endif

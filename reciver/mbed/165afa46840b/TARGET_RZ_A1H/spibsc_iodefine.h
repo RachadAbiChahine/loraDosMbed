@@ -1,62 +1,62 @@
 /*******************************************************************************
-* DISCLAIMER
-* This software is supplied by Renesas Electronics Corporation and is only
-* intended for use with Renesas products. No other uses are authorized. This
-* software is owned by Renesas Electronics Corporation and is protected under
-* all applicable laws, including copyright laws.
-* THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIES REGARDING
-* THIS SOFTWARE, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING BUT NOT
-* LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
-* AND NON-INFRINGEMENT. ALL SUCH WARRANTIES ARE EXPRESSLY DISCLAIMED.
-* TO THE MAXIMUM EXTENT PERMITTED NOT PROHIBITED BY LAW, NEITHER RENESAS
-* ELECTRONICS CORPORATION NOR ANY OF ITS AFFILIATED COMPANIES SHALL BE LIABLE
-* FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES FOR
-* ANY REASON RELATED TO THIS SOFTWARE, EVEN IF RENESAS OR ITS AFFILIATES HAVE
-* BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
-* Renesas reserves the right, without notice, to make changes to this software
-* and to discontinue the availability of this software. By using this software,
-* you agree to the additional terms and conditions found by accessing the
-* following link:
-* http://www.renesas.com/disclaimer*
-* Copyright (C) 2013-2014 Renesas Electronics Corporation. All rights reserved.
-*******************************************************************************/
+ * DISCLAIMER
+ * This software is supplied by Renesas Electronics Corporation and is only
+ * intended for use with Renesas products. No other uses are authorized. This
+ * software is owned by Renesas Electronics Corporation and is protected under
+ * all applicable laws, including copyright laws.
+ * THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIES REGARDING
+ * THIS SOFTWARE, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING BUT NOT
+ * LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
+ * AND NON-INFRINGEMENT. ALL SUCH WARRANTIES ARE EXPRESSLY DISCLAIMED.
+ * TO THE MAXIMUM EXTENT PERMITTED NOT PROHIBITED BY LAW, NEITHER RENESAS
+ * ELECTRONICS CORPORATION NOR ANY OF ITS AFFILIATED COMPANIES SHALL BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES FOR
+ * ANY REASON RELATED TO THIS SOFTWARE, EVEN IF RENESAS OR ITS AFFILIATES HAVE
+ * BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+ * Renesas reserves the right, without notice, to make changes to this software
+ * and to discontinue the availability of this software. By using this software,
+ * you agree to the additional terms and conditions found by accessing the
+ * following link:
+ * http://www.renesas.com/disclaimer*
+ * Copyright (C) 2013-2014 Renesas Electronics Corporation. All rights reserved.
+ *******************************************************************************/
 /*******************************************************************************
-* File Name : spibsc_iodefine.h
-* $Rev: $
-* $Date::                           $
-* Description : Definition of I/O Register (V1.00a)
-******************************************************************************/
+ * File Name : spibsc_iodefine.h
+ * $Rev: $
+ * $Date::                           $
+ * Description : Definition of I/O Register (V1.00a)
+ ******************************************************************************/
 #ifndef SPIBSC_IODEFINE_H
 #define SPIBSC_IODEFINE_H
+
 /* ->SEC M1.10.1 : Not magic number */
 
-struct st_spibsc
-{                                                          /* SPIBSC           */
-    volatile uint32_t  CMNCR;                                  /*  CMNCR           */
-    volatile uint32_t  SSLDR;                                  /*  SSLDR           */
-    volatile uint32_t  SPBCR;                                  /*  SPBCR           */
-    volatile uint32_t  DRCR;                                   /*  DRCR            */
-    volatile uint32_t  DRCMR;                                  /*  DRCMR           */
-    volatile uint32_t  DREAR;                                  /*  DREAR           */
-    volatile uint32_t  DROPR;                                  /*  DROPR           */
-    volatile uint32_t  DRENR;                                  /*  DRENR           */
-    volatile uint32_t  SMCR;                                   /*  SMCR            */
-    volatile uint32_t  SMCMR;                                  /*  SMCMR           */
-    volatile uint32_t  SMADR;                                  /*  SMADR           */
-    volatile uint32_t  SMOPR;                                  /*  SMOPR           */
-    volatile uint32_t  SMENR;                                  /*  SMENR           */
-    volatile uint8_t   dummy1[4];                              /*                  */
-    union iodefine_reg32_t  SMRDR0;                        /*  SMRDR0          */
-    union iodefine_reg32_t  SMRDR1;                        /*  SMRDR1          */
-    union iodefine_reg32_t  SMWDR0;                        /*  SMWDR0          */
-    union iodefine_reg32_t  SMWDR1;                        /*  SMWDR1          */
-    
-    volatile uint32_t  CMNSR;                                  /*  CMNSR           */
-    volatile uint8_t   dummy2[12];                             /*                  */
-    volatile uint32_t  DRDMCR;                                 /*  DRDMCR          */
-    volatile uint32_t  DRDRENR;                                /*  DRDRENR         */
-    volatile uint32_t  SMDMCR;                                 /*  SMDMCR          */
-    volatile uint32_t  SMDRENR;                                /*  SMDRENR         */
+struct st_spibsc { /* SPIBSC           */
+    volatile uint32_t CMNCR; /*  CMNCR           */
+    volatile uint32_t SSLDR; /*  SSLDR           */
+    volatile uint32_t SPBCR; /*  SPBCR           */
+    volatile uint32_t DRCR; /*  DRCR            */
+    volatile uint32_t DRCMR; /*  DRCMR           */
+    volatile uint32_t DREAR; /*  DREAR           */
+    volatile uint32_t DROPR; /*  DROPR           */
+    volatile uint32_t DRENR; /*  DRENR           */
+    volatile uint32_t SMCR; /*  SMCR            */
+    volatile uint32_t SMCMR; /*  SMCMR           */
+    volatile uint32_t SMADR; /*  SMADR           */
+    volatile uint32_t SMOPR; /*  SMOPR           */
+    volatile uint32_t SMENR; /*  SMENR           */
+    volatile uint8_t dummy1[4]; /*                  */
+    union iodefine_reg32_t SMRDR0; /*  SMRDR0          */
+    union iodefine_reg32_t SMRDR1; /*  SMRDR1          */
+    union iodefine_reg32_t SMWDR0; /*  SMWDR0          */
+    union iodefine_reg32_t SMWDR1; /*  SMWDR1          */
+
+    volatile uint32_t CMNSR; /*  CMNSR           */
+    volatile uint8_t dummy2[12]; /*                  */
+    volatile uint32_t DRDMCR; /*  DRDMCR          */
+    volatile uint32_t DRDRENR; /*  DRDRENR         */
+    volatile uint32_t SMDMCR; /*  SMDMCR          */
+    volatile uint32_t SMDRENR; /*  SMDRENR         */
 };
 
 

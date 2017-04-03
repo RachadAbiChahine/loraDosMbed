@@ -40,47 +40,47 @@ extern "C" {
 
 #include <stdint.h>
 
-/**
- * @file  gpio_regs.h
- * @addtogroup gpio GPIO
- * @{
- */
+    /**
+     * @file  gpio_regs.h
+     * @addtogroup gpio GPIO
+     * @{
+     */
 
-/*                                             Offset          Register Description
-                                            =============   ========================================== */
-typedef struct {
-    __I uint32_t rsv000[16];            /*  0x0000-0x003C                                              */
+    /*                                             Offset          Register Description
+                                                =============   ========================================== */
+    typedef struct {
+        __I uint32_t rsv000[16]; /*  0x0000-0x003C                                              */
 
-    __IO uint32_t free[8];              /*  0x0040-0x005C   Port P[0..7] Free for GPIO Operation Flags */
-    __I uint32_t rsv060[8];             /*  0x0060-0x007C                                              */
+        __IO uint32_t free[8]; /*  0x0040-0x005C   Port P[0..7] Free for GPIO Operation Flags */
+        __I uint32_t rsv060[8]; /*  0x0060-0x007C                                              */
 
-    __IO uint32_t out_mode[8];          /*  0x0080-0x009C   Port P[0..7] GPIO Output Drive Mode        */
-    __I uint32_t rsv0A0[8];             /*  0x00A0-0x00BC                                              */
+        __IO uint32_t out_mode[8]; /*  0x0080-0x009C   Port P[0..7] GPIO Output Drive Mode        */
+        __I uint32_t rsv0A0[8]; /*  0x00A0-0x00BC                                              */
 
-    __IO uint32_t out_val[8];           /*  0x00C0-0x00DC   Port P[0..7] GPIO Output Value             */
-    __I uint32_t rsv0E0[8];             /*  0x00E0-0x00FC                                              */
+        __IO uint32_t out_val[8]; /*  0x00C0-0x00DC   Port P[0..7] GPIO Output Value             */
+        __I uint32_t rsv0E0[8]; /*  0x00E0-0x00FC                                              */
 
-    __IO uint32_t func_sel[8];          /*  0x0100-0x011C   Port P[0..7] GPIO Function Select          */
-    __I uint32_t rsv120[8];             /*  0x0120-0x013C                                              */
+        __IO uint32_t func_sel[8]; /*  0x0100-0x011C   Port P[0..7] GPIO Function Select          */
+        __I uint32_t rsv120[8]; /*  0x0120-0x013C                                              */
 
-    __IO uint32_t in_mode[8];           /*  0x0140-0x015C   Port P[0..7] GPIO Input Monitoring Mode    */
-    __I uint32_t rsv160[8];             /*  0x0160-0x017C                                              */
+        __IO uint32_t in_mode[8]; /*  0x0140-0x015C   Port P[0..7] GPIO Input Monitoring Mode    */
+        __I uint32_t rsv160[8]; /*  0x0160-0x017C                                              */
 
-    __IO uint32_t in_val[8];            /*  0x0180-0x019C   Port P[0..7] GPIO Input Value              */
-    __I uint32_t rsv1A0[8];             /*  0x01A0-0x01BC                                              */
+        __IO uint32_t in_val[8]; /*  0x0180-0x019C   Port P[0..7] GPIO Input Value              */
+        __I uint32_t rsv1A0[8]; /*  0x01A0-0x01BC                                              */
 
-    __IO uint32_t int_mode[8];          /*  0x01C0-0x01DC   Port P[0..7] Interrupt Detection Mode      */
-    __I uint32_t rsv1E0[8];             /*  0x01E0-0x01FC                                              */
+        __IO uint32_t int_mode[8]; /*  0x01C0-0x01DC   Port P[0..7] Interrupt Detection Mode      */
+        __I uint32_t rsv1E0[8]; /*  0x01E0-0x01FC                                              */
 
-    __IO uint32_t intfl[8];             /*  0x0200-0x021C   Port P[0..7] Interrupt Flags               */
-    __I uint32_t rsv220[8];             /*  0x0220-0x023C                                              */
+        __IO uint32_t intfl[8]; /*  0x0200-0x021C   Port P[0..7] Interrupt Flags               */
+        __I uint32_t rsv220[8]; /*  0x0220-0x023C                                              */
 
-    __IO uint32_t inten[8];             /*  0x0240-0x025C   Port P[0..7] Interrupt Enables             */
-} mxc_gpio_regs_t;
+        __IO uint32_t inten[8]; /*  0x0240-0x025C   Port P[0..7] Interrupt Enables             */
+    } mxc_gpio_regs_t;
 
-/*
-   Register offsets for module GPIO.
-*/
+    /*
+       Register offsets for module GPIO.
+     */
 #define MXC_R_GPIO_OFFS_FREE_P0                   ((uint32_t)0x00000040UL)
 #define MXC_R_GPIO_OFFS_FREE_P1                   ((uint32_t)0x00000044UL)
 #define MXC_R_GPIO_OFFS_FREE_P2                   ((uint32_t)0x00000048UL)
@@ -152,9 +152,9 @@ typedef struct {
 #define MXC_R_GPIO_OFFS_INTEN_P7                  ((uint32_t)0x0000025CUL)
 
 
-/*
-   Field positions and masks for module GPIO.
-*/
+    /*
+       Field positions and masks for module GPIO.
+     */
 #define MXC_F_GPIO_FREE_PIN0_POS                             0
 #define MXC_F_GPIO_FREE_PIN0                                ((uint32_t)(0x00000001UL << MXC_F_GPIO_FREE_PIN0_POS))
 #define MXC_F_GPIO_FREE_PIN1_POS                             1
@@ -309,9 +309,9 @@ typedef struct {
 #define MXC_F_GPIO_INTEN_PIN7                               ((uint32_t)(0x00000001UL << MXC_F_GPIO_INTEN_PIN7_POS))
 
 
-/*
-   Field values and shifted values for module GPIO.
-*/
+    /*
+       Field values and shifted values for module GPIO.
+     */
 #define MXC_V_GPIO_FREE_PIN0_NOT_AVAILABLE                                      ((uint32_t)(0x0x00000000UL))
 #define MXC_V_GPIO_FREE_PIN0_AVAILABLE                                          ((uint32_t)(0x0x00000001UL))
 
@@ -471,7 +471,7 @@ typedef struct {
 #endif
 
 /**
-* @}
-*/
+ * @}
+ */
 
 #endif /* _MXC_GPIO_REGS_H_ */

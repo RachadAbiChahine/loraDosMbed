@@ -32,15 +32,15 @@
 /**************************************************************************//**
  * @brief USB_DIEP EFM32HG USB DIEP
  *****************************************************************************/
-typedef struct
-{
-  __IO uint32_t CTL;          /**< Device IN Endpoint x+1 Control Register  */
-  uint32_t      RESERVED0[1]; /**< Reserved for future use **/
-  __IO uint32_t INT;          /**< Device IN Endpoint x+1 Interrupt Register  */
-  uint32_t      RESERVED1[1]; /**< Reserved for future use **/
-  __IO uint32_t TSIZ;         /**< Device IN Endpoint x+1 Transfer Size Register  */
-  __IO uint32_t DMAADDR;      /**< Device IN Endpoint x+1 DMA Address Register  */
-  __I uint32_t  TXFSTS;       /**< Device IN Endpoint x+1 Transmit FIFO Status Register  */
-  uint32_t      RESERVED2[1]; /**< Reserved future */
+
+typedef struct {
+    __IO uint32_t CTL; /**< Device IN Endpoint x+1 Control Register  */
+    uint32_t RESERVED0[1]; /**< Reserved for future use **/
+    __IO uint32_t INT; /**< Device IN Endpoint x+1 Interrupt Register  */
+    uint32_t RESERVED1[1]; /**< Reserved for future use **/
+    __IO uint32_t TSIZ; /**< Device IN Endpoint x+1 Transfer Size Register  */
+    __IO uint32_t DMAADDR; /**< Device IN Endpoint x+1 DMA Address Register  */
+    __I uint32_t TXFSTS; /**< Device IN Endpoint x+1 Transmit FIFO Status Register  */
+    uint32_t RESERVED2[1]; /**< Reserved future */
 } USB_DIEP_TypeDef;
 

@@ -34,30 +34,30 @@
  * @{
  * @brief EFM32LG_BURTC Register Declaration
  *****************************************************************************/
-typedef struct
-{
-  __IO uint32_t     CTRL;          /**< Control Register  */
-  __IO uint32_t     LPMODE;        /**< Low power mode configuration  */
-  __I uint32_t      CNT;           /**< Counter Value Register  */
-  __IO uint32_t     COMP0;         /**< Counter Compare Value  */
-  __I uint32_t      TIMESTAMP;     /**< Backup mode timestamp  */
-  __IO uint32_t     LFXOFDET;      /**< LFXO   */
-  __I uint32_t      STATUS;        /**< Status Register  */
-  __IO uint32_t     CMD;           /**< Command Register  */
-  __IO uint32_t     POWERDOWN;     /**< Retention RAM power-down Register  */
-  __IO uint32_t     LOCK;          /**< Configuration Lock Register  */
-  __I uint32_t      IF;            /**< Interrupt Flag Register  */
-  __IO uint32_t     IFS;           /**< Interrupt Flag Set Register  */
-  __IO uint32_t     IFC;           /**< Interrupt Flag Clear Register  */
-  __IO uint32_t     IEN;           /**< Interrupt Enable Register  */
 
-  __IO uint32_t     FREEZE;        /**< Freeze Register  */
-  __I uint32_t      SYNCBUSY;      /**< Synchronization Busy Register  */
+typedef struct {
+    __IO uint32_t CTRL; /**< Control Register  */
+    __IO uint32_t LPMODE; /**< Low power mode configuration  */
+    __I uint32_t CNT; /**< Counter Value Register  */
+    __IO uint32_t COMP0; /**< Counter Compare Value  */
+    __I uint32_t TIMESTAMP; /**< Backup mode timestamp  */
+    __IO uint32_t LFXOFDET; /**< LFXO   */
+    __I uint32_t STATUS; /**< Status Register  */
+    __IO uint32_t CMD; /**< Command Register  */
+    __IO uint32_t POWERDOWN; /**< Retention RAM power-down Register  */
+    __IO uint32_t LOCK; /**< Configuration Lock Register  */
+    __I uint32_t IF; /**< Interrupt Flag Register  */
+    __IO uint32_t IFS; /**< Interrupt Flag Set Register  */
+    __IO uint32_t IFC; /**< Interrupt Flag Clear Register  */
+    __IO uint32_t IEN; /**< Interrupt Enable Register  */
 
-  uint32_t          RESERVED0[48]; /**< Reserved registers */
+    __IO uint32_t FREEZE; /**< Freeze Register  */
+    __I uint32_t SYNCBUSY; /**< Synchronization Busy Register  */
 
-  BURTC_RET_TypeDef RET[128];      /**< RetentionReg */
-} BURTC_TypeDef;                   /** @} */
+    uint32_t RESERVED0[48]; /**< Reserved registers */
+
+    BURTC_RET_TypeDef RET[128]; /**< RetentionReg */
+} BURTC_TypeDef; /** @} */
 
 /**************************************************************************//**
  * @defgroup EFM32LG_BURTC_BitFields

@@ -40,31 +40,31 @@ extern "C" {
 
 #include <stdint.h>
 
-/**
- * @file  pwrseq_regs.h
- * @addtogroup pwrseq PWRSEQ
- * @{
- */
+    /**
+     * @file  pwrseq_regs.h
+     * @addtogroup pwrseq PWRSEQ
+     * @{
+     */
 
-/*                                      Offset   Register Description
-                                        ======   ================================================= */
-typedef struct {
-    __IO uint32_t reg0;             /*  0x0000   Power Sequencer Control Register 0                */
-    __IO uint32_t reg1;             /*  0x0004   Power Sequencer Control Register 1                */
-    __IO uint32_t reg2;             /*  0x0008   Power Sequencer Control Register 2                */
-    __IO uint32_t reg3;             /*  0x000C   Power Sequencer Control Register 3                */
-    __IO uint32_t reg4;             /*  0x0010   Power Sequencer Control Register 4                */
-    __IO uint32_t reg5;             /*  0x0014   Power Sequencer Control Register 5 (Trim 0)       */
-    __IO uint32_t reg6;             /*  0x0018   Power Sequencer Control Register 6 (Trim 1)       */
-    __I uint32_t rsv001C;           /*  0x001C                                                     */
-    __IO uint32_t flags;            /*  0x0020   Power Sequencer Flags                             */
-    __IO uint32_t msk_flags;        /*  0x0024   Power Sequencer Flags Mask Register               */
-} mxc_pwrseq_regs_t;
+    /*                                      Offset   Register Description
+                                            ======   ================================================= */
+    typedef struct {
+        __IO uint32_t reg0; /*  0x0000   Power Sequencer Control Register 0                */
+        __IO uint32_t reg1; /*  0x0004   Power Sequencer Control Register 1                */
+        __IO uint32_t reg2; /*  0x0008   Power Sequencer Control Register 2                */
+        __IO uint32_t reg3; /*  0x000C   Power Sequencer Control Register 3                */
+        __IO uint32_t reg4; /*  0x0010   Power Sequencer Control Register 4                */
+        __IO uint32_t reg5; /*  0x0014   Power Sequencer Control Register 5 (Trim 0)       */
+        __IO uint32_t reg6; /*  0x0018   Power Sequencer Control Register 6 (Trim 1)       */
+        __I uint32_t rsv001C; /*  0x001C                                                     */
+        __IO uint32_t flags; /*  0x0020   Power Sequencer Flags                             */
+        __IO uint32_t msk_flags; /*  0x0024   Power Sequencer Flags Mask Register               */
+    } mxc_pwrseq_regs_t;
 
 
-/*
-   Register offsets for module PWRSEQ.
-*/
+    /*
+       Register offsets for module PWRSEQ.
+     */
 #define MXC_R_PWRSEQ_OFFS_REG0                    ((uint32_t)0x00000000UL)
 #define MXC_R_PWRSEQ_OFFS_REG1                    ((uint32_t)0x00000004UL)
 #define MXC_R_PWRSEQ_OFFS_REG2                    ((uint32_t)0x00000008UL)
@@ -76,9 +76,9 @@ typedef struct {
 #define MXC_R_PWRSEQ_OFFS_MSK_FLAGS               ((uint32_t)0x00000024UL)
 
 
-/*
-   Field positions and masks for module PWRSEQ.
-*/
+    /*
+       Field positions and masks for module PWRSEQ.
+     */
 #define MXC_F_PWRSEQ_REG0_PWR_LP1_POS                       0
 #define MXC_F_PWRSEQ_REG0_PWR_LP1                           ((uint32_t)(0x00000001UL << MXC_F_PWRSEQ_REG0_PWR_LP1_POS))
 #define MXC_F_PWRSEQ_REG0_PWR_FIRST_BOOT_POS                1
@@ -293,7 +293,7 @@ typedef struct {
 #endif
 
 /**
-* @}
-*/
+ * @}
+ */
 
 #endif /* _MXC_PWRSEQ_REGS_H */

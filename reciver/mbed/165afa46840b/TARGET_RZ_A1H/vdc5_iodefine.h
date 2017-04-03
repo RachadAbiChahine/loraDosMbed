@@ -1,662 +1,652 @@
 /*******************************************************************************
-* DISCLAIMER
-* This software is supplied by Renesas Electronics Corporation and is only
-* intended for use with Renesas products. No other uses are authorized. This
-* software is owned by Renesas Electronics Corporation and is protected under
-* all applicable laws, including copyright laws.
-* THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIES REGARDING
-* THIS SOFTWARE, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING BUT NOT
-* LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
-* AND NON-INFRINGEMENT. ALL SUCH WARRANTIES ARE EXPRESSLY DISCLAIMED.
-* TO THE MAXIMUM EXTENT PERMITTED NOT PROHIBITED BY LAW, NEITHER RENESAS
-* ELECTRONICS CORPORATION NOR ANY OF ITS AFFILIATED COMPANIES SHALL BE LIABLE
-* FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES FOR
-* ANY REASON RELATED TO THIS SOFTWARE, EVEN IF RENESAS OR ITS AFFILIATES HAVE
-* BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
-* Renesas reserves the right, without notice, to make changes to this software
-* and to discontinue the availability of this software. By using this software,
-* you agree to the additional terms and conditions found by accessing the
-* following link:
-* http://www.renesas.com/disclaimer*
-* Copyright (C) 2013-2014 Renesas Electronics Corporation. All rights reserved.
-*******************************************************************************/
+ * DISCLAIMER
+ * This software is supplied by Renesas Electronics Corporation and is only
+ * intended for use with Renesas products. No other uses are authorized. This
+ * software is owned by Renesas Electronics Corporation and is protected under
+ * all applicable laws, including copyright laws.
+ * THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIES REGARDING
+ * THIS SOFTWARE, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING BUT NOT
+ * LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
+ * AND NON-INFRINGEMENT. ALL SUCH WARRANTIES ARE EXPRESSLY DISCLAIMED.
+ * TO THE MAXIMUM EXTENT PERMITTED NOT PROHIBITED BY LAW, NEITHER RENESAS
+ * ELECTRONICS CORPORATION NOR ANY OF ITS AFFILIATED COMPANIES SHALL BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES FOR
+ * ANY REASON RELATED TO THIS SOFTWARE, EVEN IF RENESAS OR ITS AFFILIATES HAVE
+ * BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+ * Renesas reserves the right, without notice, to make changes to this software
+ * and to discontinue the availability of this software. By using this software,
+ * you agree to the additional terms and conditions found by accessing the
+ * following link:
+ * http://www.renesas.com/disclaimer*
+ * Copyright (C) 2013-2014 Renesas Electronics Corporation. All rights reserved.
+ *******************************************************************************/
 /*******************************************************************************
-* File Name : vdc5_iodefine.h
-* $Rev: $
-* $Date::                           $
-* Description : Definition of I/O Register (V1.00a)
-******************************************************************************/
+ * File Name : vdc5_iodefine.h
+ * $Rev: $
+ * $Date::                           $
+ * Description : Definition of I/O Register (V1.00a)
+ ******************************************************************************/
 #ifndef VDC5_IODEFINE_H
 #define VDC5_IODEFINE_H
 /* ->QAC 0639 : Over 127 members (C90) */
+
 /* ->SEC M1.10.1 : Not magic number */
 
-struct st_vdc5
-{                                                          /* VDC5             */
-    volatile uint32_t  INP_UPDATE;                             /*  INP_UPDATE      */
-    volatile uint32_t  INP_SEL_CNT;                            /*  INP_SEL_CNT     */
-    volatile uint32_t  INP_EXT_SYNC_CNT;                       /*  INP_EXT_SYNC_CNT */
-    volatile uint32_t  INP_VSYNC_PH_ADJ;                       /*  INP_VSYNC_PH_ADJ */
-    volatile uint32_t  INP_DLY_ADJ;                            /*  INP_DLY_ADJ     */
-    volatile uint8_t   dummy1[108];                            /*                  */
-    volatile uint32_t  IMGCNT_UPDATE;                          /*  IMGCNT_UPDATE   */
+struct st_vdc5 { /* VDC5             */
+    volatile uint32_t INP_UPDATE; /*  INP_UPDATE      */
+    volatile uint32_t INP_SEL_CNT; /*  INP_SEL_CNT     */
+    volatile uint32_t INP_EXT_SYNC_CNT; /*  INP_EXT_SYNC_CNT */
+    volatile uint32_t INP_VSYNC_PH_ADJ; /*  INP_VSYNC_PH_ADJ */
+    volatile uint32_t INP_DLY_ADJ; /*  INP_DLY_ADJ     */
+    volatile uint8_t dummy1[108]; /*                  */
+    volatile uint32_t IMGCNT_UPDATE; /*  IMGCNT_UPDATE   */
 #define VDC5_IMGCNT_NR_CNT0_COUNT 2
-    volatile uint32_t  IMGCNT_NR_CNT0;                         /*  IMGCNT_NR_CNT0  */
-    volatile uint32_t  IMGCNT_NR_CNT1;                         /*  IMGCNT_NR_CNT1  */
-    volatile uint8_t   dummy2[20];                             /*                  */
-    volatile uint32_t  IMGCNT_MTX_MODE;                        /*  IMGCNT_MTX_MODE */
-    volatile uint32_t  IMGCNT_MTX_YG_ADJ0;                     /*  IMGCNT_MTX_YG_ADJ0 */
-    volatile uint32_t  IMGCNT_MTX_YG_ADJ1;                     /*  IMGCNT_MTX_YG_ADJ1 */
-    volatile uint32_t  IMGCNT_MTX_CBB_ADJ0;                    /*  IMGCNT_MTX_CBB_ADJ0 */
-    volatile uint32_t  IMGCNT_MTX_CBB_ADJ1;                    /*  IMGCNT_MTX_CBB_ADJ1 */
-    volatile uint32_t  IMGCNT_MTX_CRR_ADJ0;                    /*  IMGCNT_MTX_CRR_ADJ0 */
-    volatile uint32_t  IMGCNT_MTX_CRR_ADJ1;                    /*  IMGCNT_MTX_CRR_ADJ1 */
-    volatile uint8_t   dummy3[4];                              /*                  */
-    volatile uint32_t  IMGCNT_DRC_REG;                         /*  IMGCNT_DRC_REG  */
-    volatile uint8_t   dummy4[60];                             /*                  */
-/* start of struct st_vdc5_from_sc0_scl0_update */
-    volatile uint32_t  SC0_SCL0_UPDATE;                        /*  SC0_SCL0_UPDATE */
+    volatile uint32_t IMGCNT_NR_CNT0; /*  IMGCNT_NR_CNT0  */
+    volatile uint32_t IMGCNT_NR_CNT1; /*  IMGCNT_NR_CNT1  */
+    volatile uint8_t dummy2[20]; /*                  */
+    volatile uint32_t IMGCNT_MTX_MODE; /*  IMGCNT_MTX_MODE */
+    volatile uint32_t IMGCNT_MTX_YG_ADJ0; /*  IMGCNT_MTX_YG_ADJ0 */
+    volatile uint32_t IMGCNT_MTX_YG_ADJ1; /*  IMGCNT_MTX_YG_ADJ1 */
+    volatile uint32_t IMGCNT_MTX_CBB_ADJ0; /*  IMGCNT_MTX_CBB_ADJ0 */
+    volatile uint32_t IMGCNT_MTX_CBB_ADJ1; /*  IMGCNT_MTX_CBB_ADJ1 */
+    volatile uint32_t IMGCNT_MTX_CRR_ADJ0; /*  IMGCNT_MTX_CRR_ADJ0 */
+    volatile uint32_t IMGCNT_MTX_CRR_ADJ1; /*  IMGCNT_MTX_CRR_ADJ1 */
+    volatile uint8_t dummy3[4]; /*                  */
+    volatile uint32_t IMGCNT_DRC_REG; /*  IMGCNT_DRC_REG  */
+    volatile uint8_t dummy4[60]; /*                  */
+    /* start of struct st_vdc5_from_sc0_scl0_update */
+    volatile uint32_t SC0_SCL0_UPDATE; /*  SC0_SCL0_UPDATE */
 #define VDC5_SC0_SCL0_FRC1_COUNT 7
-    volatile uint32_t  SC0_SCL0_FRC1;                          /*  SC0_SCL0_FRC1   */
-    volatile uint32_t  SC0_SCL0_FRC2;                          /*  SC0_SCL0_FRC2   */
-    volatile uint32_t  SC0_SCL0_FRC3;                          /*  SC0_SCL0_FRC3   */
-    volatile uint32_t  SC0_SCL0_FRC4;                          /*  SC0_SCL0_FRC4   */
-    volatile uint32_t  SC0_SCL0_FRC5;                          /*  SC0_SCL0_FRC5   */
-    volatile uint32_t  SC0_SCL0_FRC6;                          /*  SC0_SCL0_FRC6   */
-    volatile uint32_t  SC0_SCL0_FRC7;                          /*  SC0_SCL0_FRC7   */
-    volatile uint8_t   dummy5[4];                              /*                  */
-    volatile uint32_t  SC0_SCL0_FRC9;                          /*  SC0_SCL0_FRC9   */
-    volatile uint16_t SC0_SCL0_MON0;                          /*  SC0_SCL0_MON0   */
-    volatile uint16_t SC0_SCL0_INT;                           /*  SC0_SCL0_INT    */
+    volatile uint32_t SC0_SCL0_FRC1; /*  SC0_SCL0_FRC1   */
+    volatile uint32_t SC0_SCL0_FRC2; /*  SC0_SCL0_FRC2   */
+    volatile uint32_t SC0_SCL0_FRC3; /*  SC0_SCL0_FRC3   */
+    volatile uint32_t SC0_SCL0_FRC4; /*  SC0_SCL0_FRC4   */
+    volatile uint32_t SC0_SCL0_FRC5; /*  SC0_SCL0_FRC5   */
+    volatile uint32_t SC0_SCL0_FRC6; /*  SC0_SCL0_FRC6   */
+    volatile uint32_t SC0_SCL0_FRC7; /*  SC0_SCL0_FRC7   */
+    volatile uint8_t dummy5[4]; /*                  */
+    volatile uint32_t SC0_SCL0_FRC9; /*  SC0_SCL0_FRC9   */
+    volatile uint16_t SC0_SCL0_MON0; /*  SC0_SCL0_MON0   */
+    volatile uint16_t SC0_SCL0_INT; /*  SC0_SCL0_INT    */
 #define VDC5_SC0_SCL0_DS1_COUNT 7
-    volatile uint32_t  SC0_SCL0_DS1;                           /*  SC0_SCL0_DS1    */
-    volatile uint32_t  SC0_SCL0_DS2;                           /*  SC0_SCL0_DS2    */
-    volatile uint32_t  SC0_SCL0_DS3;                           /*  SC0_SCL0_DS3    */
-    volatile uint32_t  SC0_SCL0_DS4;                           /*  SC0_SCL0_DS4    */
-    volatile uint32_t  SC0_SCL0_DS5;                           /*  SC0_SCL0_DS5    */
-    volatile uint32_t  SC0_SCL0_DS6;                           /*  SC0_SCL0_DS6    */
-    volatile uint32_t  SC0_SCL0_DS7;                           /*  SC0_SCL0_DS7    */
+    volatile uint32_t SC0_SCL0_DS1; /*  SC0_SCL0_DS1    */
+    volatile uint32_t SC0_SCL0_DS2; /*  SC0_SCL0_DS2    */
+    volatile uint32_t SC0_SCL0_DS3; /*  SC0_SCL0_DS3    */
+    volatile uint32_t SC0_SCL0_DS4; /*  SC0_SCL0_DS4    */
+    volatile uint32_t SC0_SCL0_DS5; /*  SC0_SCL0_DS5    */
+    volatile uint32_t SC0_SCL0_DS6; /*  SC0_SCL0_DS6    */
+    volatile uint32_t SC0_SCL0_DS7; /*  SC0_SCL0_DS7    */
 #define VDC5_SC0_SCL0_US1_COUNT 8
-    volatile uint32_t  SC0_SCL0_US1;                           /*  SC0_SCL0_US1    */
-    volatile uint32_t  SC0_SCL0_US2;                           /*  SC0_SCL0_US2    */
-    volatile uint32_t  SC0_SCL0_US3;                           /*  SC0_SCL0_US3    */
-    volatile uint32_t  SC0_SCL0_US4;                           /*  SC0_SCL0_US4    */
-    volatile uint32_t  SC0_SCL0_US5;                           /*  SC0_SCL0_US5    */
-    volatile uint32_t  SC0_SCL0_US6;                           /*  SC0_SCL0_US6    */
-    volatile uint32_t  SC0_SCL0_US7;                           /*  SC0_SCL0_US7    */
-    volatile uint32_t  SC0_SCL0_US8;                           /*  SC0_SCL0_US8    */
-    volatile uint8_t   dummy6[4];                              /*                  */
-    volatile uint32_t  SC0_SCL0_OVR1;                          /*  SC0_SCL0_OVR1   */
-    volatile uint8_t   dummy7[16];                             /*                  */
-    volatile uint32_t  SC0_SCL1_UPDATE;                        /*  SC0_SCL1_UPDATE */
-    volatile uint8_t   dummy8[4];                              /*                  */
+    volatile uint32_t SC0_SCL0_US1; /*  SC0_SCL0_US1    */
+    volatile uint32_t SC0_SCL0_US2; /*  SC0_SCL0_US2    */
+    volatile uint32_t SC0_SCL0_US3; /*  SC0_SCL0_US3    */
+    volatile uint32_t SC0_SCL0_US4; /*  SC0_SCL0_US4    */
+    volatile uint32_t SC0_SCL0_US5; /*  SC0_SCL0_US5    */
+    volatile uint32_t SC0_SCL0_US6; /*  SC0_SCL0_US6    */
+    volatile uint32_t SC0_SCL0_US7; /*  SC0_SCL0_US7    */
+    volatile uint32_t SC0_SCL0_US8; /*  SC0_SCL0_US8    */
+    volatile uint8_t dummy6[4]; /*                  */
+    volatile uint32_t SC0_SCL0_OVR1; /*  SC0_SCL0_OVR1   */
+    volatile uint8_t dummy7[16]; /*                  */
+    volatile uint32_t SC0_SCL1_UPDATE; /*  SC0_SCL1_UPDATE */
+    volatile uint8_t dummy8[4]; /*                  */
 #define VDC5_SC0_SCL1_WR1_COUNT 4
-    volatile uint32_t  SC0_SCL1_WR1;                           /*  SC0_SCL1_WR1    */
-    volatile uint32_t  SC0_SCL1_WR2;                           /*  SC0_SCL1_WR2    */
-    volatile uint32_t  SC0_SCL1_WR3;                           /*  SC0_SCL1_WR3    */
-    volatile uint32_t  SC0_SCL1_WR4;                           /*  SC0_SCL1_WR4    */
-    volatile uint8_t   dummy9[4];                              /*                  */
-    volatile uint32_t  SC0_SCL1_WR5;                           /*  SC0_SCL1_WR5    */
-    volatile uint32_t  SC0_SCL1_WR6;                           /*  SC0_SCL1_WR6    */
-    volatile uint32_t  SC0_SCL1_WR7;                           /*  SC0_SCL1_WR7    */
-    volatile uint32_t  SC0_SCL1_WR8;                           /*  SC0_SCL1_WR8    */
-    volatile uint32_t  SC0_SCL1_WR9;                           /*  SC0_SCL1_WR9    */
-    volatile uint32_t  SC0_SCL1_WR10;                          /*  SC0_SCL1_WR10   */
-/* end of struct st_vdc5_from_sc0_scl0_update */
-    volatile uint32_t  SC0_SCL1_WR11;                          /*  SC0_SCL1_WR11   */
-    volatile uint32_t  SC0_SCL1_MON1;                          /*  SC0_SCL1_MON1   */
-/* start of struct st_vdc5_from_sc0_scl1_pbuf0 */
+    volatile uint32_t SC0_SCL1_WR1; /*  SC0_SCL1_WR1    */
+    volatile uint32_t SC0_SCL1_WR2; /*  SC0_SCL1_WR2    */
+    volatile uint32_t SC0_SCL1_WR3; /*  SC0_SCL1_WR3    */
+    volatile uint32_t SC0_SCL1_WR4; /*  SC0_SCL1_WR4    */
+    volatile uint8_t dummy9[4]; /*                  */
+    volatile uint32_t SC0_SCL1_WR5; /*  SC0_SCL1_WR5    */
+    volatile uint32_t SC0_SCL1_WR6; /*  SC0_SCL1_WR6    */
+    volatile uint32_t SC0_SCL1_WR7; /*  SC0_SCL1_WR7    */
+    volatile uint32_t SC0_SCL1_WR8; /*  SC0_SCL1_WR8    */
+    volatile uint32_t SC0_SCL1_WR9; /*  SC0_SCL1_WR9    */
+    volatile uint32_t SC0_SCL1_WR10; /*  SC0_SCL1_WR10   */
+    /* end of struct st_vdc5_from_sc0_scl0_update */
+    volatile uint32_t SC0_SCL1_WR11; /*  SC0_SCL1_WR11   */
+    volatile uint32_t SC0_SCL1_MON1; /*  SC0_SCL1_MON1   */
+    /* start of struct st_vdc5_from_sc0_scl1_pbuf0 */
 #define VDC5_SC0_SCL1_PBUF0_COUNT 4
-    volatile uint32_t  SC0_SCL1_PBUF0;                         /*  SC0_SCL1_PBUF0  */
-    volatile uint32_t  SC0_SCL1_PBUF1;                         /*  SC0_SCL1_PBUF1  */
-    volatile uint32_t  SC0_SCL1_PBUF2;                         /*  SC0_SCL1_PBUF2  */
-    volatile uint32_t  SC0_SCL1_PBUF3;                         /*  SC0_SCL1_PBUF3  */
-    volatile uint32_t  SC0_SCL1_PBUF_FLD;                      /*  SC0_SCL1_PBUF_FLD */
-    volatile uint32_t  SC0_SCL1_PBUF_CNT;                      /*  SC0_SCL1_PBUF_CNT */
-/* end of struct st_vdc5_from_sc0_scl1_pbuf0 */
-    volatile uint8_t   dummy10[44];                            /*                  */
-/* start of struct st_vdc5_from_gr0_update */
-    volatile uint32_t  GR0_UPDATE;                             /*  GR0_UPDATE      */
-    volatile uint32_t  GR0_FLM_RD;                             /*  GR0_FLM_RD      */
+    volatile uint32_t SC0_SCL1_PBUF0; /*  SC0_SCL1_PBUF0  */
+    volatile uint32_t SC0_SCL1_PBUF1; /*  SC0_SCL1_PBUF1  */
+    volatile uint32_t SC0_SCL1_PBUF2; /*  SC0_SCL1_PBUF2  */
+    volatile uint32_t SC0_SCL1_PBUF3; /*  SC0_SCL1_PBUF3  */
+    volatile uint32_t SC0_SCL1_PBUF_FLD; /*  SC0_SCL1_PBUF_FLD */
+    volatile uint32_t SC0_SCL1_PBUF_CNT; /*  SC0_SCL1_PBUF_CNT */
+    /* end of struct st_vdc5_from_sc0_scl1_pbuf0 */
+    volatile uint8_t dummy10[44]; /*                  */
+    /* start of struct st_vdc5_from_gr0_update */
+    volatile uint32_t GR0_UPDATE; /*  GR0_UPDATE      */
+    volatile uint32_t GR0_FLM_RD; /*  GR0_FLM_RD      */
 #define VDC5_GR0_FLM1_COUNT 6
-    volatile uint32_t  GR0_FLM1;                               /*  GR0_FLM1        */
-    volatile uint32_t  GR0_FLM2;                               /*  GR0_FLM2        */
-    volatile uint32_t  GR0_FLM3;                               /*  GR0_FLM3        */
-    volatile uint32_t  GR0_FLM4;                               /*  GR0_FLM4        */
-    volatile uint32_t  GR0_FLM5;                               /*  GR0_FLM5        */
-    volatile uint32_t  GR0_FLM6;                               /*  GR0_FLM6        */
+    volatile uint32_t GR0_FLM1; /*  GR0_FLM1        */
+    volatile uint32_t GR0_FLM2; /*  GR0_FLM2        */
+    volatile uint32_t GR0_FLM3; /*  GR0_FLM3        */
+    volatile uint32_t GR0_FLM4; /*  GR0_FLM4        */
+    volatile uint32_t GR0_FLM5; /*  GR0_FLM5        */
+    volatile uint32_t GR0_FLM6; /*  GR0_FLM6        */
 #define VDC5_GR0_AB1_COUNT 3
-    volatile uint32_t  GR0_AB1;                                /*  GR0_AB1         */
-    volatile uint32_t  GR0_AB2;                                /*  GR0_AB2         */
-    volatile uint32_t  GR0_AB3;                                /*  GR0_AB3         */
-/* end of struct st_vdc5_from_gr0_update */
-    volatile uint8_t   dummy11[12];                            /*                  */
-/* start of struct st_vdc5_from_gr0_ab7 */
-    volatile uint32_t  GR0_AB7;                                /*  GR0_AB7         */
-    volatile uint32_t  GR0_AB8;                                /*  GR0_AB8         */
-    volatile uint32_t  GR0_AB9;                                /*  GR0_AB9         */
-    volatile uint32_t  GR0_AB10;                               /*  GR0_AB10        */
-    volatile uint32_t  GR0_AB11;                               /*  GR0_AB11        */
-    volatile uint32_t  GR0_BASE;                               /*  GR0_BASE        */
-/* end of struct st_vdc5_from_gr0_ab7 */
-    volatile uint32_t  GR0_CLUT;                               /*  GR0_CLUT        */
-    volatile uint8_t   dummy12[44];                            /*                  */
-/* start of struct st_vdc5_from_adj0_update */
-    volatile uint32_t  ADJ0_UPDATE;                            /*  ADJ0_UPDATE     */
-    volatile uint32_t  ADJ0_BKSTR_SET;                         /*  ADJ0_BKSTR_SET  */
+    volatile uint32_t GR0_AB1; /*  GR0_AB1         */
+    volatile uint32_t GR0_AB2; /*  GR0_AB2         */
+    volatile uint32_t GR0_AB3; /*  GR0_AB3         */
+    /* end of struct st_vdc5_from_gr0_update */
+    volatile uint8_t dummy11[12]; /*                  */
+    /* start of struct st_vdc5_from_gr0_ab7 */
+    volatile uint32_t GR0_AB7; /*  GR0_AB7         */
+    volatile uint32_t GR0_AB8; /*  GR0_AB8         */
+    volatile uint32_t GR0_AB9; /*  GR0_AB9         */
+    volatile uint32_t GR0_AB10; /*  GR0_AB10        */
+    volatile uint32_t GR0_AB11; /*  GR0_AB11        */
+    volatile uint32_t GR0_BASE; /*  GR0_BASE        */
+    /* end of struct st_vdc5_from_gr0_ab7 */
+    volatile uint32_t GR0_CLUT; /*  GR0_CLUT        */
+    volatile uint8_t dummy12[44]; /*                  */
+    /* start of struct st_vdc5_from_adj0_update */
+    volatile uint32_t ADJ0_UPDATE; /*  ADJ0_UPDATE     */
+    volatile uint32_t ADJ0_BKSTR_SET; /*  ADJ0_BKSTR_SET  */
 #define VDC5_ADJ0_ENH_TIM1_COUNT 3
-    volatile uint32_t  ADJ0_ENH_TIM1;                          /*  ADJ0_ENH_TIM1   */
-    volatile uint32_t  ADJ0_ENH_TIM2;                          /*  ADJ0_ENH_TIM2   */
-    volatile uint32_t  ADJ0_ENH_TIM3;                          /*  ADJ0_ENH_TIM3   */
+    volatile uint32_t ADJ0_ENH_TIM1; /*  ADJ0_ENH_TIM1   */
+    volatile uint32_t ADJ0_ENH_TIM2; /*  ADJ0_ENH_TIM2   */
+    volatile uint32_t ADJ0_ENH_TIM3; /*  ADJ0_ENH_TIM3   */
 #define VDC5_ADJ0_ENH_SHP1_COUNT 6
-    volatile uint32_t  ADJ0_ENH_SHP1;                          /*  ADJ0_ENH_SHP1   */
-    volatile uint32_t  ADJ0_ENH_SHP2;                          /*  ADJ0_ENH_SHP2   */
-    volatile uint32_t  ADJ0_ENH_SHP3;                          /*  ADJ0_ENH_SHP3   */
-    volatile uint32_t  ADJ0_ENH_SHP4;                          /*  ADJ0_ENH_SHP4   */
-    volatile uint32_t  ADJ0_ENH_SHP5;                          /*  ADJ0_ENH_SHP5   */
-    volatile uint32_t  ADJ0_ENH_SHP6;                          /*  ADJ0_ENH_SHP6   */
+    volatile uint32_t ADJ0_ENH_SHP1; /*  ADJ0_ENH_SHP1   */
+    volatile uint32_t ADJ0_ENH_SHP2; /*  ADJ0_ENH_SHP2   */
+    volatile uint32_t ADJ0_ENH_SHP3; /*  ADJ0_ENH_SHP3   */
+    volatile uint32_t ADJ0_ENH_SHP4; /*  ADJ0_ENH_SHP4   */
+    volatile uint32_t ADJ0_ENH_SHP5; /*  ADJ0_ENH_SHP5   */
+    volatile uint32_t ADJ0_ENH_SHP6; /*  ADJ0_ENH_SHP6   */
 #define VDC5_ADJ0_ENH_LTI1_COUNT 2
-    volatile uint32_t  ADJ0_ENH_LTI1;                          /*  ADJ0_ENH_LTI1   */
-    volatile uint32_t  ADJ0_ENH_LTI2;                          /*  ADJ0_ENH_LTI2   */
-    volatile uint32_t  ADJ0_MTX_MODE;                          /*  ADJ0_MTX_MODE   */
-    volatile uint32_t  ADJ0_MTX_YG_ADJ0;                       /*  ADJ0_MTX_YG_ADJ0 */
-    volatile uint32_t  ADJ0_MTX_YG_ADJ1;                       /*  ADJ0_MTX_YG_ADJ1 */
-    volatile uint32_t  ADJ0_MTX_CBB_ADJ0;                      /*  ADJ0_MTX_CBB_ADJ0 */
-    volatile uint32_t  ADJ0_MTX_CBB_ADJ1;                      /*  ADJ0_MTX_CBB_ADJ1 */
-    volatile uint32_t  ADJ0_MTX_CRR_ADJ0;                      /*  ADJ0_MTX_CRR_ADJ0 */
-    volatile uint32_t  ADJ0_MTX_CRR_ADJ1;                      /*  ADJ0_MTX_CRR_ADJ1 */
-/* end of struct st_vdc5_from_adj0_update */
-    volatile uint8_t   dummy13[48];                            /*                  */
-/* start of struct st_vdc5_from_gr0_update */
-    volatile uint32_t  GR2_UPDATE;                             /*  GR2_UPDATE      */
-    volatile uint32_t  GR2_FLM_RD;                             /*  GR2_FLM_RD      */
+    volatile uint32_t ADJ0_ENH_LTI1; /*  ADJ0_ENH_LTI1   */
+    volatile uint32_t ADJ0_ENH_LTI2; /*  ADJ0_ENH_LTI2   */
+    volatile uint32_t ADJ0_MTX_MODE; /*  ADJ0_MTX_MODE   */
+    volatile uint32_t ADJ0_MTX_YG_ADJ0; /*  ADJ0_MTX_YG_ADJ0 */
+    volatile uint32_t ADJ0_MTX_YG_ADJ1; /*  ADJ0_MTX_YG_ADJ1 */
+    volatile uint32_t ADJ0_MTX_CBB_ADJ0; /*  ADJ0_MTX_CBB_ADJ0 */
+    volatile uint32_t ADJ0_MTX_CBB_ADJ1; /*  ADJ0_MTX_CBB_ADJ1 */
+    volatile uint32_t ADJ0_MTX_CRR_ADJ0; /*  ADJ0_MTX_CRR_ADJ0 */
+    volatile uint32_t ADJ0_MTX_CRR_ADJ1; /*  ADJ0_MTX_CRR_ADJ1 */
+    /* end of struct st_vdc5_from_adj0_update */
+    volatile uint8_t dummy13[48]; /*                  */
+    /* start of struct st_vdc5_from_gr0_update */
+    volatile uint32_t GR2_UPDATE; /*  GR2_UPDATE      */
+    volatile uint32_t GR2_FLM_RD; /*  GR2_FLM_RD      */
 #define VDC5_GR2_FLM1_COUNT 6
-    volatile uint32_t  GR2_FLM1;                               /*  GR2_FLM1        */
-    volatile uint32_t  GR2_FLM2;                               /*  GR2_FLM2        */
-    volatile uint32_t  GR2_FLM3;                               /*  GR2_FLM3        */
-    volatile uint32_t  GR2_FLM4;                               /*  GR2_FLM4        */
-    volatile uint32_t  GR2_FLM5;                               /*  GR2_FLM5        */
-    volatile uint32_t  GR2_FLM6;                               /*  GR2_FLM6        */
+    volatile uint32_t GR2_FLM1; /*  GR2_FLM1        */
+    volatile uint32_t GR2_FLM2; /*  GR2_FLM2        */
+    volatile uint32_t GR2_FLM3; /*  GR2_FLM3        */
+    volatile uint32_t GR2_FLM4; /*  GR2_FLM4        */
+    volatile uint32_t GR2_FLM5; /*  GR2_FLM5        */
+    volatile uint32_t GR2_FLM6; /*  GR2_FLM6        */
 #define VDC5_GR2_AB1_COUNT 3
-    volatile uint32_t  GR2_AB1;                                /*  GR2_AB1         */
-    volatile uint32_t  GR2_AB2;                                /*  GR2_AB2         */
-    volatile uint32_t  GR2_AB3;                                /*  GR2_AB3         */
-/* end of struct st_vdc5_from_gr0_update */
-    volatile uint32_t  GR2_AB4;                                /*  GR2_AB4         */
-    volatile uint32_t  GR2_AB5;                                /*  GR2_AB5         */
-    volatile uint32_t  GR2_AB6;                                /*  GR2_AB6         */
-/* start of struct st_vdc5_from_gr0_ab7 */
-    volatile uint32_t  GR2_AB7;                                /*  GR2_AB7         */
-    volatile uint32_t  GR2_AB8;                                /*  GR2_AB8         */
-    volatile uint32_t  GR2_AB9;                                /*  GR2_AB9         */
-    volatile uint32_t  GR2_AB10;                               /*  GR2_AB10        */
-    volatile uint32_t  GR2_AB11;                               /*  GR2_AB11        */
-    volatile uint32_t  GR2_BASE;                               /*  GR2_BASE        */
-/* end of struct st_vdc5_from_gr0_ab7 */
-    volatile uint32_t  GR2_CLUT;                               /*  GR2_CLUT        */
-    volatile uint32_t  GR2_MON;                                /*  GR2_MON         */
-    volatile uint8_t   dummy14[40];                            /*                  */
-/* start of struct st_vdc5_from_gr0_update */
-    volatile uint32_t  GR3_UPDATE;                             /*  GR3_UPDATE      */
-    volatile uint32_t  GR3_FLM_RD;                             /*  GR3_FLM_RD      */
+    volatile uint32_t GR2_AB1; /*  GR2_AB1         */
+    volatile uint32_t GR2_AB2; /*  GR2_AB2         */
+    volatile uint32_t GR2_AB3; /*  GR2_AB3         */
+    /* end of struct st_vdc5_from_gr0_update */
+    volatile uint32_t GR2_AB4; /*  GR2_AB4         */
+    volatile uint32_t GR2_AB5; /*  GR2_AB5         */
+    volatile uint32_t GR2_AB6; /*  GR2_AB6         */
+    /* start of struct st_vdc5_from_gr0_ab7 */
+    volatile uint32_t GR2_AB7; /*  GR2_AB7         */
+    volatile uint32_t GR2_AB8; /*  GR2_AB8         */
+    volatile uint32_t GR2_AB9; /*  GR2_AB9         */
+    volatile uint32_t GR2_AB10; /*  GR2_AB10        */
+    volatile uint32_t GR2_AB11; /*  GR2_AB11        */
+    volatile uint32_t GR2_BASE; /*  GR2_BASE        */
+    /* end of struct st_vdc5_from_gr0_ab7 */
+    volatile uint32_t GR2_CLUT; /*  GR2_CLUT        */
+    volatile uint32_t GR2_MON; /*  GR2_MON         */
+    volatile uint8_t dummy14[40]; /*                  */
+    /* start of struct st_vdc5_from_gr0_update */
+    volatile uint32_t GR3_UPDATE; /*  GR3_UPDATE      */
+    volatile uint32_t GR3_FLM_RD; /*  GR3_FLM_RD      */
 #define VDC5_GR3_FLM1_COUNT 6
-    volatile uint32_t  GR3_FLM1;                               /*  GR3_FLM1        */
-    volatile uint32_t  GR3_FLM2;                               /*  GR3_FLM2        */
-    volatile uint32_t  GR3_FLM3;                               /*  GR3_FLM3        */
-    volatile uint32_t  GR3_FLM4;                               /*  GR3_FLM4        */
-    volatile uint32_t  GR3_FLM5;                               /*  GR3_FLM5        */
-    volatile uint32_t  GR3_FLM6;                               /*  GR3_FLM6        */
+    volatile uint32_t GR3_FLM1; /*  GR3_FLM1        */
+    volatile uint32_t GR3_FLM2; /*  GR3_FLM2        */
+    volatile uint32_t GR3_FLM3; /*  GR3_FLM3        */
+    volatile uint32_t GR3_FLM4; /*  GR3_FLM4        */
+    volatile uint32_t GR3_FLM5; /*  GR3_FLM5        */
+    volatile uint32_t GR3_FLM6; /*  GR3_FLM6        */
 #define VDC5_GR3_AB1_COUNT 3
-    volatile uint32_t  GR3_AB1;                                /*  GR3_AB1         */
-    volatile uint32_t  GR3_AB2;                                /*  GR3_AB2         */
-    volatile uint32_t  GR3_AB3;                                /*  GR3_AB3         */
-/* end of struct st_vdc5_from_gr0_update */
-    volatile uint32_t  GR3_AB4;                                /*  GR3_AB4         */
-    volatile uint32_t  GR3_AB5;                                /*  GR3_AB5         */
-    volatile uint32_t  GR3_AB6;                                /*  GR3_AB6         */
-/* start of struct st_vdc5_from_gr0_ab7 */
-    volatile uint32_t  GR3_AB7;                                /*  GR3_AB7         */
-    volatile uint32_t  GR3_AB8;                                /*  GR3_AB8         */
-    volatile uint32_t  GR3_AB9;                                /*  GR3_AB9         */
-    volatile uint32_t  GR3_AB10;                               /*  GR3_AB10        */
-    volatile uint32_t  GR3_AB11;                               /*  GR3_AB11        */
-    volatile uint32_t  GR3_BASE;                               /*  GR3_BASE        */
-/* end of struct st_vdc5_from_gr0_ab7 */
-    volatile uint32_t  GR3_CLUT_INT;                           /*  GR3_CLUT_INT    */
-    volatile uint32_t  GR3_MON;                                /*  GR3_MON         */
-    volatile uint8_t   dummy15[40];                            /*                  */
-    volatile uint32_t  GAM_G_UPDATE;                           /*  GAM_G_UPDATE    */
-    volatile uint32_t  GAM_SW;                                 /*  GAM_SW          */
+    volatile uint32_t GR3_AB1; /*  GR3_AB1         */
+    volatile uint32_t GR3_AB2; /*  GR3_AB2         */
+    volatile uint32_t GR3_AB3; /*  GR3_AB3         */
+    /* end of struct st_vdc5_from_gr0_update */
+    volatile uint32_t GR3_AB4; /*  GR3_AB4         */
+    volatile uint32_t GR3_AB5; /*  GR3_AB5         */
+    volatile uint32_t GR3_AB6; /*  GR3_AB6         */
+    /* start of struct st_vdc5_from_gr0_ab7 */
+    volatile uint32_t GR3_AB7; /*  GR3_AB7         */
+    volatile uint32_t GR3_AB8; /*  GR3_AB8         */
+    volatile uint32_t GR3_AB9; /*  GR3_AB9         */
+    volatile uint32_t GR3_AB10; /*  GR3_AB10        */
+    volatile uint32_t GR3_AB11; /*  GR3_AB11        */
+    volatile uint32_t GR3_BASE; /*  GR3_BASE        */
+    /* end of struct st_vdc5_from_gr0_ab7 */
+    volatile uint32_t GR3_CLUT_INT; /*  GR3_CLUT_INT    */
+    volatile uint32_t GR3_MON; /*  GR3_MON         */
+    volatile uint8_t dummy15[40]; /*                  */
+    volatile uint32_t GAM_G_UPDATE; /*  GAM_G_UPDATE    */
+    volatile uint32_t GAM_SW; /*  GAM_SW          */
 #define VDC5_GAM_G_LUT1_COUNT 16
-    volatile uint32_t  GAM_G_LUT1;                             /*  GAM_G_LUT1      */
-    volatile uint32_t  GAM_G_LUT2;                             /*  GAM_G_LUT2      */
-    volatile uint32_t  GAM_G_LUT3;                             /*  GAM_G_LUT3      */
-    volatile uint32_t  GAM_G_LUT4;                             /*  GAM_G_LUT4      */
-    volatile uint32_t  GAM_G_LUT5;                             /*  GAM_G_LUT5      */
-    volatile uint32_t  GAM_G_LUT6;                             /*  GAM_G_LUT6      */
-    volatile uint32_t  GAM_G_LUT7;                             /*  GAM_G_LUT7      */
-    volatile uint32_t  GAM_G_LUT8;                             /*  GAM_G_LUT8      */
-    volatile uint32_t  GAM_G_LUT9;                             /*  GAM_G_LUT9      */
-    volatile uint32_t  GAM_G_LUT10;                            /*  GAM_G_LUT10     */
-    volatile uint32_t  GAM_G_LUT11;                            /*  GAM_G_LUT11     */
-    volatile uint32_t  GAM_G_LUT12;                            /*  GAM_G_LUT12     */
-    volatile uint32_t  GAM_G_LUT13;                            /*  GAM_G_LUT13     */
-    volatile uint32_t  GAM_G_LUT14;                            /*  GAM_G_LUT14     */
-    volatile uint32_t  GAM_G_LUT15;                            /*  GAM_G_LUT15     */
-    volatile uint32_t  GAM_G_LUT16;                            /*  GAM_G_LUT16     */
+    volatile uint32_t GAM_G_LUT1; /*  GAM_G_LUT1      */
+    volatile uint32_t GAM_G_LUT2; /*  GAM_G_LUT2      */
+    volatile uint32_t GAM_G_LUT3; /*  GAM_G_LUT3      */
+    volatile uint32_t GAM_G_LUT4; /*  GAM_G_LUT4      */
+    volatile uint32_t GAM_G_LUT5; /*  GAM_G_LUT5      */
+    volatile uint32_t GAM_G_LUT6; /*  GAM_G_LUT6      */
+    volatile uint32_t GAM_G_LUT7; /*  GAM_G_LUT7      */
+    volatile uint32_t GAM_G_LUT8; /*  GAM_G_LUT8      */
+    volatile uint32_t GAM_G_LUT9; /*  GAM_G_LUT9      */
+    volatile uint32_t GAM_G_LUT10; /*  GAM_G_LUT10     */
+    volatile uint32_t GAM_G_LUT11; /*  GAM_G_LUT11     */
+    volatile uint32_t GAM_G_LUT12; /*  GAM_G_LUT12     */
+    volatile uint32_t GAM_G_LUT13; /*  GAM_G_LUT13     */
+    volatile uint32_t GAM_G_LUT14; /*  GAM_G_LUT14     */
+    volatile uint32_t GAM_G_LUT15; /*  GAM_G_LUT15     */
+    volatile uint32_t GAM_G_LUT16; /*  GAM_G_LUT16     */
 #define VDC5_GAM_G_AREA1_COUNT 8
-    volatile uint32_t  GAM_G_AREA1;                            /*  GAM_G_AREA1     */
-    volatile uint32_t  GAM_G_AREA2;                            /*  GAM_G_AREA2     */
-    volatile uint32_t  GAM_G_AREA3;                            /*  GAM_G_AREA3     */
-    volatile uint32_t  GAM_G_AREA4;                            /*  GAM_G_AREA4     */
-    volatile uint32_t  GAM_G_AREA5;                            /*  GAM_G_AREA5     */
-    volatile uint32_t  GAM_G_AREA6;                            /*  GAM_G_AREA6     */
-    volatile uint32_t  GAM_G_AREA7;                            /*  GAM_G_AREA7     */
-    volatile uint32_t  GAM_G_AREA8;                            /*  GAM_G_AREA8     */
-    volatile uint8_t   dummy16[24];                            /*                  */
-    volatile uint32_t  GAM_B_UPDATE;                           /*  GAM_B_UPDATE    */
-    volatile uint8_t   dummy17[4];                             /*                  */
+    volatile uint32_t GAM_G_AREA1; /*  GAM_G_AREA1     */
+    volatile uint32_t GAM_G_AREA2; /*  GAM_G_AREA2     */
+    volatile uint32_t GAM_G_AREA3; /*  GAM_G_AREA3     */
+    volatile uint32_t GAM_G_AREA4; /*  GAM_G_AREA4     */
+    volatile uint32_t GAM_G_AREA5; /*  GAM_G_AREA5     */
+    volatile uint32_t GAM_G_AREA6; /*  GAM_G_AREA6     */
+    volatile uint32_t GAM_G_AREA7; /*  GAM_G_AREA7     */
+    volatile uint32_t GAM_G_AREA8; /*  GAM_G_AREA8     */
+    volatile uint8_t dummy16[24]; /*                  */
+    volatile uint32_t GAM_B_UPDATE; /*  GAM_B_UPDATE    */
+    volatile uint8_t dummy17[4]; /*                  */
 #define VDC5_GAM_B_LUT1_COUNT 16
-    volatile uint32_t  GAM_B_LUT1;                             /*  GAM_B_LUT1      */
-    volatile uint32_t  GAM_B_LUT2;                             /*  GAM_B_LUT2      */
-    volatile uint32_t  GAM_B_LUT3;                             /*  GAM_B_LUT3      */
-    volatile uint32_t  GAM_B_LUT4;                             /*  GAM_B_LUT4      */
-    volatile uint32_t  GAM_B_LUT5;                             /*  GAM_B_LUT5      */
-    volatile uint32_t  GAM_B_LUT6;                             /*  GAM_B_LUT6      */
-    volatile uint32_t  GAM_B_LUT7;                             /*  GAM_B_LUT7      */
-    volatile uint32_t  GAM_B_LUT8;                             /*  GAM_B_LUT8      */
-    volatile uint32_t  GAM_B_LUT9;                             /*  GAM_B_LUT9      */
-    volatile uint32_t  GAM_B_LUT10;                            /*  GAM_B_LUT10     */
-    volatile uint32_t  GAM_B_LUT11;                            /*  GAM_B_LUT11     */
-    volatile uint32_t  GAM_B_LUT12;                            /*  GAM_B_LUT12     */
-    volatile uint32_t  GAM_B_LUT13;                            /*  GAM_B_LUT13     */
-    volatile uint32_t  GAM_B_LUT14;                            /*  GAM_B_LUT14     */
-    volatile uint32_t  GAM_B_LUT15;                            /*  GAM_B_LUT15     */
-    volatile uint32_t  GAM_B_LUT16;                            /*  GAM_B_LUT16     */
+    volatile uint32_t GAM_B_LUT1; /*  GAM_B_LUT1      */
+    volatile uint32_t GAM_B_LUT2; /*  GAM_B_LUT2      */
+    volatile uint32_t GAM_B_LUT3; /*  GAM_B_LUT3      */
+    volatile uint32_t GAM_B_LUT4; /*  GAM_B_LUT4      */
+    volatile uint32_t GAM_B_LUT5; /*  GAM_B_LUT5      */
+    volatile uint32_t GAM_B_LUT6; /*  GAM_B_LUT6      */
+    volatile uint32_t GAM_B_LUT7; /*  GAM_B_LUT7      */
+    volatile uint32_t GAM_B_LUT8; /*  GAM_B_LUT8      */
+    volatile uint32_t GAM_B_LUT9; /*  GAM_B_LUT9      */
+    volatile uint32_t GAM_B_LUT10; /*  GAM_B_LUT10     */
+    volatile uint32_t GAM_B_LUT11; /*  GAM_B_LUT11     */
+    volatile uint32_t GAM_B_LUT12; /*  GAM_B_LUT12     */
+    volatile uint32_t GAM_B_LUT13; /*  GAM_B_LUT13     */
+    volatile uint32_t GAM_B_LUT14; /*  GAM_B_LUT14     */
+    volatile uint32_t GAM_B_LUT15; /*  GAM_B_LUT15     */
+    volatile uint32_t GAM_B_LUT16; /*  GAM_B_LUT16     */
 #define VDC5_GAM_B_AREA1_COUNT 8
-    volatile uint32_t  GAM_B_AREA1;                            /*  GAM_B_AREA1     */
-    volatile uint32_t  GAM_B_AREA2;                            /*  GAM_B_AREA2     */
-    volatile uint32_t  GAM_B_AREA3;                            /*  GAM_B_AREA3     */
-    volatile uint32_t  GAM_B_AREA4;                            /*  GAM_B_AREA4     */
-    volatile uint32_t  GAM_B_AREA5;                            /*  GAM_B_AREA5     */
-    volatile uint32_t  GAM_B_AREA6;                            /*  GAM_B_AREA6     */
-    volatile uint32_t  GAM_B_AREA7;                            /*  GAM_B_AREA7     */
-    volatile uint32_t  GAM_B_AREA8;                            /*  GAM_B_AREA8     */
-    volatile uint8_t   dummy18[24];                            /*                  */
-    volatile uint32_t  GAM_R_UPDATE;                           /*  GAM_R_UPDATE    */
-    volatile uint8_t   dummy19[4];                             /*                  */
+    volatile uint32_t GAM_B_AREA1; /*  GAM_B_AREA1     */
+    volatile uint32_t GAM_B_AREA2; /*  GAM_B_AREA2     */
+    volatile uint32_t GAM_B_AREA3; /*  GAM_B_AREA3     */
+    volatile uint32_t GAM_B_AREA4; /*  GAM_B_AREA4     */
+    volatile uint32_t GAM_B_AREA5; /*  GAM_B_AREA5     */
+    volatile uint32_t GAM_B_AREA6; /*  GAM_B_AREA6     */
+    volatile uint32_t GAM_B_AREA7; /*  GAM_B_AREA7     */
+    volatile uint32_t GAM_B_AREA8; /*  GAM_B_AREA8     */
+    volatile uint8_t dummy18[24]; /*                  */
+    volatile uint32_t GAM_R_UPDATE; /*  GAM_R_UPDATE    */
+    volatile uint8_t dummy19[4]; /*                  */
 #define VDC5_GAM_R_LUT1_COUNT 16
-    volatile uint32_t  GAM_R_LUT1;                             /*  GAM_R_LUT1      */
-    volatile uint32_t  GAM_R_LUT2;                             /*  GAM_R_LUT2      */
-    volatile uint32_t  GAM_R_LUT3;                             /*  GAM_R_LUT3      */
-    volatile uint32_t  GAM_R_LUT4;                             /*  GAM_R_LUT4      */
-    volatile uint32_t  GAM_R_LUT5;                             /*  GAM_R_LUT5      */
-    volatile uint32_t  GAM_R_LUT6;                             /*  GAM_R_LUT6      */
-    volatile uint32_t  GAM_R_LUT7;                             /*  GAM_R_LUT7      */
-    volatile uint32_t  GAM_R_LUT8;                             /*  GAM_R_LUT8      */
-    volatile uint32_t  GAM_R_LUT9;                             /*  GAM_R_LUT9      */
-    volatile uint32_t  GAM_R_LUT10;                            /*  GAM_R_LUT10     */
-    volatile uint32_t  GAM_R_LUT11;                            /*  GAM_R_LUT11     */
-    volatile uint32_t  GAM_R_LUT12;                            /*  GAM_R_LUT12     */
-    volatile uint32_t  GAM_R_LUT13;                            /*  GAM_R_LUT13     */
-    volatile uint32_t  GAM_R_LUT14;                            /*  GAM_R_LUT14     */
-    volatile uint32_t  GAM_R_LUT15;                            /*  GAM_R_LUT15     */
-    volatile uint32_t  GAM_R_LUT16;                            /*  GAM_R_LUT16     */
+    volatile uint32_t GAM_R_LUT1; /*  GAM_R_LUT1      */
+    volatile uint32_t GAM_R_LUT2; /*  GAM_R_LUT2      */
+    volatile uint32_t GAM_R_LUT3; /*  GAM_R_LUT3      */
+    volatile uint32_t GAM_R_LUT4; /*  GAM_R_LUT4      */
+    volatile uint32_t GAM_R_LUT5; /*  GAM_R_LUT5      */
+    volatile uint32_t GAM_R_LUT6; /*  GAM_R_LUT6      */
+    volatile uint32_t GAM_R_LUT7; /*  GAM_R_LUT7      */
+    volatile uint32_t GAM_R_LUT8; /*  GAM_R_LUT8      */
+    volatile uint32_t GAM_R_LUT9; /*  GAM_R_LUT9      */
+    volatile uint32_t GAM_R_LUT10; /*  GAM_R_LUT10     */
+    volatile uint32_t GAM_R_LUT11; /*  GAM_R_LUT11     */
+    volatile uint32_t GAM_R_LUT12; /*  GAM_R_LUT12     */
+    volatile uint32_t GAM_R_LUT13; /*  GAM_R_LUT13     */
+    volatile uint32_t GAM_R_LUT14; /*  GAM_R_LUT14     */
+    volatile uint32_t GAM_R_LUT15; /*  GAM_R_LUT15     */
+    volatile uint32_t GAM_R_LUT16; /*  GAM_R_LUT16     */
 #define VDC5_GAM_R_AREA1_COUNT 8
-    volatile uint32_t  GAM_R_AREA1;                            /*  GAM_R_AREA1     */
-    volatile uint32_t  GAM_R_AREA2;                            /*  GAM_R_AREA2     */
-    volatile uint32_t  GAM_R_AREA3;                            /*  GAM_R_AREA3     */
-    volatile uint32_t  GAM_R_AREA4;                            /*  GAM_R_AREA4     */
-    volatile uint32_t  GAM_R_AREA5;                            /*  GAM_R_AREA5     */
-    volatile uint32_t  GAM_R_AREA6;                            /*  GAM_R_AREA6     */
-    volatile uint32_t  GAM_R_AREA7;                            /*  GAM_R_AREA7     */
-    volatile uint32_t  GAM_R_AREA8;                            /*  GAM_R_AREA8     */
-    volatile uint8_t   dummy20[24];                            /*                  */
-    volatile uint32_t  TCON_UPDATE;                            /*  TCON_UPDATE     */
-    volatile uint32_t  TCON_TIM;                               /*  TCON_TIM        */
+    volatile uint32_t GAM_R_AREA1; /*  GAM_R_AREA1     */
+    volatile uint32_t GAM_R_AREA2; /*  GAM_R_AREA2     */
+    volatile uint32_t GAM_R_AREA3; /*  GAM_R_AREA3     */
+    volatile uint32_t GAM_R_AREA4; /*  GAM_R_AREA4     */
+    volatile uint32_t GAM_R_AREA5; /*  GAM_R_AREA5     */
+    volatile uint32_t GAM_R_AREA6; /*  GAM_R_AREA6     */
+    volatile uint32_t GAM_R_AREA7; /*  GAM_R_AREA7     */
+    volatile uint32_t GAM_R_AREA8; /*  GAM_R_AREA8     */
+    volatile uint8_t dummy20[24]; /*                  */
+    volatile uint32_t TCON_UPDATE; /*  TCON_UPDATE     */
+    volatile uint32_t TCON_TIM; /*  TCON_TIM        */
 #define VDC5_TCON_TIM_STVA1_COUNT 2
-    volatile uint32_t  TCON_TIM_STVA1;                         /*  TCON_TIM_STVA1  */
-    volatile uint32_t  TCON_TIM_STVA2;                         /*  TCON_TIM_STVA2  */
+    volatile uint32_t TCON_TIM_STVA1; /*  TCON_TIM_STVA1  */
+    volatile uint32_t TCON_TIM_STVA2; /*  TCON_TIM_STVA2  */
 #define VDC5_TCON_TIM_STVB1_COUNT 2
-    volatile uint32_t  TCON_TIM_STVB1;                         /*  TCON_TIM_STVB1  */
-    volatile uint32_t  TCON_TIM_STVB2;                         /*  TCON_TIM_STVB2  */
+    volatile uint32_t TCON_TIM_STVB1; /*  TCON_TIM_STVB1  */
+    volatile uint32_t TCON_TIM_STVB2; /*  TCON_TIM_STVB2  */
 #define VDC5_TCON_TIM_STH1_COUNT 2
-    volatile uint32_t  TCON_TIM_STH1;                          /*  TCON_TIM_STH1   */
-    volatile uint32_t  TCON_TIM_STH2;                          /*  TCON_TIM_STH2   */
+    volatile uint32_t TCON_TIM_STH1; /*  TCON_TIM_STH1   */
+    volatile uint32_t TCON_TIM_STH2; /*  TCON_TIM_STH2   */
 #define VDC5_TCON_TIM_STB1_COUNT 2
-    volatile uint32_t  TCON_TIM_STB1;                          /*  TCON_TIM_STB1   */
-    volatile uint32_t  TCON_TIM_STB2;                          /*  TCON_TIM_STB2   */
+    volatile uint32_t TCON_TIM_STB1; /*  TCON_TIM_STB1   */
+    volatile uint32_t TCON_TIM_STB2; /*  TCON_TIM_STB2   */
 #define VDC5_TCON_TIM_CPV1_COUNT 2
-    volatile uint32_t  TCON_TIM_CPV1;                          /*  TCON_TIM_CPV1   */
-    volatile uint32_t  TCON_TIM_CPV2;                          /*  TCON_TIM_CPV2   */
+    volatile uint32_t TCON_TIM_CPV1; /*  TCON_TIM_CPV1   */
+    volatile uint32_t TCON_TIM_CPV2; /*  TCON_TIM_CPV2   */
 #define VDC5_TCON_TIM_POLA1_COUNT 2
-    volatile uint32_t  TCON_TIM_POLA1;                         /*  TCON_TIM_POLA1  */
-    volatile uint32_t  TCON_TIM_POLA2;                         /*  TCON_TIM_POLA2  */
+    volatile uint32_t TCON_TIM_POLA1; /*  TCON_TIM_POLA1  */
+    volatile uint32_t TCON_TIM_POLA2; /*  TCON_TIM_POLA2  */
 #define VDC5_TCON_TIM_POLB1_COUNT 2
-    volatile uint32_t  TCON_TIM_POLB1;                         /*  TCON_TIM_POLB1  */
-    volatile uint32_t  TCON_TIM_POLB2;                         /*  TCON_TIM_POLB2  */
-    volatile uint32_t  TCON_TIM_DE;                            /*  TCON_TIM_DE     */
-    volatile uint8_t   dummy21[60];                            /*                  */
-    volatile uint32_t  OUT_UPDATE;                             /*  OUT_UPDATE      */
-    volatile uint32_t  OUT_SET;                                /*  OUT_SET         */
+    volatile uint32_t TCON_TIM_POLB1; /*  TCON_TIM_POLB1  */
+    volatile uint32_t TCON_TIM_POLB2; /*  TCON_TIM_POLB2  */
+    volatile uint32_t TCON_TIM_DE; /*  TCON_TIM_DE     */
+    volatile uint8_t dummy21[60]; /*                  */
+    volatile uint32_t OUT_UPDATE; /*  OUT_UPDATE      */
+    volatile uint32_t OUT_SET; /*  OUT_SET         */
 #define VDC5_OUT_BRIGHT1_COUNT 2
-    volatile uint32_t  OUT_BRIGHT1;                            /*  OUT_BRIGHT1     */
-    volatile uint32_t  OUT_BRIGHT2;                            /*  OUT_BRIGHT2     */
-    volatile uint32_t  OUT_CONTRAST;                           /*  OUT_CONTRAST    */
-    volatile uint32_t  OUT_PDTHA;                              /*  OUT_PDTHA       */
-    volatile uint8_t   dummy22[12];                            /*                  */
-    volatile uint32_t  OUT_CLK_PHASE;                          /*  OUT_CLK_PHASE   */
-    volatile uint8_t   dummy23[88];                            /*                  */
+    volatile uint32_t OUT_BRIGHT1; /*  OUT_BRIGHT1     */
+    volatile uint32_t OUT_BRIGHT2; /*  OUT_BRIGHT2     */
+    volatile uint32_t OUT_CONTRAST; /*  OUT_CONTRAST    */
+    volatile uint32_t OUT_PDTHA; /*  OUT_PDTHA       */
+    volatile uint8_t dummy22[12]; /*                  */
+    volatile uint32_t OUT_CLK_PHASE; /*  OUT_CLK_PHASE   */
+    volatile uint8_t dummy23[88]; /*                  */
 #define VDC5_SYSCNT_INT1_COUNT 6
-    volatile uint32_t  SYSCNT_INT1;                            /*  SYSCNT_INT1     */
-    volatile uint32_t  SYSCNT_INT2;                            /*  SYSCNT_INT2     */
-    volatile uint32_t  SYSCNT_INT3;                            /*  SYSCNT_INT3     */
-    volatile uint32_t  SYSCNT_INT4;                            /*  SYSCNT_INT4     */
-    volatile uint32_t  SYSCNT_INT5;                            /*  SYSCNT_INT5     */
-    volatile uint32_t  SYSCNT_INT6;                            /*  SYSCNT_INT6     */
-    volatile uint16_t SYSCNT_PANEL_CLK;                       /*  SYSCNT_PANEL_CLK */
-    volatile uint16_t SYSCNT_CLUT;                            /*  SYSCNT_CLUT     */
-    volatile uint8_t   dummy24[356];                           /*                  */
-/* start of struct st_vdc5_from_sc0_scl0_update */
-    volatile uint32_t  SC1_SCL0_UPDATE;                        /*  SC1_SCL0_UPDATE */
+    volatile uint32_t SYSCNT_INT1; /*  SYSCNT_INT1     */
+    volatile uint32_t SYSCNT_INT2; /*  SYSCNT_INT2     */
+    volatile uint32_t SYSCNT_INT3; /*  SYSCNT_INT3     */
+    volatile uint32_t SYSCNT_INT4; /*  SYSCNT_INT4     */
+    volatile uint32_t SYSCNT_INT5; /*  SYSCNT_INT5     */
+    volatile uint32_t SYSCNT_INT6; /*  SYSCNT_INT6     */
+    volatile uint16_t SYSCNT_PANEL_CLK; /*  SYSCNT_PANEL_CLK */
+    volatile uint16_t SYSCNT_CLUT; /*  SYSCNT_CLUT     */
+    volatile uint8_t dummy24[356]; /*                  */
+    /* start of struct st_vdc5_from_sc0_scl0_update */
+    volatile uint32_t SC1_SCL0_UPDATE; /*  SC1_SCL0_UPDATE */
 #define VDC5_SC1_SCL0_FRC1_COUNT 7
-    volatile uint32_t  SC1_SCL0_FRC1;                          /*  SC1_SCL0_FRC1   */
-    volatile uint32_t  SC1_SCL0_FRC2;                          /*  SC1_SCL0_FRC2   */
-    volatile uint32_t  SC1_SCL0_FRC3;                          /*  SC1_SCL0_FRC3   */
-    volatile uint32_t  SC1_SCL0_FRC4;                          /*  SC1_SCL0_FRC4   */
-    volatile uint32_t  SC1_SCL0_FRC5;                          /*  SC1_SCL0_FRC5   */
-    volatile uint32_t  SC1_SCL0_FRC6;                          /*  SC1_SCL0_FRC6   */
-    volatile uint32_t  SC1_SCL0_FRC7;                          /*  SC1_SCL0_FRC7   */
-    volatile uint8_t   dummy25[4];                             /*                  */
-    volatile uint32_t  SC1_SCL0_FRC9;                          /*  SC1_SCL0_FRC9   */
-    volatile uint16_t SC1_SCL0_MON0;                          /*  SC1_SCL0_MON0   */
-    volatile uint16_t SC1_SCL0_INT;                           /*  SC1_SCL0_INT    */
+    volatile uint32_t SC1_SCL0_FRC1; /*  SC1_SCL0_FRC1   */
+    volatile uint32_t SC1_SCL0_FRC2; /*  SC1_SCL0_FRC2   */
+    volatile uint32_t SC1_SCL0_FRC3; /*  SC1_SCL0_FRC3   */
+    volatile uint32_t SC1_SCL0_FRC4; /*  SC1_SCL0_FRC4   */
+    volatile uint32_t SC1_SCL0_FRC5; /*  SC1_SCL0_FRC5   */
+    volatile uint32_t SC1_SCL0_FRC6; /*  SC1_SCL0_FRC6   */
+    volatile uint32_t SC1_SCL0_FRC7; /*  SC1_SCL0_FRC7   */
+    volatile uint8_t dummy25[4]; /*                  */
+    volatile uint32_t SC1_SCL0_FRC9; /*  SC1_SCL0_FRC9   */
+    volatile uint16_t SC1_SCL0_MON0; /*  SC1_SCL0_MON0   */
+    volatile uint16_t SC1_SCL0_INT; /*  SC1_SCL0_INT    */
 #define VDC5_SC1_SC1_SCL0_DS1_COUNT 7
-    volatile uint32_t  SC1_SCL0_DS1;                           /*  SC1_SCL0_DS1    */
-    volatile uint32_t  SC1_SCL0_DS2;                           /*  SC1_SCL0_DS2    */
-    volatile uint32_t  SC1_SCL0_DS3;                           /*  SC1_SCL0_DS3    */
-    volatile uint32_t  SC1_SCL0_DS4;                           /*  SC1_SCL0_DS4    */
-    volatile uint32_t  SC1_SCL0_DS5;                           /*  SC1_SCL0_DS5    */
-    volatile uint32_t  SC1_SCL0_DS6;                           /*  SC1_SCL0_DS6    */
-    volatile uint32_t  SC1_SCL0_DS7;                           /*  SC1_SCL0_DS7    */
+    volatile uint32_t SC1_SCL0_DS1; /*  SC1_SCL0_DS1    */
+    volatile uint32_t SC1_SCL0_DS2; /*  SC1_SCL0_DS2    */
+    volatile uint32_t SC1_SCL0_DS3; /*  SC1_SCL0_DS3    */
+    volatile uint32_t SC1_SCL0_DS4; /*  SC1_SCL0_DS4    */
+    volatile uint32_t SC1_SCL0_DS5; /*  SC1_SCL0_DS5    */
+    volatile uint32_t SC1_SCL0_DS6; /*  SC1_SCL0_DS6    */
+    volatile uint32_t SC1_SCL0_DS7; /*  SC1_SCL0_DS7    */
 #define VDC5_SC1_SC1_SCL0_US1_COUNT 8
-    volatile uint32_t  SC1_SCL0_US1;                           /*  SC1_SCL0_US1    */
-    volatile uint32_t  SC1_SCL0_US2;                           /*  SC1_SCL0_US2    */
-    volatile uint32_t  SC1_SCL0_US3;                           /*  SC1_SCL0_US3    */
-    volatile uint32_t  SC1_SCL0_US4;                           /*  SC1_SCL0_US4    */
-    volatile uint32_t  SC1_SCL0_US5;                           /*  SC1_SCL0_US5    */
-    volatile uint32_t  SC1_SCL0_US6;                           /*  SC1_SCL0_US6    */
-    volatile uint32_t  SC1_SCL0_US7;                           /*  SC1_SCL0_US7    */
-    volatile uint32_t  SC1_SCL0_US8;                           /*  SC1_SCL0_US8    */
-    volatile uint8_t   dummy26[4];                             /*                  */
-    volatile uint32_t  SC1_SCL0_OVR1;                          /*  SC1_SCL0_OVR1   */
-    volatile uint8_t   dummy27[16];                            /*                  */
-    volatile uint32_t  SC1_SCL1_UPDATE;                        /*  SC1_SCL1_UPDATE */
-    volatile uint8_t   dummy28[4];                             /*                  */
+    volatile uint32_t SC1_SCL0_US1; /*  SC1_SCL0_US1    */
+    volatile uint32_t SC1_SCL0_US2; /*  SC1_SCL0_US2    */
+    volatile uint32_t SC1_SCL0_US3; /*  SC1_SCL0_US3    */
+    volatile uint32_t SC1_SCL0_US4; /*  SC1_SCL0_US4    */
+    volatile uint32_t SC1_SCL0_US5; /*  SC1_SCL0_US5    */
+    volatile uint32_t SC1_SCL0_US6; /*  SC1_SCL0_US6    */
+    volatile uint32_t SC1_SCL0_US7; /*  SC1_SCL0_US7    */
+    volatile uint32_t SC1_SCL0_US8; /*  SC1_SCL0_US8    */
+    volatile uint8_t dummy26[4]; /*                  */
+    volatile uint32_t SC1_SCL0_OVR1; /*  SC1_SCL0_OVR1   */
+    volatile uint8_t dummy27[16]; /*                  */
+    volatile uint32_t SC1_SCL1_UPDATE; /*  SC1_SCL1_UPDATE */
+    volatile uint8_t dummy28[4]; /*                  */
 #define VDC5_SC1_SCL1_WR1_COUNT 4
-    volatile uint32_t  SC1_SCL1_WR1;                           /*  SC1_SCL1_WR1    */
-    volatile uint32_t  SC1_SCL1_WR2;                           /*  SC1_SCL1_WR2    */
-    volatile uint32_t  SC1_SCL1_WR3;                           /*  SC1_SCL1_WR3    */
-    volatile uint32_t  SC1_SCL1_WR4;                           /*  SC1_SCL1_WR4    */
-    volatile uint8_t   dummy29[4];                             /*                  */
-    volatile uint32_t  SC1_SCL1_WR5;                           /*  SC1_SCL1_WR5    */
-    volatile uint32_t  SC1_SCL1_WR6;                           /*  SC1_SCL1_WR6    */
-    volatile uint32_t  SC1_SCL1_WR7;                           /*  SC1_SCL1_WR7    */
-    volatile uint32_t  SC1_SCL1_WR8;                           /*  SC1_SCL1_WR8    */
-    volatile uint32_t  SC1_SCL1_WR9;                           /*  SC1_SCL1_WR9    */
-    volatile uint32_t  SC1_SCL1_WR10;                          /*  SC1_SCL1_WR10   */
-/* end of struct st_vdc5_from_sc0_scl0_update */
-    volatile uint32_t  SC1_SCL1_WR11;                          /*  SC1_SCL1_WR11   */
-    volatile uint32_t  SC1_SCL1_MON1;                          /*  SC1_SCL1_MON1   */
-/* start of struct st_vdc5_from_sc0_scl1_pbuf0 */
+    volatile uint32_t SC1_SCL1_WR1; /*  SC1_SCL1_WR1    */
+    volatile uint32_t SC1_SCL1_WR2; /*  SC1_SCL1_WR2    */
+    volatile uint32_t SC1_SCL1_WR3; /*  SC1_SCL1_WR3    */
+    volatile uint32_t SC1_SCL1_WR4; /*  SC1_SCL1_WR4    */
+    volatile uint8_t dummy29[4]; /*                  */
+    volatile uint32_t SC1_SCL1_WR5; /*  SC1_SCL1_WR5    */
+    volatile uint32_t SC1_SCL1_WR6; /*  SC1_SCL1_WR6    */
+    volatile uint32_t SC1_SCL1_WR7; /*  SC1_SCL1_WR7    */
+    volatile uint32_t SC1_SCL1_WR8; /*  SC1_SCL1_WR8    */
+    volatile uint32_t SC1_SCL1_WR9; /*  SC1_SCL1_WR9    */
+    volatile uint32_t SC1_SCL1_WR10; /*  SC1_SCL1_WR10   */
+    /* end of struct st_vdc5_from_sc0_scl0_update */
+    volatile uint32_t SC1_SCL1_WR11; /*  SC1_SCL1_WR11   */
+    volatile uint32_t SC1_SCL1_MON1; /*  SC1_SCL1_MON1   */
+    /* start of struct st_vdc5_from_sc0_scl1_pbuf0 */
 #define VDC5_SC1_SCL1_PBUF0_COUNT 4
-    volatile uint32_t  SC1_SCL1_PBUF0;                         /*  SC1_SCL1_PBUF0  */
-    volatile uint32_t  SC1_SCL1_PBUF1;                         /*  SC1_SCL1_PBUF1  */
-    volatile uint32_t  SC1_SCL1_PBUF2;                         /*  SC1_SCL1_PBUF2  */
-    volatile uint32_t  SC1_SCL1_PBUF3;                         /*  SC1_SCL1_PBUF3  */
-    volatile uint32_t  SC1_SCL1_PBUF_FLD;                      /*  SC1_SCL1_PBUF_FLD */
-    volatile uint32_t  SC1_SCL1_PBUF_CNT;                      /*  SC1_SCL1_PBUF_CNT */
-/* end of struct st_vdc5_from_sc0_scl1_pbuf0 */
-    volatile uint8_t   dummy30[44];                            /*                  */
-/* start of struct st_vdc5_from_gr0_update */
-    volatile uint32_t  GR1_UPDATE;                             /*  GR1_UPDATE      */
-    volatile uint32_t  GR1_FLM_RD;                             /*  GR1_FLM_RD      */
+    volatile uint32_t SC1_SCL1_PBUF0; /*  SC1_SCL1_PBUF0  */
+    volatile uint32_t SC1_SCL1_PBUF1; /*  SC1_SCL1_PBUF1  */
+    volatile uint32_t SC1_SCL1_PBUF2; /*  SC1_SCL1_PBUF2  */
+    volatile uint32_t SC1_SCL1_PBUF3; /*  SC1_SCL1_PBUF3  */
+    volatile uint32_t SC1_SCL1_PBUF_FLD; /*  SC1_SCL1_PBUF_FLD */
+    volatile uint32_t SC1_SCL1_PBUF_CNT; /*  SC1_SCL1_PBUF_CNT */
+    /* end of struct st_vdc5_from_sc0_scl1_pbuf0 */
+    volatile uint8_t dummy30[44]; /*                  */
+    /* start of struct st_vdc5_from_gr0_update */
+    volatile uint32_t GR1_UPDATE; /*  GR1_UPDATE      */
+    volatile uint32_t GR1_FLM_RD; /*  GR1_FLM_RD      */
 #define VDC5_GR1_FLM1_COUNT 6
-    volatile uint32_t  GR1_FLM1;                               /*  GR1_FLM1        */
-    volatile uint32_t  GR1_FLM2;                               /*  GR1_FLM2        */
-    volatile uint32_t  GR1_FLM3;                               /*  GR1_FLM3        */
-    volatile uint32_t  GR1_FLM4;                               /*  GR1_FLM4        */
-    volatile uint32_t  GR1_FLM5;                               /*  GR1_FLM5        */
-    volatile uint32_t  GR1_FLM6;                               /*  GR1_FLM6        */
+    volatile uint32_t GR1_FLM1; /*  GR1_FLM1        */
+    volatile uint32_t GR1_FLM2; /*  GR1_FLM2        */
+    volatile uint32_t GR1_FLM3; /*  GR1_FLM3        */
+    volatile uint32_t GR1_FLM4; /*  GR1_FLM4        */
+    volatile uint32_t GR1_FLM5; /*  GR1_FLM5        */
+    volatile uint32_t GR1_FLM6; /*  GR1_FLM6        */
 #define VDC5_GR1_AB1_COUNT 3
-    volatile uint32_t  GR1_AB1;                                /*  GR1_AB1         */
-    volatile uint32_t  GR1_AB2;                                /*  GR1_AB2         */
-    volatile uint32_t  GR1_AB3;                                /*  GR1_AB3         */
-/* end of struct st_vdc5_from_gr0_update */
-    volatile uint32_t  GR1_AB4;                                /*  GR1_AB4         */
-    volatile uint32_t  GR1_AB5;                                /*  GR1_AB5         */
-    volatile uint32_t  GR1_AB6;                                /*  GR1_AB6         */
-/* start of struct st_vdc5_from_gr0_ab7 */
-    volatile uint32_t  GR1_AB7;                                /*  GR1_AB7         */
-    volatile uint32_t  GR1_AB8;                                /*  GR1_AB8         */
-    volatile uint32_t  GR1_AB9;                                /*  GR1_AB9         */
-    volatile uint32_t  GR1_AB10;                               /*  GR1_AB10        */
-    volatile uint32_t  GR1_AB11;                               /*  GR1_AB11        */
-    volatile uint32_t  GR1_BASE;                               /*  GR1_BASE        */
-/* end of struct st_vdc5_from_gr0_ab7 */
-    volatile uint32_t  GR1_CLUT;                               /*  GR1_CLUT        */
-    volatile uint32_t  GR1_MON;                                /*  GR1_MON         */
-    volatile uint8_t   dummy31[40];                            /*                  */
-/* start of struct st_vdc5_from_adj0_update */
-    volatile uint32_t  ADJ1_UPDATE;                            /*  ADJ1_UPDATE     */
-    volatile uint32_t  ADJ1_BKSTR_SET;                         /*  ADJ1_BKSTR_SET  */
+    volatile uint32_t GR1_AB1; /*  GR1_AB1         */
+    volatile uint32_t GR1_AB2; /*  GR1_AB2         */
+    volatile uint32_t GR1_AB3; /*  GR1_AB3         */
+    /* end of struct st_vdc5_from_gr0_update */
+    volatile uint32_t GR1_AB4; /*  GR1_AB4         */
+    volatile uint32_t GR1_AB5; /*  GR1_AB5         */
+    volatile uint32_t GR1_AB6; /*  GR1_AB6         */
+    /* start of struct st_vdc5_from_gr0_ab7 */
+    volatile uint32_t GR1_AB7; /*  GR1_AB7         */
+    volatile uint32_t GR1_AB8; /*  GR1_AB8         */
+    volatile uint32_t GR1_AB9; /*  GR1_AB9         */
+    volatile uint32_t GR1_AB10; /*  GR1_AB10        */
+    volatile uint32_t GR1_AB11; /*  GR1_AB11        */
+    volatile uint32_t GR1_BASE; /*  GR1_BASE        */
+    /* end of struct st_vdc5_from_gr0_ab7 */
+    volatile uint32_t GR1_CLUT; /*  GR1_CLUT        */
+    volatile uint32_t GR1_MON; /*  GR1_MON         */
+    volatile uint8_t dummy31[40]; /*                  */
+    /* start of struct st_vdc5_from_adj0_update */
+    volatile uint32_t ADJ1_UPDATE; /*  ADJ1_UPDATE     */
+    volatile uint32_t ADJ1_BKSTR_SET; /*  ADJ1_BKSTR_SET  */
 #define VDC5_ADJ1_ENH_TIM1_COUNT 3
-    volatile uint32_t  ADJ1_ENH_TIM1;                          /*  ADJ1_ENH_TIM1   */
-    volatile uint32_t  ADJ1_ENH_TIM2;                          /*  ADJ1_ENH_TIM2   */
-    volatile uint32_t  ADJ1_ENH_TIM3;                          /*  ADJ1_ENH_TIM3   */
+    volatile uint32_t ADJ1_ENH_TIM1; /*  ADJ1_ENH_TIM1   */
+    volatile uint32_t ADJ1_ENH_TIM2; /*  ADJ1_ENH_TIM2   */
+    volatile uint32_t ADJ1_ENH_TIM3; /*  ADJ1_ENH_TIM3   */
 #define VDC5_ADJ1_ENH_SHP1_COUNT 6
-    volatile uint32_t  ADJ1_ENH_SHP1;                          /*  ADJ1_ENH_SHP1   */
-    volatile uint32_t  ADJ1_ENH_SHP2;                          /*  ADJ1_ENH_SHP2   */
-    volatile uint32_t  ADJ1_ENH_SHP3;                          /*  ADJ1_ENH_SHP3   */
-    volatile uint32_t  ADJ1_ENH_SHP4;                          /*  ADJ1_ENH_SHP4   */
-    volatile uint32_t  ADJ1_ENH_SHP5;                          /*  ADJ1_ENH_SHP5   */
-    volatile uint32_t  ADJ1_ENH_SHP6;                          /*  ADJ1_ENH_SHP6   */
+    volatile uint32_t ADJ1_ENH_SHP1; /*  ADJ1_ENH_SHP1   */
+    volatile uint32_t ADJ1_ENH_SHP2; /*  ADJ1_ENH_SHP2   */
+    volatile uint32_t ADJ1_ENH_SHP3; /*  ADJ1_ENH_SHP3   */
+    volatile uint32_t ADJ1_ENH_SHP4; /*  ADJ1_ENH_SHP4   */
+    volatile uint32_t ADJ1_ENH_SHP5; /*  ADJ1_ENH_SHP5   */
+    volatile uint32_t ADJ1_ENH_SHP6; /*  ADJ1_ENH_SHP6   */
 #define VDC5_ADJ1_ENH_LTI1_COUNT 2
-    volatile uint32_t  ADJ1_ENH_LTI1;                          /*  ADJ1_ENH_LTI1   */
-    volatile uint32_t  ADJ1_ENH_LTI2;                          /*  ADJ1_ENH_LTI2   */
-    volatile uint32_t  ADJ1_MTX_MODE;                          /*  ADJ1_MTX_MODE   */
-    volatile uint32_t  ADJ1_MTX_YG_ADJ0;                       /*  ADJ1_MTX_YG_ADJ0 */
-    volatile uint32_t  ADJ1_MTX_YG_ADJ1;                       /*  ADJ1_MTX_YG_ADJ1 */
-    volatile uint32_t  ADJ1_MTX_CBB_ADJ0;                      /*  ADJ1_MTX_CBB_ADJ0 */
-    volatile uint32_t  ADJ1_MTX_CBB_ADJ1;                      /*  ADJ1_MTX_CBB_ADJ1 */
-    volatile uint32_t  ADJ1_MTX_CRR_ADJ0;                      /*  ADJ1_MTX_CRR_ADJ0 */
-    volatile uint32_t  ADJ1_MTX_CRR_ADJ1;                      /*  ADJ1_MTX_CRR_ADJ1 */
-/* end of struct st_vdc5_from_adj0_update */
-    volatile uint8_t   dummy32[48];                            /*                  */
-    volatile uint32_t  GR_VIN_UPDATE;                          /*  GR_VIN_UPDATE   */
-    volatile uint8_t   dummy33[28];                            /*                  */
+    volatile uint32_t ADJ1_ENH_LTI1; /*  ADJ1_ENH_LTI1   */
+    volatile uint32_t ADJ1_ENH_LTI2; /*  ADJ1_ENH_LTI2   */
+    volatile uint32_t ADJ1_MTX_MODE; /*  ADJ1_MTX_MODE   */
+    volatile uint32_t ADJ1_MTX_YG_ADJ0; /*  ADJ1_MTX_YG_ADJ0 */
+    volatile uint32_t ADJ1_MTX_YG_ADJ1; /*  ADJ1_MTX_YG_ADJ1 */
+    volatile uint32_t ADJ1_MTX_CBB_ADJ0; /*  ADJ1_MTX_CBB_ADJ0 */
+    volatile uint32_t ADJ1_MTX_CBB_ADJ1; /*  ADJ1_MTX_CBB_ADJ1 */
+    volatile uint32_t ADJ1_MTX_CRR_ADJ0; /*  ADJ1_MTX_CRR_ADJ0 */
+    volatile uint32_t ADJ1_MTX_CRR_ADJ1; /*  ADJ1_MTX_CRR_ADJ1 */
+    /* end of struct st_vdc5_from_adj0_update */
+    volatile uint8_t dummy32[48]; /*                  */
+    volatile uint32_t GR_VIN_UPDATE; /*  GR_VIN_UPDATE   */
+    volatile uint8_t dummy33[28]; /*                  */
 #define VDC5_GR_VIN_AB1_COUNT 7
-    volatile uint32_t  GR_VIN_AB1;                             /*  GR_VIN_AB1      */
-    volatile uint32_t  GR_VIN_AB2;                             /*  GR_VIN_AB2      */
-    volatile uint32_t  GR_VIN_AB3;                             /*  GR_VIN_AB3      */
-    volatile uint32_t  GR_VIN_AB4;                             /*  GR_VIN_AB4      */
-    volatile uint32_t  GR_VIN_AB5;                             /*  GR_VIN_AB5      */
-    volatile uint32_t  GR_VIN_AB6;                             /*  GR_VIN_AB6      */
-    volatile uint32_t  GR_VIN_AB7;                             /*  GR_VIN_AB7      */
-    volatile uint8_t   dummy34[16];                            /*                  */
-    volatile uint32_t  GR_VIN_BASE;                            /*  GR_VIN_BASE     */
-    volatile uint8_t   dummy35[4];                             /*                  */
-    volatile uint32_t  GR_VIN_MON;                             /*  GR_VIN_MON      */
-    volatile uint8_t   dummy36[40];                            /*                  */
-    volatile uint32_t  OIR_SCL0_UPDATE;                        /*  OIR_SCL0_UPDATE */
+    volatile uint32_t GR_VIN_AB1; /*  GR_VIN_AB1      */
+    volatile uint32_t GR_VIN_AB2; /*  GR_VIN_AB2      */
+    volatile uint32_t GR_VIN_AB3; /*  GR_VIN_AB3      */
+    volatile uint32_t GR_VIN_AB4; /*  GR_VIN_AB4      */
+    volatile uint32_t GR_VIN_AB5; /*  GR_VIN_AB5      */
+    volatile uint32_t GR_VIN_AB6; /*  GR_VIN_AB6      */
+    volatile uint32_t GR_VIN_AB7; /*  GR_VIN_AB7      */
+    volatile uint8_t dummy34[16]; /*                  */
+    volatile uint32_t GR_VIN_BASE; /*  GR_VIN_BASE     */
+    volatile uint8_t dummy35[4]; /*                  */
+    volatile uint32_t GR_VIN_MON; /*  GR_VIN_MON      */
+    volatile uint8_t dummy36[40]; /*                  */
+    volatile uint32_t OIR_SCL0_UPDATE; /*  OIR_SCL0_UPDATE */
 #define VDC5_OIR_SCL0_FRC1_COUNT 7
-    volatile uint32_t  OIR_SCL0_FRC1;                          /*  OIR_SCL0_FRC1   */
-    volatile uint32_t  OIR_SCL0_FRC2;                          /*  OIR_SCL0_FRC2   */
-    volatile uint32_t  OIR_SCL0_FRC3;                          /*  OIR_SCL0_FRC3   */
-    volatile uint32_t  OIR_SCL0_FRC4;                          /*  OIR_SCL0_FRC4   */
-    volatile uint32_t  OIR_SCL0_FRC5;                          /*  OIR_SCL0_FRC5   */
-    volatile uint32_t  OIR_SCL0_FRC6;                          /*  OIR_SCL0_FRC6   */
-    volatile uint32_t  OIR_SCL0_FRC7;                          /*  OIR_SCL0_FRC7   */
-    volatile uint8_t   dummy37[12];                            /*                  */
+    volatile uint32_t OIR_SCL0_FRC1; /*  OIR_SCL0_FRC1   */
+    volatile uint32_t OIR_SCL0_FRC2; /*  OIR_SCL0_FRC2   */
+    volatile uint32_t OIR_SCL0_FRC3; /*  OIR_SCL0_FRC3   */
+    volatile uint32_t OIR_SCL0_FRC4; /*  OIR_SCL0_FRC4   */
+    volatile uint32_t OIR_SCL0_FRC5; /*  OIR_SCL0_FRC5   */
+    volatile uint32_t OIR_SCL0_FRC6; /*  OIR_SCL0_FRC6   */
+    volatile uint32_t OIR_SCL0_FRC7; /*  OIR_SCL0_FRC7   */
+    volatile uint8_t dummy37[12]; /*                  */
 #define VDC5_OIR_SCL0_DS1_COUNT 3
-    volatile uint32_t  OIR_SCL0_DS1;                           /*  OIR_SCL0_DS1    */
-    volatile uint32_t  OIR_SCL0_DS2;                           /*  OIR_SCL0_DS2    */
-    volatile uint32_t  OIR_SCL0_DS3;                           /*  OIR_SCL0_DS3    */
-    volatile uint8_t   dummy38[12];                            /*                  */
-    volatile uint32_t  OIR_SCL0_DS7;                           /*  OIR_SCL0_DS7    */
-    volatile uint32_t  OIR_SCL0_US1;                           /*  OIR_SCL0_US1    */
-    volatile uint32_t  OIR_SCL0_US2;                           /*  OIR_SCL0_US2    */
-    volatile uint32_t  OIR_SCL0_US3;                           /*  OIR_SCL0_US3    */
-    volatile uint8_t   dummy39[16];                            /*                  */
-    volatile uint32_t  OIR_SCL0_US8;                           /*  OIR_SCL0_US8    */
-    volatile uint8_t   dummy40[4];                             /*                  */
-    volatile uint32_t  OIR_SCL0_OVR1;                          /*  OIR_SCL0_OVR1   */
-    volatile uint8_t   dummy41[16];                            /*                  */
-    volatile uint32_t  OIR_SCL1_UPDATE;                        /*  OIR_SCL1_UPDATE */
-    volatile uint8_t   dummy42[4];                             /*                  */
+    volatile uint32_t OIR_SCL0_DS1; /*  OIR_SCL0_DS1    */
+    volatile uint32_t OIR_SCL0_DS2; /*  OIR_SCL0_DS2    */
+    volatile uint32_t OIR_SCL0_DS3; /*  OIR_SCL0_DS3    */
+    volatile uint8_t dummy38[12]; /*                  */
+    volatile uint32_t OIR_SCL0_DS7; /*  OIR_SCL0_DS7    */
+    volatile uint32_t OIR_SCL0_US1; /*  OIR_SCL0_US1    */
+    volatile uint32_t OIR_SCL0_US2; /*  OIR_SCL0_US2    */
+    volatile uint32_t OIR_SCL0_US3; /*  OIR_SCL0_US3    */
+    volatile uint8_t dummy39[16]; /*                  */
+    volatile uint32_t OIR_SCL0_US8; /*  OIR_SCL0_US8    */
+    volatile uint8_t dummy40[4]; /*                  */
+    volatile uint32_t OIR_SCL0_OVR1; /*  OIR_SCL0_OVR1   */
+    volatile uint8_t dummy41[16]; /*                  */
+    volatile uint32_t OIR_SCL1_UPDATE; /*  OIR_SCL1_UPDATE */
+    volatile uint8_t dummy42[4]; /*                  */
 #define VDC5_OIR_SCL1_WR1_COUNT 4
-    volatile uint32_t  OIR_SCL1_WR1;                           /*  OIR_SCL1_WR1    */
-    volatile uint32_t  OIR_SCL1_WR2;                           /*  OIR_SCL1_WR2    */
-    volatile uint32_t  OIR_SCL1_WR3;                           /*  OIR_SCL1_WR3    */
-    volatile uint32_t  OIR_SCL1_WR4;                           /*  OIR_SCL1_WR4    */
-    volatile uint8_t   dummy43[4];                             /*                  */
-    volatile uint32_t  OIR_SCL1_WR5;                           /*  OIR_SCL1_WR5    */
-    volatile uint32_t  OIR_SCL1_WR6;                           /*  OIR_SCL1_WR6    */
-    volatile uint32_t  OIR_SCL1_WR7;                           /*  OIR_SCL1_WR7    */
-    volatile uint8_t   dummy44[88];                            /*                  */
-    volatile uint32_t  GR_OIR_UPDATE;                          /*  GR_OIR_UPDATE   */
-    volatile uint32_t  GR_OIR_FLM_RD;                          /*  GR_OIR_FLM_RD   */
+    volatile uint32_t OIR_SCL1_WR1; /*  OIR_SCL1_WR1    */
+    volatile uint32_t OIR_SCL1_WR2; /*  OIR_SCL1_WR2    */
+    volatile uint32_t OIR_SCL1_WR3; /*  OIR_SCL1_WR3    */
+    volatile uint32_t OIR_SCL1_WR4; /*  OIR_SCL1_WR4    */
+    volatile uint8_t dummy43[4]; /*                  */
+    volatile uint32_t OIR_SCL1_WR5; /*  OIR_SCL1_WR5    */
+    volatile uint32_t OIR_SCL1_WR6; /*  OIR_SCL1_WR6    */
+    volatile uint32_t OIR_SCL1_WR7; /*  OIR_SCL1_WR7    */
+    volatile uint8_t dummy44[88]; /*                  */
+    volatile uint32_t GR_OIR_UPDATE; /*  GR_OIR_UPDATE   */
+    volatile uint32_t GR_OIR_FLM_RD; /*  GR_OIR_FLM_RD   */
 #define VDC5_GR_OIR_FLM1_COUNT 6
-    volatile uint32_t  GR_OIR_FLM1;                            /*  GR_OIR_FLM1     */
-    volatile uint32_t  GR_OIR_FLM2;                            /*  GR_OIR_FLM2     */
-    volatile uint32_t  GR_OIR_FLM3;                            /*  GR_OIR_FLM3     */
-    volatile uint32_t  GR_OIR_FLM4;                            /*  GR_OIR_FLM4     */
-    volatile uint32_t  GR_OIR_FLM5;                            /*  GR_OIR_FLM5     */
-    volatile uint32_t  GR_OIR_FLM6;                            /*  GR_OIR_FLM6     */
+    volatile uint32_t GR_OIR_FLM1; /*  GR_OIR_FLM1     */
+    volatile uint32_t GR_OIR_FLM2; /*  GR_OIR_FLM2     */
+    volatile uint32_t GR_OIR_FLM3; /*  GR_OIR_FLM3     */
+    volatile uint32_t GR_OIR_FLM4; /*  GR_OIR_FLM4     */
+    volatile uint32_t GR_OIR_FLM5; /*  GR_OIR_FLM5     */
+    volatile uint32_t GR_OIR_FLM6; /*  GR_OIR_FLM6     */
 #define VDC5_GR_OIR_AB1_COUNT 3
-    volatile uint32_t  GR_OIR_AB1;                             /*  GR_OIR_AB1      */
-    volatile uint32_t  GR_OIR_AB2;                             /*  GR_OIR_AB2      */
-    volatile uint32_t  GR_OIR_AB3;                             /*  GR_OIR_AB3      */
-    volatile uint8_t   dummy45[12];                            /*                  */
-    volatile uint32_t  GR_OIR_AB7;                             /*  GR_OIR_AB7      */
-    volatile uint32_t  GR_OIR_AB8;                             /*  GR_OIR_AB8      */
-    volatile uint32_t  GR_OIR_AB9;                             /*  GR_OIR_AB9      */
-    volatile uint32_t  GR_OIR_AB10;                            /*  GR_OIR_AB10     */
-    volatile uint32_t  GR_OIR_AB11;                            /*  GR_OIR_AB11     */
-    volatile uint32_t  GR_OIR_BASE;                            /*  GR_OIR_BASE     */
-    volatile uint32_t  GR_OIR_CLUT;                            /*  GR_OIR_CLUT     */
-    volatile uint32_t  GR_OIR_MON;                             /*  GR_OIR_MON      */
+    volatile uint32_t GR_OIR_AB1; /*  GR_OIR_AB1      */
+    volatile uint32_t GR_OIR_AB2; /*  GR_OIR_AB2      */
+    volatile uint32_t GR_OIR_AB3; /*  GR_OIR_AB3      */
+    volatile uint8_t dummy45[12]; /*                  */
+    volatile uint32_t GR_OIR_AB7; /*  GR_OIR_AB7      */
+    volatile uint32_t GR_OIR_AB8; /*  GR_OIR_AB8      */
+    volatile uint32_t GR_OIR_AB9; /*  GR_OIR_AB9      */
+    volatile uint32_t GR_OIR_AB10; /*  GR_OIR_AB10     */
+    volatile uint32_t GR_OIR_AB11; /*  GR_OIR_AB11     */
+    volatile uint32_t GR_OIR_BASE; /*  GR_OIR_BASE     */
+    volatile uint32_t GR_OIR_CLUT; /*  GR_OIR_CLUT     */
+    volatile uint32_t GR_OIR_MON; /*  GR_OIR_MON      */
 };
 
-
-struct st_vdc5_from_gr0_update
-{
-    volatile uint32_t  GR0_UPDATE;                             /*  GR0_UPDATE      */
-    volatile uint32_t  GR0_FLM_RD;                             /*  GR0_FLM_RD      */
-    volatile uint32_t  GR0_FLM1;                               /*  GR0_FLM1        */
-    volatile uint32_t  GR0_FLM2;                               /*  GR0_FLM2        */
-    volatile uint32_t  GR0_FLM3;                               /*  GR0_FLM3        */
-    volatile uint32_t  GR0_FLM4;                               /*  GR0_FLM4        */
-    volatile uint32_t  GR0_FLM5;                               /*  GR0_FLM5        */
-    volatile uint32_t  GR0_FLM6;                               /*  GR0_FLM6        */
-    volatile uint32_t  GR0_AB1;                                /*  GR0_AB1         */
-    volatile uint32_t  GR0_AB2;                                /*  GR0_AB2         */
-    volatile uint32_t  GR0_AB3;                                /*  GR0_AB3         */
+struct st_vdc5_from_gr0_update {
+    volatile uint32_t GR0_UPDATE; /*  GR0_UPDATE      */
+    volatile uint32_t GR0_FLM_RD; /*  GR0_FLM_RD      */
+    volatile uint32_t GR0_FLM1; /*  GR0_FLM1        */
+    volatile uint32_t GR0_FLM2; /*  GR0_FLM2        */
+    volatile uint32_t GR0_FLM3; /*  GR0_FLM3        */
+    volatile uint32_t GR0_FLM4; /*  GR0_FLM4        */
+    volatile uint32_t GR0_FLM5; /*  GR0_FLM5        */
+    volatile uint32_t GR0_FLM6; /*  GR0_FLM6        */
+    volatile uint32_t GR0_AB1; /*  GR0_AB1         */
+    volatile uint32_t GR0_AB2; /*  GR0_AB2         */
+    volatile uint32_t GR0_AB3; /*  GR0_AB3         */
 };
 
-
-struct st_vdc5_from_gr0_ab7
-{
-    volatile uint32_t  GR0_AB7;                                /*  GR0_AB7         */
-    volatile uint32_t  GR0_AB8;                                /*  GR0_AB8         */
-    volatile uint32_t  GR0_AB9;                                /*  GR0_AB9         */
-    volatile uint32_t  GR0_AB10;                               /*  GR0_AB10        */
-    volatile uint32_t  GR0_AB11;                               /*  GR0_AB11        */
-    volatile uint32_t  GR0_BASE;                               /*  GR0_BASE        */
+struct st_vdc5_from_gr0_ab7 {
+    volatile uint32_t GR0_AB7; /*  GR0_AB7         */
+    volatile uint32_t GR0_AB8; /*  GR0_AB8         */
+    volatile uint32_t GR0_AB9; /*  GR0_AB9         */
+    volatile uint32_t GR0_AB10; /*  GR0_AB10        */
+    volatile uint32_t GR0_AB11; /*  GR0_AB11        */
+    volatile uint32_t GR0_BASE; /*  GR0_BASE        */
 };
 
-
-struct st_vdc5_from_adj0_update
-{
-    volatile uint32_t  ADJ0_UPDATE;                            /*  ADJ0_UPDATE     */
-    volatile uint32_t  ADJ0_BKSTR_SET;                         /*  ADJ0_BKSTR_SET  */
-    volatile uint32_t  ADJ0_ENH_TIM1;                          /*  ADJ0_ENH_TIM1   */
-    volatile uint32_t  ADJ0_ENH_TIM2;                          /*  ADJ0_ENH_TIM2   */
-    volatile uint32_t  ADJ0_ENH_TIM3;                          /*  ADJ0_ENH_TIM3   */
-    volatile uint32_t  ADJ0_ENH_SHP1;                          /*  ADJ0_ENH_SHP1   */
-    volatile uint32_t  ADJ0_ENH_SHP2;                          /*  ADJ0_ENH_SHP2   */
-    volatile uint32_t  ADJ0_ENH_SHP3;                          /*  ADJ0_ENH_SHP3   */
-    volatile uint32_t  ADJ0_ENH_SHP4;                          /*  ADJ0_ENH_SHP4   */
-    volatile uint32_t  ADJ0_ENH_SHP5;                          /*  ADJ0_ENH_SHP5   */
-    volatile uint32_t  ADJ0_ENH_SHP6;                          /*  ADJ0_ENH_SHP6   */
-    volatile uint32_t  ADJ0_ENH_LTI1;                          /*  ADJ0_ENH_LTI1   */
-    volatile uint32_t  ADJ0_ENH_LTI2;                          /*  ADJ0_ENH_LTI2   */
-    volatile uint32_t  ADJ0_MTX_MODE;                          /*  ADJ0_MTX_MODE   */
-    volatile uint32_t  ADJ0_MTX_YG_ADJ0;                       /*  ADJ0_MTX_YG_ADJ0 */
-    volatile uint32_t  ADJ0_MTX_YG_ADJ1;                       /*  ADJ0_MTX_YG_ADJ1 */
-    volatile uint32_t  ADJ0_MTX_CBB_ADJ0;                      /*  ADJ0_MTX_CBB_ADJ0 */
-    volatile uint32_t  ADJ0_MTX_CBB_ADJ1;                      /*  ADJ0_MTX_CBB_ADJ1 */
-    volatile uint32_t  ADJ0_MTX_CRR_ADJ0;                      /*  ADJ0_MTX_CRR_ADJ0 */
-    volatile uint32_t  ADJ0_MTX_CRR_ADJ1;                      /*  ADJ0_MTX_CRR_ADJ1 */
+struct st_vdc5_from_adj0_update {
+    volatile uint32_t ADJ0_UPDATE; /*  ADJ0_UPDATE     */
+    volatile uint32_t ADJ0_BKSTR_SET; /*  ADJ0_BKSTR_SET  */
+    volatile uint32_t ADJ0_ENH_TIM1; /*  ADJ0_ENH_TIM1   */
+    volatile uint32_t ADJ0_ENH_TIM2; /*  ADJ0_ENH_TIM2   */
+    volatile uint32_t ADJ0_ENH_TIM3; /*  ADJ0_ENH_TIM3   */
+    volatile uint32_t ADJ0_ENH_SHP1; /*  ADJ0_ENH_SHP1   */
+    volatile uint32_t ADJ0_ENH_SHP2; /*  ADJ0_ENH_SHP2   */
+    volatile uint32_t ADJ0_ENH_SHP3; /*  ADJ0_ENH_SHP3   */
+    volatile uint32_t ADJ0_ENH_SHP4; /*  ADJ0_ENH_SHP4   */
+    volatile uint32_t ADJ0_ENH_SHP5; /*  ADJ0_ENH_SHP5   */
+    volatile uint32_t ADJ0_ENH_SHP6; /*  ADJ0_ENH_SHP6   */
+    volatile uint32_t ADJ0_ENH_LTI1; /*  ADJ0_ENH_LTI1   */
+    volatile uint32_t ADJ0_ENH_LTI2; /*  ADJ0_ENH_LTI2   */
+    volatile uint32_t ADJ0_MTX_MODE; /*  ADJ0_MTX_MODE   */
+    volatile uint32_t ADJ0_MTX_YG_ADJ0; /*  ADJ0_MTX_YG_ADJ0 */
+    volatile uint32_t ADJ0_MTX_YG_ADJ1; /*  ADJ0_MTX_YG_ADJ1 */
+    volatile uint32_t ADJ0_MTX_CBB_ADJ0; /*  ADJ0_MTX_CBB_ADJ0 */
+    volatile uint32_t ADJ0_MTX_CBB_ADJ1; /*  ADJ0_MTX_CBB_ADJ1 */
+    volatile uint32_t ADJ0_MTX_CRR_ADJ0; /*  ADJ0_MTX_CRR_ADJ0 */
+    volatile uint32_t ADJ0_MTX_CRR_ADJ1; /*  ADJ0_MTX_CRR_ADJ1 */
 };
 
-
-struct st_vdc5_from_sc0_scl0_update
-{
-    volatile uint32_t  SC0_SCL0_UPDATE;                        /*  SC0_SCL0_UPDATE */
-    volatile uint32_t  SC0_SCL0_FRC1;                          /*  SC0_SCL0_FRC1   */
-    volatile uint32_t  SC0_SCL0_FRC2;                          /*  SC0_SCL0_FRC2   */
-    volatile uint32_t  SC0_SCL0_FRC3;                          /*  SC0_SCL0_FRC3   */
-    volatile uint32_t  SC0_SCL0_FRC4;                          /*  SC0_SCL0_FRC4   */
-    volatile uint32_t  SC0_SCL0_FRC5;                          /*  SC0_SCL0_FRC5   */
-    volatile uint32_t  SC0_SCL0_FRC6;                          /*  SC0_SCL0_FRC6   */
-    volatile uint32_t  SC0_SCL0_FRC7;                          /*  SC0_SCL0_FRC7   */
-    volatile uint8_t   dummy5[4];                              /*                  */
-    volatile uint32_t  SC0_SCL0_FRC9;                          /*  SC0_SCL0_FRC9   */
-    volatile uint16_t SC0_SCL0_MON0;                          /*  SC0_SCL0_MON0   */
-    volatile uint16_t SC0_SCL0_INT;                           /*  SC0_SCL0_INT    */
-    volatile uint32_t  SC0_SCL0_DS1;                           /*  SC0_SCL0_DS1    */
-    volatile uint32_t  SC0_SCL0_DS2;                           /*  SC0_SCL0_DS2    */
-    volatile uint32_t  SC0_SCL0_DS3;                           /*  SC0_SCL0_DS3    */
-    volatile uint32_t  SC0_SCL0_DS4;                           /*  SC0_SCL0_DS4    */
-    volatile uint32_t  SC0_SCL0_DS5;                           /*  SC0_SCL0_DS5    */
-    volatile uint32_t  SC0_SCL0_DS6;                           /*  SC0_SCL0_DS6    */
-    volatile uint32_t  SC0_SCL0_DS7;                           /*  SC0_SCL0_DS7    */
-    volatile uint32_t  SC0_SCL0_US1;                           /*  SC0_SCL0_US1    */
-    volatile uint32_t  SC0_SCL0_US2;                           /*  SC0_SCL0_US2    */
-    volatile uint32_t  SC0_SCL0_US3;                           /*  SC0_SCL0_US3    */
-    volatile uint32_t  SC0_SCL0_US4;                           /*  SC0_SCL0_US4    */
-    volatile uint32_t  SC0_SCL0_US5;                           /*  SC0_SCL0_US5    */
-    volatile uint32_t  SC0_SCL0_US6;                           /*  SC0_SCL0_US6    */
-    volatile uint32_t  SC0_SCL0_US7;                           /*  SC0_SCL0_US7    */
-    volatile uint32_t  SC0_SCL0_US8;                           /*  SC0_SCL0_US8    */
-    volatile uint8_t   dummy6[4];                              /*                  */
-    volatile uint32_t  SC0_SCL0_OVR1;                          /*  SC0_SCL0_OVR1   */
-    volatile uint8_t   dummy7[16];                             /*                  */
-    volatile uint32_t  SC0_SCL1_UPDATE;                        /*  SC0_SCL1_UPDATE */
-    volatile uint8_t   dummy8[4];                              /*                  */
-    volatile uint32_t  SC0_SCL1_WR1;                           /*  SC0_SCL1_WR1    */
-    volatile uint32_t  SC0_SCL1_WR2;                           /*  SC0_SCL1_WR2    */
-    volatile uint32_t  SC0_SCL1_WR3;                           /*  SC0_SCL1_WR3    */
-    volatile uint32_t  SC0_SCL1_WR4;                           /*  SC0_SCL1_WR4    */
-    volatile uint8_t   dummy9[4];                              /*                  */
-    volatile uint32_t  SC0_SCL1_WR5;                           /*  SC0_SCL1_WR5    */
-    volatile uint32_t  SC0_SCL1_WR6;                           /*  SC0_SCL1_WR6    */
-    volatile uint32_t  SC0_SCL1_WR7;                           /*  SC0_SCL1_WR7    */
-    volatile uint32_t  SC0_SCL1_WR8;                           /*  SC0_SCL1_WR8    */
-    volatile uint32_t  SC0_SCL1_WR9;                           /*  SC0_SCL1_WR9    */
-    volatile uint32_t  SC0_SCL1_WR10;                          /*  SC0_SCL1_WR10   */
+struct st_vdc5_from_sc0_scl0_update {
+    volatile uint32_t SC0_SCL0_UPDATE; /*  SC0_SCL0_UPDATE */
+    volatile uint32_t SC0_SCL0_FRC1; /*  SC0_SCL0_FRC1   */
+    volatile uint32_t SC0_SCL0_FRC2; /*  SC0_SCL0_FRC2   */
+    volatile uint32_t SC0_SCL0_FRC3; /*  SC0_SCL0_FRC3   */
+    volatile uint32_t SC0_SCL0_FRC4; /*  SC0_SCL0_FRC4   */
+    volatile uint32_t SC0_SCL0_FRC5; /*  SC0_SCL0_FRC5   */
+    volatile uint32_t SC0_SCL0_FRC6; /*  SC0_SCL0_FRC6   */
+    volatile uint32_t SC0_SCL0_FRC7; /*  SC0_SCL0_FRC7   */
+    volatile uint8_t dummy5[4]; /*                  */
+    volatile uint32_t SC0_SCL0_FRC9; /*  SC0_SCL0_FRC9   */
+    volatile uint16_t SC0_SCL0_MON0; /*  SC0_SCL0_MON0   */
+    volatile uint16_t SC0_SCL0_INT; /*  SC0_SCL0_INT    */
+    volatile uint32_t SC0_SCL0_DS1; /*  SC0_SCL0_DS1    */
+    volatile uint32_t SC0_SCL0_DS2; /*  SC0_SCL0_DS2    */
+    volatile uint32_t SC0_SCL0_DS3; /*  SC0_SCL0_DS3    */
+    volatile uint32_t SC0_SCL0_DS4; /*  SC0_SCL0_DS4    */
+    volatile uint32_t SC0_SCL0_DS5; /*  SC0_SCL0_DS5    */
+    volatile uint32_t SC0_SCL0_DS6; /*  SC0_SCL0_DS6    */
+    volatile uint32_t SC0_SCL0_DS7; /*  SC0_SCL0_DS7    */
+    volatile uint32_t SC0_SCL0_US1; /*  SC0_SCL0_US1    */
+    volatile uint32_t SC0_SCL0_US2; /*  SC0_SCL0_US2    */
+    volatile uint32_t SC0_SCL0_US3; /*  SC0_SCL0_US3    */
+    volatile uint32_t SC0_SCL0_US4; /*  SC0_SCL0_US4    */
+    volatile uint32_t SC0_SCL0_US5; /*  SC0_SCL0_US5    */
+    volatile uint32_t SC0_SCL0_US6; /*  SC0_SCL0_US6    */
+    volatile uint32_t SC0_SCL0_US7; /*  SC0_SCL0_US7    */
+    volatile uint32_t SC0_SCL0_US8; /*  SC0_SCL0_US8    */
+    volatile uint8_t dummy6[4]; /*                  */
+    volatile uint32_t SC0_SCL0_OVR1; /*  SC0_SCL0_OVR1   */
+    volatile uint8_t dummy7[16]; /*                  */
+    volatile uint32_t SC0_SCL1_UPDATE; /*  SC0_SCL1_UPDATE */
+    volatile uint8_t dummy8[4]; /*                  */
+    volatile uint32_t SC0_SCL1_WR1; /*  SC0_SCL1_WR1    */
+    volatile uint32_t SC0_SCL1_WR2; /*  SC0_SCL1_WR2    */
+    volatile uint32_t SC0_SCL1_WR3; /*  SC0_SCL1_WR3    */
+    volatile uint32_t SC0_SCL1_WR4; /*  SC0_SCL1_WR4    */
+    volatile uint8_t dummy9[4]; /*                  */
+    volatile uint32_t SC0_SCL1_WR5; /*  SC0_SCL1_WR5    */
+    volatile uint32_t SC0_SCL1_WR6; /*  SC0_SCL1_WR6    */
+    volatile uint32_t SC0_SCL1_WR7; /*  SC0_SCL1_WR7    */
+    volatile uint32_t SC0_SCL1_WR8; /*  SC0_SCL1_WR8    */
+    volatile uint32_t SC0_SCL1_WR9; /*  SC0_SCL1_WR9    */
+    volatile uint32_t SC0_SCL1_WR10; /*  SC0_SCL1_WR10   */
 };
 
-
-struct st_vdc5_from_sc0_scl1_pbuf0
-{
-    volatile uint32_t  SC0_SCL1_PBUF0;                         /*  SC0_SCL1_PBUF0  */
-    volatile uint32_t  SC0_SCL1_PBUF1;                         /*  SC0_SCL1_PBUF1  */
-    volatile uint32_t  SC0_SCL1_PBUF2;                         /*  SC0_SCL1_PBUF2  */
-    volatile uint32_t  SC0_SCL1_PBUF3;                         /*  SC0_SCL1_PBUF3  */
-    volatile uint32_t  SC0_SCL1_PBUF_FLD;                      /*  SC0_SCL1_PBUF_FLD */
-    volatile uint32_t  SC0_SCL1_PBUF_CNT;                      /*  SC0_SCL1_PBUF_CNT */
+struct st_vdc5_from_sc0_scl1_pbuf0 {
+    volatile uint32_t SC0_SCL1_PBUF0; /*  SC0_SCL1_PBUF0  */
+    volatile uint32_t SC0_SCL1_PBUF1; /*  SC0_SCL1_PBUF1  */
+    volatile uint32_t SC0_SCL1_PBUF2; /*  SC0_SCL1_PBUF2  */
+    volatile uint32_t SC0_SCL1_PBUF3; /*  SC0_SCL1_PBUF3  */
+    volatile uint32_t SC0_SCL1_PBUF_FLD; /*  SC0_SCL1_PBUF_FLD */
+    volatile uint32_t SC0_SCL1_PBUF_CNT; /*  SC0_SCL1_PBUF_CNT */
 };
 
 

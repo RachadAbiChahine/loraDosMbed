@@ -34,12 +34,12 @@
  * @{
  * @brief EFM32HG_RMU Register Declaration
  *****************************************************************************/
-typedef struct
-{
-  __IO uint32_t CTRL;     /**< Control Register  */
-  __I uint32_t  RSTCAUSE; /**< Reset Cause Register  */
-  __O uint32_t  CMD;      /**< Command Register  */
-} RMU_TypeDef;            /** @} */
+
+typedef struct {
+    __IO uint32_t CTRL; /**< Control Register  */
+    __I uint32_t RSTCAUSE; /**< Reset Cause Register  */
+    __O uint32_t CMD; /**< Command Register  */
+} RMU_TypeDef; /** @} */
 
 /**************************************************************************//**
  * @defgroup EFM32HG_RMU_BitFields

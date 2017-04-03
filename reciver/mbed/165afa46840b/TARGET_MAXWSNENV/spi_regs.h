@@ -40,50 +40,52 @@ extern "C" {
 
 #include <stdint.h>
 
-/**
- * @file  spi_regs.h
- * @addtogroup spi SPI
- * @{
- */
+    /**
+     * @file  spi_regs.h
+     * @addtogroup spi SPI
+     * @{
+     */
 
-/*                                       Offset   Register Description
-                                         ======   ============================================ */
-typedef struct {
-    __IO uint32_t mstr_cfg;          /*  0x0000   SPI Master Configuration Register            */
-    __IO uint32_t ss_sr_polarity;    /*  0x0004   Polarity Control for SS and SR Signals       */
-    __IO uint32_t gen_ctrl;          /*  0x0008   SPI Master General Control Register          */
-    __IO uint32_t fifo_ctrl;         /*  0x000C   SPI Master FIFO Control Register             */
-    __IO uint32_t spcl_ctrl;         /*  0x0010   SPI Master Special Mode Controls             */
-    __IO uint32_t intfl;             /*  0x0014   SPI Master Interrupt Flags                   */
-    __IO uint32_t inten;             /*  0x0018   SPI Master Interrupt Enable/Disable Settings */
-    __I uint32_t rsv001C;            /*  0x001C   Deprecated - was SPI_AHB_RETRY               */
-} mxc_spi_regs_t;
+    /*                                       Offset   Register Description
+                                             ======   ============================================ */
+    typedef struct {
+        __IO uint32_t mstr_cfg; /*  0x0000   SPI Master Configuration Register            */
+        __IO uint32_t ss_sr_polarity; /*  0x0004   Polarity Control for SS and SR Signals       */
+        __IO uint32_t gen_ctrl; /*  0x0008   SPI Master General Control Register          */
+        __IO uint32_t fifo_ctrl; /*  0x000C   SPI Master FIFO Control Register             */
+        __IO uint32_t spcl_ctrl; /*  0x0010   SPI Master Special Mode Controls             */
+        __IO uint32_t intfl; /*  0x0014   SPI Master Interrupt Flags                   */
+        __IO uint32_t inten; /*  0x0018   SPI Master Interrupt Enable/Disable Settings */
+        __I uint32_t rsv001C; /*  0x001C   Deprecated - was SPI_AHB_RETRY               */
+    } mxc_spi_regs_t;
 
-/**
- * @brief TX FIFO register. Can do 8, 16, or 32 bit access.
- */
-typedef struct {
-    union {
-        __O uint8_t txfifo_8;
-        __O uint16_t txfifo_16;
-        __O uint32_t txfifo_32;
-    };
-} mxc_spi_txfifo_regs_t;
+    /**
+     * @brief TX FIFO register. Can do 8, 16, or 32 bit access.
+     */
+    typedef struct {
 
-/**
- * @brief RX FIFO register. Can do 8, 16, or 32 bit access.
- */
-typedef struct {
-    union {
-        __I uint8_t rxfifo_8;
-        __I uint16_t rxfifo_16;
-        __I uint32_t rxfifo_32;
-    };
-} mxc_spi_rxfifo_regs_t;
+        union {
+            __O uint8_t txfifo_8;
+            __O uint16_t txfifo_16;
+            __O uint32_t txfifo_32;
+        };
+    } mxc_spi_txfifo_regs_t;
 
-/*
-   Register offsets for module SPI.
-*/
+    /**
+     * @brief RX FIFO register. Can do 8, 16, or 32 bit access.
+     */
+    typedef struct {
+
+        union {
+            __I uint8_t rxfifo_8;
+            __I uint16_t rxfifo_16;
+            __I uint32_t rxfifo_32;
+        };
+    } mxc_spi_rxfifo_regs_t;
+
+    /*
+       Register offsets for module SPI.
+     */
 #define MXC_R_SPI_OFFS_MSTR_CFG                   ((uint32_t)0x00000000UL)
 #define MXC_R_SPI_OFFS_SS_SR_POLARITY             ((uint32_t)0x00000004UL)
 #define MXC_R_SPI_OFFS_GEN_CTRL                   ((uint32_t)0x00000008UL)
@@ -95,9 +97,9 @@ typedef struct {
 #define MXC_R_SPI_FIFO_OFFS_TRANS                 ((uint32_t)0x00000000UL)
 #define MXC_R_SPI_FIFO_OFFS_RSLTS                 ((uint32_t)0x00000800UL)
 
-/*
-   Field positions and masks for module SPI.
-*/
+    /*
+       Field positions and masks for module SPI.
+     */
 #define MXC_F_SPI_MSTR_CFG_SLAVE_SEL_POS                    0
 #define MXC_F_SPI_MSTR_CFG_SLAVE_SEL                        ((uint32_t)(0x00000007UL << MXC_F_SPI_MSTR_CFG_SLAVE_SEL_POS))
 #define MXC_F_SPI_MSTR_CFG_THREE_WIRE_MODE_POS              3
@@ -209,7 +211,7 @@ typedef struct {
 #endif
 
 /**
-* @}
-*/
+ * @}
+ */
 
 #endif /* _MXC_SPI_REGS_H */

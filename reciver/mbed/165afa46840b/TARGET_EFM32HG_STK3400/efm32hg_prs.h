@@ -34,18 +34,18 @@
  * @{
  * @brief EFM32HG_PRS Register Declaration
  *****************************************************************************/
-typedef struct
-{
-  __IO uint32_t  SWPULSE;      /**< Software Pulse Register  */
-  __IO uint32_t  SWLEVEL;      /**< Software Level Register  */
-  __IO uint32_t  ROUTE;        /**< I/O Routing Register  */
 
-  uint32_t       RESERVED0[1]; /**< Reserved registers */
-  PRS_CH_TypeDef CH[6];        /**< Channel registers */
+typedef struct {
+    __IO uint32_t SWPULSE; /**< Software Pulse Register  */
+    __IO uint32_t SWLEVEL; /**< Software Level Register  */
+    __IO uint32_t ROUTE; /**< I/O Routing Register  */
 
-  uint32_t       RESERVED1[6]; /**< Reserved for future use **/
-  __IO uint32_t  TRACECTRL;    /**< MTB Trace Control Register  */
-} PRS_TypeDef;                 /** @} */
+    uint32_t RESERVED0[1]; /**< Reserved registers */
+    PRS_CH_TypeDef CH[6]; /**< Channel registers */
+
+    uint32_t RESERVED1[6]; /**< Reserved for future use **/
+    __IO uint32_t TRACECTRL; /**< MTB Trace Control Register  */
+} PRS_TypeDef; /** @} */
 
 /**************************************************************************//**
  * @defgroup EFM32HG_PRS_BitFields

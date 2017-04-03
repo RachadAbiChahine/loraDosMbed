@@ -40,52 +40,52 @@ extern "C" {
 
 #include <stdint.h>
 
-/**
- * @file  tmr_regs.h
- * @addtogroup tmr TMR
- * @{
- */
+    /**
+     * @file  tmr_regs.h
+     * @addtogroup tmr TMR
+     * @{
+     */
 
-/**
- * @brief Defines timer modes for 16 and 32-bit timers
- */
-typedef enum {
-    /** 32-bit or 16-bit timer one-shot mode */
-    MXC_E_TMR_MODE_ONE_SHOT = 0,
-    /** 32-bit or 16-bit timer one-shot mode */
-    MXC_E_TMR_MODE_CONTINUOUS,
-    /** 32-bit timer counter mode */
-    MXC_E_TMR_MODE_COUNTER,
-    /** 32-bit timer pulse width modulation mode */
-    MXC_E_TMR_MODE_PWM,
-    /** 32-bit timer capture mode */
-    MXC_E_TMR_MODE_CAPTURE,
-    /** 32-bit timer compare mode */
-    MXC_E_TMR_MODE_COMPARE,
-    /** 32-bit timer gated mode */
-    MXC_E_TMR_MODE_GATED,
-    /** 32-bit timer measure mode */
-    MXC_E_TMR_MODE_MEASURE
-} mxc_tmr_mode_t;
+    /**
+     * @brief Defines timer modes for 16 and 32-bit timers
+     */
+    typedef enum {
+        /** 32-bit or 16-bit timer one-shot mode */
+        MXC_E_TMR_MODE_ONE_SHOT = 0,
+        /** 32-bit or 16-bit timer one-shot mode */
+        MXC_E_TMR_MODE_CONTINUOUS,
+        /** 32-bit timer counter mode */
+        MXC_E_TMR_MODE_COUNTER,
+        /** 32-bit timer pulse width modulation mode */
+        MXC_E_TMR_MODE_PWM,
+        /** 32-bit timer capture mode */
+        MXC_E_TMR_MODE_CAPTURE,
+        /** 32-bit timer compare mode */
+        MXC_E_TMR_MODE_COMPARE,
+        /** 32-bit timer gated mode */
+        MXC_E_TMR_MODE_GATED,
+        /** 32-bit timer measure mode */
+        MXC_E_TMR_MODE_MEASURE
+    } mxc_tmr_mode_t;
 
-/*                                          Offset   Register Description
-                                            ======   ============================================== */
-typedef struct {
-    __IO uint32_t ctrl;                 /*  0x0000   Timer Control Register                         */
-    __IO uint32_t count32;              /*  0x0004   [32 bit] Current Count Value                   */
-    __IO uint32_t term_cnt32;           /*  0x0008   [32 bit] Terminal Count Setting                */
-    __IO uint32_t pwm_cap32;            /*  0x000C   [32 bit] PWM Compare Setting or Capture/Measure Value */
-    __IO uint32_t count16_0;            /*  0x0010   [16 bit] Current Count Value, 16-bit Timer0    */
-    __IO uint32_t term_cnt16_0;         /*  0x0014   [16 bit] Terminal Count Setting, 16-bit Timer0 */
-    __IO uint32_t count16_1;            /*  0x0018   [16 bit] Current Count Value, 16-bit Timer1    */
-    __IO uint32_t term_cnt16_1;         /*  0x001C   [16 bit] Terminal Count Setting, 16-bit Timer1 */
-    __IO uint32_t intfl;                /*  0x0020   Timer Module Interrupt Flags                   */
-    __IO uint32_t inten;                /*  0x0024   Timer Module Interrupt Enable/Disable Settings */
-} mxc_tmr_regs_t;
+    /*                                          Offset   Register Description
+                                                ======   ============================================== */
+    typedef struct {
+        __IO uint32_t ctrl; /*  0x0000   Timer Control Register                         */
+        __IO uint32_t count32; /*  0x0004   [32 bit] Current Count Value                   */
+        __IO uint32_t term_cnt32; /*  0x0008   [32 bit] Terminal Count Setting                */
+        __IO uint32_t pwm_cap32; /*  0x000C   [32 bit] PWM Compare Setting or Capture/Measure Value */
+        __IO uint32_t count16_0; /*  0x0010   [16 bit] Current Count Value, 16-bit Timer0    */
+        __IO uint32_t term_cnt16_0; /*  0x0014   [16 bit] Terminal Count Setting, 16-bit Timer0 */
+        __IO uint32_t count16_1; /*  0x0018   [16 bit] Current Count Value, 16-bit Timer1    */
+        __IO uint32_t term_cnt16_1; /*  0x001C   [16 bit] Terminal Count Setting, 16-bit Timer1 */
+        __IO uint32_t intfl; /*  0x0020   Timer Module Interrupt Flags                   */
+        __IO uint32_t inten; /*  0x0024   Timer Module Interrupt Enable/Disable Settings */
+    } mxc_tmr_regs_t;
 
-/*
-   Register offsets for module TMR.
-*/
+    /*
+       Register offsets for module TMR.
+     */
 #define MXC_R_TMR_OFFS_CTRL                       ((uint32_t)0x00000000UL)
 #define MXC_R_TMR_OFFS_COUNT32                    ((uint32_t)0x00000004UL)
 #define MXC_R_TMR_OFFS_TERM_CNT32                 ((uint32_t)0x00000008UL)
@@ -97,9 +97,9 @@ typedef struct {
 #define MXC_R_TMR_OFFS_INTFL                      ((uint32_t)0x00000020UL)
 #define MXC_R_TMR_OFFS_INTEN                      ((uint32_t)0x00000024UL)
 
-/*
-   Field positions and masks for module TMR.
-*/
+    /*
+       Field positions and masks for module TMR.
+     */
 #define MXC_F_TMR_CTRL_MODE_POS                             0
 #define MXC_F_TMR_CTRL_MODE                                 ((uint32_t)(0x00000007UL << MXC_F_TMR_CTRL_MODE_POS))
 #define MXC_F_TMR_CTRL_TMR2X16_POS                          3
@@ -140,7 +140,7 @@ typedef struct {
 #endif
 
 /**
-* @}
-*/
+ * @}
+ */
 
 #endif /* _MXC_TMR_REGS_H */

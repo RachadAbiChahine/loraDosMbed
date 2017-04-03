@@ -1,105 +1,103 @@
 /*******************************************************************************
-* DISCLAIMER
-* This software is supplied by Renesas Electronics Corporation and is only
-* intended for use with Renesas products. No other uses are authorized. This
-* software is owned by Renesas Electronics Corporation and is protected under
-* all applicable laws, including copyright laws.
-* THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIES REGARDING
-* THIS SOFTWARE, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING BUT NOT
-* LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
-* AND NON-INFRINGEMENT. ALL SUCH WARRANTIES ARE EXPRESSLY DISCLAIMED.
-* TO THE MAXIMUM EXTENT PERMITTED NOT PROHIBITED BY LAW, NEITHER RENESAS
-* ELECTRONICS CORPORATION NOR ANY OF ITS AFFILIATED COMPANIES SHALL BE LIABLE
-* FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES FOR
-* ANY REASON RELATED TO THIS SOFTWARE, EVEN IF RENESAS OR ITS AFFILIATES HAVE
-* BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
-* Renesas reserves the right, without notice, to make changes to this software
-* and to discontinue the availability of this software. By using this software,
-* you agree to the additional terms and conditions found by accessing the
-* following link:
-* http://www.renesas.com/disclaimer*
-* Copyright (C) 2013-2014 Renesas Electronics Corporation. All rights reserved.
-*******************************************************************************/
+ * DISCLAIMER
+ * This software is supplied by Renesas Electronics Corporation and is only
+ * intended for use with Renesas products. No other uses are authorized. This
+ * software is owned by Renesas Electronics Corporation and is protected under
+ * all applicable laws, including copyright laws.
+ * THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIES REGARDING
+ * THIS SOFTWARE, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING BUT NOT
+ * LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
+ * AND NON-INFRINGEMENT. ALL SUCH WARRANTIES ARE EXPRESSLY DISCLAIMED.
+ * TO THE MAXIMUM EXTENT PERMITTED NOT PROHIBITED BY LAW, NEITHER RENESAS
+ * ELECTRONICS CORPORATION NOR ANY OF ITS AFFILIATED COMPANIES SHALL BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES FOR
+ * ANY REASON RELATED TO THIS SOFTWARE, EVEN IF RENESAS OR ITS AFFILIATES HAVE
+ * BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+ * Renesas reserves the right, without notice, to make changes to this software
+ * and to discontinue the availability of this software. By using this software,
+ * you agree to the additional terms and conditions found by accessing the
+ * following link:
+ * http://www.renesas.com/disclaimer*
+ * Copyright (C) 2013-2014 Renesas Electronics Corporation. All rights reserved.
+ *******************************************************************************/
 /*******************************************************************************
-* File Name : jcu_iodefine.h
-* $Rev: $
-* $Date::                           $
-* Description : Definition of I/O Register (V1.00a)
-******************************************************************************/
+ * File Name : jcu_iodefine.h
+ * $Rev: $
+ * $Date::                           $
+ * Description : Definition of I/O Register (V1.00a)
+ ******************************************************************************/
 #ifndef JCU_IODEFINE_H
 #define JCU_IODEFINE_H
+
 /* ->SEC M1.10.1 : Not magic number */
 
-struct st_jcu
-{                                                          /* JCU              */
-    volatile uint8_t   JCMOD;                                  /*  JCMOD           */
-    volatile uint8_t   JCCMD;                                  /*  JCCMD           */
-    volatile uint8_t   dummy145[1];                            /*                  */
-    volatile uint8_t   JCQTN;                                  /*  JCQTN           */
-    volatile uint8_t   JCHTN;                                  /*  JCHTN           */
-    volatile uint8_t   JCDRIU;                                 /*  JCDRIU          */
-    volatile uint8_t   JCDRID;                                 /*  JCDRID          */
-    volatile uint8_t   JCVSZU;                                 /*  JCVSZU          */
-    volatile uint8_t   JCVSZD;                                 /*  JCVSZD          */
-    volatile uint8_t   JCHSZU;                                 /*  JCHSZU          */
-    volatile uint8_t   JCHSZD;                                 /*  JCHSZD          */
-    volatile uint8_t   JCDTCU;                                 /*  JCDTCU          */
-    volatile uint8_t   JCDTCM;                                 /*  JCDTCM          */
-    volatile uint8_t   JCDTCD;                                 /*  JCDTCD          */
-    volatile uint8_t   JINTE0;                                 /*  JINTE0          */
-    volatile uint8_t   JINTS0;                                 /*  JINTS0          */
-    volatile uint8_t   JCDERR;                                 /*  JCDERR          */
-    volatile uint8_t   JCRST;                                  /*  JCRST           */
-    volatile uint8_t   dummy146[46];                           /*                  */
-    volatile uint32_t  JIFECNT;                                /*  JIFECNT         */
-    volatile uint32_t  JIFESA;                                 /*  JIFESA          */
-    volatile uint32_t  JIFESOFST;                              /*  JIFESOFST       */
-    volatile uint32_t  JIFEDA;                                 /*  JIFEDA          */
-    volatile uint32_t  JIFESLC;                                /*  JIFESLC         */
-    volatile uint32_t  JIFEDDC;                                /*  JIFEDDC         */
-    volatile uint32_t  JIFDCNT;                                /*  JIFDCNT         */
-    volatile uint32_t  JIFDSA;                                 /*  JIFDSA          */
-    volatile uint32_t  JIFDDOFST;                              /*  JIFDDOFST       */
-    volatile uint32_t  JIFDDA;                                 /*  JIFDDA          */
-    volatile uint32_t  JIFDSDC;                                /*  JIFDSDC         */
-    volatile uint32_t  JIFDDLC;                                /*  JIFDDLC         */
-    volatile uint32_t  JIFDADT;                                /*  JIFDADT         */
-    volatile uint8_t   dummy147[24];                           /*                  */
-    volatile uint32_t  JINTE1;                                 /*  JINTE1          */
-    volatile uint32_t  JINTS1;                                 /*  JINTS1          */
-    volatile uint32_t  JIFESVSZ;                               /*  JIFESVSZ        */
-    volatile uint32_t  JIFESHSZ;                               /*  JIFESHSZ        */
-    volatile uint8_t   dummy148[100];                          /*                  */
-/* start of struct st_jcu_from_jcqtbl0 */
-    volatile uint8_t   JCQTBL0;                                /*  JCQTBL0         */
-    volatile uint8_t   dummy149[63];                           /*                  */
-/* end of struct st_jcu_from_jcqtbl0 */
-/* start of struct st_jcu_from_jcqtbl0 */
-    volatile uint8_t   JCQTBL1;                                /*  JCQTBL1         */
-    volatile uint8_t   dummy150[63];                           /*                  */
-/* end of struct st_jcu_from_jcqtbl0 */
-/* start of struct st_jcu_from_jcqtbl0 */
-    volatile uint8_t   JCQTBL2;                                /*  JCQTBL2         */
-    volatile uint8_t   dummy151[63];                           /*                  */
-/* end of struct st_jcu_from_jcqtbl0 */
-/* start of struct st_jcu_from_jcqtbl0 */
-    volatile uint8_t   JCQTBL3;                                /*  JCQTBL3         */
-    volatile uint8_t   dummy152[63];                           /*                  */
-/* end of struct st_jcu_from_jcqtbl0 */
-    volatile uint8_t   JCHTBD0;                                /*  JCHTBD0         */
-    volatile uint8_t   dummy153[31];                           /*                  */
-    volatile uint8_t   JCHTBA0;                                /*  JCHTBA0         */
-    volatile uint8_t   dummy154[223];                          /*                  */
-    volatile uint8_t   JCHTBD1;                                /*  JCHTBD1         */
-    volatile uint8_t   dummy155[31];                           /*                  */
-    volatile uint8_t   JCHTBA1;                                /*  JCHTBA1         */
+struct st_jcu { /* JCU              */
+    volatile uint8_t JCMOD; /*  JCMOD           */
+    volatile uint8_t JCCMD; /*  JCCMD           */
+    volatile uint8_t dummy145[1]; /*                  */
+    volatile uint8_t JCQTN; /*  JCQTN           */
+    volatile uint8_t JCHTN; /*  JCHTN           */
+    volatile uint8_t JCDRIU; /*  JCDRIU          */
+    volatile uint8_t JCDRID; /*  JCDRID          */
+    volatile uint8_t JCVSZU; /*  JCVSZU          */
+    volatile uint8_t JCVSZD; /*  JCVSZD          */
+    volatile uint8_t JCHSZU; /*  JCHSZU          */
+    volatile uint8_t JCHSZD; /*  JCHSZD          */
+    volatile uint8_t JCDTCU; /*  JCDTCU          */
+    volatile uint8_t JCDTCM; /*  JCDTCM          */
+    volatile uint8_t JCDTCD; /*  JCDTCD          */
+    volatile uint8_t JINTE0; /*  JINTE0          */
+    volatile uint8_t JINTS0; /*  JINTS0          */
+    volatile uint8_t JCDERR; /*  JCDERR          */
+    volatile uint8_t JCRST; /*  JCRST           */
+    volatile uint8_t dummy146[46]; /*                  */
+    volatile uint32_t JIFECNT; /*  JIFECNT         */
+    volatile uint32_t JIFESA; /*  JIFESA          */
+    volatile uint32_t JIFESOFST; /*  JIFESOFST       */
+    volatile uint32_t JIFEDA; /*  JIFEDA          */
+    volatile uint32_t JIFESLC; /*  JIFESLC         */
+    volatile uint32_t JIFEDDC; /*  JIFEDDC         */
+    volatile uint32_t JIFDCNT; /*  JIFDCNT         */
+    volatile uint32_t JIFDSA; /*  JIFDSA          */
+    volatile uint32_t JIFDDOFST; /*  JIFDDOFST       */
+    volatile uint32_t JIFDDA; /*  JIFDDA          */
+    volatile uint32_t JIFDSDC; /*  JIFDSDC         */
+    volatile uint32_t JIFDDLC; /*  JIFDDLC         */
+    volatile uint32_t JIFDADT; /*  JIFDADT         */
+    volatile uint8_t dummy147[24]; /*                  */
+    volatile uint32_t JINTE1; /*  JINTE1          */
+    volatile uint32_t JINTS1; /*  JINTS1          */
+    volatile uint32_t JIFESVSZ; /*  JIFESVSZ        */
+    volatile uint32_t JIFESHSZ; /*  JIFESHSZ        */
+    volatile uint8_t dummy148[100]; /*                  */
+    /* start of struct st_jcu_from_jcqtbl0 */
+    volatile uint8_t JCQTBL0; /*  JCQTBL0         */
+    volatile uint8_t dummy149[63]; /*                  */
+    /* end of struct st_jcu_from_jcqtbl0 */
+    /* start of struct st_jcu_from_jcqtbl0 */
+    volatile uint8_t JCQTBL1; /*  JCQTBL1         */
+    volatile uint8_t dummy150[63]; /*                  */
+    /* end of struct st_jcu_from_jcqtbl0 */
+    /* start of struct st_jcu_from_jcqtbl0 */
+    volatile uint8_t JCQTBL2; /*  JCQTBL2         */
+    volatile uint8_t dummy151[63]; /*                  */
+    /* end of struct st_jcu_from_jcqtbl0 */
+    /* start of struct st_jcu_from_jcqtbl0 */
+    volatile uint8_t JCQTBL3; /*  JCQTBL3         */
+    volatile uint8_t dummy152[63]; /*                  */
+    /* end of struct st_jcu_from_jcqtbl0 */
+    volatile uint8_t JCHTBD0; /*  JCHTBD0         */
+    volatile uint8_t dummy153[31]; /*                  */
+    volatile uint8_t JCHTBA0; /*  JCHTBA0         */
+    volatile uint8_t dummy154[223]; /*                  */
+    volatile uint8_t JCHTBD1; /*  JCHTBD1         */
+    volatile uint8_t dummy155[31]; /*                  */
+    volatile uint8_t JCHTBA1; /*  JCHTBA1         */
 };
 
-
-struct st_jcu_from_jcqtbl0
-{
-    volatile uint8_t   JCQTBL0;                                /*  JCQTBL0         */
-    volatile uint8_t   dummy1[63];                             /*                  */
+struct st_jcu_from_jcqtbl0 {
+    volatile uint8_t JCQTBL0; /*  JCQTBL0         */
+    volatile uint8_t dummy1[63]; /*                  */
 };
 
 

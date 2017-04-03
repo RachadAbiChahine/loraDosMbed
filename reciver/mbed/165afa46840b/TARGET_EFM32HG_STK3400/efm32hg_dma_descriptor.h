@@ -33,13 +33,13 @@
  * @defgroup EFM32HG_DMA_DESCRIPTOR
  * @{
  *****************************************************************************/
-typedef struct
-{
-  /* Note! Use of double __IO (volatile) qualifier to ensure that both */
-  /* pointer and referenced memory are declared volatile. */
-  __IO void * __IO SRCEND;     /**< DMA source address end */
-  __IO void * __IO DSTEND;     /**< DMA destination address end */
-  __IO uint32_t    CTRL;       /**< DMA control register */
-  __IO uint32_t    USER;       /**< DMA padding register, available for user */
-} DMA_DESCRIPTOR_TypeDef;      /** @} */
+
+typedef struct {
+    /* Note! Use of double __IO (volatile) qualifier to ensure that both */
+    /* pointer and referenced memory are declared volatile. */
+    __IO void * __IO SRCEND; /**< DMA source address end */
+    __IO void * __IO DSTEND; /**< DMA destination address end */
+    __IO uint32_t CTRL; /**< DMA control register */
+    __IO uint32_t USER; /**< DMA padding register, available for user */
+} DMA_DESCRIPTOR_TypeDef; /** @} */
 

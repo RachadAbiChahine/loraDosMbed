@@ -40,42 +40,42 @@ extern "C" {
 
 #include <stdint.h>
 
-/**
- * @file  usb_regs.h
- * @addtogroup usb USB
- * @{
- */
+    /**
+     * @file  usb_regs.h
+     * @addtogroup usb USB
+     * @{
+     */
 
-/*                                                Offset   Register Description
-                                                  ======   ================================================ */
-typedef struct {
-    __IO uint32_t cn;                         /*  0x0000   USB Control Register                             */
-    __I uint32_t rsv0004[127];                /*  0x0004                                                    */
-    __IO uint32_t dev_addr;                   /*  0x0200   USB Device Address Register                      */
-    __IO uint32_t dev_cn;                     /*  0x0204   USB Device Control Register                      */
-    __IO uint32_t dev_intfl;                  /*  0x0208   USB Device Interrupt                             */
-    __IO uint32_t dev_inten;                  /*  0x020C   USB Device Interrupt Enable                      */
-    __I uint32_t rsv0210[4];                  /*  0x0210                                                    */
-    __IO uint32_t ep_base;                    /*  0x0220   USB Endpoint Descriptor Table Base Address       */
-    __IO uint32_t cur_buf;                    /*  0x0224   USB Current Endpoint Buffer Register             */
-    __IO uint32_t in_owner;                   /*  0x0228   USB IN Endpoint Buffer Owner Register            */
-    __IO uint32_t out_owner;                  /*  0x022C   USB OUT Endpoint Buffer Owner Register           */
-    __IO uint32_t in_int;                     /*  0x0230   USB IN Endpoint Buffer Available Interrupt       */
-    __IO uint32_t out_int;                    /*  0x0234   USB OUT Endpoint Data Available Interrupt        */
-    __IO uint32_t nak_int;                    /*  0x0238   USB IN Endpoint NAK Interrupt                    */
-    __IO uint32_t dma_err_int;                /*  0x023C   USB DMA Error Interrupt                          */
-    __IO uint32_t buf_ovr_int;                /*  0x0240   USB Buffer Overflow Interrupt                    */
-    __I uint32_t rsv0244[7];                  /*  0x0244                                                    */
-    __IO uint32_t setup0;                     /*  0x0260   USB SETUP Packet Bytes 0 to 3                    */
-    __IO uint32_t setup1;                     /*  0x0264   USB SETUP Packet Bytes 4 to 7                    */
-    __I uint32_t rsv0268[6];                  /*  0x0268                                                    */
-    __IO uint32_t ep[MXC_USB_NUM_EP];         /*  0x0280   USB Endpoint Control Registers                   */
-} mxc_usb_regs_t;
+    /*                                                Offset   Register Description
+                                                      ======   ================================================ */
+    typedef struct {
+        __IO uint32_t cn; /*  0x0000   USB Control Register                             */
+        __I uint32_t rsv0004[127]; /*  0x0004                                                    */
+        __IO uint32_t dev_addr; /*  0x0200   USB Device Address Register                      */
+        __IO uint32_t dev_cn; /*  0x0204   USB Device Control Register                      */
+        __IO uint32_t dev_intfl; /*  0x0208   USB Device Interrupt                             */
+        __IO uint32_t dev_inten; /*  0x020C   USB Device Interrupt Enable                      */
+        __I uint32_t rsv0210[4]; /*  0x0210                                                    */
+        __IO uint32_t ep_base; /*  0x0220   USB Endpoint Descriptor Table Base Address       */
+        __IO uint32_t cur_buf; /*  0x0224   USB Current Endpoint Buffer Register             */
+        __IO uint32_t in_owner; /*  0x0228   USB IN Endpoint Buffer Owner Register            */
+        __IO uint32_t out_owner; /*  0x022C   USB OUT Endpoint Buffer Owner Register           */
+        __IO uint32_t in_int; /*  0x0230   USB IN Endpoint Buffer Available Interrupt       */
+        __IO uint32_t out_int; /*  0x0234   USB OUT Endpoint Data Available Interrupt        */
+        __IO uint32_t nak_int; /*  0x0238   USB IN Endpoint NAK Interrupt                    */
+        __IO uint32_t dma_err_int; /*  0x023C   USB DMA Error Interrupt                          */
+        __IO uint32_t buf_ovr_int; /*  0x0240   USB Buffer Overflow Interrupt                    */
+        __I uint32_t rsv0244[7]; /*  0x0244                                                    */
+        __IO uint32_t setup0; /*  0x0260   USB SETUP Packet Bytes 0 to 3                    */
+        __IO uint32_t setup1; /*  0x0264   USB SETUP Packet Bytes 4 to 7                    */
+        __I uint32_t rsv0268[6]; /*  0x0268                                                    */
+        __IO uint32_t ep[MXC_USB_NUM_EP]; /*  0x0280   USB Endpoint Control Registers                   */
+    } mxc_usb_regs_t;
 
 
-/*
-   Register offsets for module USB.
-*/
+    /*
+       Register offsets for module USB.
+     */
 #define MXC_R_USB_OFFS_CN                       ((uint32_t)0x00000000UL)
 #define MXC_R_USB_OFFS_DEV_ADDR                 ((uint32_t)0x00000200UL)
 #define MXC_R_USB_OFFS_DEV_CN                   ((uint32_t)0x00000204UL)
@@ -102,9 +102,9 @@ typedef struct {
 #define MXC_R_USB_OFFS_EP7                      ((uint32_t)0x0000029CUL)
 
 
-/*
-   Field positions and masks for module USB.
-*/
+    /*
+       Field positions and masks for module USB.
+     */
 #define MXC_F_USB_CN_USB_EN_POS                 0
 #define MXC_F_USB_CN_USB_EN                     ((uint32_t)(0x00000001UL << MXC_F_USB_CN_USB_EN_POS))
 
@@ -447,7 +447,7 @@ typedef struct {
 #endif
 
 /**
-* @}
-*/
+ * @}
+ */
 
 #endif /* _MXC_USB_REGS_H_ */

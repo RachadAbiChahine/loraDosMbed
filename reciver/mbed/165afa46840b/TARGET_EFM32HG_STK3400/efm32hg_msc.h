@@ -34,32 +34,32 @@
  * @{
  * @brief EFM32HG_MSC Register Declaration
  *****************************************************************************/
-typedef struct
-{
-  __IO uint32_t CTRL;         /**< Memory System Control Register  */
-  __IO uint32_t READCTRL;     /**< Read Control Register  */
-  __IO uint32_t WRITECTRL;    /**< Write Control Register  */
-  __IO uint32_t WRITECMD;     /**< Write Command Register  */
-  __IO uint32_t ADDRB;        /**< Page Erase/Write Address Buffer  */
 
-  uint32_t      RESERVED0[1]; /**< Reserved for future use **/
-  __IO uint32_t WDATA;        /**< Write Data Register  */
-  __I uint32_t  STATUS;       /**< Status Register  */
+typedef struct {
+    __IO uint32_t CTRL; /**< Memory System Control Register  */
+    __IO uint32_t READCTRL; /**< Read Control Register  */
+    __IO uint32_t WRITECTRL; /**< Write Control Register  */
+    __IO uint32_t WRITECMD; /**< Write Command Register  */
+    __IO uint32_t ADDRB; /**< Page Erase/Write Address Buffer  */
 
-  uint32_t      RESERVED1[3]; /**< Reserved for future use **/
-  __I uint32_t  IF;           /**< Interrupt Flag Register  */
-  __IO uint32_t IFS;          /**< Interrupt Flag Set Register  */
-  __IO uint32_t IFC;          /**< Interrupt Flag Clear Register  */
-  __IO uint32_t IEN;          /**< Interrupt Enable Register  */
-  __IO uint32_t LOCK;         /**< Configuration Lock Register  */
-  __IO uint32_t CMD;          /**< Command Register  */
-  __I uint32_t  CACHEHITS;    /**< Cache Hits Performance Counter  */
-  __I uint32_t  CACHEMISSES;  /**< Cache Misses Performance Counter  */
-  uint32_t      RESERVED2[1]; /**< Reserved for future use **/
-  __IO uint32_t TIMEBASE;     /**< Flash Write and Erase Timebase  */
-  __IO uint32_t MASSLOCK;     /**< Mass Erase Lock Register  */
-  __IO uint32_t IRQLATENCY;   /**< Irq Latency Register  */
-} MSC_TypeDef;                /** @} */
+    uint32_t RESERVED0[1]; /**< Reserved for future use **/
+    __IO uint32_t WDATA; /**< Write Data Register  */
+    __I uint32_t STATUS; /**< Status Register  */
+
+    uint32_t RESERVED1[3]; /**< Reserved for future use **/
+    __I uint32_t IF; /**< Interrupt Flag Register  */
+    __IO uint32_t IFS; /**< Interrupt Flag Set Register  */
+    __IO uint32_t IFC; /**< Interrupt Flag Clear Register  */
+    __IO uint32_t IEN; /**< Interrupt Enable Register  */
+    __IO uint32_t LOCK; /**< Configuration Lock Register  */
+    __IO uint32_t CMD; /**< Command Register  */
+    __I uint32_t CACHEHITS; /**< Cache Hits Performance Counter  */
+    __I uint32_t CACHEMISSES; /**< Cache Misses Performance Counter  */
+    uint32_t RESERVED2[1]; /**< Reserved for future use **/
+    __IO uint32_t TIMEBASE; /**< Flash Write and Erase Timebase  */
+    __IO uint32_t MASSLOCK; /**< Mass Erase Lock Register  */
+    __IO uint32_t IRQLATENCY; /**< Irq Latency Register  */
+} MSC_TypeDef; /** @} */
 
 /**************************************************************************//**
  * @defgroup EFM32HG_MSC_BitFields

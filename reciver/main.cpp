@@ -1,72 +1,18 @@
-#include "mbed.h"
+
 #include "main.h"
-#include "sx1276-hal.h"
-#include "debug.h"
-#include <stdio.h>
-#include <string.h>
+
 
 /* Set this flag to '1' to display debug messages on the console */
-#define DEBUG_MESSAGE   1
-
-/* Set this flag to '1' to use the LoRa modulation or to '0' to use FSK modulation */
-#define USE_MODEM_LORA  1
-#define USE_MODEM_FSK   !USE_MODEM_LORA
-
-#define RF_FREQUENCY                                    868000000 // Hz
-#define TX_OUTPUT_POWER                                 14     // 14 dBm
-
-#if USE_MODEM_LORA == 1
-
-#define LORA_BANDWIDTH                              1        // [0: 125 kHz,
-//  1: 250 kHz,
-//  2: 500 kHz,
-//  3: Reserved]
-#define LORA_SPREADING_FACTOR                       7         // [SF7..SF12]
-#define LORA_CODINGRATE                             1         // [1: 4/5,
-//  2: 4/6,
-//  3: 4/7,
-//  4: 4/8]
-#define LORA_PREAMBLE_LENGTH                        8         // Same for Tx and Rx
-#define LORA_SYMBOL_TIMEOUT                         5         // Symbols
-#define LORA_FIX_LENGTH_PAYLOAD_ON                  false
-#define LORA_FHSS_ENABLED                           false
-#define LORA_NB_SYMB_HOP                            4
-#define LORA_IQ_INVERSION_ON                        false
-#define LORA_CRC_ENABLED                            true
-#else
-#error "Please define a modem in the compiler options."
-#endif
-
-#define RX_TIMEOUT_VALUE                                2000000   // in us
-#define BUFFER_SIZE                                     32        // Define the payload size here
+#define DEBUG_MESSAGE   0
+#define DEBUG_MESSAGE1   (DEBUG_MESSAGE||0)
+/*
+ *  Global variables declarations
+ */
 
 DigitalOut led(LED1);
 
-/*
- *  Global variables declarations
- */
-typedef enum {
-    LOWPOWER = 0,
-    IDLE,
-    RX,
-    RX_TIMEOUT,
-    RX_ERROR,
-    TX,
-    TX_TIMEOUT,
-    CAD,
-    CAD_DONE
-} AppStates_t;
-
 volatile AppStates_t State = RX;
 
-/*!
- * Radio events function pointer
- */
-static RadioEvents_t RadioEvents;
-
-/*
- *  Global variables declarations
- */
 SX1276MB1xAS Radio(NULL);
 
 uint16_t BufferSize = BUFFER_SIZE;
@@ -75,27 +21,24 @@ uint8_t Buffer[BUFFER_SIZE];
 int16_t RssiValue = 0.0;
 int8_t SnrValue = 0.0;
 
-int main() {
+/*!
+ * Radio events function pointer
+ */
+static RadioEvents_t RadioEvents;
+
+int main()
+{
     Serial pc(USBTX, USBRX);
     pc.baud(38400);
     debug("\n\n\r     SX1276 Ping Pong Demo Application \n\n\r");
 
-    // Initialize Radio driver
-    RadioEvents.TxDone = OnTxDone;
-    RadioEvents.RxDone = OnRxDone;
-    RadioEvents.RxError = OnRxError;
-    RadioEvents.TxTimeout = OnTxTimeout;
-    RadioEvents.RxTimeout = OnRxTimeout;
-    Radio.Init(&RadioEvents);
-
+    radio_initializes(&RadioEvents);
     // verify the connection with the board
-    while (Radio.Read(REG_VERSION) == 0x00) {
+    while (Radio.Read(REG_VERSION) == 0x00)
+    {
         debug("Radio could not be detected!\n\r", NULL);
         wait(1);
     }
-
-    debug_if((DEBUG_MESSAGE & (Radio.DetectBoardType() == SX1276MB1LAS)), "\n\r > Board Type: SX1276MB1LAS < \n\r");
-    debug_if((DEBUG_MESSAGE & (Radio.DetectBoardType() == SX1276MB1MAS)), "\n\r > Board Type: SX1276MB1MAS < \n\r");
 
     Radio.SetChannel(RF_FREQUENCY);
 
@@ -104,10 +47,10 @@ int main() {
     debug_if(!LORA_FHSS_ENABLED, "\n\n\r             > LORA Mode < \n\n\r");
 
     Radio.SetRxConfig(MODEM_LORA, LORA_BANDWIDTH, LORA_SPREADING_FACTOR,
-            LORA_CODINGRATE, 0, LORA_PREAMBLE_LENGTH,
-            LORA_SYMBOL_TIMEOUT, LORA_FIX_LENGTH_PAYLOAD_ON, 0,
-            LORA_CRC_ENABLED, LORA_FHSS_ENABLED, LORA_NB_SYMB_HOP,
-            LORA_IQ_INVERSION_ON, true);
+                      LORA_CODINGRATE, 0, LORA_PREAMBLE_LENGTH,
+                      LORA_SYMBOL_TIMEOUT, LORA_FIX_LENGTH_PAYLOAD_ON, 0,
+                      LORA_CRC_ENABLED, LORA_FHSS_ENABLED, LORA_NB_SYMB_HOP,
+                      LORA_IQ_INVERSION_ON, true);
 #else
 #error "Please define a modem in the compiler options."
 #endif
@@ -117,64 +60,108 @@ int main() {
     Radio.Rx(RX_TIMEOUT_VALUE);
     int recived = 0;
     uint8_t value_tester[4];
-    while (1) {
+    while (1)
+    {
         wait_ms(20);
+        debug_if(DEBUG_MESSAGE, "BeforeRXn\r\n\r");
         Radio.Rx(RX_TIMEOUT_VALUE);
-        // led = !led;
-        if (BufferSize > 0) {
+        debug_if(DEBUG_MESSAGE, "afterRX\n\r\n\r");
+        led = !led;
+        if (BufferSize > 0)
+        {
 
             wait_ms(120);
-
-            if (strncmp((const char*) (Buffer + 4), (const char*) value_tester, 4) != 0) {
+            debug_if(DEBUG_MESSAGE, "Before if strcmp\n\r\n\r");
+            if (strncmp((const char*) (Buffer + 4), (const char*) value_tester, 4) != 0)
+            {
                 recived++;
+#if DEBUG_MESSAGE1 ==1
+
                 pc.printf("BUFFER/ [ ");
                 pc.printf("%c  ", Buffer[0]);
                 pc.printf("%c  ", Buffer[1]);
                 pc.printf("%c  ", Buffer[2]);
                 pc.printf("%c  ", Buffer[3]);
-
-                for (uint8_t ct = 4; ct <= 8; ct++) {
+#endif
+                for (uint8_t ct = 4; ct <= 8; ct++)
+                {
+#if DEBUG_MESSAGE1 ==1
                     pc.printf("%d ", Buffer[ct]);
+#endif
                     value_tester[ct - 4] = Buffer[ct];
                 }
-                pc.printf("recived =%d ]\n\r", recived);
+#if DEBUG_MESSAGE1 ==1
+                if (DEBUG_MESSAGE1) pc.printf("\n\r ");
+#endif
+
+                /**
+                 * @warning printf cause freeze
+                 */
+
+#if DEBUG_MESSAGE1 ==1
+                __disable_irq();
+                debug_if(DEBUG_MESSAGE, "before printf\n\r\n\r");
+                printf("[[[[%d]]]]\n\r", recived);
+                wait_ms(20);
+                __enable_irq();
+                debug_if(DEBUG_MESSAGE, "after printf\n\r\n\r");
+#endif
             }
-        } else pc.printf("buffer <0");
+        }
+
     }
-    pc.printf("error");
+    wait_ms(20);
+    printf("%d\n\r", recived);
+
 }
 
-void OnTxDone(void) {
+void OnTxDone(void)
+{
     Radio.Sleep();
     State = TX;
     debug_if(DEBUG_MESSAGE, "> OnTxDone\n\r");
 }
 
-void OnRxDone(uint8_t *payload, uint16_t size, int16_t rssi, int8_t snr) {
+void OnRxDone(uint8_t *payload, uint16_t size, int16_t rssi, int8_t snr)
+{
     Radio.Sleep();
     BufferSize = size;
     memcpy(Buffer, payload, BufferSize);
     RssiValue = rssi;
     SnrValue = snr;
     State = RX;
-    debug_if(DEBUG_MESSAGE, "> OnRxDone\n\r");
+    //  debug_if(DEBUG_MESSAGE, "> OnRxDone\n\r");
 }
 
-void OnTxTimeout(void) {
+void OnTxTimeout(void)
+{
     Radio.Sleep();
     State = TX_TIMEOUT;
     debug_if(DEBUG_MESSAGE, "> OnTxTimeout\n\r");
 }
 
-void OnRxTimeout(void) {
+void OnRxTimeout(void)
+{
     Radio.Sleep();
     Buffer[ BufferSize ] = 0;
     State = RX_TIMEOUT;
     debug_if(DEBUG_MESSAGE, "> OnRxTimeout\n\r");
 }
 
-void OnRxError(void) {
+void OnRxError(void)
+{
     Radio.Sleep();
     State = RX_ERROR;
     debug_if(DEBUG_MESSAGE, "> OnRxError\n\r");
+}
+
+void radio_initializes(RadioEvents_t* RadioEvents)
+{
+    // Initialize Radio driver
+    RadioEvents->TxDone = OnTxDone;
+    RadioEvents->RxDone = OnRxDone;
+    RadioEvents->RxError = OnRxError;
+    RadioEvents->TxTimeout = OnTxTimeout;
+    RadioEvents->RxTimeout = OnRxTimeout;
+    Radio.Init(RadioEvents);
 }

@@ -34,18 +34,18 @@
  * @{
  * @brief Chip Information, Revision numbers
  *****************************************************************************/
-typedef struct
-{
-  __I uint32_t PID4; /**< JEP_106_BANK */
-  __I uint32_t PID5; /**< Unused */
-  __I uint32_t PID6; /**< Unused */
-  __I uint32_t PID7; /**< Unused */
-  __I uint32_t PID0; /**< Chip family LSB, chip major revision */
-  __I uint32_t PID1; /**< JEP_106_NO, Chip family MSB */
-  __I uint32_t PID2; /**< Chip minor rev MSB, JEP_106_PRESENT, JEP_106_NO */
-  __I uint32_t PID3; /**< Chip minor rev LSB */
-  __I uint32_t CID0; /**< Unused */
-} ROMTABLE_TypeDef;  /** @} */
+
+typedef struct {
+    __I uint32_t PID4; /**< JEP_106_BANK */
+    __I uint32_t PID5; /**< Unused */
+    __I uint32_t PID6; /**< Unused */
+    __I uint32_t PID7; /**< Unused */
+    __I uint32_t PID0; /**< Chip family LSB, chip major revision */
+    __I uint32_t PID1; /**< JEP_106_NO, Chip family MSB */
+    __I uint32_t PID2; /**< Chip minor rev MSB, JEP_106_PRESENT, JEP_106_NO */
+    __I uint32_t PID3; /**< Chip minor rev LSB */
+    __I uint32_t CID0; /**< Unused */
+} ROMTABLE_TypeDef; /** @} */
 
 /**************************************************************************//**
  * @defgroup EFM32LG_ROMTABLE_BitFields

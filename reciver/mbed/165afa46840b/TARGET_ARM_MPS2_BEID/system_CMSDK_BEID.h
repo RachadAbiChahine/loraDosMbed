@@ -21,7 +21,7 @@
    - Neither the name of ARM nor the names of its contributors may be used
      to endorse or promote products derived from this software without
      specific prior written permission.
-   *
+ *
    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
    AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
    IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -43,30 +43,30 @@
 extern "C" {
 #endif
 
-extern uint32_t SystemCoreClock;     /*!< System Clock Frequency (Core Clock)  */
+    extern uint32_t SystemCoreClock; /*!< System Clock Frequency (Core Clock)  */
 
 
-/**
- * Initialize the system
- *
- * @param  none
- * @return none
- *
- * @brief  Setup the microcontroller system.
- *         Initialize the System and update the SystemCoreClock variable.
- */
-extern void SystemInit (void);
+    /**
+     * Initialize the system
+     *
+     * @param  none
+     * @return none
+     *
+     * @brief  Setup the microcontroller system.
+     *         Initialize the System and update the SystemCoreClock variable.
+     */
+    extern void SystemInit(void);
 
-/**
- * Update SystemCoreClock variable
- *
- * @param  none
- * @return none
- *
- * @brief  Updates the SystemCoreClock with current core Clock
- *         retrieved from cpu registers.
- */
-extern void SystemCoreClockUpdate (void);
+    /**
+     * Update SystemCoreClock variable
+     *
+     * @param  none
+     * @return none
+     *
+     * @brief  Updates the SystemCoreClock with current core Clock
+     *         retrieved from cpu registers.
+     */
+    extern void SystemCoreClockUpdate(void);
 
 #ifdef __cplusplus
 }

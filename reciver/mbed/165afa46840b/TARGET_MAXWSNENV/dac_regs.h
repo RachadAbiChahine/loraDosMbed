@@ -40,82 +40,83 @@ extern "C" {
 
 #include <stdint.h>
 
-/**
- * @file  dac_regs.h
- * @addtogroup dac DAC
- * @{
- */
+    /**
+     * @file  dac_regs.h
+     * @addtogroup dac DAC
+     * @{
+     */
 
-/**
- * @brief Defines the DAC Operational Modes.
- */
-typedef enum {
-    /** DAC OpMode FIFO */
-    MXC_E_DAC_OP_MODE_FIFO = 0,
-    /** DAC OpMode Sample Count */
-    MXC_E_DAC_OP_MODE_DACSMPLCNT,
-    /** DAC OpMode DAC_REG Control */
-    MXC_E_DAC_OP_MODE_DAC_REG,
-    /** DAC OpMode Continuous */
-    MXC_E_DAC_OP_MODE_CONTINUOUS
-} mxc_dac_op_mode_t;
+    /**
+     * @brief Defines the DAC Operational Modes.
+     */
+    typedef enum {
+        /** DAC OpMode FIFO */
+        MXC_E_DAC_OP_MODE_FIFO = 0,
+        /** DAC OpMode Sample Count */
+        MXC_E_DAC_OP_MODE_DACSMPLCNT,
+        /** DAC OpMode DAC_REG Control */
+        MXC_E_DAC_OP_MODE_DAC_REG,
+        /** DAC OpMode Continuous */
+        MXC_E_DAC_OP_MODE_CONTINUOUS
+    } mxc_dac_op_mode_t;
 
-/**
- * @brief Defines the DAC Interpolation Options.
- */
-typedef enum {
-    /** DAC Interpolation is Disabled */
-    MXC_E_DAC_INTERP_MODE_DISABLED = 0,
-    /** DAC Interpolation 2:1 */
-    MXC_E_DAC_INTERP_MODE_2_TO_1,
-    /** DAC Interpolation 4:1 */
-    MXC_E_DAC_INTERP_MODE_4_TO_1,
-    /** DAC Interpolation 8:1 */
-    MXC_E_DAC_INTERP_MODE_8_TO_1
-} mxc_dac_interp_mode_t;
+    /**
+     * @brief Defines the DAC Interpolation Options.
+     */
+    typedef enum {
+        /** DAC Interpolation is Disabled */
+        MXC_E_DAC_INTERP_MODE_DISABLED = 0,
+        /** DAC Interpolation 2:1 */
+        MXC_E_DAC_INTERP_MODE_2_TO_1,
+        /** DAC Interpolation 4:1 */
+        MXC_E_DAC_INTERP_MODE_4_TO_1,
+        /** DAC Interpolation 8:1 */
+        MXC_E_DAC_INTERP_MODE_8_TO_1
+    } mxc_dac_interp_mode_t;
 
-/**
- * @brief Defines the DAC Start Modes.
- */
-typedef enum {
-    /** Start on FIFO Not Empty */
-    MXC_E_DAC_START_MODE_FIFO_NOT_EMPTY = 0,
-    /** Start on ADC generated Start Strobe */
-    MXC_E_DAC_START_MODE_ADC_STROBE,
-    /** Start on DAC generated Start Strobe */
-    MXC_E_DAC_START_MODE_DAC_STROBE
-} mxc_dac_start_mode_t;
+    /**
+     * @brief Defines the DAC Start Modes.
+     */
+    typedef enum {
+        /** Start on FIFO Not Empty */
+        MXC_E_DAC_START_MODE_FIFO_NOT_EMPTY = 0,
+        /** Start on ADC generated Start Strobe */
+        MXC_E_DAC_START_MODE_ADC_STROBE,
+        /** Start on DAC generated Start Strobe */
+        MXC_E_DAC_START_MODE_DAC_STROBE
+    } mxc_dac_start_mode_t;
 
-/*                                                  Offset   Register Description
-                                                    ======   ================================================== */
-typedef struct {
-    __IO uint32_t ctrl0;                        /*  0x0000   DAC Control Register 0                             */
-    __IO uint32_t rate;                         /*  0x0004   DAC Output Rate Control                            */
-    __IO uint32_t ctrl1_int;                    /*  0x0008   DAC Control Register 1, Interrupt Flags and Enable */
-    __IO uint32_t reg;                          /*  0x000C   DAC Data Register                                  */
-    __IO uint32_t trm;                          /*  0x0010   DAC Trim Register */
-} mxc_dac_regs_t;
+    /*                                                  Offset   Register Description
+                                                        ======   ================================================== */
+    typedef struct {
+        __IO uint32_t ctrl0; /*  0x0000   DAC Control Register 0                             */
+        __IO uint32_t rate; /*  0x0004   DAC Output Rate Control                            */
+        __IO uint32_t ctrl1_int; /*  0x0008   DAC Control Register 1, Interrupt Flags and Enable */
+        __IO uint32_t reg; /*  0x000C   DAC Data Register                                  */
+        __IO uint32_t trm; /*  0x0010   DAC Trim Register */
+    } mxc_dac_regs_t;
 
-/*                                                  Offset   Register Description
-                                                    ======   ================================================== */
-typedef struct {
-    union {
-        __IO uint8_t output_8;                  /*  0x0000   Write to push values to DAC output FIFO            */
-        __IO uint16_t output_16;                /*  0x0000   Write to push values to DAC output FIFO            */
-    };
-} mxc_dac_fifo_t;
+    /*                                                  Offset   Register Description
+                                                        ======   ================================================== */
+    typedef struct {
 
-/*
-   Register offsets for module DAC12.
-*/
+        union {
+            __IO uint8_t output_8; /*  0x0000   Write to push values to DAC output FIFO            */
+            __IO uint16_t output_16; /*  0x0000   Write to push values to DAC output FIFO            */
+        };
+    } mxc_dac_fifo_t;
+
+    /*
+       Register offsets for module DAC12.
+     */
 #define MXC_R_DAC_OFFS_CTRL0                    ((uint32_t)0x00000000UL)
 #define MXC_R_DAC_OFFS_RATE                     ((uint32_t)0x00000004UL)
 #define MXC_R_DAC_OFFS_CTRL1_INT                ((uint32_t)0x00000008UL)
 #define MXC_R_DAC_FIFO_OFFS_OUTPUT              ((uint32_t)0x00000000UL)
 
-/*
-   Field positions and masks for module DAC.
-*/
+    /*
+       Field positions and masks for module DAC.
+     */
 #define MXC_F_DAC_CTRL0_FIFO_AE_CNT_POS         0
 #define MXC_F_DAC_CTRL0_FIFO_AE_CNT             ((uint32_t)(0x0000000FUL << MXC_F_DAC_CTRL0_FIFO_AE_CNT_POS))
 #define MXC_F_DAC_CTRL0_FIFO_ALMOST_FULL_POS    5
@@ -174,7 +175,7 @@ typedef struct {
 #endif
 
 /**
-* @}
-*/
+ * @}
+ */
 
 #endif /* _DAC12_REGS_H */

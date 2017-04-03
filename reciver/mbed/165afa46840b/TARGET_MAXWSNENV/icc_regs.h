@@ -40,34 +40,34 @@ extern "C" {
 
 #include <stdint.h>
 
-/**
- * @file  icc_regs.h
- * @addtogroup icc ICC
- * @{
- */
+    /**
+     * @file  icc_regs.h
+     * @addtogroup icc ICC
+     * @{
+     */
 
-/*                                              Offset   Register Description
-                                                ======   =================================================== */
-typedef struct {
-    __IO uint32_t id;                       /*  0x0000   Device ID Register                                  */
-    __IO uint32_t mem_cfg;                  /*  0x0004   Memory Configuration                                */
-    __I uint32_t rsv0008[62];               /*  0x0008                                                       */
-    __IO uint32_t ctrl_stat;                /*  0x0100   Control and Status                                  */
-    __I uint32_t rsv0104[383];              /*  0x0104                                                       */
-    __IO uint32_t invdt_all;                /*  0x0700   Invalidate (Clear) Cache Control                    */
-} mxc_icc_regs_t;
+    /*                                              Offset   Register Description
+                                                    ======   =================================================== */
+    typedef struct {
+        __IO uint32_t id; /*  0x0000   Device ID Register                                  */
+        __IO uint32_t mem_cfg; /*  0x0004   Memory Configuration                                */
+        __I uint32_t rsv0008[62]; /*  0x0008                                                       */
+        __IO uint32_t ctrl_stat; /*  0x0100   Control and Status                                  */
+        __I uint32_t rsv0104[383]; /*  0x0104                                                       */
+        __IO uint32_t invdt_all; /*  0x0700   Invalidate (Clear) Cache Control                    */
+    } mxc_icc_regs_t;
 
-/*
-   Register offsets for module ICC.
-*/
+    /*
+       Register offsets for module ICC.
+     */
 #define MXC_R_ICC_OFFS_ID                       ((uint32_t)0x00000000UL)
 #define MXC_R_ICC_OFFS_MEM_CFG                  ((uint32_t)0x00000004UL)
 #define MXC_R_ICC_OFFS_CTRL_STAT                ((uint32_t)0x00000100UL)
 #define MXC_R_ICC_OFFS_INVDT_ALL                ((uint32_t)0x00000700UL)
 
-/*
-   Field positions and masks for module ICC.
-*/
+    /*
+       Field positions and masks for module ICC.
+     */
 #define MXC_F_ICC_ID_RTL_VERSION_POS            0
 #define MXC_F_ICC_ID_RTL_VERSION                ((uint32_t)(0x0000003FUL << MXC_F_ICC_ID_RTL_VERSION_POS))
 #define MXC_F_ICC_ID_PART_NUM_POS               6
@@ -90,7 +90,7 @@ typedef struct {
 #endif
 
 /**
-* @}
-*/
+ * @}
+ */
 
 #endif /* _MXC_ICC_REGS_H_ */

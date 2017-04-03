@@ -1,60 +1,59 @@
 /*******************************************************************************
-* DISCLAIMER
-* This software is supplied by Renesas Electronics Corporation and is only
-* intended for use with Renesas products. No other uses are authorized. This
-* software is owned by Renesas Electronics Corporation and is protected under
-* all applicable laws, including copyright laws.
-* THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIES REGARDING
-* THIS SOFTWARE, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING BUT NOT
-* LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
-* AND NON-INFRINGEMENT. ALL SUCH WARRANTIES ARE EXPRESSLY DISCLAIMED.
-* TO THE MAXIMUM EXTENT PERMITTED NOT PROHIBITED BY LAW, NEITHER RENESAS
-* ELECTRONICS CORPORATION NOR ANY OF ITS AFFILIATED COMPANIES SHALL BE LIABLE
-* FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES FOR
-* ANY REASON RELATED TO THIS SOFTWARE, EVEN IF RENESAS OR ITS AFFILIATES HAVE
-* BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
-* Renesas reserves the right, without notice, to make changes to this software
-* and to discontinue the availability of this software. By using this software,
-* you agree to the additional terms and conditions found by accessing the
-* following link:
-* http://www.renesas.com/disclaimer*
-* Copyright (C) 2013-2014 Renesas Electronics Corporation. All rights reserved.
-*******************************************************************************/
+ * DISCLAIMER
+ * This software is supplied by Renesas Electronics Corporation and is only
+ * intended for use with Renesas products. No other uses are authorized. This
+ * software is owned by Renesas Electronics Corporation and is protected under
+ * all applicable laws, including copyright laws.
+ * THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIES REGARDING
+ * THIS SOFTWARE, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING BUT NOT
+ * LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
+ * AND NON-INFRINGEMENT. ALL SUCH WARRANTIES ARE EXPRESSLY DISCLAIMED.
+ * TO THE MAXIMUM EXTENT PERMITTED NOT PROHIBITED BY LAW, NEITHER RENESAS
+ * ELECTRONICS CORPORATION NOR ANY OF ITS AFFILIATED COMPANIES SHALL BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES FOR
+ * ANY REASON RELATED TO THIS SOFTWARE, EVEN IF RENESAS OR ITS AFFILIATES HAVE
+ * BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+ * Renesas reserves the right, without notice, to make changes to this software
+ * and to discontinue the availability of this software. By using this software,
+ * you agree to the additional terms and conditions found by accessing the
+ * following link:
+ * http://www.renesas.com/disclaimer*
+ * Copyright (C) 2013-2014 Renesas Electronics Corporation. All rights reserved.
+ *******************************************************************************/
 /*******************************************************************************
-* File Name : riic_iodefine.h
-* $Rev: $
-* $Date::                           $
-* Description : Definition of I/O Register (V1.00a)
-******************************************************************************/
+ * File Name : riic_iodefine.h
+ * $Rev: $
+ * $Date::                           $
+ * Description : Definition of I/O Register (V1.00a)
+ ******************************************************************************/
 #ifndef RIIC_IODEFINE_H
 #define RIIC_IODEFINE_H
 
 #include "reg32_t.h"
 
-struct st_riic
-{                                                          /* RIIC             */
+struct st_riic { /* RIIC             */
 #define RIICnCRm_COUNT 2
-    union reg32_t  RIICnCR1;                      /*  RIICnCR1        */
-    union reg32_t  RIICnCR2;                      /*  RIICnCR2        */
+    union reg32_t RIICnCR1; /*  RIICnCR1        */
+    union reg32_t RIICnCR2; /*  RIICnCR2        */
 #define RIICnMRm_COUNT 3
-    union reg32_t  RIICnMR1;                      /*  RIICnMR1        */
-    union reg32_t  RIICnMR2;                      /*  RIICnMR2        */
-    union reg32_t  RIICnMR3;                      /*  RIICnMR3        */
-    union reg32_t  RIICnFER;                      /*  RIICnFER        */
-    union reg32_t  RIICnSER;                      /*  RIICnSER        */
-    union reg32_t  RIICnIER;                      /*  RIICnIER        */
+    union reg32_t RIICnMR1; /*  RIICnMR1        */
+    union reg32_t RIICnMR2; /*  RIICnMR2        */
+    union reg32_t RIICnMR3; /*  RIICnMR3        */
+    union reg32_t RIICnFER; /*  RIICnFER        */
+    union reg32_t RIICnSER; /*  RIICnSER        */
+    union reg32_t RIICnIER; /*  RIICnIER        */
 #define RIICnSRm_COUNT 2
-    union reg32_t  RIICnSR1;                      /*  RIICnSR1        */
-    union reg32_t  RIICnSR2;                      /*  RIICnSR2        */
+    union reg32_t RIICnSR1; /*  RIICnSR1        */
+    union reg32_t RIICnSR2; /*  RIICnSR2        */
 #define RIICnSARm_COUNT 3
-    union reg32_t  RIICnSAR0;                     /*  RIICnSAR0       */
-    union reg32_t  RIICnSAR1;                     /*  RIICnSAR1       */
-    union reg32_t  RIICnSAR2;                     /*  RIICnSAR2       */
-    union reg32_t  RIICnBRL;                      /*  RIICnBRL        */
-    union reg32_t  RIICnBRH;                      /*  RIICnBRH        */
-    union reg32_t  RIICnDRT;                      /*  RIICnDRT        */
-    union reg32_t  RIICnDRR;                      /*  RIICnDRR        */
-    
+    union reg32_t RIICnSAR0; /*  RIICnSAR0       */
+    union reg32_t RIICnSAR1; /*  RIICnSAR1       */
+    union reg32_t RIICnSAR2; /*  RIICnSAR2       */
+    union reg32_t RIICnBRL; /*  RIICnBRL        */
+    union reg32_t RIICnBRH; /*  RIICnBRH        */
+    union reg32_t RIICnDRT; /*  RIICnDRT        */
+    union reg32_t RIICnDRR; /*  RIICnDRR        */
+
 };
 
 

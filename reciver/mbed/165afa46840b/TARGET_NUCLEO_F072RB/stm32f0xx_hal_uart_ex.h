@@ -1,94 +1,93 @@
 /**
-  ******************************************************************************
-  * @file    stm32f0xx_hal_uart_ex.h
-  * @author  MCD Application Team
-  * @version V1.3.0
-  * @date    26-June-2015
-  * @brief   Header file of UART HAL Extension module.
-  ******************************************************************************
-  * @attention
-  *
-  * <h2><center>&copy; COPYRIGHT(c) 2015 STMicroelectronics</center></h2>
-  *
-  * Redistribution and use in source and binary forms, with or without modification,
-  * are permitted provided that the following conditions are met:
-  *   1. Redistributions of source code must retain the above copyright notice,
-  *      this list of conditions and the following disclaimer.
-  *   2. Redistributions in binary form must reproduce the above copyright notice,
-  *      this list of conditions and the following disclaimer in the documentation
-  *      and/or other materials provided with the distribution.
-  *   3. Neither the name of STMicroelectronics nor the names of its contributors
-  *      may be used to endorse or promote products derived from this software
-  *      without specific prior written permission.
-  *
-  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file    stm32f0xx_hal_uart_ex.h
+ * @author  MCD Application Team
+ * @version V1.3.0
+ * @date    26-June-2015
+ * @brief   Header file of UART HAL Extension module.
+ ******************************************************************************
+ * @attention
+ *
+ * <h2><center>&copy; COPYRIGHT(c) 2015 STMicroelectronics</center></h2>
+ *
+ * Redistribution and use in source and binary forms, with or without modification,
+ * are permitted provided that the following conditions are met:
+ *   1. Redistributions of source code must retain the above copyright notice,
+ *      this list of conditions and the following disclaimer.
+ *   2. Redistributions in binary form must reproduce the above copyright notice,
+ *      this list of conditions and the following disclaimer in the documentation
+ *      and/or other materials provided with the distribution.
+ *   3. Neither the name of STMicroelectronics nor the names of its contributors
+ *      may be used to endorse or promote products derived from this software
+ *      without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ ******************************************************************************
+ */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __STM32F0xx_HAL_UART_EX_H
 #define __STM32F0xx_HAL_UART_EX_H
 
 #ifdef __cplusplus
- extern "C" {
+extern "C" {
 #endif
 
-/* Includes ------------------------------------------------------------------*/
+    /* Includes ------------------------------------------------------------------*/
 #include "stm32f0xx_hal_def.h"
 
-/** @addtogroup STM32F0xx_HAL_Driver
-  * @{
-  */
+    /** @addtogroup STM32F0xx_HAL_Driver
+     * @{
+     */
 
-/** @addtogroup UARTEx
-  * @{
-  */
+    /** @addtogroup UARTEx
+     * @{
+     */
 
-/* Exported types ------------------------------------------------------------*/
+    /* Exported types ------------------------------------------------------------*/
 #if !defined(STM32F030x6) && !defined(STM32F030x8) && !defined(STM32F070x6)  && !defined(STM32F070xB)  && !defined(STM32F030xC)
-/** @defgroup UARTEx_Exported_Types UARTEx Exported Types
-  * @{
-  */
+    /** @defgroup UARTEx_Exported_Types UARTEx Exported Types
+     * @{
+     */
 
-/**
-  * @brief  UART wake up from stop mode parameters
-  */
-typedef struct
-{
-  uint32_t WakeUpEvent;        /*!< Specifies which event will activat the Wakeup from Stop mode flag (WUF).
+    /**
+     * @brief  UART wake up from stop mode parameters
+     */
+    typedef struct {
+        uint32_t WakeUpEvent; /*!< Specifies which event will activat the Wakeup from Stop mode flag (WUF).
                                     This parameter can be a value of @ref UART_WakeUp_from_Stop_Selection.
                                     If set to UART_WAKEUP_ON_ADDRESS, the two other fields below must
                                     be filled up. */
 
-  uint16_t AddressLength;      /*!< Specifies whether the address is 4 or 7-bit long.
+        uint16_t AddressLength; /*!< Specifies whether the address is 4 or 7-bit long.
                                     This parameter can be a value of @ref UART_WakeUp_Address_Length  */
 
-  uint8_t Address;             /*!< UART/USART node address (7-bit long max) */
-} UART_WakeUpTypeDef;
+        uint8_t Address; /*!< UART/USART node address (7-bit long max) */
+    } UART_WakeUpTypeDef;
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 #endif /* !defined(STM32F030x6) && !defined(STM32F030x8) && !defined(STM32F070x6)  && !defined(STM32F070xB)  && !defined(STM32F030xC) */  
 
-/* Exported constants --------------------------------------------------------*/
-/** @defgroup UARTEx_Exported_Constants UARTEx Exported Constants
-  * @{
-  */
+    /* Exported constants --------------------------------------------------------*/
+    /** @defgroup UARTEx_Exported_Constants UARTEx Exported Constants
+     * @{
+     */
 
-/** @defgroup UARTEx_Word_Length UARTEx Word Length
-  * @{
-  */
+    /** @defgroup UARTEx_Word_Length UARTEx Word Length
+     * @{
+     */
 #if defined (STM32F042x6) || defined (STM32F048xx) || defined (STM32F070x6) || \
     defined (STM32F071xB) || defined (STM32F072xB) || defined (STM32F078xx) || defined (STM32F070xB) || \
     defined (STM32F091xC) || defined (STM32F098xx) || defined (STM32F030xC)
@@ -101,13 +100,13 @@ typedef struct
 #endif /* defined (STM32F042x6) || defined (STM32F048xx) || defined (STM32F070x6) || \
           defined (STM32F071xB) || defined (STM32F072xB) || defined (STM32F078xx) || defined (STM32F070xB) || \
           defined (STM32F091xC) || defined (STM32F098xx) || defined (STM32F030xC) */
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/** @defgroup UARTEx_AutoBaud_Rate_Mode    UARTEx Advanced Feature AutoBaud Rate Mode
-  * @{
-  */
+    /** @defgroup UARTEx_AutoBaud_Rate_Mode    UARTEx Advanced Feature AutoBaud Rate Mode
+     * @{
+     */
 #if defined (STM32F042x6) || defined (STM32F048xx) || defined (STM32F070x6) || \
     defined (STM32F071xB) || defined (STM32F072xB) || defined (STM32F078xx) || defined (STM32F070xB) || \
     defined (STM32F091xC) || defined (STM32F098xx) || defined (STM32F030xC)
@@ -121,35 +120,35 @@ typedef struct
 #endif /* defined (STM32F042x6) || defined (STM32F048xx) || defined (STM32F070x6) || \
           defined (STM32F071xB) || defined (STM32F072xB) || defined (STM32F078xx) || defined (STM32F070xB) || \
           defined (STM32F091xC) || defined (STM32F098xx) || defined (STM32F030xC) */
-/**
-  * @}
-  */  
+    /**
+     * @}
+     */
 
 #if !defined(STM32F030x6) && !defined(STM32F030x8) && !defined(STM32F070x6)  && !defined(STM32F070xB)  && !defined(STM32F030xC)
-/** @defgroup UARTEx_LIN    UARTEx Local Interconnection Network mode
-  * @{
-  */
+    /** @defgroup UARTEx_LIN    UARTEx Local Interconnection Network mode
+     * @{
+     */
 #define UART_LIN_DISABLE                    ((uint32_t)0x00000000)                 /*!< Local Interconnect Network disable */
 #define UART_LIN_ENABLE                     ((uint32_t)USART_CR2_LINEN)            /*!< Local Interconnect Network enable  */
-/**
-  * @}
-  */ 
-  
-/** @defgroup UARTEx_LIN_Break_Detection  UARTEx LIN Break Detection
-  * @{
-  */
+    /**
+     * @}
+     */
+
+    /** @defgroup UARTEx_LIN_Break_Detection  UARTEx LIN Break Detection
+     * @{
+     */
 #define UART_LINBREAKDETECTLENGTH_10B       ((uint32_t)0x00000000)                /*!< LIN 10-bit break detection length */
 #define UART_LINBREAKDETECTLENGTH_11B       ((uint32_t)USART_CR2_LBDL)            /*!< LIN 11-bit break detection length  */
-/**
-  * @}
-  */   
+    /**
+     * @}
+     */
 #endif /* !defined(STM32F030x6) && !defined(STM32F030x8) && !defined(STM32F070x6)  && !defined(STM32F070xB)  && !defined(STM32F030xC) */  
 
-/** @defgroup UART_Flags     UARTEx Status Flags
-  *        Elements values convention: 0xXXXX
-  *           - 0xXXXX  : Flag mask in the ISR register
-  * @{
-  */
+    /** @defgroup UART_Flags     UARTEx Status Flags
+     *        Elements values convention: 0xXXXX
+     *           - 0xXXXX  : Flag mask in the ISR register
+     * @{
+     */
 #if !defined(STM32F030x6) && !defined(STM32F030x8) && !defined(STM32F070x6)  && !defined(STM32F070xB)  && !defined(STM32F030xC)
 #define UART_FLAG_REACK                     ((uint32_t)0x00400000)
 #endif /* !defined(STM32F030x6) && !defined(STM32F030x8) && !defined(STM32F070x6)  && !defined(STM32F070xB)  && !defined(STM32F030xC) */ 
@@ -180,20 +179,20 @@ typedef struct
 #define UART_FLAG_NE                        ((uint32_t)0x00000004)
 #define UART_FLAG_FE                        ((uint32_t)0x00000002)
 #define UART_FLAG_PE                        ((uint32_t)0x00000001)
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/** @defgroup UART_Interrupt_definition   UARTEx Interrupts Definition
-  *        Elements values convention: 0000ZZZZZ0XXYYYYYb
-  *           - YYYYY  : Interrupt source position in the XX register (5bits)
-  *           - XX  : Interrupt source register (2bits)
-  *                 - 01: CR1 register
-  *                 - 10: CR2 register
-  *                 - 11: CR3 register
-  *           - ZZZZZ  : Flag position in the ISR register(5bits)
-  * @{   
-  */  
+    /** @defgroup UART_Interrupt_definition   UARTEx Interrupts Definition
+     *        Elements values convention: 0000ZZZZZ0XXYYYYYb
+     *           - YYYYY  : Interrupt source position in the XX register (5bits)
+     *           - XX  : Interrupt source register (2bits)
+     *                 - 01: CR1 register
+     *                 - 10: CR2 register
+     *                 - 11: CR3 register
+     *           - ZZZZZ  : Flag position in the ISR register(5bits)
+     * @{   
+     */
 #define UART_IT_PE                          ((uint16_t)0x0028)
 #define UART_IT_TXE                         ((uint16_t)0x0727)
 #define UART_IT_TC                          ((uint16_t)0x0626)
@@ -207,14 +206,14 @@ typedef struct
 #if !defined(STM32F030x6) && !defined(STM32F030x8) && !defined(STM32F070x6)  && !defined(STM32F070xB)  && !defined(STM32F030xC) 
 #define UART_IT_WUF                         ((uint16_t)0x1476)
 #endif /* !defined(STM32F030x6) && !defined(STM32F030x8) && !defined(STM32F070x6)  && !defined(STM32F070xB)  && !defined(STM32F030xC) */ 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
 
-/** @defgroup UART_IT_CLEAR_Flags  UARTEx Interruption Clear Flags
-  * @{
-  */
+    /** @defgroup UART_IT_CLEAR_Flags  UARTEx Interruption Clear Flags
+     * @{
+     */
 #define UART_CLEAR_PEF                       USART_ICR_PECF            /*!< Parity Error Clear Flag */          
 #define UART_CLEAR_FEF                       USART_ICR_FECF            /*!< Framing Error Clear Flag */         
 #define UART_CLEAR_NEF                       USART_ICR_NCF             /*!< Noise detected Clear Flag */        
@@ -233,13 +232,13 @@ typedef struct
 #if !defined(STM32F030x6) && !defined(STM32F030x8) && !defined(STM32F070x6)  && !defined(STM32F070xB)  && !defined(STM32F030xC)      
 #define UART_CLEAR_WUF                       USART_ICR_WUCF            /*!< Wake Up from stop mode Clear Flag */
 #endif /* !defined(STM32F030x6) && !defined(STM32F030x8) && !defined(STM32F070x6)  && !defined(STM32F070xB)  && !defined(STM32F030xC) */ 
-/**
-  * @}
-  */ 
+    /**
+     * @}
+     */
 
-/** @defgroup UART_Request_Parameters UARTEx Request Parameters
-  * @{
-  */
+    /** @defgroup UART_Request_Parameters UARTEx Request Parameters
+     * @{
+     */
 #define UART_AUTOBAUD_REQUEST            ((uint32_t)USART_RQR_ABRRQ)        /*!< Auto-Baud Rate Request */     
 #define UART_SENDBREAK_REQUEST           ((uint32_t)USART_RQR_SBKRQ)        /*!< Send Break Request */         
 #define UART_MUTE_MODE_REQUEST           ((uint32_t)USART_RQR_MMRQ)         /*!< Mute Mode Request */          
@@ -248,44 +247,44 @@ typedef struct
 #define UART_TXDATA_FLUSH_REQUEST        ((uint32_t)USART_RQR_TXFRQ)        /*!< Transmit data flush Request */
 #else
 #endif /* !defined(STM32F030x6) && !defined(STM32F030x8) && !defined(STM32F070x6)  && !defined(STM32F070xB)  && !defined(STM32F030xC) */ 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
 #if !defined(STM32F030x6) && !defined(STM32F030x8) && !defined(STM32F070x6) && !defined(STM32F070xB)  && !defined(STM32F030xC)
-/** @defgroup UART_Stop_Mode_Enable   UARTEx Advanced Feature Stop Mode Enable
-  * @{
-  */
+    /** @defgroup UART_Stop_Mode_Enable   UARTEx Advanced Feature Stop Mode Enable
+     * @{
+     */
 #define UART_ADVFEATURE_STOPMODE_DISABLE    ((uint32_t)0x00000000)              /*!< UART stop mode disable */
 #define UART_ADVFEATURE_STOPMODE_ENABLE     ((uint32_t)USART_CR1_UESM)          /*!< UART stop mode enable  */
-/**
-  * @}
-  */  
+    /**
+     * @}
+     */
 
-/** @defgroup UART_WakeUp_from_Stop_Selection   UART WakeUp From Stop Selection
-  * @{
-  */
+    /** @defgroup UART_WakeUp_from_Stop_Selection   UART WakeUp From Stop Selection
+     * @{
+     */
 #define UART_WAKEUP_ON_ADDRESS              ((uint32_t)0x00000000)              /*!< UART wake-up on address                         */
 #define UART_WAKEUP_ON_STARTBIT             ((uint32_t)USART_CR3_WUS_1)         /*!< UART wake-up on start bit                       */
 #define UART_WAKEUP_ON_READDATA_NONEMPTY    ((uint32_t)USART_CR3_WUS)           /*!< UART wake-up on receive data register not empty */
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 #endif /* !defined(STM32F030x6) && !defined(STM32F030x8) && !defined(STM32F070x6) && !defined(STM32F070xB) && !defined(STM32F030xC) */   
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/* Exported macros ------------------------------------------------------------*/
-/** @defgroup UARTEx_Exported_Macros UARTEx Exported Macros
-  * @{
-  */
+    /* Exported macros ------------------------------------------------------------*/
+    /** @defgroup UARTEx_Exported_Macros UARTEx Exported Macros
+     * @{
+     */
 
-/** @brief  Flush the UART Data registers.
-  * @param  __HANDLE__: specifies the UART Handle.
-  * @retval None  
-  */
+    /** @brief  Flush the UART Data registers.
+     * @param  __HANDLE__: specifies the UART Handle.
+     * @retval None  
+     */
 #if !defined(STM32F030x6) && !defined(STM32F030x8) 
 #define __HAL_UART_FLUSH_DRREGISTER(__HANDLE__)  \
   do{                \
@@ -299,20 +298,20 @@ typedef struct
     }  while(0)
 #endif /* !defined(STM32F030x6) && !defined(STM32F030x8) */ 
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/* Private macros ------------------------------------------------------------*/
-/** @defgroup UARTEx_Private_Macros UARTEx Private Macros
-  * @{
-  */
+    /* Private macros ------------------------------------------------------------*/
+    /** @defgroup UARTEx_Private_Macros UARTEx Private Macros
+     * @{
+     */
 
-/** @brief  Report the UART clock source.
-  * @param  __HANDLE__: specifies the UART Handle.
-  * @param  __CLOCKSOURCE__: output variable.
-  * @retval UART clocking source, written in __CLOCKSOURCE__.
-  */
+    /** @brief  Report the UART clock source.
+     * @param  __HANDLE__: specifies the UART Handle.
+     * @param  __CLOCKSOURCE__: output variable.
+     * @retval UART clocking source, written in __CLOCKSOURCE__.
+     */
 
 
 #if defined(STM32F030x6) || defined(STM32F031x6) || defined(STM32F038xx)
@@ -611,19 +610,19 @@ typedef struct
       (__CLOCKSOURCE__) = UART_CLOCKSOURCE_UNDEFINED;         \
     }                                                         \
   } while(0)
-  
-#endif /* defined(STM32F030x6) || defined(STM32F031x6) || defined(STM32F038xx) */
-  
 
-/** @brief  Compute the UART mask to apply to retrieve the received data
-  *         according to the word length and to the parity bits activation.
-  * @note   If PCE = 1, the parity bit is not included in the data extracted
-  *         by the reception API().
-  *         This masking operation is not carried out in the case of
-  *         DMA transfers.
-  * @param  __HANDLE__: specifies the UART Handle.
-  * @retval None, the mask to apply to UART RDR register is stored in (__HANDLE__)->Mask field.
-  */
+#endif /* defined(STM32F030x6) || defined(STM32F031x6) || defined(STM32F038xx) */
+
+
+    /** @brief  Compute the UART mask to apply to retrieve the received data
+     *         according to the word length and to the parity bits activation.
+     * @note   If PCE = 1, the parity bit is not included in the data extracted
+     *         by the reception API().
+     *         This masking operation is not carried out in the case of
+     *         DMA transfers.
+     * @param  __HANDLE__: specifies the UART Handle.
+     * @retval None, the mask to apply to UART RDR register is stored in (__HANDLE__)->Mask field.
+     */
 #if defined (STM32F042x6) || defined (STM32F048xx) || defined (STM32F070x6) || \
     defined (STM32F071xB) || defined (STM32F072xB) || defined (STM32F078xx) || defined (STM32F070xB) || \
     defined (STM32F091xC) || defined (STM32F098xx) || defined (STM32F030xC)
@@ -693,11 +692,11 @@ typedef struct
           defined (STM32F071xB) || defined (STM32F072xB) || defined (STM32F078xx) || defined (STM32F070xB) || \
           defined (STM32F091xC) || defined (STM32F098xx) || defined (STM32F030xC)  */
 
-/**
-  * @brief Ensure that UART frame length is valid.
-  * @param __LENGTH__: UART frame length. 
-  * @retval SET (__LENGTH__ is valid) or RESET (__LENGTH__ is invalid)
-  */
+    /**
+     * @brief Ensure that UART frame length is valid.
+     * @param __LENGTH__: UART frame length. 
+     * @retval SET (__LENGTH__ is valid) or RESET (__LENGTH__ is invalid)
+     */
 #if defined (STM32F042x6) || defined (STM32F048xx) || defined (STM32F070x6) || \
     defined (STM32F071xB) || defined (STM32F072xB) || defined (STM32F078xx) || defined (STM32F070xB) || \
     defined (STM32F091xC) || defined (STM32F098xx) || defined (STM32F030xC)
@@ -711,11 +710,11 @@ typedef struct
           defined (STM32F071xB) || defined (STM32F072xB) || defined (STM32F078xx) || defined (STM32F070xB) || \
           defined (STM32F091xC) || defined (STM32F098xx) || defined (STM32F030xC) */
 
-/**
-  * @brief Ensure that UART auto Baud rate detection mode is valid.
-  * @param __MODE__: UART auto Baud rate detection mode. 
-  * @retval SET (__MODE__ is valid) or RESET (__MODE__ is invalid)
-  */
+    /**
+     * @brief Ensure that UART auto Baud rate detection mode is valid.
+     * @param __MODE__: UART auto Baud rate detection mode. 
+     * @retval SET (__MODE__ is valid) or RESET (__MODE__ is invalid)
+     */
 #if defined (STM32F042x6) || defined (STM32F048xx) || defined (STM32F070x6) || \
     defined (STM32F071xB) || defined (STM32F072xB) || defined (STM32F078xx) || defined (STM32F070xB) || \
     defined (STM32F091xC) || defined (STM32F098xx) || defined (STM32F030xC)
@@ -732,28 +731,28 @@ typedef struct
 
 
 #if !defined(STM32F030x6) && !defined(STM32F030x8) && !defined(STM32F070x6)  && !defined(STM32F070xB)  && !defined(STM32F030xC)
-/**
-  * @brief Ensure that UART LIN state is valid.
-  * @param __LIN__: UART LIN state. 
-  * @retval SET (__LIN__ is valid) or RESET (__LIN__ is invalid)
-  */
+    /**
+     * @brief Ensure that UART LIN state is valid.
+     * @param __LIN__: UART LIN state. 
+     * @retval SET (__LIN__ is valid) or RESET (__LIN__ is invalid)
+     */
 #define IS_UART_LIN(__LIN__)        (((__LIN__) == UART_LIN_DISABLE) || \
                                      ((__LIN__) == UART_LIN_ENABLE))
 
-/**
-  * @brief Ensure that UART LIN break detection length is valid.
-  * @param __LENGTH__: UART LIN break detection length. 
-  * @retval SET (__LENGTH__ is valid) or RESET (__LENGTH__ is invalid)
-  */
+    /**
+     * @brief Ensure that UART LIN break detection length is valid.
+     * @param __LENGTH__: UART LIN break detection length. 
+     * @retval SET (__LENGTH__ is valid) or RESET (__LENGTH__ is invalid)
+     */
 #define IS_UART_LIN_BREAK_DETECT_LENGTH(__LENGTH__) (((__LENGTH__) == UART_LINBREAKDETECTLENGTH_10B) || \
                                                      ((__LENGTH__) == UART_LINBREAKDETECTLENGTH_11B))
 #endif /* !defined(STM32F030x6) && !defined(STM32F030x8) && !defined(STM32F070x6)  && !defined(STM32F070xB)  && !defined(STM32F030xC) */  
 
-/**
-  * @brief Ensure that UART request parameter is valid.
-  * @param __PARAM__: UART request parameter. 
-  * @retval SET (__PARAM__ is valid) or RESET (__PARAM__ is invalid)
-  */
+    /**
+     * @brief Ensure that UART request parameter is valid.
+     * @param __PARAM__: UART request parameter. 
+     * @retval SET (__PARAM__ is valid) or RESET (__PARAM__ is invalid)
+     */
 #if !defined(STM32F030x6) && !defined(STM32F030x8) && !defined(STM32F070x6)  && !defined(STM32F070xB)  && !defined(STM32F030xC)
 #define IS_UART_REQUEST_PARAMETER(__PARAM__) (((__PARAM__) == UART_AUTOBAUD_REQUEST)     || \
                                               ((__PARAM__) == UART_SENDBREAK_REQUEST)    || \
@@ -768,90 +767,90 @@ typedef struct
 #endif /* !defined(STM32F030x6) && !defined(STM32F030x8) && !defined(STM32F070x6)  && !defined(STM32F070xB)  && !defined(STM32F030xC) */  
 
 #if !defined(STM32F030x6) && !defined(STM32F030x8) && !defined(STM32F070x6) && !defined(STM32F070xB)  && !defined(STM32F030xC)
-/**
-  * @brief Ensure that UART stop mode state is valid.
-  * @param __STOPMODE__: UART stop mode state. 
-  * @retval SET (__STOPMODE__ is valid) or RESET (__STOPMODE__ is invalid)
-  */
+    /**
+     * @brief Ensure that UART stop mode state is valid.
+     * @param __STOPMODE__: UART stop mode state. 
+     * @retval SET (__STOPMODE__ is valid) or RESET (__STOPMODE__ is invalid)
+     */
 #define IS_UART_ADVFEATURE_STOPMODE(__STOPMODE__) (((__STOPMODE__) == UART_ADVFEATURE_STOPMODE_DISABLE) || \
                                                    ((__STOPMODE__) == UART_ADVFEATURE_STOPMODE_ENABLE))
-  
-/**
-  * @brief Ensure that UART wake-up selection is valid.
-  * @param __WAKE__: UART wake-up selection. 
-  * @retval SET (__WAKE__ is valid) or RESET (__WAKE__ is invalid)
-  */
+
+    /**
+     * @brief Ensure that UART wake-up selection is valid.
+     * @param __WAKE__: UART wake-up selection. 
+     * @retval SET (__WAKE__ is valid) or RESET (__WAKE__ is invalid)
+     */
 #define IS_UART_WAKEUP_SELECTION(__WAKE__) (((__WAKE__) == UART_WAKEUP_ON_ADDRESS) || \
                                             ((__WAKE__) == UART_WAKEUP_ON_STARTBIT) || \
                                             ((__WAKE__) == UART_WAKEUP_ON_READDATA_NONEMPTY))
 #endif /* !defined(STM32F030x6) && !defined(STM32F030x8) && !defined(STM32F070x6) && !defined(STM32F070xB) && !defined(STM32F030xC) */   
-  
-/**
-  * @}
-  */
 
-/* Exported functions --------------------------------------------------------*/
-/** @addtogroup UARTEx_Exported_Functions
-  * @{
-  */
+    /**
+     * @}
+     */
 
-/** @addtogroup UARTEx_Exported_Functions_Group1
-  * @brief    Extended Initialization and Configuration Functions
-  * @{
-  */
-/* Initialization and de-initialization functions  ****************************/
-HAL_StatusTypeDef HAL_RS485Ex_Init(UART_HandleTypeDef *huart, uint32_t UART_DEPolarity, uint32_t UART_DEAssertionTime, uint32_t UART_DEDeassertionTime);
+    /* Exported functions --------------------------------------------------------*/
+    /** @addtogroup UARTEx_Exported_Functions
+     * @{
+     */
+
+    /** @addtogroup UARTEx_Exported_Functions_Group1
+     * @brief    Extended Initialization and Configuration Functions
+     * @{
+     */
+    /* Initialization and de-initialization functions  ****************************/
+    HAL_StatusTypeDef HAL_RS485Ex_Init(UART_HandleTypeDef *huart, uint32_t UART_DEPolarity, uint32_t UART_DEAssertionTime, uint32_t UART_DEDeassertionTime);
 #if !defined(STM32F030x6) && !defined(STM32F030x8)&& !defined(STM32F070xB)&& !defined(STM32F070x6)&& !defined(STM32F030xC)
-HAL_StatusTypeDef HAL_LIN_Init(UART_HandleTypeDef *huart, uint32_t BreakDetectLength);
+    HAL_StatusTypeDef HAL_LIN_Init(UART_HandleTypeDef *huart, uint32_t BreakDetectLength);
 #endif /* !defined(STM32F030x6) && !defined(STM32F030x8)&& !defined(STM32F070xB)&& !defined(STM32F070x6)&& !defined(STM32F030xC) */ 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/** @addtogroup UARTEx_Exported_Functions_Group2
-  * @brief    Extended UART Interrupt handling function
-  * @{
-  */
+    /** @addtogroup UARTEx_Exported_Functions_Group2
+     * @brief    Extended UART Interrupt handling function
+     * @{
+     */
 
-/* IO operation functions  ***************************************************/
+    /* IO operation functions  ***************************************************/
 #if !defined(STM32F030x6) && !defined(STM32F030x8)&& !defined(STM32F070xB)&& !defined(STM32F070x6)&& !defined(STM32F030xC)
-void HAL_UARTEx_WakeupCallback(UART_HandleTypeDef *huart);
+    void HAL_UARTEx_WakeupCallback(UART_HandleTypeDef *huart);
 #endif /* !defined(STM32F030x6) && !defined(STM32F030x8)&& !defined(STM32F070xB)&& !defined(STM32F070x6)&& !defined(STM32F030xC) */ 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/** @addtogroup UARTEx_Exported_Functions_Group3
-  * @brief    Extended Peripheral Control functions
-  * @{
-  */
+    /** @addtogroup UARTEx_Exported_Functions_Group3
+     * @brief    Extended Peripheral Control functions
+     * @{
+     */
 
-/* Peripheral Control functions  **********************************************/
-HAL_StatusTypeDef HAL_MultiProcessorEx_AddressLength_Set(UART_HandleTypeDef *huart, uint32_t AddressLength);
+    /* Peripheral Control functions  **********************************************/
+    HAL_StatusTypeDef HAL_MultiProcessorEx_AddressLength_Set(UART_HandleTypeDef *huart, uint32_t AddressLength);
 #if !defined(STM32F030x6) && !defined(STM32F030x8)&& !defined(STM32F070xB)&& !defined(STM32F070x6) && !defined(STM32F030xC)
-HAL_StatusTypeDef HAL_UARTEx_StopModeWakeUpSourceConfig(UART_HandleTypeDef *huart, UART_WakeUpTypeDef WakeUpSelection);
-HAL_StatusTypeDef HAL_UARTEx_EnableStopMode(UART_HandleTypeDef *huart);
-HAL_StatusTypeDef HAL_UARTEx_DisableStopMode(UART_HandleTypeDef *huart);
-HAL_StatusTypeDef HAL_LIN_SendBreak(UART_HandleTypeDef *huart);
+    HAL_StatusTypeDef HAL_UARTEx_StopModeWakeUpSourceConfig(UART_HandleTypeDef *huart, UART_WakeUpTypeDef WakeUpSelection);
+    HAL_StatusTypeDef HAL_UARTEx_EnableStopMode(UART_HandleTypeDef *huart);
+    HAL_StatusTypeDef HAL_UARTEx_DisableStopMode(UART_HandleTypeDef *huart);
+    HAL_StatusTypeDef HAL_LIN_SendBreak(UART_HandleTypeDef *huart);
 #endif /* !defined(STM32F030x6) && !defined(STM32F030x8)&& !defined(STM32F070xB)&& !defined(STM32F070x6)&& !defined(STM32F030xC) */ 
-/**
-  * @}
-  */
-/* Peripheral State functions  ************************************************/
+    /**
+     * @}
+     */
+    /* Peripheral State functions  ************************************************/
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/* Private functions ---------------------------------------------------------*/
+    /* Private functions ---------------------------------------------------------*/
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
 #ifdef __cplusplus
 }

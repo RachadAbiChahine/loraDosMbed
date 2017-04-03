@@ -1,76 +1,76 @@
 /*******************************************************************************
-* DISCLAIMER
-* This software is supplied by Renesas Electronics Corporation and is only
-* intended for use with Renesas products. No other uses are authorized. This
-* software is owned by Renesas Electronics Corporation and is protected under
-* all applicable laws, including copyright laws.
-* THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIES REGARDING
-* THIS SOFTWARE, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING BUT NOT
-* LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
-* AND NON-INFRINGEMENT. ALL SUCH WARRANTIES ARE EXPRESSLY DISCLAIMED.
-* TO THE MAXIMUM EXTENT PERMITTED NOT PROHIBITED BY LAW, NEITHER RENESAS
-* ELECTRONICS CORPORATION NOR ANY OF ITS AFFILIATED COMPANIES SHALL BE LIABLE
-* FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES FOR
-* ANY REASON RELATED TO THIS SOFTWARE, EVEN IF RENESAS OR ITS AFFILIATES HAVE
-* BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
-* Renesas reserves the right, without notice, to make changes to this software
-* and to discontinue the availability of this software. By using this software,
-* you agree to the additional terms and conditions found by accessing the
-* following link:
-* http://www.renesas.com/disclaimer*
-* Copyright (C) 2013-2014 Renesas Electronics Corporation. All rights reserved.
-*******************************************************************************/
+ * DISCLAIMER
+ * This software is supplied by Renesas Electronics Corporation and is only
+ * intended for use with Renesas products. No other uses are authorized. This
+ * software is owned by Renesas Electronics Corporation and is protected under
+ * all applicable laws, including copyright laws.
+ * THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIES REGARDING
+ * THIS SOFTWARE, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING BUT NOT
+ * LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
+ * AND NON-INFRINGEMENT. ALL SUCH WARRANTIES ARE EXPRESSLY DISCLAIMED.
+ * TO THE MAXIMUM EXTENT PERMITTED NOT PROHIBITED BY LAW, NEITHER RENESAS
+ * ELECTRONICS CORPORATION NOR ANY OF ITS AFFILIATED COMPANIES SHALL BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES FOR
+ * ANY REASON RELATED TO THIS SOFTWARE, EVEN IF RENESAS OR ITS AFFILIATES HAVE
+ * BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+ * Renesas reserves the right, without notice, to make changes to this software
+ * and to discontinue the availability of this software. By using this software,
+ * you agree to the additional terms and conditions found by accessing the
+ * following link:
+ * http://www.renesas.com/disclaimer*
+ * Copyright (C) 2013-2014 Renesas Electronics Corporation. All rights reserved.
+ *******************************************************************************/
 /*******************************************************************************
-* File Name : lin_iodefine.h
-* $Rev: $
-* $Date::                           $
-* Description : Definition of I/O Register (V1.00a)
-******************************************************************************/
+ * File Name : lin_iodefine.h
+ * $Rev: $
+ * $Date::                           $
+ * Description : Definition of I/O Register (V1.00a)
+ ******************************************************************************/
 #ifndef LIN_IODEFINE_H
 #define LIN_IODEFINE_H
 /* ->MISRA 18.4 : Pack unpack union */ /* ->SEC M1.6.2 */
+
 /* ->SEC M1.10.1 : Not magic number */
 
-struct st_lin
-{                                                          /* LIN              */
-    volatile uint8_t   dummy1[1];                              /*                  */
-    volatile uint8_t   RLN3nLWBR;                              /*  RLN3nLWBR       */
-    union iodefine_reg16_8_t  RLN3nLBRP01;                     /*  RLN3nLBRP01 */
-    
-    volatile uint8_t   RLN3nLSTC;                              /*  RLN3nLSTC       */
-    volatile uint8_t   dummy2[3];                              /*                  */
-    volatile uint8_t   RLN3nLMD;                               /*  RLN3nLMD        */
-    volatile uint8_t   RLN3nLBFC;                              /*  RLN3nLBFC       */
-    volatile uint8_t   RLN3nLSC;                               /*  RLN3nLSC        */
-    volatile uint8_t   RLN3nLWUP;                              /*  RLN3nLWUP       */
-    volatile uint8_t   RLN3nLIE;                               /*  RLN3nLIE        */
-    volatile uint8_t   RLN3nLEDE;                              /*  RLN3nLEDE       */
-    volatile uint8_t   RLN3nLCUC;                              /*  RLN3nLCUC       */
-    volatile uint8_t   dummy3[1];                              /*                  */
-    volatile uint8_t   RLN3nLTRC;                              /*  RLN3nLTRC       */
-    volatile uint8_t   RLN3nLMST;                              /*  RLN3nLMST       */
-    volatile uint8_t   RLN3nLST;                               /*  RLN3nLST        */
-    volatile uint8_t   RLN3nLEST;                              /*  RLN3nLEST       */
-    volatile uint8_t   RLN3nLDFC;                              /*  RLN3nLDFC       */
-    volatile uint8_t   RLN3nLIDB;                              /*  RLN3nLIDB       */
-    volatile uint8_t   RLN3nLCBR;                              /*  RLN3nLCBR       */
-    volatile uint8_t   RLN3nLUDB0;                             /*  RLN3nLUDB0      */
+struct st_lin { /* LIN              */
+    volatile uint8_t dummy1[1]; /*                  */
+    volatile uint8_t RLN3nLWBR; /*  RLN3nLWBR       */
+    union iodefine_reg16_8_t RLN3nLBRP01; /*  RLN3nLBRP01 */
+
+    volatile uint8_t RLN3nLSTC; /*  RLN3nLSTC       */
+    volatile uint8_t dummy2[3]; /*                  */
+    volatile uint8_t RLN3nLMD; /*  RLN3nLMD        */
+    volatile uint8_t RLN3nLBFC; /*  RLN3nLBFC       */
+    volatile uint8_t RLN3nLSC; /*  RLN3nLSC        */
+    volatile uint8_t RLN3nLWUP; /*  RLN3nLWUP       */
+    volatile uint8_t RLN3nLIE; /*  RLN3nLIE        */
+    volatile uint8_t RLN3nLEDE; /*  RLN3nLEDE       */
+    volatile uint8_t RLN3nLCUC; /*  RLN3nLCUC       */
+    volatile uint8_t dummy3[1]; /*                  */
+    volatile uint8_t RLN3nLTRC; /*  RLN3nLTRC       */
+    volatile uint8_t RLN3nLMST; /*  RLN3nLMST       */
+    volatile uint8_t RLN3nLST; /*  RLN3nLST        */
+    volatile uint8_t RLN3nLEST; /*  RLN3nLEST       */
+    volatile uint8_t RLN3nLDFC; /*  RLN3nLDFC       */
+    volatile uint8_t RLN3nLIDB; /*  RLN3nLIDB       */
+    volatile uint8_t RLN3nLCBR; /*  RLN3nLCBR       */
+    volatile uint8_t RLN3nLUDB0; /*  RLN3nLUDB0      */
 #define LIN_LDBn_COUNT 8
-    volatile uint8_t   RLN3nLDBR1;                             /*  RLN3nLDBR1      */
-    volatile uint8_t   RLN3nLDBR2;                             /*  RLN3nLDBR2      */
-    volatile uint8_t   RLN3nLDBR3;                             /*  RLN3nLDBR3      */
-    volatile uint8_t   RLN3nLDBR4;                             /*  RLN3nLDBR4      */
-    volatile uint8_t   RLN3nLDBR5;                             /*  RLN3nLDBR5      */
-    volatile uint8_t   RLN3nLDBR6;                             /*  RLN3nLDBR6      */
-    volatile uint8_t   RLN3nLDBR7;                             /*  RLN3nLDBR7      */
-    volatile uint8_t   RLN3nLDBR8;                             /*  RLN3nLDBR8      */
-    volatile uint8_t   RLN3nLUOER;                             /*  RLN3nLUOER      */
-    volatile uint8_t   RLN3nLUOR1;                             /*  RLN3nLUOR1      */
-    volatile uint8_t   dummy4[2];                              /*                  */
-    union iodefine_reg16_8_t  RLN3nLUTDR;                      /*  RLN3nLUTDR  */
-    union iodefine_reg16_8_t  RLN3nLURDR;                      /*  RLN3nLURDR  */
-    union iodefine_reg16_8_t  RLN3nLUWTDR;                     /*  RLN3nLUWTDR */
-    
+    volatile uint8_t RLN3nLDBR1; /*  RLN3nLDBR1      */
+    volatile uint8_t RLN3nLDBR2; /*  RLN3nLDBR2      */
+    volatile uint8_t RLN3nLDBR3; /*  RLN3nLDBR3      */
+    volatile uint8_t RLN3nLDBR4; /*  RLN3nLDBR4      */
+    volatile uint8_t RLN3nLDBR5; /*  RLN3nLDBR5      */
+    volatile uint8_t RLN3nLDBR6; /*  RLN3nLDBR6      */
+    volatile uint8_t RLN3nLDBR7; /*  RLN3nLDBR7      */
+    volatile uint8_t RLN3nLDBR8; /*  RLN3nLDBR8      */
+    volatile uint8_t RLN3nLUOER; /*  RLN3nLUOER      */
+    volatile uint8_t RLN3nLUOR1; /*  RLN3nLUOR1      */
+    volatile uint8_t dummy4[2]; /*                  */
+    union iodefine_reg16_8_t RLN3nLUTDR; /*  RLN3nLUTDR  */
+    union iodefine_reg16_8_t RLN3nLURDR; /*  RLN3nLURDR  */
+    union iodefine_reg16_8_t RLN3nLUWTDR; /*  RLN3nLUWTDR */
+
 };
 
 

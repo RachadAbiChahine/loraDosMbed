@@ -1,81 +1,81 @@
 /**
-  ******************************************************************************
-  * @file    stm32l0xx_hal_tim_ex.h
-  * @author  MCD Application Team
-  * @version V1.2.0
-  * @date    06-February-2015
-  * @brief   Header file of TIM HAL module.
-  ******************************************************************************
-  * @attention
-  *
-  * <h2><center>&copy; COPYRIGHT(c) 2015 STMicroelectronics</center></h2>
-  *
-  * Redistribution and use in source and binary forms, with or without modification,
-  * are permitted provided that the following conditions are met:
-  *   1. Redistributions of source code must retain the above copyright notice,
-  *      this list of conditions and the following disclaimer.
-  *   2. Redistributions in binary form must reproduce the above copyright notice,
-  *      this list of conditions and the following disclaimer in the documentation
-  *      and/or other materials provided with the distribution.
-  *   3. Neither the name of STMicroelectronics nor the names of its contributors
-  *      may be used to endorse or promote products derived from this software
-  *      without specific prior written permission.
-  *
-  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  *
-  ******************************************************************************
-  */ 
+ ******************************************************************************
+ * @file    stm32l0xx_hal_tim_ex.h
+ * @author  MCD Application Team
+ * @version V1.2.0
+ * @date    06-February-2015
+ * @brief   Header file of TIM HAL module.
+ ******************************************************************************
+ * @attention
+ *
+ * <h2><center>&copy; COPYRIGHT(c) 2015 STMicroelectronics</center></h2>
+ *
+ * Redistribution and use in source and binary forms, with or without modification,
+ * are permitted provided that the following conditions are met:
+ *   1. Redistributions of source code must retain the above copyright notice,
+ *      this list of conditions and the following disclaimer.
+ *   2. Redistributions in binary form must reproduce the above copyright notice,
+ *      this list of conditions and the following disclaimer in the documentation
+ *      and/or other materials provided with the distribution.
+ *   3. Neither the name of STMicroelectronics nor the names of its contributors
+ *      may be used to endorse or promote products derived from this software
+ *      without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ ******************************************************************************
+ */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __STM32L0xx_HAL_TIM_EX_H
 #define __STM32L0xx_HAL_TIM_EX_H
 
 #ifdef __cplusplus
- extern "C" {
+extern "C" {
 #endif
 
-/* Includes ------------------------------------------------------------------*/
+    /* Includes ------------------------------------------------------------------*/
 #include "stm32l0xx_hal_def.h"
 
-/** @addtogroup STM32L0xx_HAL_Driver
-  * @{
-  */
+    /** @addtogroup STM32L0xx_HAL_Driver
+     * @{
+     */
 
-/** @defgroup TIMEx TIMEx (Timer extended)
-  * @{
-  */ 
+    /** @defgroup TIMEx TIMEx (Timer extended)
+     * @{
+     */
 
-/* Exported types ------------------------------------------------------------*/
+    /* Exported types ------------------------------------------------------------*/
 
-/** 
-  * @brief  TIM Master configuration Structure definition  
-  */ 
-typedef struct {
-  uint32_t  MasterOutputTrigger;   /*!< Trigger output (TRGO) selection 
+    /** 
+     * @brief  TIM Master configuration Structure definition  
+     */
+    typedef struct {
+        uint32_t MasterOutputTrigger; /*!< Trigger output (TRGO) selection 
                                       This parameter can be a value of @ref TIM_Master_Mode_Selection */
-  uint32_t  MasterSlaveMode;       /*!< Master/slave mode selection 
+        uint32_t MasterSlaveMode; /*!< Master/slave mode selection 
                                       This parameter can be a value of @ref TIM_Master_Slave_Mode */
-}TIM_MasterConfigTypeDef;
+    } TIM_MasterConfigTypeDef;
 
 
 
-/* Exported constants --------------------------------------------------------*/
-/** @defgroup TIMEx_Exported_Constants TIMEx Exported Constants
-  * @{
-  */
+    /* Exported constants --------------------------------------------------------*/
+    /** @defgroup TIMEx_Exported_Constants TIMEx Exported Constants
+     * @{
+     */
 
-/** @defgroup TIMEx_Trigger_Selection Trigger selection
-  * @{
-  */  
+    /** @defgroup TIMEx_Trigger_Selection Trigger selection
+     * @{
+     */
 #define  TIM_TRGO_RESET            ((uint32_t)0x0000)
 #define  TIM_TRGO_ENABLE           (TIM_CR2_MMS_0)
 #define  TIM_TRGO_UPDATE           (TIM_CR2_MMS_1)
@@ -93,14 +93,14 @@ typedef struct {
                                         ((__SOURCE__) == TIM_TRGO_OC2REF) || \
                                         ((__SOURCE__) == TIM_TRGO_OC3REF) || \
                                         ((__SOURCE__) == TIM_TRGO_OC4REF))
-   
-/**
-  * @}
-  */ 
 
-/** @defgroup TIMEx_Remap Remaping
-  * @{
-  */
+    /**
+     * @}
+     */
+
+    /** @defgroup TIMEx_Remap Remaping
+     * @{
+     */
 
 #define TIM2_ETR_GPIO                     ((uint32_t)0x0)
 #define TIM2_ETR_HSI48                    TIM2_OR_ETR_RMP_2
@@ -195,49 +195,49 @@ typedef struct {
 #endif /*defined (STM32L07Xxx) or defined (STM32L08Xxx) */
 
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
 
-/* Exported macro ------------------------------------------------------------*/
-/* Exported functions --------------------------------------------------------*/
-/* Control functions  ***********************************************************/
+    /* Exported macro ------------------------------------------------------------*/
+    /* Exported functions --------------------------------------------------------*/
+    /* Control functions  ***********************************************************/
 
-/** @defgroup TIMEx_Exported_Functions TIMEx Exported Functions
- *  @{
- */
+    /** @defgroup TIMEx_Exported_Functions TIMEx Exported Functions
+     *  @{
+     */
 
-/** @defgroup TIMEx_Exported_Functions_Group1 TIMEx Peripheral Control functions
- *  @{
- */
+    /** @defgroup TIMEx_Exported_Functions_Group1 TIMEx Peripheral Control functions
+     *  @{
+     */
 
-HAL_StatusTypeDef HAL_TIMEx_RemapConfig(TIM_HandleTypeDef *htim, uint32_t Remap);
-HAL_StatusTypeDef HAL_TIMEx_MasterConfigSynchronization(TIM_HandleTypeDef *htim, TIM_MasterConfigTypeDef * sMasterConfig);
+    HAL_StatusTypeDef HAL_TIMEx_RemapConfig(TIM_HandleTypeDef *htim, uint32_t Remap);
+    HAL_StatusTypeDef HAL_TIMEx_MasterConfigSynchronization(TIM_HandleTypeDef *htim, TIM_MasterConfigTypeDef * sMasterConfig);
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/**
-  * @}
-  */ 
+    /**
+     * @}
+     */
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 #ifdef __cplusplus
 }
 #endif

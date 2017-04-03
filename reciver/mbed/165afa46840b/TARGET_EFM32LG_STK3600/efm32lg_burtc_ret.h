@@ -32,8 +32,8 @@
 /**************************************************************************//**
  * @brief BURTC_RET EFM32LG BURTC RET
  *****************************************************************************/
-typedef struct
-{
-  __IO uint32_t REG; /**< Retention Register  */
+
+typedef struct {
+    __IO uint32_t REG; /**< Retention Register  */
 } BURTC_RET_TypeDef;
 

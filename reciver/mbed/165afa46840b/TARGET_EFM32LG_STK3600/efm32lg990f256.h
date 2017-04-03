@@ -38,73 +38,72 @@
 extern "C" {
 #endif
 
-/**************************************************************************//**
+    /**************************************************************************//**
  * @addtogroup Parts
  * @{
  *****************************************************************************/
 
-/**************************************************************************//**
+    /**************************************************************************//**
  * @defgroup EFM32LG990F256 EFM32LG990F256
  * @{
  *****************************************************************************/
 
-/** Interrupt Number Definition */
-typedef enum IRQn
-{
-/******  Cortex-M3 Processor Exceptions Numbers *******************************************/
-  NonMaskableInt_IRQn   = -14,              /*!< 2 Non Maskable Interrupt                 */
-  HardFault_IRQn        = -13,              /*!< 3 Cortex-M3 Hard Fault Interrupt         */
-  MemoryManagement_IRQn = -12,              /*!< 4 Cortex-M3 Memory Management Interrupt  */
-  BusFault_IRQn         = -11,              /*!< 5 Cortex-M3 Bus Fault Interrupt          */
-  UsageFault_IRQn       = -10,              /*!< 6 Cortex-M3 Usage Fault Interrupt        */
-  SVCall_IRQn           = -5,               /*!< 11 Cortex-M3 SV Call Interrupt           */
-  DebugMonitor_IRQn     = -4,               /*!< 12 Cortex-M3 Debug Monitor Interrupt     */
-  PendSV_IRQn           = -2,               /*!< 14 Cortex-M3 Pend SV Interrupt           */
-  SysTick_IRQn          = -1,               /*!< 15 Cortex-M3 System Tick Interrupt       */
+    /** Interrupt Number Definition */
+    typedef enum IRQn {
+        /******  Cortex-M3 Processor Exceptions Numbers *******************************************/
+        NonMaskableInt_IRQn = -14, /*!< 2 Non Maskable Interrupt                 */
+        HardFault_IRQn = -13, /*!< 3 Cortex-M3 Hard Fault Interrupt         */
+        MemoryManagement_IRQn = -12, /*!< 4 Cortex-M3 Memory Management Interrupt  */
+        BusFault_IRQn = -11, /*!< 5 Cortex-M3 Bus Fault Interrupt          */
+        UsageFault_IRQn = -10, /*!< 6 Cortex-M3 Usage Fault Interrupt        */
+        SVCall_IRQn = -5, /*!< 11 Cortex-M3 SV Call Interrupt           */
+        DebugMonitor_IRQn = -4, /*!< 12 Cortex-M3 Debug Monitor Interrupt     */
+        PendSV_IRQn = -2, /*!< 14 Cortex-M3 Pend SV Interrupt           */
+        SysTick_IRQn = -1, /*!< 15 Cortex-M3 System Tick Interrupt       */
 
-/******  EFM32LG Peripheral Interrupt Numbers *********************************************/
-  DMA_IRQn              = 0,  /*!< 16+0 EFM32 DMA Interrupt */
-  GPIO_EVEN_IRQn        = 1,  /*!< 16+1 EFM32 GPIO_EVEN Interrupt */
-  TIMER0_IRQn           = 2,  /*!< 16+2 EFM32 TIMER0 Interrupt */
-  USART0_RX_IRQn        = 3,  /*!< 16+3 EFM32 USART0_RX Interrupt */
-  USART0_TX_IRQn        = 4,  /*!< 16+4 EFM32 USART0_TX Interrupt */
-  USB_IRQn              = 5,  /*!< 16+5 EFM32 USB Interrupt */
-  ACMP0_IRQn            = 6,  /*!< 16+6 EFM32 ACMP0 Interrupt */
-  ADC0_IRQn             = 7,  /*!< 16+7 EFM32 ADC0 Interrupt */
-  DAC0_IRQn             = 8,  /*!< 16+8 EFM32 DAC0 Interrupt */
-  I2C0_IRQn             = 9,  /*!< 16+9 EFM32 I2C0 Interrupt */
-  I2C1_IRQn             = 10, /*!< 16+10 EFM32 I2C1 Interrupt */
-  GPIO_ODD_IRQn         = 11, /*!< 16+11 EFM32 GPIO_ODD Interrupt */
-  TIMER1_IRQn           = 12, /*!< 16+12 EFM32 TIMER1 Interrupt */
-  TIMER2_IRQn           = 13, /*!< 16+13 EFM32 TIMER2 Interrupt */
-  TIMER3_IRQn           = 14, /*!< 16+14 EFM32 TIMER3 Interrupt */
-  USART1_RX_IRQn        = 15, /*!< 16+15 EFM32 USART1_RX Interrupt */
-  USART1_TX_IRQn        = 16, /*!< 16+16 EFM32 USART1_TX Interrupt */
-  LESENSE_IRQn          = 17, /*!< 16+17 EFM32 LESENSE Interrupt */
-  USART2_RX_IRQn        = 18, /*!< 16+18 EFM32 USART2_RX Interrupt */
-  USART2_TX_IRQn        = 19, /*!< 16+19 EFM32 USART2_TX Interrupt */
-  UART0_RX_IRQn         = 20, /*!< 16+20 EFM32 UART0_RX Interrupt */
-  UART0_TX_IRQn         = 21, /*!< 16+21 EFM32 UART0_TX Interrupt */
-  UART1_RX_IRQn         = 22, /*!< 16+22 EFM32 UART1_RX Interrupt */
-  UART1_TX_IRQn         = 23, /*!< 16+23 EFM32 UART1_TX Interrupt */
-  LEUART0_IRQn          = 24, /*!< 16+24 EFM32 LEUART0 Interrupt */
-  LEUART1_IRQn          = 25, /*!< 16+25 EFM32 LEUART1 Interrupt */
-  LETIMER0_IRQn         = 26, /*!< 16+26 EFM32 LETIMER0 Interrupt */
-  PCNT0_IRQn            = 27, /*!< 16+27 EFM32 PCNT0 Interrupt */
-  PCNT1_IRQn            = 28, /*!< 16+28 EFM32 PCNT1 Interrupt */
-  PCNT2_IRQn            = 29, /*!< 16+29 EFM32 PCNT2 Interrupt */
-  RTC_IRQn              = 30, /*!< 16+30 EFM32 RTC Interrupt */
-  BURTC_IRQn            = 31, /*!< 16+31 EFM32 BURTC Interrupt */
-  CMU_IRQn              = 32, /*!< 16+32 EFM32 CMU Interrupt */
-  VCMP_IRQn             = 33, /*!< 16+33 EFM32 VCMP Interrupt */
-  LCD_IRQn              = 34, /*!< 16+34 EFM32 LCD Interrupt */
-  MSC_IRQn              = 35, /*!< 16+35 EFM32 MSC Interrupt */
-  AES_IRQn              = 36, /*!< 16+36 EFM32 AES Interrupt */
-  EBI_IRQn              = 37, /*!< 16+37 EFM32 EBI Interrupt */
-  EMU_IRQn              = 38, /*!< 16+38 EFM32 EMU Interrupt */
-} IRQn_Type;
+        /******  EFM32LG Peripheral Interrupt Numbers *********************************************/
+        DMA_IRQn = 0, /*!< 16+0 EFM32 DMA Interrupt */
+        GPIO_EVEN_IRQn = 1, /*!< 16+1 EFM32 GPIO_EVEN Interrupt */
+        TIMER0_IRQn = 2, /*!< 16+2 EFM32 TIMER0 Interrupt */
+        USART0_RX_IRQn = 3, /*!< 16+3 EFM32 USART0_RX Interrupt */
+        USART0_TX_IRQn = 4, /*!< 16+4 EFM32 USART0_TX Interrupt */
+        USB_IRQn = 5, /*!< 16+5 EFM32 USB Interrupt */
+        ACMP0_IRQn = 6, /*!< 16+6 EFM32 ACMP0 Interrupt */
+        ADC0_IRQn = 7, /*!< 16+7 EFM32 ADC0 Interrupt */
+        DAC0_IRQn = 8, /*!< 16+8 EFM32 DAC0 Interrupt */
+        I2C0_IRQn = 9, /*!< 16+9 EFM32 I2C0 Interrupt */
+        I2C1_IRQn = 10, /*!< 16+10 EFM32 I2C1 Interrupt */
+        GPIO_ODD_IRQn = 11, /*!< 16+11 EFM32 GPIO_ODD Interrupt */
+        TIMER1_IRQn = 12, /*!< 16+12 EFM32 TIMER1 Interrupt */
+        TIMER2_IRQn = 13, /*!< 16+13 EFM32 TIMER2 Interrupt */
+        TIMER3_IRQn = 14, /*!< 16+14 EFM32 TIMER3 Interrupt */
+        USART1_RX_IRQn = 15, /*!< 16+15 EFM32 USART1_RX Interrupt */
+        USART1_TX_IRQn = 16, /*!< 16+16 EFM32 USART1_TX Interrupt */
+        LESENSE_IRQn = 17, /*!< 16+17 EFM32 LESENSE Interrupt */
+        USART2_RX_IRQn = 18, /*!< 16+18 EFM32 USART2_RX Interrupt */
+        USART2_TX_IRQn = 19, /*!< 16+19 EFM32 USART2_TX Interrupt */
+        UART0_RX_IRQn = 20, /*!< 16+20 EFM32 UART0_RX Interrupt */
+        UART0_TX_IRQn = 21, /*!< 16+21 EFM32 UART0_TX Interrupt */
+        UART1_RX_IRQn = 22, /*!< 16+22 EFM32 UART1_RX Interrupt */
+        UART1_TX_IRQn = 23, /*!< 16+23 EFM32 UART1_TX Interrupt */
+        LEUART0_IRQn = 24, /*!< 16+24 EFM32 LEUART0 Interrupt */
+        LEUART1_IRQn = 25, /*!< 16+25 EFM32 LEUART1 Interrupt */
+        LETIMER0_IRQn = 26, /*!< 16+26 EFM32 LETIMER0 Interrupt */
+        PCNT0_IRQn = 27, /*!< 16+27 EFM32 PCNT0 Interrupt */
+        PCNT1_IRQn = 28, /*!< 16+28 EFM32 PCNT1 Interrupt */
+        PCNT2_IRQn = 29, /*!< 16+29 EFM32 PCNT2 Interrupt */
+        RTC_IRQn = 30, /*!< 16+30 EFM32 RTC Interrupt */
+        BURTC_IRQn = 31, /*!< 16+31 EFM32 BURTC Interrupt */
+        CMU_IRQn = 32, /*!< 16+32 EFM32 CMU Interrupt */
+        VCMP_IRQn = 33, /*!< 16+33 EFM32 VCMP Interrupt */
+        LCD_IRQn = 34, /*!< 16+34 EFM32 LCD Interrupt */
+        MSC_IRQn = 35, /*!< 16+35 EFM32 MSC Interrupt */
+        AES_IRQn = 36, /*!< 16+36 EFM32 AES Interrupt */
+        EBI_IRQn = 37, /*!< 16+37 EFM32 EBI Interrupt */
+        EMU_IRQn = 38, /*!< 16+38 EFM32 EMU Interrupt */
+    } IRQn_Type;
 
-/**************************************************************************//**
+    /**************************************************************************//**
  * @defgroup EFM32LG990F256_Core EFM32LG990F256 Core
  * @{
  * @brief Processor and Core Peripheral Section
@@ -113,26 +112,26 @@ typedef enum IRQn
 #define __NVIC_PRIO_BITS          3 /**< NVIC interrupt priority bits */
 #define __Vendor_SysTickConfig    0 /**< Is 1 if different SysTick counter is used */
 
-/** @} End of group EFM32LG990F256_Core */
+    /** @} End of group EFM32LG990F256_Core */
 
-/**************************************************************************//**
+    /**************************************************************************//**
 * @defgroup EFM32LG990F256_Part EFM32LG990F256 Part
 * @{
 ******************************************************************************/
 
-/** Part family */
+    /** Part family */
 #define _EFM32_GIANT_FAMILY    1 /**< Giant/Leopard Gecko EFM32LG/GG MCU Family */
 #define _EFM_DEVICE              /**< Silicon Labs EFM-type microcontroller */
 
-/* If part number is not defined as compiler option, define it */
+    /* If part number is not defined as compiler option, define it */
 #if !defined(EFM32LG990F256)
 #define EFM32LG990F256    1 /**< Giant/Leopard Gecko Part  */
 #endif
 
-/** Configure part number */
+    /** Configure part number */
 #define PART_NUMBER          "EFM32LG990F256" /**< Part Number */
 
-/** Memory Base addresses and limits */
+    /** Memory Base addresses and limits */
 #define FLASH_MEM_BASE       ((uint32_t) 0x0UL)        /**< FLASH base address  */
 #define FLASH_MEM_SIZE       ((uint32_t) 0x10000000UL) /**< FLASH available address space  */
 #define FLASH_MEM_END        ((uint32_t) 0xFFFFFFFUL)  /**< FLASH end address  */
@@ -166,11 +165,11 @@ typedef enum IRQn
 #define EBI_MEM_END          ((uint32_t) 0xBFFFFFFFUL) /**< EBI end address  */
 #define EBI_MEM_BITS         ((uint32_t) 0x30UL)       /**< EBI used bits  */
 
-/** Bit banding area */
+    /** Bit banding area */
 #define BITBAND_PER_BASE     ((uint32_t) 0x42000000UL) /**< Peripheral Address Space bit-band area */
 #define BITBAND_RAM_BASE     ((uint32_t) 0x22000000UL) /**< SRAM Address Space bit-band area */
 
-/** Flash and SRAM limits for EFM32LG990F256 */
+    /** Flash and SRAM limits for EFM32LG990F256 */
 #define FLASH_BASE           (0x00000000UL) /**< Flash Base Address */
 #define FLASH_SIZE           (0x00040000UL) /**< Available Flash Memory */
 #define FLASH_PAGE_SIZE      2048           /**< Flash Memory page size */
@@ -180,13 +179,13 @@ typedef enum IRQn
 #define PRS_CHAN_COUNT       12             /**< Number of PRS channels */
 #define DMA_CHAN_COUNT       12             /**< Number of DMA channels */
 
-/** AF channels connect the different on-chip peripherals with the af-mux */
+    /** AF channels connect the different on-chip peripherals with the af-mux */
 #define AFCHAN_MAX           163
 #define AFCHANLOC_MAX        7
-/** Analog AF channels */
+    /** Analog AF channels */
 #define AFACHAN_MAX          53
 
-/* Part number capabilities */
+    /* Part number capabilities */
 
 #define USART_PRESENT         /**< USART is available in this part */
 #define USART_COUNT         3 /**< 3 USARTs available  */
@@ -264,9 +263,9 @@ typedef enum IRQn
 #include "core_cm3.h"       /* Cortex-M3 processor and core peripherals */
 #include "system_efm32lg.h" /* System Header */
 
-/** @} End of group EFM32LG990F256_Part */
+    /** @} End of group EFM32LG990F256_Part */
 
-/**************************************************************************//**
+    /**************************************************************************//**
  * @defgroup EFM32LG990F256_Peripheral_TypeDefs EFM32LG990F256 Peripheral TypeDefs
  * @{
  * @brief Device Specific Peripheral Register Structures
@@ -283,47 +282,47 @@ typedef enum IRQn
 #include "efm32lg_emu.h"
 #include "efm32lg_rmu.h"
 
-/**************************************************************************//**
+    /**************************************************************************//**
  * @defgroup EFM32LG990F256_CMU EFM32LG990F256 CMU
  * @{
  * @brief EFM32LG990F256_CMU Register Declaration
  *****************************************************************************/
-typedef struct
-{
-  __IO uint32_t CTRL;         /**< CMU Control Register  */
-  __IO uint32_t HFCORECLKDIV; /**< High Frequency Core Clock Division Register  */
-  __IO uint32_t HFPERCLKDIV;  /**< High Frequency Peripheral Clock Division Register  */
-  __IO uint32_t HFRCOCTRL;    /**< HFRCO Control Register  */
-  __IO uint32_t LFRCOCTRL;    /**< LFRCO Control Register  */
-  __IO uint32_t AUXHFRCOCTRL; /**< AUXHFRCO Control Register  */
-  __IO uint32_t CALCTRL;      /**< Calibration Control Register  */
-  __IO uint32_t CALCNT;       /**< Calibration Counter Register  */
-  __IO uint32_t OSCENCMD;     /**< Oscillator Enable/Disable Command Register  */
-  __IO uint32_t CMD;          /**< Command Register  */
-  __IO uint32_t LFCLKSEL;     /**< Low Frequency Clock Select Register  */
-  __I uint32_t  STATUS;       /**< Status Register  */
-  __I uint32_t  IF;           /**< Interrupt Flag Register  */
-  __IO uint32_t IFS;          /**< Interrupt Flag Set Register  */
-  __IO uint32_t IFC;          /**< Interrupt Flag Clear Register  */
-  __IO uint32_t IEN;          /**< Interrupt Enable Register  */
-  __IO uint32_t HFCORECLKEN0; /**< High Frequency Core Clock Enable Register 0  */
-  __IO uint32_t HFPERCLKEN0;  /**< High Frequency Peripheral Clock Enable Register 0  */
-  uint32_t      RESERVED0[2]; /**< Reserved for future use **/
-  __I uint32_t  SYNCBUSY;     /**< Synchronization Busy Register  */
-  __IO uint32_t FREEZE;       /**< Freeze Register  */
-  __IO uint32_t LFACLKEN0;    /**< Low Frequency A Clock Enable Register 0  (Async Reg)  */
-  uint32_t      RESERVED1[1]; /**< Reserved for future use **/
-  __IO uint32_t LFBCLKEN0;    /**< Low Frequency B Clock Enable Register 0 (Async Reg)  */
-  uint32_t      RESERVED2[1]; /**< Reserved for future use **/
-  __IO uint32_t LFAPRESC0;    /**< Low Frequency A Prescaler Register 0 (Async Reg)  */
-  uint32_t      RESERVED3[1]; /**< Reserved for future use **/
-  __IO uint32_t LFBPRESC0;    /**< Low Frequency B Prescaler Register 0  (Async Reg)  */
-  uint32_t      RESERVED4[1]; /**< Reserved for future use **/
-  __IO uint32_t PCNTCTRL;     /**< PCNT Control Register  */
-  __IO uint32_t LCDCTRL;      /**< LCD Control Register  */
-  __IO uint32_t ROUTE;        /**< I/O Routing Register  */
-  __IO uint32_t LOCK;         /**< Configuration Lock Register  */
-} CMU_TypeDef;                /** @} */
+
+    typedef struct {
+        __IO uint32_t CTRL; /**< CMU Control Register  */
+        __IO uint32_t HFCORECLKDIV; /**< High Frequency Core Clock Division Register  */
+        __IO uint32_t HFPERCLKDIV; /**< High Frequency Peripheral Clock Division Register  */
+        __IO uint32_t HFRCOCTRL; /**< HFRCO Control Register  */
+        __IO uint32_t LFRCOCTRL; /**< LFRCO Control Register  */
+        __IO uint32_t AUXHFRCOCTRL; /**< AUXHFRCO Control Register  */
+        __IO uint32_t CALCTRL; /**< Calibration Control Register  */
+        __IO uint32_t CALCNT; /**< Calibration Counter Register  */
+        __IO uint32_t OSCENCMD; /**< Oscillator Enable/Disable Command Register  */
+        __IO uint32_t CMD; /**< Command Register  */
+        __IO uint32_t LFCLKSEL; /**< Low Frequency Clock Select Register  */
+        __I uint32_t STATUS; /**< Status Register  */
+        __I uint32_t IF; /**< Interrupt Flag Register  */
+        __IO uint32_t IFS; /**< Interrupt Flag Set Register  */
+        __IO uint32_t IFC; /**< Interrupt Flag Clear Register  */
+        __IO uint32_t IEN; /**< Interrupt Enable Register  */
+        __IO uint32_t HFCORECLKEN0; /**< High Frequency Core Clock Enable Register 0  */
+        __IO uint32_t HFPERCLKEN0; /**< High Frequency Peripheral Clock Enable Register 0  */
+        uint32_t RESERVED0[2]; /**< Reserved for future use **/
+        __I uint32_t SYNCBUSY; /**< Synchronization Busy Register  */
+        __IO uint32_t FREEZE; /**< Freeze Register  */
+        __IO uint32_t LFACLKEN0; /**< Low Frequency A Clock Enable Register 0  (Async Reg)  */
+        uint32_t RESERVED1[1]; /**< Reserved for future use **/
+        __IO uint32_t LFBCLKEN0; /**< Low Frequency B Clock Enable Register 0 (Async Reg)  */
+        uint32_t RESERVED2[1]; /**< Reserved for future use **/
+        __IO uint32_t LFAPRESC0; /**< Low Frequency A Prescaler Register 0 (Async Reg)  */
+        uint32_t RESERVED3[1]; /**< Reserved for future use **/
+        __IO uint32_t LFBPRESC0; /**< Low Frequency B Prescaler Register 0  (Async Reg)  */
+        uint32_t RESERVED4[1]; /**< Reserved for future use **/
+        __IO uint32_t PCNTCTRL; /**< PCNT Control Register  */
+        __IO uint32_t LCDCTRL; /**< LCD Control Register  */
+        __IO uint32_t ROUTE; /**< I/O Routing Register  */
+        __IO uint32_t LOCK; /**< Configuration Lock Register  */
+    } CMU_TypeDef; /** @} */
 
 #include "efm32lg_lesense_st.h"
 #include "efm32lg_lesense_buf.h"
@@ -356,9 +355,9 @@ typedef struct
 #include "efm32lg_romtable.h"
 #include "efm32lg_calibrate.h"
 
-/** @} End of group EFM32LG990F256_Peripheral_TypeDefs */
+    /** @} End of group EFM32LG990F256_Peripheral_TypeDefs */
 
-/**************************************************************************//**
+    /**************************************************************************//**
  * @defgroup EFM32LG990F256_Peripheral_Base EFM32LG990F256 Peripheral Memory Map
  * @{
  *****************************************************************************/
@@ -407,9 +406,9 @@ typedef struct
 #define LOCKBITS_BASE     (0x0FE04000UL) /**< Lock-bits page base address */
 #define USERDATA_BASE     (0x0FE00000UL) /**< User data page base address */
 
-/** @} End of group EFM32LG990F256_Peripheral_Base */
+    /** @} End of group EFM32LG990F256_Peripheral_Base */
 
-/**************************************************************************//**
+    /**************************************************************************//**
  * @defgroup EFM32LG990F256_Peripheral_Declaration  EFM32LG990F256 Peripheral Declarations
  * @{
  *****************************************************************************/
@@ -456,9 +455,9 @@ typedef struct
 #define DEVINFO      ((DEVINFO_TypeDef *) DEVINFO_BASE)     /**< DEVINFO base pointer */
 #define ROMTABLE     ((ROMTABLE_TypeDef *) ROMTABLE_BASE)   /**< ROMTABLE base pointer */
 
-/** @} End of group EFM32LG990F256_Peripheral_Declaration */
+    /** @} End of group EFM32LG990F256_Peripheral_Declaration */
 
-/**************************************************************************//**
+    /**************************************************************************//**
  * @defgroup EFM32LG990F256_BitFields EFM32LG990F256 Bit Fields
  * @{
  *****************************************************************************/
@@ -468,12 +467,12 @@ typedef struct
 #include "efm32lg_dmactrl.h"
 #include "efm32lg_uart.h"
 
-/**************************************************************************//**
+    /**************************************************************************//**
  * @defgroup EFM32LG990F256_CMU_BitFields  EFM32LG990F256_CMU Bit Fields
  * @{
  *****************************************************************************/
 
-/* Bit fields for CMU CTRL */
+    /* Bit fields for CMU CTRL */
 #define _CMU_CTRL_RESETVALUE                        0x000C062CUL                                /**< Default value for CMU_CTRL */
 #define _CMU_CTRL_MASK                              0x53FFFEEFUL                                /**< Mask for CMU_CTRL */
 #define _CMU_CTRL_HFXOMODE_SHIFT                    0                                           /**< Shift value for CMU_HFXOMODE */
@@ -618,7 +617,7 @@ typedef struct
 #define _CMU_CTRL_HFLE_DEFAULT                      0x00000000UL                                /**< Mode DEFAULT for CMU_CTRL */
 #define CMU_CTRL_HFLE_DEFAULT                       (_CMU_CTRL_HFLE_DEFAULT << 30)              /**< Shifted mode DEFAULT for CMU_CTRL */
 
-/* Bit fields for CMU HFCORECLKDIV */
+    /* Bit fields for CMU HFCORECLKDIV */
 #define _CMU_HFCORECLKDIV_RESETVALUE                0x00000000UL                                    /**< Default value for CMU_HFCORECLKDIV */
 #define _CMU_HFCORECLKDIV_MASK                      0x0000010FUL                                    /**< Mask for CMU_HFCORECLKDIV */
 #define _CMU_HFCORECLKDIV_HFCORECLKDIV_SHIFT        0                                               /**< Shift value for CMU_HFCORECLKDIV */
@@ -655,7 +654,7 @@ typedef struct
 #define CMU_HFCORECLKDIV_HFCORECLKLEDIV_DIV2        (_CMU_HFCORECLKDIV_HFCORECLKLEDIV_DIV2 << 8)    /**< Shifted mode DIV2 for CMU_HFCORECLKDIV */
 #define CMU_HFCORECLKDIV_HFCORECLKLEDIV_DIV4        (_CMU_HFCORECLKDIV_HFCORECLKLEDIV_DIV4 << 8)    /**< Shifted mode DIV4 for CMU_HFCORECLKDIV */
 
-/* Bit fields for CMU HFPERCLKDIV */
+    /* Bit fields for CMU HFPERCLKDIV */
 #define _CMU_HFPERCLKDIV_RESETVALUE                 0x00000100UL                                 /**< Default value for CMU_HFPERCLKDIV */
 #define _CMU_HFPERCLKDIV_MASK                       0x0000010FUL                                 /**< Mask for CMU_HFPERCLKDIV */
 #define _CMU_HFPERCLKDIV_HFPERCLKDIV_SHIFT          0                                            /**< Shift value for CMU_HFPERCLKDIV */
@@ -688,7 +687,7 @@ typedef struct
 #define _CMU_HFPERCLKDIV_HFPERCLKEN_DEFAULT         0x00000001UL                                 /**< Mode DEFAULT for CMU_HFPERCLKDIV */
 #define CMU_HFPERCLKDIV_HFPERCLKEN_DEFAULT          (_CMU_HFPERCLKDIV_HFPERCLKEN_DEFAULT << 8)   /**< Shifted mode DEFAULT for CMU_HFPERCLKDIV */
 
-/* Bit fields for CMU HFRCOCTRL */
+    /* Bit fields for CMU HFRCOCTRL */
 #define _CMU_HFRCOCTRL_RESETVALUE                   0x00000380UL                           /**< Default value for CMU_HFRCOCTRL */
 #define _CMU_HFRCOCTRL_MASK                         0x0001F7FFUL                           /**< Mask for CMU_HFRCOCTRL */
 #define _CMU_HFRCOCTRL_TUNING_SHIFT                 0                                      /**< Shift value for CMU_TUNING */
@@ -716,7 +715,7 @@ typedef struct
 #define _CMU_HFRCOCTRL_SUDELAY_DEFAULT              0x00000000UL                           /**< Mode DEFAULT for CMU_HFRCOCTRL */
 #define CMU_HFRCOCTRL_SUDELAY_DEFAULT               (_CMU_HFRCOCTRL_SUDELAY_DEFAULT << 12) /**< Shifted mode DEFAULT for CMU_HFRCOCTRL */
 
-/* Bit fields for CMU LFRCOCTRL */
+    /* Bit fields for CMU LFRCOCTRL */
 #define _CMU_LFRCOCTRL_RESETVALUE                   0x00000040UL                         /**< Default value for CMU_LFRCOCTRL */
 #define _CMU_LFRCOCTRL_MASK                         0x0000007FUL                         /**< Mask for CMU_LFRCOCTRL */
 #define _CMU_LFRCOCTRL_TUNING_SHIFT                 0                                    /**< Shift value for CMU_TUNING */
@@ -724,7 +723,7 @@ typedef struct
 #define _CMU_LFRCOCTRL_TUNING_DEFAULT               0x00000040UL                         /**< Mode DEFAULT for CMU_LFRCOCTRL */
 #define CMU_LFRCOCTRL_TUNING_DEFAULT                (_CMU_LFRCOCTRL_TUNING_DEFAULT << 0) /**< Shifted mode DEFAULT for CMU_LFRCOCTRL */
 
-/* Bit fields for CMU AUXHFRCOCTRL */
+    /* Bit fields for CMU AUXHFRCOCTRL */
 #define _CMU_AUXHFRCOCTRL_RESETVALUE                0x00000080UL                            /**< Default value for CMU_AUXHFRCOCTRL */
 #define _CMU_AUXHFRCOCTRL_MASK                      0x000007FFUL                            /**< Mask for CMU_AUXHFRCOCTRL */
 #define _CMU_AUXHFRCOCTRL_TUNING_SHIFT              0                                       /**< Shift value for CMU_TUNING */
@@ -748,7 +747,7 @@ typedef struct
 #define CMU_AUXHFRCOCTRL_BAND_28MHZ                 (_CMU_AUXHFRCOCTRL_BAND_28MHZ << 8)     /**< Shifted mode 28MHZ for CMU_AUXHFRCOCTRL */
 #define CMU_AUXHFRCOCTRL_BAND_21MHZ                 (_CMU_AUXHFRCOCTRL_BAND_21MHZ << 8)     /**< Shifted mode 21MHZ for CMU_AUXHFRCOCTRL */
 
-/* Bit fields for CMU CALCTRL */
+    /* Bit fields for CMU CALCTRL */
 #define _CMU_CALCTRL_RESETVALUE                     0x00000000UL                         /**< Default value for CMU_CALCTRL */
 #define _CMU_CALCTRL_MASK                           0x0000007FUL                         /**< Mask for CMU_CALCTRL */
 #define _CMU_CALCTRL_UPSEL_SHIFT                    0                                    /**< Shift value for CMU_UPSEL */
@@ -787,7 +786,7 @@ typedef struct
 #define _CMU_CALCTRL_CONT_DEFAULT                   0x00000000UL                         /**< Mode DEFAULT for CMU_CALCTRL */
 #define CMU_CALCTRL_CONT_DEFAULT                    (_CMU_CALCTRL_CONT_DEFAULT << 6)     /**< Shifted mode DEFAULT for CMU_CALCTRL */
 
-/* Bit fields for CMU CALCNT */
+    /* Bit fields for CMU CALCNT */
 #define _CMU_CALCNT_RESETVALUE                      0x00000000UL                      /**< Default value for CMU_CALCNT */
 #define _CMU_CALCNT_MASK                            0x000FFFFFUL                      /**< Mask for CMU_CALCNT */
 #define _CMU_CALCNT_CALCNT_SHIFT                    0                                 /**< Shift value for CMU_CALCNT */
@@ -795,7 +794,7 @@ typedef struct
 #define _CMU_CALCNT_CALCNT_DEFAULT                  0x00000000UL                      /**< Mode DEFAULT for CMU_CALCNT */
 #define CMU_CALCNT_CALCNT_DEFAULT                   (_CMU_CALCNT_CALCNT_DEFAULT << 0) /**< Shifted mode DEFAULT for CMU_CALCNT */
 
-/* Bit fields for CMU OSCENCMD */
+    /* Bit fields for CMU OSCENCMD */
 #define _CMU_OSCENCMD_RESETVALUE                    0x00000000UL                             /**< Default value for CMU_OSCENCMD */
 #define _CMU_OSCENCMD_MASK                          0x000003FFUL                             /**< Mask for CMU_OSCENCMD */
 #define CMU_OSCENCMD_HFRCOEN                        (0x1UL << 0)                             /**< HFRCO Enable */
@@ -849,7 +848,7 @@ typedef struct
 #define _CMU_OSCENCMD_LFXODIS_DEFAULT               0x00000000UL                             /**< Mode DEFAULT for CMU_OSCENCMD */
 #define CMU_OSCENCMD_LFXODIS_DEFAULT                (_CMU_OSCENCMD_LFXODIS_DEFAULT << 9)     /**< Shifted mode DEFAULT for CMU_OSCENCMD */
 
-/* Bit fields for CMU CMD */
+    /* Bit fields for CMU CMD */
 #define _CMU_CMD_RESETVALUE                         0x00000000UL                          /**< Default value for CMU_CMD */
 #define _CMU_CMD_MASK                               0x0000007FUL                          /**< Mask for CMU_CMD */
 #define _CMU_CMD_HFCLKSEL_SHIFT                     0                                     /**< Shift value for CMU_HFCLKSEL */
@@ -885,7 +884,7 @@ typedef struct
 #define CMU_CMD_USBCCLKSEL_LFXO                     (_CMU_CMD_USBCCLKSEL_LFXO << 5)       /**< Shifted mode LFXO for CMU_CMD */
 #define CMU_CMD_USBCCLKSEL_LFRCO                    (_CMU_CMD_USBCCLKSEL_LFRCO << 5)      /**< Shifted mode LFRCO for CMU_CMD */
 
-/* Bit fields for CMU LFCLKSEL */
+    /* Bit fields for CMU LFCLKSEL */
 #define _CMU_LFCLKSEL_RESETVALUE                    0x00000005UL                             /**< Default value for CMU_LFCLKSEL */
 #define _CMU_LFCLKSEL_MASK                          0x0011000FUL                             /**< Mask for CMU_LFCLKSEL */
 #define _CMU_LFCLKSEL_LFA_SHIFT                     0                                        /**< Shift value for CMU_LFA */
@@ -931,7 +930,7 @@ typedef struct
 #define CMU_LFCLKSEL_LFBE_DISABLED                  (_CMU_LFCLKSEL_LFBE_DISABLED << 20)      /**< Shifted mode DISABLED for CMU_LFCLKSEL */
 #define CMU_LFCLKSEL_LFBE_ULFRCO                    (_CMU_LFCLKSEL_LFBE_ULFRCO << 20)        /**< Shifted mode ULFRCO for CMU_LFCLKSEL */
 
-/* Bit fields for CMU STATUS */
+    /* Bit fields for CMU STATUS */
 #define _CMU_STATUS_RESETVALUE                      0x00000403UL                             /**< Default value for CMU_STATUS */
 #define _CMU_STATUS_MASK                            0x0003FFFFUL                             /**< Mask for CMU_STATUS */
 #define CMU_STATUS_HFRCOENS                         (0x1UL << 0)                             /**< HFRCO Enable Status */
@@ -1025,7 +1024,7 @@ typedef struct
 #define _CMU_STATUS_USBCLFRCOSEL_DEFAULT            0x00000000UL                             /**< Mode DEFAULT for CMU_STATUS */
 #define CMU_STATUS_USBCLFRCOSEL_DEFAULT             (_CMU_STATUS_USBCLFRCOSEL_DEFAULT << 17) /**< Shifted mode DEFAULT for CMU_STATUS */
 
-/* Bit fields for CMU IF */
+    /* Bit fields for CMU IF */
 #define _CMU_IF_RESETVALUE                          0x00000001UL                        /**< Default value for CMU_IF */
 #define _CMU_IF_MASK                                0x000000FFUL                        /**< Mask for CMU_IF */
 #define CMU_IF_HFRCORDY                             (0x1UL << 0)                        /**< HFRCO Ready Interrupt Flag */
@@ -1069,7 +1068,7 @@ typedef struct
 #define _CMU_IF_USBCHFCLKSEL_DEFAULT                0x00000000UL                        /**< Mode DEFAULT for CMU_IF */
 #define CMU_IF_USBCHFCLKSEL_DEFAULT                 (_CMU_IF_USBCHFCLKSEL_DEFAULT << 7) /**< Shifted mode DEFAULT for CMU_IF */
 
-/* Bit fields for CMU IFS */
+    /* Bit fields for CMU IFS */
 #define _CMU_IFS_RESETVALUE                         0x00000000UL                         /**< Default value for CMU_IFS */
 #define _CMU_IFS_MASK                               0x000000FFUL                         /**< Mask for CMU_IFS */
 #define CMU_IFS_HFRCORDY                            (0x1UL << 0)                         /**< HFRCO Ready Interrupt Flag Set */
@@ -1113,7 +1112,7 @@ typedef struct
 #define _CMU_IFS_USBCHFCLKSEL_DEFAULT               0x00000000UL                         /**< Mode DEFAULT for CMU_IFS */
 #define CMU_IFS_USBCHFCLKSEL_DEFAULT                (_CMU_IFS_USBCHFCLKSEL_DEFAULT << 7) /**< Shifted mode DEFAULT for CMU_IFS */
 
-/* Bit fields for CMU IFC */
+    /* Bit fields for CMU IFC */
 #define _CMU_IFC_RESETVALUE                         0x00000000UL                         /**< Default value for CMU_IFC */
 #define _CMU_IFC_MASK                               0x000000FFUL                         /**< Mask for CMU_IFC */
 #define CMU_IFC_HFRCORDY                            (0x1UL << 0)                         /**< HFRCO Ready Interrupt Flag Clear */
@@ -1157,7 +1156,7 @@ typedef struct
 #define _CMU_IFC_USBCHFCLKSEL_DEFAULT               0x00000000UL                         /**< Mode DEFAULT for CMU_IFC */
 #define CMU_IFC_USBCHFCLKSEL_DEFAULT                (_CMU_IFC_USBCHFCLKSEL_DEFAULT << 7) /**< Shifted mode DEFAULT for CMU_IFC */
 
-/* Bit fields for CMU IEN */
+    /* Bit fields for CMU IEN */
 #define _CMU_IEN_RESETVALUE                         0x00000000UL                         /**< Default value for CMU_IEN */
 #define _CMU_IEN_MASK                               0x000000FFUL                         /**< Mask for CMU_IEN */
 #define CMU_IEN_HFRCORDY                            (0x1UL << 0)                         /**< HFRCO Ready Interrupt Enable */
@@ -1201,7 +1200,7 @@ typedef struct
 #define _CMU_IEN_USBCHFCLKSEL_DEFAULT               0x00000000UL                         /**< Mode DEFAULT for CMU_IEN */
 #define CMU_IEN_USBCHFCLKSEL_DEFAULT                (_CMU_IEN_USBCHFCLKSEL_DEFAULT << 7) /**< Shifted mode DEFAULT for CMU_IEN */
 
-/* Bit fields for CMU HFCORECLKEN0 */
+    /* Bit fields for CMU HFCORECLKEN0 */
 #define _CMU_HFCORECLKEN0_RESETVALUE                0x00000000UL                          /**< Default value for CMU_HFCORECLKEN0 */
 #define _CMU_HFCORECLKEN0_MASK                      0x0000003FUL                          /**< Mask for CMU_HFCORECLKEN0 */
 #define CMU_HFCORECLKEN0_DMA                        (0x1UL << 0)                          /**< Direct Memory Access Controller Clock Enable */
@@ -1235,7 +1234,7 @@ typedef struct
 #define _CMU_HFCORECLKEN0_EBI_DEFAULT               0x00000000UL                          /**< Mode DEFAULT for CMU_HFCORECLKEN0 */
 #define CMU_HFCORECLKEN0_EBI_DEFAULT                (_CMU_HFCORECLKEN0_EBI_DEFAULT << 5)  /**< Shifted mode DEFAULT for CMU_HFCORECLKEN0 */
 
-/* Bit fields for CMU HFPERCLKEN0 */
+    /* Bit fields for CMU HFPERCLKEN0 */
 #define _CMU_HFPERCLKEN0_RESETVALUE                 0x00000000UL                           /**< Default value for CMU_HFPERCLKEN0 */
 #define _CMU_HFPERCLKEN0_MASK                       0x0003FFFFUL                           /**< Mask for CMU_HFPERCLKEN0 */
 #define CMU_HFPERCLKEN0_USART0                      (0x1UL << 0)                           /**< Universal Synchronous/Asynchronous Receiver/Transmitter 0 Clock Enable */
@@ -1329,7 +1328,7 @@ typedef struct
 #define _CMU_HFPERCLKEN0_DAC0_DEFAULT               0x00000000UL                           /**< Mode DEFAULT for CMU_HFPERCLKEN0 */
 #define CMU_HFPERCLKEN0_DAC0_DEFAULT                (_CMU_HFPERCLKEN0_DAC0_DEFAULT << 17)  /**< Shifted mode DEFAULT for CMU_HFPERCLKEN0 */
 
-/* Bit fields for CMU SYNCBUSY */
+    /* Bit fields for CMU SYNCBUSY */
 #define _CMU_SYNCBUSY_RESETVALUE                    0x00000000UL                           /**< Default value for CMU_SYNCBUSY */
 #define _CMU_SYNCBUSY_MASK                          0x00000055UL                           /**< Mask for CMU_SYNCBUSY */
 #define CMU_SYNCBUSY_LFACLKEN0                      (0x1UL << 0)                           /**< Low Frequency A Clock Enable 0 Busy */
@@ -1353,7 +1352,7 @@ typedef struct
 #define _CMU_SYNCBUSY_LFBPRESC0_DEFAULT             0x00000000UL                           /**< Mode DEFAULT for CMU_SYNCBUSY */
 #define CMU_SYNCBUSY_LFBPRESC0_DEFAULT              (_CMU_SYNCBUSY_LFBPRESC0_DEFAULT << 6) /**< Shifted mode DEFAULT for CMU_SYNCBUSY */
 
-/* Bit fields for CMU FREEZE */
+    /* Bit fields for CMU FREEZE */
 #define _CMU_FREEZE_RESETVALUE                      0x00000000UL                         /**< Default value for CMU_FREEZE */
 #define _CMU_FREEZE_MASK                            0x00000001UL                         /**< Mask for CMU_FREEZE */
 #define CMU_FREEZE_REGFREEZE                        (0x1UL << 0)                         /**< Register Update Freeze */
@@ -1366,7 +1365,7 @@ typedef struct
 #define CMU_FREEZE_REGFREEZE_UPDATE                 (_CMU_FREEZE_REGFREEZE_UPDATE << 0)  /**< Shifted mode UPDATE for CMU_FREEZE */
 #define CMU_FREEZE_REGFREEZE_FREEZE                 (_CMU_FREEZE_REGFREEZE_FREEZE << 0)  /**< Shifted mode FREEZE for CMU_FREEZE */
 
-/* Bit fields for CMU LFACLKEN0 */
+    /* Bit fields for CMU LFACLKEN0 */
 #define _CMU_LFACLKEN0_RESETVALUE                   0x00000000UL                           /**< Default value for CMU_LFACLKEN0 */
 #define _CMU_LFACLKEN0_MASK                         0x0000000FUL                           /**< Mask for CMU_LFACLKEN0 */
 #define CMU_LFACLKEN0_LESENSE                       (0x1UL << 0)                           /**< Low Energy Sensor Interface Clock Enable */
@@ -1390,7 +1389,7 @@ typedef struct
 #define _CMU_LFACLKEN0_LCD_DEFAULT                  0x00000000UL                           /**< Mode DEFAULT for CMU_LFACLKEN0 */
 #define CMU_LFACLKEN0_LCD_DEFAULT                   (_CMU_LFACLKEN0_LCD_DEFAULT << 3)      /**< Shifted mode DEFAULT for CMU_LFACLKEN0 */
 
-/* Bit fields for CMU LFBCLKEN0 */
+    /* Bit fields for CMU LFBCLKEN0 */
 #define _CMU_LFBCLKEN0_RESETVALUE                   0x00000000UL                          /**< Default value for CMU_LFBCLKEN0 */
 #define _CMU_LFBCLKEN0_MASK                         0x00000003UL                          /**< Mask for CMU_LFBCLKEN0 */
 #define CMU_LFBCLKEN0_LEUART0                       (0x1UL << 0)                          /**< Low Energy UART 0 Clock Enable */
@@ -1404,7 +1403,7 @@ typedef struct
 #define _CMU_LFBCLKEN0_LEUART1_DEFAULT              0x00000000UL                          /**< Mode DEFAULT for CMU_LFBCLKEN0 */
 #define CMU_LFBCLKEN0_LEUART1_DEFAULT               (_CMU_LFBCLKEN0_LEUART1_DEFAULT << 1) /**< Shifted mode DEFAULT for CMU_LFBCLKEN0 */
 
-/* Bit fields for CMU LFAPRESC0 */
+    /* Bit fields for CMU LFAPRESC0 */
 #define _CMU_LFAPRESC0_RESETVALUE                   0x00000000UL                            /**< Default value for CMU_LFAPRESC0 */
 #define _CMU_LFAPRESC0_MASK                         0x00003FF3UL                            /**< Mask for CMU_LFAPRESC0 */
 #define _CMU_LFAPRESC0_LESENSE_SHIFT                0                                       /**< Shift value for CMU_LESENSE */
@@ -1496,7 +1495,7 @@ typedef struct
 #define CMU_LFAPRESC0_LCD_DIV64                     (_CMU_LFAPRESC0_LCD_DIV64 << 12)        /**< Shifted mode DIV64 for CMU_LFAPRESC0 */
 #define CMU_LFAPRESC0_LCD_DIV128                    (_CMU_LFAPRESC0_LCD_DIV128 << 12)       /**< Shifted mode DIV128 for CMU_LFAPRESC0 */
 
-/* Bit fields for CMU LFBPRESC0 */
+    /* Bit fields for CMU LFBPRESC0 */
 #define _CMU_LFBPRESC0_RESETVALUE                   0x00000000UL                       /**< Default value for CMU_LFBPRESC0 */
 #define _CMU_LFBPRESC0_MASK                         0x00000033UL                       /**< Mask for CMU_LFBPRESC0 */
 #define _CMU_LFBPRESC0_LEUART0_SHIFT                0                                  /**< Shift value for CMU_LEUART0 */
@@ -1520,7 +1519,7 @@ typedef struct
 #define CMU_LFBPRESC0_LEUART1_DIV4                  (_CMU_LFBPRESC0_LEUART1_DIV4 << 4) /**< Shifted mode DIV4 for CMU_LFBPRESC0 */
 #define CMU_LFBPRESC0_LEUART1_DIV8                  (_CMU_LFBPRESC0_LEUART1_DIV8 << 4) /**< Shifted mode DIV8 for CMU_LFBPRESC0 */
 
-/* Bit fields for CMU PCNTCTRL */
+    /* Bit fields for CMU PCNTCTRL */
 #define _CMU_PCNTCTRL_RESETVALUE                    0x00000000UL                             /**< Default value for CMU_PCNTCTRL */
 #define _CMU_PCNTCTRL_MASK                          0x0000003FUL                             /**< Mask for CMU_PCNTCTRL */
 #define CMU_PCNTCTRL_PCNT0CLKEN                     (0x1UL << 0)                             /**< PCNT0 Clock Enable */
@@ -1566,7 +1565,7 @@ typedef struct
 #define CMU_PCNTCTRL_PCNT2CLKSEL_LFACLK             (_CMU_PCNTCTRL_PCNT2CLKSEL_LFACLK << 5)  /**< Shifted mode LFACLK for CMU_PCNTCTRL */
 #define CMU_PCNTCTRL_PCNT2CLKSEL_PCNT2S0            (_CMU_PCNTCTRL_PCNT2CLKSEL_PCNT2S0 << 5) /**< Shifted mode PCNT2S0 for CMU_PCNTCTRL */
 
-/* Bit fields for CMU LCDCTRL */
+    /* Bit fields for CMU LCDCTRL */
 #define _CMU_LCDCTRL_RESETVALUE                     0x00000020UL                         /**< Default value for CMU_LCDCTRL */
 #define _CMU_LCDCTRL_MASK                           0x0000007FUL                         /**< Mask for CMU_LCDCTRL */
 #define _CMU_LCDCTRL_FDIV_SHIFT                     0                                    /**< Shift value for CMU_FDIV */
@@ -1599,7 +1598,7 @@ typedef struct
 #define CMU_LCDCTRL_VBFDIV_DIV64                    (_CMU_LCDCTRL_VBFDIV_DIV64 << 4)     /**< Shifted mode DIV64 for CMU_LCDCTRL */
 #define CMU_LCDCTRL_VBFDIV_DIV128                   (_CMU_LCDCTRL_VBFDIV_DIV128 << 4)    /**< Shifted mode DIV128 for CMU_LCDCTRL */
 
-/* Bit fields for CMU ROUTE */
+    /* Bit fields for CMU ROUTE */
 #define _CMU_ROUTE_RESETVALUE                       0x00000000UL                         /**< Default value for CMU_ROUTE */
 #define _CMU_ROUTE_MASK                             0x0000001FUL                         /**< Mask for CMU_ROUTE */
 #define CMU_ROUTE_CLKOUT0PEN                        (0x1UL << 0)                         /**< CLKOUT0 Pin Enable */
@@ -1623,7 +1622,7 @@ typedef struct
 #define CMU_ROUTE_LOCATION_LOC1                     (_CMU_ROUTE_LOCATION_LOC1 << 2)      /**< Shifted mode LOC1 for CMU_ROUTE */
 #define CMU_ROUTE_LOCATION_LOC2                     (_CMU_ROUTE_LOCATION_LOC2 << 2)      /**< Shifted mode LOC2 for CMU_ROUTE */
 
-/* Bit fields for CMU LOCK */
+    /* Bit fields for CMU LOCK */
 #define _CMU_LOCK_RESETVALUE                        0x00000000UL                      /**< Default value for CMU_LOCK */
 #define _CMU_LOCK_MASK                              0x0000FFFFUL                      /**< Mask for CMU_LOCK */
 #define _CMU_LOCK_LOCKKEY_SHIFT                     0                                 /**< Shift value for CMU_LOCKKEY */
@@ -1639,11 +1638,11 @@ typedef struct
 #define CMU_LOCK_LOCKKEY_LOCKED                     (_CMU_LOCK_LOCKKEY_LOCKED << 0)   /**< Shifted mode LOCKED for CMU_LOCK */
 #define CMU_LOCK_LOCKKEY_UNLOCK                     (_CMU_LOCK_LOCKKEY_UNLOCK << 0)   /**< Shifted mode UNLOCK for CMU_LOCK */
 
-/** @} End of group EFM32LG990F256_CMU */
+    /** @} End of group EFM32LG990F256_CMU */
 
 
 
-/**************************************************************************//**
+    /**************************************************************************//**
  * @defgroup EFM32LG990F256_UNLOCK EFM32LG990F256 Unlock Codes
  * @{
  *****************************************************************************/
@@ -1654,11 +1653,11 @@ typedef struct
 #define GPIO_UNLOCK_CODE     0xA534 /**< GPIO unlock code */
 #define BURTC_UNLOCK_CODE    0xAEE8 /**< BURTC unlock code */
 
-/** @} End of group EFM32LG990F256_UNLOCK */
+    /** @} End of group EFM32LG990F256_UNLOCK */
 
-/** @} End of group EFM32LG990F256_BitFields */
+    /** @} End of group EFM32LG990F256_BitFields */
 
-/**************************************************************************//**
+    /**************************************************************************//**
  * @defgroup EFM32LG990F256_Alternate_Function EFM32LG990F256 Alternate Function
  * @{
  *****************************************************************************/
@@ -1666,9 +1665,9 @@ typedef struct
 #include "efm32lg_af_ports.h"
 #include "efm32lg_af_pins.h"
 
-/** @} End of group EFM32LG990F256_Alternate_Function */
+    /** @} End of group EFM32LG990F256_Alternate_Function */
 
-/**************************************************************************//**
+    /**************************************************************************//**
  *  @brief Set the value of a bit field within a register.
  *
  *  @param REG
@@ -1684,9 +1683,9 @@ typedef struct
 #define SET_BIT_FIELD(REG, MASK, VALUE, OFFSET) \
   REG = ((REG) &~(MASK)) | (((VALUE) << (OFFSET)) & (MASK));
 
-/** @} End of group EFM32LG990F256 */
+    /** @} End of group EFM32LG990F256 */
 
-/** @} End of group Parts */
+    /** @} End of group Parts */
 
 #ifdef __cplusplus
 }

@@ -40,39 +40,39 @@ extern "C" {
 
 #include <stdint.h>
 
-/**
- * @file  crc_regs.h
- * @addtogroup crc CRC
- * @{
- */
+    /**
+     * @file  crc_regs.h
+     * @addtogroup crc CRC
+     * @{
+     */
 
-/*                                             Offset   Register Description
-                                               ======   ======================================================= */
-typedef struct {
-    __IO uint32_t reseed;                  /*  0x0000   CRC-16/CRC-32 Reseed Controls                           */
-    __IO uint32_t seed16;                  /*  0x0004   Reseed Value for CRC-16 Calculations                    */
-    __IO uint32_t seed32;                  /*  0x0008   Reseed Value for CRC-32 Calculations                    */
-} mxc_crc_regs_t;
+    /*                                             Offset   Register Description
+                                                   ======   ======================================================= */
+    typedef struct {
+        __IO uint32_t reseed; /*  0x0000   CRC-16/CRC-32 Reseed Controls                           */
+        __IO uint32_t seed16; /*  0x0004   Reseed Value for CRC-16 Calculations                    */
+        __IO uint32_t seed32; /*  0x0008   Reseed Value for CRC-32 Calculations                    */
+    } mxc_crc_regs_t;
 
-/*                                             Offset   Register Description
-                                               ======   ======================================================= */
-typedef struct {
-    __IO uint32_t value16[512];            /*  0x0000   Write Next CRC-16 Data Value / Read CRC-16 Result Value */
-    __IO uint32_t value32[512];            /*  0x0800   Write Next CRC-32 Data Value / Read CRC-32 Result Value */
-} mxc_crc_data_regs_t;
+    /*                                             Offset   Register Description
+                                                   ======   ======================================================= */
+    typedef struct {
+        __IO uint32_t value16[512]; /*  0x0000   Write Next CRC-16 Data Value / Read CRC-16 Result Value */
+        __IO uint32_t value32[512]; /*  0x0800   Write Next CRC-32 Data Value / Read CRC-32 Result Value */
+    } mxc_crc_data_regs_t;
 
-/*
-   Register offsets for module CRC.
-*/
+    /*
+       Register offsets for module CRC.
+     */
 #define MXC_R_CRC_OFFS_RESEED           ((uint32_t)0x00000000UL)
 #define MXC_R_CRC_OFFS_SEED16           ((uint32_t)0x00000004UL)
 #define MXC_R_CRC_OFFS_SEED32           ((uint32_t)0x00000008UL)
 #define MXC_R_CRC_DATA_OFFS_VALUE16     ((uint32_t)0x00000000UL)
 #define MXC_R_CRC_DATA_OFFS_VALUE32     ((uint32_t)0x00000800UL)
 
-/*
-   Field positions and masks for module CRC.
-*/
+    /*
+       Field positions and masks for module CRC.
+     */
 #define MXC_F_CRC_RESEED_CRC16_POS      0
 #define MXC_F_CRC_RESEED_CRC16          ((uint32_t)(0x00000001UL << MXC_F_CRC_RESEED_CRC16_POS))
 #define MXC_F_CRC_RESEED_CRC32_POS      1
@@ -83,7 +83,7 @@ typedef struct {
 #endif
 
 /**
-* @}
-*/
+ * @}
+ */
 
 #endif   /* _MXC_CRC_REGS_H_ */

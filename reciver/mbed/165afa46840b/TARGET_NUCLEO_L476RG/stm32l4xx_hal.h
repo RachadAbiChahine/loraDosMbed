@@ -1,82 +1,82 @@
 /**
-  ******************************************************************************
-  * @file    stm32l4xx_hal.h
-  * @author  MCD Application Team
-  * @version V1.0.0
-  * @date    26-June-2015
-  * @brief   This file contains all the functions prototypes for the HAL
-  *          module driver.
-  ******************************************************************************
-  * @attention
-  *
-  * <h2><center>&copy; COPYRIGHT(c) 2015 STMicroelectronics</center></h2>
-  *
-  * Redistribution and use in source and binary forms, with or without modification,
-  * are permitted provided that the following conditions are met:
-  *   1. Redistributions of source code must retain the above copyright notice,
-  *      this list of conditions and the following disclaimer.
-  *   2. Redistributions in binary form must reproduce the above copyright notice,
-  *      this list of conditions and the following disclaimer in the documentation
-  *      and/or other materials provided with the distribution.
-  *   3. Neither the name of STMicroelectronics nor the names of its contributors
-  *      may be used to endorse or promote products derived from this software
-  *      without specific prior written permission.
-  *
-  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file    stm32l4xx_hal.h
+ * @author  MCD Application Team
+ * @version V1.0.0
+ * @date    26-June-2015
+ * @brief   This file contains all the functions prototypes for the HAL
+ *          module driver.
+ ******************************************************************************
+ * @attention
+ *
+ * <h2><center>&copy; COPYRIGHT(c) 2015 STMicroelectronics</center></h2>
+ *
+ * Redistribution and use in source and binary forms, with or without modification,
+ * are permitted provided that the following conditions are met:
+ *   1. Redistributions of source code must retain the above copyright notice,
+ *      this list of conditions and the following disclaimer.
+ *   2. Redistributions in binary form must reproduce the above copyright notice,
+ *      this list of conditions and the following disclaimer in the documentation
+ *      and/or other materials provided with the distribution.
+ *   3. Neither the name of STMicroelectronics nor the names of its contributors
+ *      may be used to endorse or promote products derived from this software
+ *      without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ ******************************************************************************
+ */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __STM32L4xx_HAL_H
 #define __STM32L4xx_HAL_H
 
 #ifdef __cplusplus
- extern "C" {
+extern "C" {
 #endif
 
-/* Includes ------------------------------------------------------------------*/
+    /* Includes ------------------------------------------------------------------*/
 #include "stm32l4xx_hal_conf.h"
 
-/** @addtogroup STM32L4xx_HAL_Driver
-  * @{
-  */
+    /** @addtogroup STM32L4xx_HAL_Driver
+     * @{
+     */
 
-/** @addtogroup HAL
-  * @{
-  */
+    /** @addtogroup HAL
+     * @{
+     */
 
-/* Exported types ------------------------------------------------------------*/
-/* Exported constants --------------------------------------------------------*/
-/** @defgroup SYSCFG_Exported_Constants SYSCFG Exported Constants
-  * @{
-  */
+    /* Exported types ------------------------------------------------------------*/
+    /* Exported constants --------------------------------------------------------*/
+    /** @defgroup SYSCFG_Exported_Constants SYSCFG Exported Constants
+     * @{
+     */
 
-/** @defgroup SYSCFG_BootMode Boot Mode
-  * @{
-  */
+    /** @defgroup SYSCFG_BootMode Boot Mode
+     * @{
+     */
 #define SYSCFG_BOOT_MAINFLASH          ((uint32_t)0x00000000)
 #define SYSCFG_BOOT_SYSTEMFLASH        SYSCFG_MEMRMP_MEM_MODE_0
 #define SYSCFG_BOOT_FMC                SYSCFG_MEMRMP_MEM_MODE_1
 #define SYSCFG_BOOT_SRAM               (SYSCFG_MEMRMP_MEM_MODE_1 | SYSCFG_MEMRMP_MEM_MODE_0)
 #define SYSCFG_BOOT_QUADSPI            (SYSCFG_MEMRMP_MEM_MODE_2 | SYSCFG_MEMRMP_MEM_MODE_1)
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/** @defgroup SYSCFG_FPU_Interrupts FPU Interrupts
-  * @{
-  */
+    /** @defgroup SYSCFG_FPU_Interrupts FPU Interrupts
+     * @{
+     */
 #define SYSCFG_IT_FPU_IOC              SYSCFG_CFGR1_FPU_IE_0  /*!< Floating Point Unit Invalid operation Interrupt */
 #define SYSCFG_IT_FPU_DZC              SYSCFG_CFGR1_FPU_IE_1  /*!< Floating Point Unit Divide-by-zero Interrupt */
 #define SYSCFG_IT_FPU_UFC              SYSCFG_CFGR1_FPU_IE_2  /*!< Floating Point Unit Underflow Interrupt */
@@ -84,13 +84,13 @@
 #define SYSCFG_IT_FPU_IDC              SYSCFG_CFGR1_FPU_IE_4  /*!< Floating Point Unit Input denormal Interrupt */
 #define SYSCFG_IT_FPU_IXC              SYSCFG_CFGR1_FPU_IE_5  /*!< Floating Point Unit Inexact Interrupt */
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/** @defgroup SYSCFG_SRAM2WRP SRAM2 Write protection
-  * @{
-  */
+    /** @defgroup SYSCFG_SRAM2WRP SRAM2 Write protection
+     * @{
+     */
 #define SYSCFG_SRAM2WRP_PAGE0          SYSCFG_SWPR_PAGE0 /*!< SRAM2 Write protection page 0 */
 #define SYSCFG_SRAM2WRP_PAGE1          SYSCFG_SWPR_PAGE1 /*!< SRAM2 Write protection page 1 */
 #define SYSCFG_SRAM2WRP_PAGE2          SYSCFG_SWPR_PAGE2 /*!< SRAM2 Write protection page 2 */
@@ -124,68 +124,68 @@
 #define SYSCFG_SRAM2WRP_PAGE30         SYSCFG_SWPR_PAGE30 /*!< SRAM2 Write protection page 30 */
 #define SYSCFG_SRAM2WRP_PAGE31         SYSCFG_SWPR_PAGE31 /*!< SRAM2 Write protection page 31 */
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/** @defgroup SYSCFG_VREFBUF_VoltageScale VREFBUF Voltage Scale
-  * @{
-  */
+    /** @defgroup SYSCFG_VREFBUF_VoltageScale VREFBUF Voltage Scale
+     * @{
+     */
 #define SYSCFG_VREFBUF_VOLTAGE_SCALE0  ((uint32_t)0x00000000) /*!< Voltage reference scale 0 (VREF_OUT1) */
 #define SYSCFG_VREFBUF_VOLTAGE_SCALE1  VREFBUF_CSR_VRS        /*!< Voltage reference scale 1 (VREF_OUT2) */
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/** @defgroup SYSCFG_VREFBUF_HighImpedance VREFBUF High Impedance
-  * @{
-  */
+    /** @defgroup SYSCFG_VREFBUF_HighImpedance VREFBUF High Impedance
+     * @{
+     */
 #define SYSCFG_VREFBUF_HIGH_IMPEDANCE_DISABLE  ((uint32_t)0x00000000) /*!< VREF_plus pin is internally connected to Voltage reference buffer output */
 #define SYSCFG_VREFBUF_HIGH_IMPEDANCE_ENABLE   VREFBUF_CSR_HIZ        /*!< VREF_plus pin is high impedance */
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/** @defgroup SYSCFG_flags_definition Flags
-  * @{
-  */
+    /** @defgroup SYSCFG_flags_definition Flags
+     * @{
+     */
 
 #define SYSCFG_FLAG_SRAM2_PE            SYSCFG_CFGR2_SPF       /*!< SRAM2 parity error */
 #define SYSCFG_FLAG_SRAM2_BUSY          SYSCFG_SCSR_SRAM2BSY   /*!< SRAM2 busy by erase operation */
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/** @defgroup SYSCFG_FastModePlus_GPIO Fast-mode Plus on GPIO
-  * @{
-  */
+    /** @defgroup SYSCFG_FastModePlus_GPIO Fast-mode Plus on GPIO
+     * @{
+     */
 
-/** @brief  Fast-mode Plus driving capability on a specific GPIO
-  */  
+    /** @brief  Fast-mode Plus driving capability on a specific GPIO
+     */
 #define SYSCFG_FASTMODEPLUS_PB6        SYSCFG_CFGR1_I2C_PB6_FMP  /*!< Enable Fast-mode Plus on PB6 */
 #define SYSCFG_FASTMODEPLUS_PB7        SYSCFG_CFGR1_I2C_PB7_FMP  /*!< Enable Fast-mode Plus on PB7 */
 #define SYSCFG_FASTMODEPLUS_PB8        SYSCFG_CFGR1_I2C_PB8_FMP  /*!< Enable Fast-mode Plus on PB8 */
 #define SYSCFG_FASTMODEPLUS_PB9        SYSCFG_CFGR1_I2C_PB9_FMP  /*!< Enable Fast-mode Plus on PB9 */
 
-/**
- * @}
- */
+    /**
+     * @}
+     */
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/* Exported macros -----------------------------------------------------------*/
+    /* Exported macros -----------------------------------------------------------*/
 
-/** @defgroup DBGMCU_Exported_Macros DBGMCU Exported Macros
-  * @{
-  */
+    /** @defgroup DBGMCU_Exported_Macros DBGMCU Exported Macros
+     * @{
+     */
 
-/** @brief  Freeze/Unfreeze Peripherals in Debug mode
-  */
+    /** @brief  Freeze/Unfreeze Peripherals in Debug mode
+     */
 #if defined(DBGMCU_APB1FZR1_DBG_TIM2_STOP)
 #define __HAL_DBGMCU_FREEZE_TIM2()           SET_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_TIM2_STOP)
 #define __HAL_DBGMCU_UNFREEZE_TIM2()         CLEAR_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_TIM2_STOP)
@@ -286,69 +286,69 @@
 #define __HAL_DBGMCU_UNFREEZE_TIM17()        CLEAR_BIT(DBGMCU->APB2FZ, DBGMCU_APB2FZ_DBG_TIM17_STOP)
 #endif
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/** @defgroup SYSCFG_Exported_Macros SYSCFG Exported Macros
-  * @{
-  */
+    /** @defgroup SYSCFG_Exported_Macros SYSCFG Exported Macros
+     * @{
+     */
 
-/** @brief  Main Flash memory mapped at 0x00000000.
-  */
+    /** @brief  Main Flash memory mapped at 0x00000000.
+     */
 #define __HAL_SYSCFG_REMAPMEMORY_FLASH()       CLEAR_BIT(SYSCFG->MEMRMP, SYSCFG_MEMRMP_MEM_MODE)
 
-/** @brief  System Flash memory mapped at 0x00000000.
-  */
+    /** @brief  System Flash memory mapped at 0x00000000.
+     */
 #define __HAL_SYSCFG_REMAPMEMORY_SYSTEMFLASH() MODIFY_REG(SYSCFG->MEMRMP, SYSCFG_MEMRMP_MEM_MODE, SYSCFG_MEMRMP_MEM_MODE_0)
 
-/** @brief  Embedded SRAM mapped at 0x00000000.
-  */
+    /** @brief  Embedded SRAM mapped at 0x00000000.
+     */
 #define __HAL_SYSCFG_REMAPMEMORY_SRAM()        MODIFY_REG(SYSCFG->MEMRMP, SYSCFG_MEMRMP_MEM_MODE, (SYSCFG_MEMRMP_MEM_MODE_1|SYSCFG_MEMRMP_MEM_MODE_0))
 
-/** @brief  FMC Bank1 (NOR/PSRAM 1 and 2) mapped at 0x00000000.
-  */
+    /** @brief  FMC Bank1 (NOR/PSRAM 1 and 2) mapped at 0x00000000.
+     */
 #define __HAL_SYSCFG_REMAPMEMORY_FMC()         MODIFY_REG(SYSCFG->MEMRMP, SYSCFG_MEMRMP_MEM_MODE, SYSCFG_MEMRMP_MEM_MODE_1)
 
-/** @brief  QUADSPI mapped at 0x00000000.
-  */
+    /** @brief  QUADSPI mapped at 0x00000000.
+     */
 #define __HAL_SYSCFG_REMAPMEMORY_QUADSPI()     MODIFY_REG(SYSCFG->MEMRMP, SYSCFG_MEMRMP_MEM_MODE, (SYSCFG_MEMRMP_MEM_MODE_2|SYSCFG_MEMRMP_MEM_MODE_1))
 
-/**
-  * @brief  Return the boot mode as configured by user.
-  * @retval The boot mode as configured by user. The returned value can be one
-  *         of the following values:
-  *           @arg SYSCFG_BOOT_MAINFLASH
-  *           @arg SYSCFG_BOOT_SYSTEMFLASH
-  *           @arg SYSCFG_BOOT_FMC
-  *           @arg SYSCFG_BOOT_SRAM
-  *           @arg SYSCFG_BOOT_QUADSPI
-  */
+    /**
+     * @brief  Return the boot mode as configured by user.
+     * @retval The boot mode as configured by user. The returned value can be one
+     *         of the following values:
+     *           @arg SYSCFG_BOOT_MAINFLASH
+     *           @arg SYSCFG_BOOT_SYSTEMFLASH
+     *           @arg SYSCFG_BOOT_FMC
+     *           @arg SYSCFG_BOOT_SRAM
+     *           @arg SYSCFG_BOOT_QUADSPI
+     */
 #define __HAL_SYSCFG_GET_BOOT_MODE()           READ_BIT(SYSCFG->MEMRMP, SYSCFG_MEMRMP_MEM_MODE)
 
-/** @brief  SRAM2 page write protection enable macro
-  * @param __SRAM2WRP__: This parameter can be a value of @ref SYSCFG_SRAM2WRP
-  * @note   write protection can only be disabled by a system reset
-  */
+    /** @brief  SRAM2 page write protection enable macro
+     * @param __SRAM2WRP__: This parameter can be a value of @ref SYSCFG_SRAM2WRP
+     * @note   write protection can only be disabled by a system reset
+     */
 #define __HAL_SYSCFG_SRAM2_WRP_ENABLE(__SRAM2WRP__)   do {assert_param(IS_SYSCFG_SRAM2WRP_PAGE((__SRAM2WRP__)));\
                                                          SET_BIT(SYSCFG->SWPR, (__SRAM2WRP__));\
                                                         }while(0)
 
-/** @brief  SRAM2 page write protection unlock prior to erase
-  * @note   Writing a wrong key reactivates the write protection
-  */
+    /** @brief  SRAM2 page write protection unlock prior to erase
+     * @note   Writing a wrong key reactivates the write protection
+     */
 #define __HAL_SYSCFG_SRAM2_WRP_UNLOCK()      do {SYSCFG->SKR = 0xCA;\
                                                  SYSCFG->SKR = 0x53;\
                                                 }while(0)
 
-/** @brief  SRAM2 erase
-  * @note   __SYSCFG_GET_FLAG(SYSCFG_FLAG_SRAM2_BUSY) may be used to check end of erase
-  */
+    /** @brief  SRAM2 erase
+     * @note   __SYSCFG_GET_FLAG(SYSCFG_FLAG_SRAM2_BUSY) may be used to check end of erase
+     */
 #define __HAL_SYSCFG_SRAM2_ERASE()           SET_BIT(SYSCFG->SCSR, SYSCFG_SCSR_SRAM2ER)
 
-/** @brief  Floating Point Unit interrupt enable/disable macros
-  * @param __INTERRUPT__: This parameter can be a value of @ref SYSCFG_FPU_Interrupts
-  */
+    /** @brief  Floating Point Unit interrupt enable/disable macros
+     * @param __INTERRUPT__: This parameter can be a value of @ref SYSCFG_FPU_Interrupts
+     */
 #define __HAL_SYSCFG_FPU_INTERRUPT_ENABLE(__INTERRUPT__)    do {assert_param(IS_SYSCFG_FPU_INTERRUPT((__INTERRUPT__)));\
                                                                 SET_BIT(SYSCFG->CFGR1, (__INTERRUPT__));\
                                                             }while(0)
@@ -357,50 +357,50 @@
                                                                 CLEAR_BIT(SYSCFG->CFGR1, (__INTERRUPT__));\
                                                             }while(0)
 
-/** @brief  SYSCFG Break ECC lock.
-  *         Enable and lock the connection of Flash ECC error connection to TIM1/8/15/16/17 Break input.
-  * @note   The selected configuration is locked and can be unlocked only by system reset.
-  */
+    /** @brief  SYSCFG Break ECC lock.
+     *         Enable and lock the connection of Flash ECC error connection to TIM1/8/15/16/17 Break input.
+     * @note   The selected configuration is locked and can be unlocked only by system reset.
+     */
 #define __HAL_SYSCFG_BREAK_ECC_LOCK()        SET_BIT(SYSCFG->CFGR2, SYSCFG_CFGR2_ECCL)
 
-/** @brief  SYSCFG Break Cortex-M4 Lockup lock.
-  *         Enable and lock the connection of Cortex-M4 LOCKUP (Hardfault) output to TIM1/8/15/16/17 Break input.
-  * @note   The selected configuration is locked and can be unlocked only by system reset.
-  */
+    /** @brief  SYSCFG Break Cortex-M4 Lockup lock.
+     *         Enable and lock the connection of Cortex-M4 LOCKUP (Hardfault) output to TIM1/8/15/16/17 Break input.
+     * @note   The selected configuration is locked and can be unlocked only by system reset.
+     */
 #define __HAL_SYSCFG_BREAK_LOCKUP_LOCK()     SET_BIT(SYSCFG->CFGR2, SYSCFG_CFGR2_CLL)
 
-/** @brief  SYSCFG Break PVD lock.
-  *         Enable and lock the PVD connection to Timer1/8/15/16/17 Break input, as well as the PVDE and PLS[2:0] in the PWR_CR2 register.
-  * @note   The selected configuration is locked and can be unlocked only by system reset.
-  */
+    /** @brief  SYSCFG Break PVD lock.
+     *         Enable and lock the PVD connection to Timer1/8/15/16/17 Break input, as well as the PVDE and PLS[2:0] in the PWR_CR2 register.
+     * @note   The selected configuration is locked and can be unlocked only by system reset.
+     */
 #define __HAL_SYSCFG_BREAK_PVD_LOCK()        SET_BIT(SYSCFG->CFGR2, SYSCFG_CFGR2_PVDL)
 
-/** @brief  SYSCFG Break SRAM2 parity lock.
-  *         Enable and lock the SRAM2 parity error signal connection to TIM1/8/15/16/17 Break input.
-  * @note   The selected configuration is locked and can be unlocked by system reset.
-  */
+    /** @brief  SYSCFG Break SRAM2 parity lock.
+     *         Enable and lock the SRAM2 parity error signal connection to TIM1/8/15/16/17 Break input.
+     * @note   The selected configuration is locked and can be unlocked by system reset.
+     */
 #define __HAL_SYSCFG_BREAK_SRAM2PARITY_LOCK()  SET_BIT(SYSCFG->CFGR2, SYSCFG_CFGR2_SPL)
 
-/** @brief  Check SYSCFG flag is set or not.
-  * @param  __FLAG__: specifies the flag to check.
-  *         This parameter can be one of the following values:
-  *            @arg SYSCFG_FLAG_SRAM2_PE: SRAM2 Parity Error Flag
-  *            @arg SYSCFG_FLAG_SRAM2_BUSY: SRAM2 Erase Ongoing
-  * @retval The new state of __FLAG__ (TRUE or FALSE).
-  */
+    /** @brief  Check SYSCFG flag is set or not.
+     * @param  __FLAG__: specifies the flag to check.
+     *         This parameter can be one of the following values:
+     *            @arg SYSCFG_FLAG_SRAM2_PE: SRAM2 Parity Error Flag
+     *            @arg SYSCFG_FLAG_SRAM2_BUSY: SRAM2 Erase Ongoing
+     * @retval The new state of __FLAG__ (TRUE or FALSE).
+     */
 #define __HAL_SYSCFG_GET_FLAG(__FLAG__)      ((((((__FLAG__) == SYSCFG_SCSR_SRAM2BSY)? SYSCFG->SCSR : SYSCFG->CFGR2) & (__FLAG__))!= 0) ? 1 : 0)
 
-/** @brief  Set the SPF bit to clear the SRAM Parity Error Flag.
-  */
+    /** @brief  Set the SPF bit to clear the SRAM Parity Error Flag.
+     */
 #define __HAL_SYSCFG_CLEAR_FLAG()            SET_BIT(SYSCFG->CFGR2, SYSCFG_CFGR2_SPF)
 
-/** @brief  Fast-mode Plus driving capability enable/disable macros
-  * @param __FASTMODEPLUS__: This parameter can be a value of : 
-  *     @arg SYSCFG_FASTMODEPLUS_PB6: Fast-mode Plus driving capability activation on PB6
-  *     @arg SYSCFG_FASTMODEPLUS_PB7: Fast-mode Plus driving capability activation on PB7 
-  *     @arg SYSCFG_FASTMODEPLUS_PB8: Fast-mode Plus driving capability activation on PB8
-  *     @arg SYSCFG_FASTMODEPLUS_PB9: Fast-mode Plus driving capability activation on PB9
-  */
+    /** @brief  Fast-mode Plus driving capability enable/disable macros
+     * @param __FASTMODEPLUS__: This parameter can be a value of : 
+     *     @arg SYSCFG_FASTMODEPLUS_PB6: Fast-mode Plus driving capability activation on PB6
+     *     @arg SYSCFG_FASTMODEPLUS_PB7: Fast-mode Plus driving capability activation on PB7 
+     *     @arg SYSCFG_FASTMODEPLUS_PB8: Fast-mode Plus driving capability activation on PB8
+     *     @arg SYSCFG_FASTMODEPLUS_PB9: Fast-mode Plus driving capability activation on PB9
+     */
 #define __HAL_SYSCFG_FASTMODEPLUS_ENABLE(__FASTMODEPLUS__)  do {assert_param(IS_SYSCFG_FASTMODEPLUS((__FASTMODEPLUS__)));\
                                                                 SET_BIT(SYSCFG->CFGR1, (__FASTMODEPLUS__));\
                                                                }while(0)
@@ -409,14 +409,14 @@
                                                                 CLEAR_BIT(SYSCFG->CFGR1, (__FASTMODEPLUS__));\
                                                                }while(0)
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/* Private macros ------------------------------------------------------------*/
-/** @defgroup SYSCFG_Private_Macros SYSCFG Private Macros
-  * @{
-  */
+    /* Private macros ------------------------------------------------------------*/
+    /** @defgroup SYSCFG_Private_Macros SYSCFG Private Macros
+     * @{
+     */
 
 #define IS_SYSCFG_FPU_INTERRUPT(__INTERRUPT__) ((((__INTERRUPT__) & SYSCFG_IT_FPU_IOC) == SYSCFG_IT_FPU_IOC) || \
                                                 (((__INTERRUPT__) & SYSCFG_IT_FPU_DZC) == SYSCFG_IT_FPU_DZC) || \
@@ -446,95 +446,95 @@
                                          (((__PIN__) & SYSCFG_FASTMODEPLUS_PB8) == SYSCFG_FASTMODEPLUS_PB8) || \
                                          (((__PIN__) & SYSCFG_FASTMODEPLUS_PB9) == SYSCFG_FASTMODEPLUS_PB9))
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/* Exported functions --------------------------------------------------------*/
+    /* Exported functions --------------------------------------------------------*/
 
-/** @addtogroup HAL_Exported_Functions
-  * @{
-  */
+    /** @addtogroup HAL_Exported_Functions
+     * @{
+     */
 
-/** @addtogroup HAL_Exported_Functions_Group1
-  * @{
-  */
+    /** @addtogroup HAL_Exported_Functions_Group1
+     * @{
+     */
 
-/* Initialization and de-initialization functions  ******************************/
-HAL_StatusTypeDef HAL_Init(void);
-HAL_StatusTypeDef HAL_DeInit(void);
-void HAL_MspInit(void);
-void HAL_MspDeInit(void);
-HAL_StatusTypeDef HAL_InitTick (uint32_t TickPriority);
+    /* Initialization and de-initialization functions  ******************************/
+    HAL_StatusTypeDef HAL_Init(void);
+    HAL_StatusTypeDef HAL_DeInit(void);
+    void HAL_MspInit(void);
+    void HAL_MspDeInit(void);
+    HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority);
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/** @addtogroup HAL_Exported_Functions_Group2
-  * @{
-  */
+    /** @addtogroup HAL_Exported_Functions_Group2
+     * @{
+     */
 
-/* Peripheral Control functions  ************************************************/
-void HAL_IncTick(void);
-void HAL_Delay(uint32_t Delay);
-uint32_t HAL_GetTick(void);
-void HAL_SuspendTick(void);
-void HAL_ResumeTick(void);
-uint32_t HAL_GetHalVersion(void);
-uint32_t HAL_GetREVID(void);
-uint32_t HAL_GetDEVID(void);
+    /* Peripheral Control functions  ************************************************/
+    void HAL_IncTick(void);
+    void HAL_Delay(uint32_t Delay);
+    uint32_t HAL_GetTick(void);
+    void HAL_SuspendTick(void);
+    void HAL_ResumeTick(void);
+    uint32_t HAL_GetHalVersion(void);
+    uint32_t HAL_GetREVID(void);
+    uint32_t HAL_GetDEVID(void);
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/** @addtogroup HAL_Exported_Functions_Group3
-  * @{
-  */
+    /** @addtogroup HAL_Exported_Functions_Group3
+     * @{
+     */
 
-/* DBGMCU Peripheral Control functions  *****************************************/
-void HAL_DBGMCU_EnableDBGSleepMode(void);
-void HAL_DBGMCU_DisableDBGSleepMode(void);
-void HAL_DBGMCU_EnableDBGStopMode(void);
-void HAL_DBGMCU_DisableDBGStopMode(void);
-void HAL_DBGMCU_EnableDBGStandbyMode(void);
-void HAL_DBGMCU_DisableDBGStandbyMode(void);
+    /* DBGMCU Peripheral Control functions  *****************************************/
+    void HAL_DBGMCU_EnableDBGSleepMode(void);
+    void HAL_DBGMCU_DisableDBGSleepMode(void);
+    void HAL_DBGMCU_EnableDBGStopMode(void);
+    void HAL_DBGMCU_DisableDBGStopMode(void);
+    void HAL_DBGMCU_EnableDBGStandbyMode(void);
+    void HAL_DBGMCU_DisableDBGStandbyMode(void);
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/** @addtogroup HAL_Exported_Functions_Group4
-  * @{
-  */
+    /** @addtogroup HAL_Exported_Functions_Group4
+     * @{
+     */
 
-/* SYSCFG Control functions  ****************************************************/
-void HAL_SYSCFG_SRAM2Erase(void);
-void HAL_SYSCFG_EnableMemorySwappingBank(void);
-void HAL_SYSCFG_DisableMemorySwappingBank(void);
+    /* SYSCFG Control functions  ****************************************************/
+    void HAL_SYSCFG_SRAM2Erase(void);
+    void HAL_SYSCFG_EnableMemorySwappingBank(void);
+    void HAL_SYSCFG_DisableMemorySwappingBank(void);
 
-void HAL_SYSCFG_VREFBUF_VoltageScalingConfig(uint32_t VoltageScaling);
-void HAL_SYSCFG_VREFBUF_HighImpedanceConfig(uint32_t Mode);
-void HAL_SYSCFG_VREFBUF_TrimmingConfig(uint32_t TrimmingValue);
-HAL_StatusTypeDef HAL_SYSCFG_EnableVREFBUF(void);
-void HAL_SYSCFG_DisableVREFBUF(void);
+    void HAL_SYSCFG_VREFBUF_VoltageScalingConfig(uint32_t VoltageScaling);
+    void HAL_SYSCFG_VREFBUF_HighImpedanceConfig(uint32_t Mode);
+    void HAL_SYSCFG_VREFBUF_TrimmingConfig(uint32_t TrimmingValue);
+    HAL_StatusTypeDef HAL_SYSCFG_EnableVREFBUF(void);
+    void HAL_SYSCFG_DisableVREFBUF(void);
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
 #ifdef __cplusplus
 }

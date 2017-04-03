@@ -40,63 +40,63 @@ extern "C" {
 
 #include <stdint.h>
 
-/**
- * @file  rtc_regs.h
- * @addtogroup rtc RTCTMR
- * @{
- */
+    /**
+     * @file  rtc_regs.h
+     * @addtogroup rtc RTCTMR
+     * @{
+     */
 
-/**
- * @brief Defines clock divider for 4096Hz input clock.
- */
-typedef enum {
-    /** (4kHz) divide input clock by 2^0 = 1 */
-    MXC_E_RTC_PRESCALE_DIV_2_0 = 0,
-    /** (2kHz) divide input clock by 2^1 = 2 */
-    MXC_E_RTC_PRESCALE_DIV_2_1,
-    /** (1kHz) divide input clock by 2^2 = 4 */
-    MXC_E_RTC_PRESCALE_DIV_2_2,
-    /** (512Hz) divide input clock by 2^3 = 8 */
-    MXC_E_RTC_PRESCALE_DIV_2_3,
-    /** (256Hz) divide input clock by 2^4 = 16 */
-    MXC_E_RTC_PRESCALE_DIV_2_4,
-    /** (128Hz) divide input clock by 2^5 = 32 */
-    MXC_E_RTC_PRESCALE_DIV_2_5,
-    /** (64Hz) divide input clock by 2^6 = 64 */
-    MXC_E_RTC_PRESCALE_DIV_2_6,
-    /** (32Hz) divide input clock by 2^7 = 128 */
-    MXC_E_RTC_PRESCALE_DIV_2_7,
-    /** (16Hz) divide input clock by 2^8 = 256 */
-    MXC_E_RTC_PRESCALE_DIV_2_8,
-    /** (8Hz) divide input clock by 2^9 = 512 */
-    MXC_E_RTC_PRESCALE_DIV_2_9,
-    /** (4Hz) divide input clock by 2^10 = 1024 */
-    MXC_E_RTC_PRESCALE_DIV_2_10,
-    /** (2Hz) divide input clock by 2^11 = 2048 */
-    MXC_E_RTC_PRESCALE_DIV_2_11,
-    /** (1Hz) divide input clock by 2^12 = 4096 */
-    MXC_E_RTC_PRESCALE_DIV_2_12,
-} mxc_rtc_prescale_t;
+    /**
+     * @brief Defines clock divider for 4096Hz input clock.
+     */
+    typedef enum {
+        /** (4kHz) divide input clock by 2^0 = 1 */
+        MXC_E_RTC_PRESCALE_DIV_2_0 = 0,
+        /** (2kHz) divide input clock by 2^1 = 2 */
+        MXC_E_RTC_PRESCALE_DIV_2_1,
+        /** (1kHz) divide input clock by 2^2 = 4 */
+        MXC_E_RTC_PRESCALE_DIV_2_2,
+        /** (512Hz) divide input clock by 2^3 = 8 */
+        MXC_E_RTC_PRESCALE_DIV_2_3,
+        /** (256Hz) divide input clock by 2^4 = 16 */
+        MXC_E_RTC_PRESCALE_DIV_2_4,
+        /** (128Hz) divide input clock by 2^5 = 32 */
+        MXC_E_RTC_PRESCALE_DIV_2_5,
+        /** (64Hz) divide input clock by 2^6 = 64 */
+        MXC_E_RTC_PRESCALE_DIV_2_6,
+        /** (32Hz) divide input clock by 2^7 = 128 */
+        MXC_E_RTC_PRESCALE_DIV_2_7,
+        /** (16Hz) divide input clock by 2^8 = 256 */
+        MXC_E_RTC_PRESCALE_DIV_2_8,
+        /** (8Hz) divide input clock by 2^9 = 512 */
+        MXC_E_RTC_PRESCALE_DIV_2_9,
+        /** (4Hz) divide input clock by 2^10 = 1024 */
+        MXC_E_RTC_PRESCALE_DIV_2_10,
+        /** (2Hz) divide input clock by 2^11 = 2048 */
+        MXC_E_RTC_PRESCALE_DIV_2_11,
+        /** (1Hz) divide input clock by 2^12 = 4096 */
+        MXC_E_RTC_PRESCALE_DIV_2_12,
+    } mxc_rtc_prescale_t;
 
-/*                                          Offset   Register Description
-                                            ======   ========================================= */
-typedef struct {
-    __IO uint32_t ctrl;                 /*  0x0000   RTC Timer Control                         */
-    __IO uint32_t timer;                /*  0x0004   RTC Timer Count Value                     */
-    __IO uint32_t comp[2];              /*  0x0008   RTC Alarm (0..1) Compare Registers        */
-    __IO uint32_t flags;                /*  0x0010   CPU Interrupt and RTC Domain Flags        */
-    __I uint32_t rsv0014;               /*  0x0014                                             */
-    __IO uint32_t inten;                /*  0x0018   Interrupt Enable Controls                 */
-    __IO uint32_t prescale;             /*  0x001C   RTC Timer Prescale Setting                */
-    __I uint32_t rsv0020;               /*  0x0020                                             */
-    __IO uint32_t prescale_mask;        /*  0x0024   RTC Timer Prescale Compare Mask           */
-    __IO uint32_t trim_ctrl;            /*  0x0028   RTC Timer Trim Controls                   */
-    __IO uint32_t trim_value;           /*  0x002C   RTC Timer Trim Adjustment Interval        */
-} mxc_rtctmr_regs_t;
+    /*                                          Offset   Register Description
+                                                ======   ========================================= */
+    typedef struct {
+        __IO uint32_t ctrl; /*  0x0000   RTC Timer Control                         */
+        __IO uint32_t timer; /*  0x0004   RTC Timer Count Value                     */
+        __IO uint32_t comp[2]; /*  0x0008   RTC Alarm (0..1) Compare Registers        */
+        __IO uint32_t flags; /*  0x0010   CPU Interrupt and RTC Domain Flags        */
+        __I uint32_t rsv0014; /*  0x0014                                             */
+        __IO uint32_t inten; /*  0x0018   Interrupt Enable Controls                 */
+        __IO uint32_t prescale; /*  0x001C   RTC Timer Prescale Setting                */
+        __I uint32_t rsv0020; /*  0x0020                                             */
+        __IO uint32_t prescale_mask; /*  0x0024   RTC Timer Prescale Compare Mask           */
+        __IO uint32_t trim_ctrl; /*  0x0028   RTC Timer Trim Controls                   */
+        __IO uint32_t trim_value; /*  0x002C   RTC Timer Trim Adjustment Interval        */
+    } mxc_rtctmr_regs_t;
 
-/*
-   Register offsets for module RTCTMR.
-*/
+    /*
+       Register offsets for module RTCTMR.
+     */
 #define MXC_R_RTCTMR_OFFS_CTRL                    ((uint32_t)0x00000000UL)
 #define MXC_R_RTCTMR_OFFS_TIMER                   ((uint32_t)0x00000004UL)
 #define MXC_R_RTCTMR_OFFS_COMP_0                  ((uint32_t)0x00000008UL)
@@ -108,9 +108,9 @@ typedef struct {
 #define MXC_R_RTCTMR_OFFS_TRIM_CTRL               ((uint32_t)0x00000028UL)
 #define MXC_R_RTCTMR_OFFS_TRIM_VALUE              ((uint32_t)0x0000002CUL)
 
-/*
-   Field positions and masks for module RTCTMR.
-*/
+    /*
+       Field positions and masks for module RTCTMR.
+     */
 #define MXC_F_RTC_CTRL_ENABLE_POS                           0
 #define MXC_F_RTC_CTRL_ENABLE                               ((uint32_t)(0x00000001UL << MXC_F_RTC_CTRL_ENABLE_POS))
 #define MXC_F_RTC_CTRL_CLEAR_POS                            1
@@ -218,18 +218,18 @@ typedef struct {
 #define MXC_F_RTC_OSC_CTRL_OSC_DISABLE_O_POS                3
 #define MXC_F_RTC_OSC_CTRL_OSC_DISABLE_O                    ((uint32_t)(0x00000001UL << MXC_F_RTC_OSC_CTRL_OSC_DISABLE_O_POS))
 
-/*                                      Offset   Register Description
-                                        ======   ===================================================================== */
-typedef struct {
-    __IO uint32_t nano_counter;     /*  0x0000   Nanoring Counter Read Register                                        */
-    __IO uint32_t clk_ctrl;         /*  0x0004   RTC Clock Control Settings                                            */
-    __IO uint32_t dsen_ctrl;        /*  0x0008   Dynamic Tamper Sensor Control                                         */
-    __IO uint32_t osc_ctrl;         /*  0x000C   RTC Oscillator Control                                                */
-} mxc_rtccfg_regs_t;
+    /*                                      Offset   Register Description
+                                            ======   ===================================================================== */
+    typedef struct {
+        __IO uint32_t nano_counter; /*  0x0000   Nanoring Counter Read Register                                        */
+        __IO uint32_t clk_ctrl; /*  0x0004   RTC Clock Control Settings                                            */
+        __IO uint32_t dsen_ctrl; /*  0x0008   Dynamic Tamper Sensor Control                                         */
+        __IO uint32_t osc_ctrl; /*  0x000C   RTC Oscillator Control                                                */
+    } mxc_rtccfg_regs_t;
 
-/*
-   Register offsets for module RTCCFG.
-*/
+    /*
+       Register offsets for module RTCCFG.
+     */
 #define MXC_R_RTCCFG_OFFS_NANO_COUNTER            ((uint32_t)0x00000000UL)
 #define MXC_R_RTCCFG_OFFS_CLK_CTRL                ((uint32_t)0x00000004UL)
 #define MXC_R_RTCCFG_OFFS_DSEN_CTRL               ((uint32_t)0x00000008UL)
@@ -240,7 +240,7 @@ typedef struct {
 #endif
 
 /**
-* @}
-*/
+ * @}
+ */
 
 #endif /* _MXC_RTC_REGS_H */

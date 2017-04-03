@@ -34,16 +34,16 @@
  * @{
  * @brief EFM32LG_PRS Register Declaration
  *****************************************************************************/
-typedef struct
-{
-  __IO uint32_t  SWPULSE;      /**< Software Pulse Register  */
-  __IO uint32_t  SWLEVEL;      /**< Software Level Register  */
-  __IO uint32_t  ROUTE;        /**< I/O Routing Register  */
 
-  uint32_t       RESERVED0[1]; /**< Reserved registers */
+typedef struct {
+    __IO uint32_t SWPULSE; /**< Software Pulse Register  */
+    __IO uint32_t SWLEVEL; /**< Software Level Register  */
+    __IO uint32_t ROUTE; /**< I/O Routing Register  */
 
-  PRS_CH_TypeDef CH[12];       /**< Channel registers */
-} PRS_TypeDef;                 /** @} */
+    uint32_t RESERVED0[1]; /**< Reserved registers */
+
+    PRS_CH_TypeDef CH[12]; /**< Channel registers */
+} PRS_TypeDef; /** @} */
 
 /**************************************************************************//**
  * @defgroup EFM32LG_PRS_BitFields

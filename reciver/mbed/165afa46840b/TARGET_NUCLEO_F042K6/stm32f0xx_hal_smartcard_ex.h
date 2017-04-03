@@ -1,74 +1,74 @@
 /**
-  ******************************************************************************
-  * @file    stm32f0xx_hal_smartcard_ex.h
-  * @author  MCD Application Team
-  * @version V1.3.0
-  * @date    26-June-2015
-  * @brief   Header file of SMARTCARD HAL Extended module.
-  ******************************************************************************
-  * @attention
-  *
-  * <h2><center>&copy; COPYRIGHT(c) 2015 STMicroelectronics</center></h2>
-  *
-  * Redistribution and use in source and binary forms, with or without modification,
-  * are permitted provided that the following conditions are met:
-  *   1. Redistributions of source code must retain the above copyright notice,
-  *      this list of conditions and the following disclaimer.
-  *   2. Redistributions in binary form must reproduce the above copyright notice,
-  *      this list of conditions and the following disclaimer in the documentation
-  *      and/or other materials provided with the distribution.
-  *   3. Neither the name of STMicroelectronics nor the names of its contributors
-  *      may be used to endorse or promote products derived from this software
-  *      without specific prior written permission.
-  *
-  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file    stm32f0xx_hal_smartcard_ex.h
+ * @author  MCD Application Team
+ * @version V1.3.0
+ * @date    26-June-2015
+ * @brief   Header file of SMARTCARD HAL Extended module.
+ ******************************************************************************
+ * @attention
+ *
+ * <h2><center>&copy; COPYRIGHT(c) 2015 STMicroelectronics</center></h2>
+ *
+ * Redistribution and use in source and binary forms, with or without modification,
+ * are permitted provided that the following conditions are met:
+ *   1. Redistributions of source code must retain the above copyright notice,
+ *      this list of conditions and the following disclaimer.
+ *   2. Redistributions in binary form must reproduce the above copyright notice,
+ *      this list of conditions and the following disclaimer in the documentation
+ *      and/or other materials provided with the distribution.
+ *   3. Neither the name of STMicroelectronics nor the names of its contributors
+ *      may be used to endorse or promote products derived from this software
+ *      without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ ******************************************************************************
+ */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __STM32F0xx_HAL_SMARTCARD_EX_H
 #define __STM32F0xx_HAL_SMARTCARD_EX_H
 
 #ifdef __cplusplus
- extern "C" {
+extern "C" {
 #endif
 
 #if !defined(STM32F030x6) && !defined(STM32F030x8) && !defined(STM32F070x6) && !defined(STM32F070xB) && !defined(STM32F030xC) 
 
-/* Includes ------------------------------------------------------------------*/
+    /* Includes ------------------------------------------------------------------*/
 #include "stm32f0xx_hal_def.h"
 
-/** @addtogroup STM32F0xx_HAL_Driver
-  * @{
-  */
+    /** @addtogroup STM32F0xx_HAL_Driver
+     * @{
+     */
 
-/** @addtogroup SMARTCARDEx
-  * @{
-  */
+    /** @addtogroup SMARTCARDEx
+     * @{
+     */
 
-/* Exported types ------------------------------------------------------------*/  
-/* Exported constants --------------------------------------------------------*/
-/* Exported macro ------------------------------------------------------------*/
+    /* Exported types ------------------------------------------------------------*/
+    /* Exported constants --------------------------------------------------------*/
+    /* Exported macro ------------------------------------------------------------*/
 
-/** @defgroup SMARTCARD_Extended_Exported_Macros SMARTCARDEx Exported Macros
-  * @{
-  */
+    /** @defgroup SMARTCARD_Extended_Exported_Macros SMARTCARDEx Exported Macros
+     * @{
+     */
 
-/** @brief  Reports the SMARTCARD clock source.
-  * @param  __HANDLE__: specifies the SMARTCARD Handle
-  * @param  __CLOCKSOURCE__ : output variable   
-  * @retval the SMARTCARD clocking source, written in __CLOCKSOURCE__.
-  */
+    /** @brief  Reports the SMARTCARD clock source.
+     * @param  __HANDLE__: specifies the SMARTCARD Handle
+     * @param  __CLOCKSOURCE__ : output variable   
+     * @retval the SMARTCARD clocking source, written in __CLOCKSOURCE__.
+     */
 #if defined(STM32F031x6) || defined(STM32F038xx)
 #define SMARTCARD_GETCLOCKSOURCE(__HANDLE__,__CLOCKSOURCE__) \
   do {                                                             \
@@ -277,48 +277,48 @@
   } while(0)      
 #endif /* defined(STM32F031x6) || defined(STM32F038xx) */
 
-/**
-  * @}
-  */      
+    /**
+     * @}
+     */
 
-/* Exported functions --------------------------------------------------------*/
-/** @addtogroup SMARTCARDEx_Exported_Functions
-  * @{
-  */
+    /* Exported functions --------------------------------------------------------*/
+    /** @addtogroup SMARTCARDEx_Exported_Functions
+     * @{
+     */
 
-/* Initialization and de-initialization functions  ****************************/
-/* IO operation methods *******************************************************/
+    /* Initialization and de-initialization functions  ****************************/
+    /* IO operation methods *******************************************************/
 
-/** @addtogroup SMARTCARDEx_Exported_Functions_Group1
-  * @{
-  */
+    /** @addtogroup SMARTCARDEx_Exported_Functions_Group1
+     * @{
+     */
 
-/* Peripheral Control functions ***********************************************/
-void              HAL_SMARTCARDEx_BlockLength_Config(SMARTCARD_HandleTypeDef *hsmartcard, uint8_t BlockLength);
-void              HAL_SMARTCARDEx_TimeOut_Config(SMARTCARD_HandleTypeDef *hsmartcard, uint32_t TimeOutValue);
-HAL_StatusTypeDef HAL_SMARTCARDEx_EnableReceiverTimeOut(SMARTCARD_HandleTypeDef *hsmartcard);
-HAL_StatusTypeDef HAL_SMARTCARDEx_DisableReceiverTimeOut(SMARTCARD_HandleTypeDef *hsmartcard);
+    /* Peripheral Control functions ***********************************************/
+    void HAL_SMARTCARDEx_BlockLength_Config(SMARTCARD_HandleTypeDef *hsmartcard, uint8_t BlockLength);
+    void HAL_SMARTCARDEx_TimeOut_Config(SMARTCARD_HandleTypeDef *hsmartcard, uint32_t TimeOutValue);
+    HAL_StatusTypeDef HAL_SMARTCARDEx_EnableReceiverTimeOut(SMARTCARD_HandleTypeDef *hsmartcard);
+    HAL_StatusTypeDef HAL_SMARTCARDEx_DisableReceiverTimeOut(SMARTCARD_HandleTypeDef *hsmartcard);
 
-/* Peripheral State and Error functions ***************************************/
+    /* Peripheral State and Error functions ***************************************/
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
-/**
-  * @}
-  */
+    /**
+     * @}
+     */
 
 #endif /* !defined(STM32F030x6) && !defined(STM32F030x8)&& !defined(STM32F070x6) && !defined(STM32F070xB) && !defined(STM32F030xC)  */  
-  
+
 #ifdef __cplusplus
 }
 #endif

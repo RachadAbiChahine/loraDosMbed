@@ -40,76 +40,76 @@ extern "C" {
 
 #include <stdint.h>
 
-/**
- * @file  ioman_regs.h
- * @addtogroup ioman IO MUX Manager
- * @{
- */
+    /**
+     * @file  ioman_regs.h
+     * @addtogroup ioman IO MUX Manager
+     * @{
+     */
 
-typedef enum {
-    /** Pin Mapping 'A' */
-    MXC_E_IOMAN_MAPPING_A = 0,
-    /** Pin Mapping 'B' */
-    MXC_E_IOMAN_MAPPING_B,
-    /** Pin Mapping 'C' */
-    MXC_E_IOMAN_MAPPING_C,
-    /** Pin Mapping 'D' */
-    MXC_E_IOMAN_MAPPING_D,
-    /** Pin Mapping 'E' */
-    MXC_E_IOMAN_MAPPING_E,
-    /** Pin Mapping 'F' */
-    MXC_E_IOMAN_MAPPING_F,
-    /** Pin Mapping 'G' */
-    MXC_E_IOMAN_MAPPING_G,
-    /** Pin Mapping 'H' */
-    MXC_E_IOMAN_MAPPING_H,
-} ioman_mapping_t;
+    typedef enum {
+        /** Pin Mapping 'A' */
+        MXC_E_IOMAN_MAPPING_A = 0,
+        /** Pin Mapping 'B' */
+        MXC_E_IOMAN_MAPPING_B,
+        /** Pin Mapping 'C' */
+        MXC_E_IOMAN_MAPPING_C,
+        /** Pin Mapping 'D' */
+        MXC_E_IOMAN_MAPPING_D,
+        /** Pin Mapping 'E' */
+        MXC_E_IOMAN_MAPPING_E,
+        /** Pin Mapping 'F' */
+        MXC_E_IOMAN_MAPPING_F,
+        /** Pin Mapping 'G' */
+        MXC_E_IOMAN_MAPPING_G,
+        /** Pin Mapping 'H' */
+        MXC_E_IOMAN_MAPPING_H,
+    } ioman_mapping_t;
 
-/*                                      Offset   Register Description
-                                        ======   ========================================== */
-typedef struct {
-    __IO uint32_t wud_req0;         /*  0x0000   Wakeup Detect Mode Request Register 0      */
-    __IO uint32_t wud_req1;         /*  0x0004   Wakeup Detect Mode Request Register 1      */
-    __IO uint32_t wud_ack0;         /*  0x0008   Wakeup Detect Mode Acknowledge Register 0  */
-    __IO uint32_t wud_ack1;         /*  0x000C   Wakeup Detect Mode Acknowledge Register 1  */
-    __IO uint32_t ali_req0;         /*  0x0010   Analog Input Request Register 0            */
-    __IO uint32_t ali_req1;         /*  0x0014   Analog Input Request Register 1            */
-    __IO uint32_t ali_ack0;         /*  0x0018   Analog Input Acknowledge Register 0        */
-    __IO uint32_t ali_ack1;         /*  0x001C   Analog Input Acknowledge Register 1        */
-    __IO uint32_t spi0_req;         /*  0x0020   SPI0 I/O Mode Request                      */
-    __IO uint32_t spi0_ack;         /*  0x0024   SPI0 I/O Mode Acknowledge                  */
-    __IO uint32_t spi1_req;         /*  0x0028   SPI1 I/O Mode Request                      */
-    __IO uint32_t spi1_ack;         /*  0x002C   SPI1 I/O Mode Acknowledge                  */
-    __IO uint32_t spi2_req;         /*  0x0030   SPI2 I/O Mode Request                      */
-    __IO uint32_t spi2_ack;         /*  0x0034   SPI2 I/O Mode Acknowledge                  */
-    __IO uint32_t uart0_req;        /*  0x0038   UART0 I/O Mode Request                     */
-    __IO uint32_t uart0_ack;        /*  0x003C   UART0 I/O Mode Acknowledge                 */
-    __IO uint32_t uart1_req;        /*  0x0040   UART1 I/O Mode Request                     */
-    __IO uint32_t uart1_ack;        /*  0x0044   UART1 I/O Mode Acknowledge                 */
-    __IO uint32_t i2cm0_req;        /*  0x0048   I2C Master 0 I/O Request                   */
-    __IO uint32_t i2cm0_ack;        /*  0x004C   I2C Master 0 I/O Acknowledge               */
-    __IO uint32_t i2cs0_req;        /*  0x0050   I2C Slave 0 I/O Request                    */
-    __IO uint32_t i2s0_ack;         /*  0x0054   I2C Slave 0 I/O Acknowledge                */
-    __IO uint32_t lcd_com_req;      /*  0x0058   LCD COM Driver I/O Request                 */
-    __IO uint32_t lcd_com_ack;      /*  0x005C   LCD COM Driver I/O Acknowledge             */
-    __IO uint32_t lcd_seg_req0;     /*  0x0060   LCD SEG Driver I/O Request Register 0      */
-    __IO uint32_t lcd_seg_req1;     /*  0x0064   LCD SEG Driver I/O Request Register 1      */
-    __IO uint32_t lcd_seg_ack0;     /*  0x0068   LCD SEG Driver I/O Acknowledge Register 0  */
-    __IO uint32_t lcd_seg_ack1;     /*  0x006C   LCD SEG Driver I/O Acknowledge Register 1  */
-    __IO uint32_t crnt_req;         /*  0x0070   Current Drive I/O Request Register         */
-    __IO uint32_t io_crnt_ack;      /*  0x0074   Current Drive I/O Acknowledge Register     */
-    __IO uint32_t crnt_mode;        /*  0x0078   Current Drive I/O Mode Control             */
-    __IO uint32_t ali_connect0;     /*  0x007C   Analog I/O Connection Control Register 0   */
-    __IO uint32_t ali_connect1;     /*  0x0080   Analog I/O Connection Control Register 1   */
-    __IO uint32_t i2cm1_req;        /*  0x0084   I2C Master 1 I/O Request                   */
-    __IO uint32_t i2cm1_ack;        /*  0x0088   I2C Master 1 I/O Acknowledge               */
-    __IO uint32_t padx_control;     /*  0x008C   PADX Control                               */
-} mxc_ioman_regs_t;
+    /*                                      Offset   Register Description
+                                            ======   ========================================== */
+    typedef struct {
+        __IO uint32_t wud_req0; /*  0x0000   Wakeup Detect Mode Request Register 0      */
+        __IO uint32_t wud_req1; /*  0x0004   Wakeup Detect Mode Request Register 1      */
+        __IO uint32_t wud_ack0; /*  0x0008   Wakeup Detect Mode Acknowledge Register 0  */
+        __IO uint32_t wud_ack1; /*  0x000C   Wakeup Detect Mode Acknowledge Register 1  */
+        __IO uint32_t ali_req0; /*  0x0010   Analog Input Request Register 0            */
+        __IO uint32_t ali_req1; /*  0x0014   Analog Input Request Register 1            */
+        __IO uint32_t ali_ack0; /*  0x0018   Analog Input Acknowledge Register 0        */
+        __IO uint32_t ali_ack1; /*  0x001C   Analog Input Acknowledge Register 1        */
+        __IO uint32_t spi0_req; /*  0x0020   SPI0 I/O Mode Request                      */
+        __IO uint32_t spi0_ack; /*  0x0024   SPI0 I/O Mode Acknowledge                  */
+        __IO uint32_t spi1_req; /*  0x0028   SPI1 I/O Mode Request                      */
+        __IO uint32_t spi1_ack; /*  0x002C   SPI1 I/O Mode Acknowledge                  */
+        __IO uint32_t spi2_req; /*  0x0030   SPI2 I/O Mode Request                      */
+        __IO uint32_t spi2_ack; /*  0x0034   SPI2 I/O Mode Acknowledge                  */
+        __IO uint32_t uart0_req; /*  0x0038   UART0 I/O Mode Request                     */
+        __IO uint32_t uart0_ack; /*  0x003C   UART0 I/O Mode Acknowledge                 */
+        __IO uint32_t uart1_req; /*  0x0040   UART1 I/O Mode Request                     */
+        __IO uint32_t uart1_ack; /*  0x0044   UART1 I/O Mode Acknowledge                 */
+        __IO uint32_t i2cm0_req; /*  0x0048   I2C Master 0 I/O Request                   */
+        __IO uint32_t i2cm0_ack; /*  0x004C   I2C Master 0 I/O Acknowledge               */
+        __IO uint32_t i2cs0_req; /*  0x0050   I2C Slave 0 I/O Request                    */
+        __IO uint32_t i2s0_ack; /*  0x0054   I2C Slave 0 I/O Acknowledge                */
+        __IO uint32_t lcd_com_req; /*  0x0058   LCD COM Driver I/O Request                 */
+        __IO uint32_t lcd_com_ack; /*  0x005C   LCD COM Driver I/O Acknowledge             */
+        __IO uint32_t lcd_seg_req0; /*  0x0060   LCD SEG Driver I/O Request Register 0      */
+        __IO uint32_t lcd_seg_req1; /*  0x0064   LCD SEG Driver I/O Request Register 1      */
+        __IO uint32_t lcd_seg_ack0; /*  0x0068   LCD SEG Driver I/O Acknowledge Register 0  */
+        __IO uint32_t lcd_seg_ack1; /*  0x006C   LCD SEG Driver I/O Acknowledge Register 1  */
+        __IO uint32_t crnt_req; /*  0x0070   Current Drive I/O Request Register         */
+        __IO uint32_t io_crnt_ack; /*  0x0074   Current Drive I/O Acknowledge Register     */
+        __IO uint32_t crnt_mode; /*  0x0078   Current Drive I/O Mode Control             */
+        __IO uint32_t ali_connect0; /*  0x007C   Analog I/O Connection Control Register 0   */
+        __IO uint32_t ali_connect1; /*  0x0080   Analog I/O Connection Control Register 1   */
+        __IO uint32_t i2cm1_req; /*  0x0084   I2C Master 1 I/O Request                   */
+        __IO uint32_t i2cm1_ack; /*  0x0088   I2C Master 1 I/O Acknowledge               */
+        __IO uint32_t padx_control; /*  0x008C   PADX Control                               */
+    } mxc_ioman_regs_t;
 
 
-/*
-   Register offsets for module IOMAN.
-*/
+    /*
+       Register offsets for module IOMAN.
+     */
 #define MXC_R_IOMAN_OFFS_WUD_REQ0                 ((uint32_t)0x00000000UL)
 #define MXC_R_IOMAN_OFFS_WUD_REQ1                 ((uint32_t)0x00000004UL)
 #define MXC_R_IOMAN_OFFS_WUD_ACK0                 ((uint32_t)0x00000008UL)
@@ -148,9 +148,9 @@ typedef struct {
 #define MXC_R_IOMAN_OFFS_PADX_CONTROL             ((uint32_t)0x0000008CUL)
 
 
-/*
-   Field positions and masks for module IOMAN.
-*/
+    /*
+       Field positions and masks for module IOMAN.
+     */
 #define MXC_F_IOMAN_WUD_REQ0_PORT0_POS                      0
 #define MXC_F_IOMAN_WUD_REQ0_PORT0                          ((uint32_t)(0x000000FFUL << MXC_F_IOMAN_WUD_REQ0_PORT0_POS))
 #define MXC_F_IOMAN_WUD_REQ0_PORT1_POS                      8
@@ -502,7 +502,7 @@ typedef struct {
 #endif
 
 /**
-* @}
-*/
+ * @}
+ */
 
 #endif   /* _MXC_IOMAN_REGS_H_ */

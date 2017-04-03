@@ -34,50 +34,50 @@
  * @{
  * @brief EFM32LG_DMA Register Declaration
  *****************************************************************************/
-typedef struct
-{
-  __I uint32_t   STATUS;         /**< DMA Status Registers  */
-  __O uint32_t   CONFIG;         /**< DMA Configuration Register  */
-  __IO uint32_t  CTRLBASE;       /**< Channel Control Data Base Pointer Register  */
-  __I uint32_t   ALTCTRLBASE;    /**< Channel Alternate Control Data Base Pointer Register  */
-  __I uint32_t   CHWAITSTATUS;   /**< Channel Wait on Request Status Register  */
-  __O uint32_t   CHSWREQ;        /**< Channel Software Request Register  */
-  __IO uint32_t  CHUSEBURSTS;    /**< Channel Useburst Set Register  */
-  __O uint32_t   CHUSEBURSTC;    /**< Channel Useburst Clear Register  */
-  __IO uint32_t  CHREQMASKS;     /**< Channel Request Mask Set Register  */
-  __O uint32_t   CHREQMASKC;     /**< Channel Request Mask Clear Register  */
-  __IO uint32_t  CHENS;          /**< Channel Enable Set Register  */
-  __O uint32_t   CHENC;          /**< Channel Enable Clear Register  */
-  __IO uint32_t  CHALTS;         /**< Channel Alternate Set Register  */
-  __O uint32_t   CHALTC;         /**< Channel Alternate Clear Register  */
-  __IO uint32_t  CHPRIS;         /**< Channel Priority Set Register  */
-  __O uint32_t   CHPRIC;         /**< Channel Priority Clear Register  */
-  uint32_t       RESERVED0[3];   /**< Reserved for future use **/
-  __IO uint32_t  ERRORC;         /**< Bus Error Clear Register  */
 
-  uint32_t       RESERVED1[880]; /**< Reserved for future use **/
-  __I uint32_t   CHREQSTATUS;    /**< Channel Request Status  */
-  uint32_t       RESERVED2[1];   /**< Reserved for future use **/
-  __I uint32_t   CHSREQSTATUS;   /**< Channel Single Request Status  */
+typedef struct {
+    __I uint32_t STATUS; /**< DMA Status Registers  */
+    __O uint32_t CONFIG; /**< DMA Configuration Register  */
+    __IO uint32_t CTRLBASE; /**< Channel Control Data Base Pointer Register  */
+    __I uint32_t ALTCTRLBASE; /**< Channel Alternate Control Data Base Pointer Register  */
+    __I uint32_t CHWAITSTATUS; /**< Channel Wait on Request Status Register  */
+    __O uint32_t CHSWREQ; /**< Channel Software Request Register  */
+    __IO uint32_t CHUSEBURSTS; /**< Channel Useburst Set Register  */
+    __O uint32_t CHUSEBURSTC; /**< Channel Useburst Clear Register  */
+    __IO uint32_t CHREQMASKS; /**< Channel Request Mask Set Register  */
+    __O uint32_t CHREQMASKC; /**< Channel Request Mask Clear Register  */
+    __IO uint32_t CHENS; /**< Channel Enable Set Register  */
+    __O uint32_t CHENC; /**< Channel Enable Clear Register  */
+    __IO uint32_t CHALTS; /**< Channel Alternate Set Register  */
+    __O uint32_t CHALTC; /**< Channel Alternate Clear Register  */
+    __IO uint32_t CHPRIS; /**< Channel Priority Set Register  */
+    __O uint32_t CHPRIC; /**< Channel Priority Clear Register  */
+    uint32_t RESERVED0[3]; /**< Reserved for future use **/
+    __IO uint32_t ERRORC; /**< Bus Error Clear Register  */
 
-  uint32_t       RESERVED3[121]; /**< Reserved for future use **/
-  __I uint32_t   IF;             /**< Interrupt Flag Register  */
-  __IO uint32_t  IFS;            /**< Interrupt Flag Set Register  */
-  __IO uint32_t  IFC;            /**< Interrupt Flag Clear Register  */
-  __IO uint32_t  IEN;            /**< Interrupt Enable register  */
-  __IO uint32_t  CTRL;           /**< DMA Control Register  */
-  __IO uint32_t  RDS;            /**< DMA Retain Descriptor State  */
+    uint32_t RESERVED1[880]; /**< Reserved for future use **/
+    __I uint32_t CHREQSTATUS; /**< Channel Request Status  */
+    uint32_t RESERVED2[1]; /**< Reserved for future use **/
+    __I uint32_t CHSREQSTATUS; /**< Channel Single Request Status  */
 
-  uint32_t       RESERVED4[2];   /**< Reserved for future use **/
-  __IO uint32_t  LOOP0;          /**< Channel 0 Loop Register  */
-  __IO uint32_t  LOOP1;          /**< Channel 1 Loop Register  */
-  uint32_t       RESERVED5[14];  /**< Reserved for future use **/
-  __IO uint32_t  RECT0;          /**< Channel 0 Rectangle Register  */
+    uint32_t RESERVED3[121]; /**< Reserved for future use **/
+    __I uint32_t IF; /**< Interrupt Flag Register  */
+    __IO uint32_t IFS; /**< Interrupt Flag Set Register  */
+    __IO uint32_t IFC; /**< Interrupt Flag Clear Register  */
+    __IO uint32_t IEN; /**< Interrupt Enable register  */
+    __IO uint32_t CTRL; /**< DMA Control Register  */
+    __IO uint32_t RDS; /**< DMA Retain Descriptor State  */
 
-  uint32_t       RESERVED6[39];  /**< Reserved registers */
+    uint32_t RESERVED4[2]; /**< Reserved for future use **/
+    __IO uint32_t LOOP0; /**< Channel 0 Loop Register  */
+    __IO uint32_t LOOP1; /**< Channel 1 Loop Register  */
+    uint32_t RESERVED5[14]; /**< Reserved for future use **/
+    __IO uint32_t RECT0; /**< Channel 0 Rectangle Register  */
 
-  DMA_CH_TypeDef CH[12];         /**< Channel registers */
-} DMA_TypeDef;                   /** @} */
+    uint32_t RESERVED6[39]; /**< Reserved registers */
+
+    DMA_CH_TypeDef CH[12]; /**< Channel registers */
+} DMA_TypeDef; /** @} */
 
 /**************************************************************************//**
  * @defgroup EFM32LG_DMA_BitFields

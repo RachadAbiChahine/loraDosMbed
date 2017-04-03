@@ -34,24 +34,24 @@
  * @{
  * @brief EFM32LG_I2C Register Declaration
  *****************************************************************************/
-typedef struct
-{
-  __IO uint32_t CTRL;      /**< Control Register  */
-  __IO uint32_t CMD;       /**< Command Register  */
-  __I uint32_t  STATE;     /**< State Register  */
-  __I uint32_t  STATUS;    /**< Status Register  */
-  __IO uint32_t CLKDIV;    /**< Clock Division Register  */
-  __IO uint32_t SADDR;     /**< Slave Address Register  */
-  __IO uint32_t SADDRMASK; /**< Slave Address Mask Register  */
-  __I uint32_t  RXDATA;    /**< Receive Buffer Data Register  */
-  __I uint32_t  RXDATAP;   /**< Receive Buffer Data Peek Register  */
-  __IO uint32_t TXDATA;    /**< Transmit Buffer Data Register  */
-  __I uint32_t  IF;        /**< Interrupt Flag Register  */
-  __IO uint32_t IFS;       /**< Interrupt Flag Set Register  */
-  __IO uint32_t IFC;       /**< Interrupt Flag Clear Register  */
-  __IO uint32_t IEN;       /**< Interrupt Enable Register  */
-  __IO uint32_t ROUTE;     /**< I/O Routing Register  */
-} I2C_TypeDef;             /** @} */
+
+typedef struct {
+    __IO uint32_t CTRL; /**< Control Register  */
+    __IO uint32_t CMD; /**< Command Register  */
+    __I uint32_t STATE; /**< State Register  */
+    __I uint32_t STATUS; /**< Status Register  */
+    __IO uint32_t CLKDIV; /**< Clock Division Register  */
+    __IO uint32_t SADDR; /**< Slave Address Register  */
+    __IO uint32_t SADDRMASK; /**< Slave Address Mask Register  */
+    __I uint32_t RXDATA; /**< Receive Buffer Data Register  */
+    __I uint32_t RXDATAP; /**< Receive Buffer Data Peek Register  */
+    __IO uint32_t TXDATA; /**< Transmit Buffer Data Register  */
+    __I uint32_t IF; /**< Interrupt Flag Register  */
+    __IO uint32_t IFS; /**< Interrupt Flag Set Register  */
+    __IO uint32_t IFC; /**< Interrupt Flag Clear Register  */
+    __IO uint32_t IEN; /**< Interrupt Enable Register  */
+    __IO uint32_t ROUTE; /**< I/O Routing Register  */
+} I2C_TypeDef; /** @} */
 
 /**************************************************************************//**
  * @defgroup EFM32LG_I2C_BitFields

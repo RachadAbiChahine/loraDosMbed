@@ -32,8 +32,8 @@
 /**************************************************************************//**
  * @brief PRS_CH EFM32LG PRS CH
  *****************************************************************************/
-typedef struct
-{
-  __IO uint32_t CTRL; /**< Channel Control Register  */
+
+typedef struct {
+    __IO uint32_t CTRL; /**< Channel Control Register  */
 } PRS_CH_TypeDef;
 

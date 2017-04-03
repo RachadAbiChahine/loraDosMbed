@@ -32,15 +32,15 @@
 /**************************************************************************//**
  * @brief USB_DOEP EFM32LG USB DOEP
  *****************************************************************************/
-typedef struct
-{
-  __IO uint32_t CTL;          /**< Device OUT Endpoint x+1 Control Register  */
-  uint32_t      RESERVED0[1]; /**< Reserved for future use **/
-  __IO uint32_t INT;          /**< Device OUT Endpoint x+1 Interrupt Register  */
-  uint32_t      RESERVED1[1]; /**< Reserved for future use **/
-  __IO uint32_t TSIZ;         /**< Device OUT Endpoint x+1 Transfer Size Register  */
-  __IO uint32_t DMAADDR;      /**< Device OUT Endpoint x+1 DMA Address Register  */
 
-  uint32_t      RESERVED2[2]; /**< Reserved future */
+typedef struct {
+    __IO uint32_t CTL; /**< Device OUT Endpoint x+1 Control Register  */
+    uint32_t RESERVED0[1]; /**< Reserved for future use **/
+    __IO uint32_t INT; /**< Device OUT Endpoint x+1 Interrupt Register  */
+    uint32_t RESERVED1[1]; /**< Reserved for future use **/
+    __IO uint32_t TSIZ; /**< Device OUT Endpoint x+1 Transfer Size Register  */
+    __IO uint32_t DMAADDR; /**< Device OUT Endpoint x+1 DMA Address Register  */
+
+    uint32_t RESERVED2[2]; /**< Reserved future */
 } USB_DOEP_TypeDef;
 
