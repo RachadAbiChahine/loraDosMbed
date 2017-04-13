@@ -1,5 +1,10 @@
 *.o
 */BUILD/
 */.temp/
+*/nbproject/
 #*
 ~*
+/reciver/mbed/
+/transiver/mbed/
+/Maestro/build/
+/Maestro/dist/
